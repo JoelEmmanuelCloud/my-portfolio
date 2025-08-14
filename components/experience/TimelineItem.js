@@ -1,7 +1,6 @@
 'use client'
-import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { ExternalLink, MapPin, Calendar, ChevronDown, ChevronUp, Building } from 'lucide-react'
+import { ExternalLink, MapPin, Calendar, Building } from 'lucide-react'
 import TechStack from '../project/TechStack'
 
 export default function TimelineItem({ 
@@ -15,72 +14,49 @@ export default function TimelineItem({
   const isCurrent = experience.current
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
-      viewport={{ once: true }}
-      className="relative"
-    >
+    <div className="relative">
       {/* Timeline Line */}
-      <div className="absolute left-0 top-0 w-px bg-gradient-to-b from-blue-200 to-gray-200 h-full">
+      <div className="absolute left-6 top-0 w-px bg-gray-200 h-full">
         {!isLast && (
-          <div className="absolute top-12 left-0 w-px bg-gradient-to-b from-blue-400 to-blue-200 h-full" />
+          <div className="absolute top-12 left-0 w-px bg-gray-300 h-full" />
         )}
       </div>
 
       {/* Timeline Dot */}
-      <div className="absolute left-0 top-6 transform -translate-x-1/2">
-        <div className={`w-4 h-4 rounded-full border-4 ${
-          isCurrent 
-            ? 'bg-blue-600 border-blue-200 shadow-lg shadow-blue-600/30' 
-            : 'bg-white border-blue-300'
-        }`}>
-          {isCurrent && (
-            <div className="absolute inset-1 bg-white rounded-full animate-pulse" />
-          )}
-        </div>
+      <div className="absolute left-6 top-6 transform -translate-x-1/2">
+        <div className={`w-3 h-3 rounded-full ${
+          isCurrent ? 'bg-gray-900' : 'bg-gray-400'
+        }`} />
       </div>
 
       {/* Content */}
-      <div className="ml-8 pb-8">
-        <motion.div
-          layout
-          className={`bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 ${
-            isCurrent ? 'ring-2 ring-blue-500/20 border-blue-200' : ''
-          }`}
-        >
+      <div className="ml-16 pb-12">
+        <div className={`${isCurrent ? 'bg-gray-50/50' : ''} p-6 -ml-6 rounded-lg`}>
           {/* Header */}
           <div className="flex items-start justify-between mb-4">
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <h3 className="text-xl font-bold text-gray-900">
+              <div className="flex items-center gap-3 mb-2">
+                <h3 className="text-2xl font-light text-gray-900">
                   {experience.role}
                 </h3>
                 {isCurrent && (
-                  <span className="px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
+                  <span className="text-xs font-light text-gray-600 bg-gray-200 px-2 py-1 rounded">
                     Current
                   </span>
                 )}
               </div>
               
-              <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
-                <div className="flex items-center gap-1">
-                  <Building className="h-4 w-4" />
-                  <span className="font-medium text-blue-600">{experience.company}</span>
-                </div>
-                
-                <div className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
+              <div className="space-y-1 text-sm text-gray-600">
+                <p className="font-light">{experience.company}</p>
+                <div className="flex items-center gap-4 text-xs text-gray-500">
                   <span>{experience.period}</span>
+                  {experience.location && (
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3 w-3" />
+                      {experience.location}
+                    </span>
+                  )}
                 </div>
-                
-                {experience.location && (
-                  <div className="flex items-center gap-1">
-                    <MapPin className="h-4 w-4" />
-                    <span>{experience.location}</span>
-                  </div>
-                )}
               </div>
             </div>
 
@@ -90,7 +66,7 @@ export default function TimelineItem({
                 href={experience.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors duration-200"
+                className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
               >
                 <ExternalLink className="h-4 w-4" />
               </a>
@@ -100,12 +76,21 @@ export default function TimelineItem({
           {/* Technology Stack */}
           {experience.stack && experience.stack.length > 0 && (
             <div className="mb-4">
-              <TechStack 
-                technologies={experience.stack} 
-                limit={isCompact ? 4 : 8}
-                size="sm"
-                animated={false}
-              />
+              <div className="flex flex-wrap gap-2">
+                {experience.stack.slice(0, isCompact ? 4 : 8).map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs font-light text-gray-600 bg-gray-100 px-2 py-1 rounded"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {experience.stack.length > (isCompact ? 4 : 8) && (
+                  <span className="text-xs font-light text-gray-500">
+                    +{experience.stack.length - (isCompact ? 4 : 8)} more
+                  </span>
+                )}
+              </div>
             </div>
           )}
 
@@ -113,38 +98,20 @@ export default function TimelineItem({
           {experience.bullets && experience.bullets.length > 0 && (
             <div className="space-y-3">
               {(isExpanded || isCompact ? experience.bullets : experience.bullets.slice(0, 2)).map((bullet, bulletIndex) => (
-                <motion.div
-                  key={bulletIndex}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: bulletIndex * 0.1, duration: 0.4 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
-                  <p className="text-gray-700 leading-relaxed">
-                    {bullet}
+                <div key={bulletIndex}>
+                  <p className="text-gray-700 font-light leading-relaxed">
+                    — {bullet}
                   </p>
-                </motion.div>
+                </div>
               ))}
               
               {/* Expand/Collapse Button */}
               {!isCompact && experience.bullets.length > 2 && (
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 mt-3"
+                  className="text-sm text-gray-500 hover:text-gray-700 font-light transition-colors duration-200 mt-3"
                 >
-                  {isExpanded ? (
-                    <>
-                      <ChevronUp className="h-4 w-4" />
-                      Show less
-                    </>
-                  ) : (
-                    <>
-                      <ChevronDown className="h-4 w-4" />
-                      Show {experience.bullets.length - 2} more
-                    </>
-                  )}
+                  {isExpanded ? 'Show less' : `Show ${experience.bullets.length - 2} more`}
                 </button>
               )}
             </div>
@@ -152,53 +119,49 @@ export default function TimelineItem({
 
           {/* Additional Info */}
           {experience.description && (
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-              <p className="text-sm text-gray-600 leading-relaxed">
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <p className="text-sm text-gray-600 font-light leading-relaxed">
                 {experience.description}
               </p>
             </div>
           )}
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
 // Compact version for sidebar or summary views
 export function TimelineItemCompact({ experience, index = 0 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.4 }}
-      viewport={{ once: true }}
-      className="flex items-start gap-4 p-4 rounded-lg bg-white border border-gray-200 hover:border-blue-300 transition-colors duration-200"
-    >
-      <div className="flex-shrink-0">
-        <div className={`w-3 h-3 rounded-full ${
-          experience.current ? 'bg-green-500' : 'bg-blue-500'
+    <div className="flex items-start gap-4 p-4 border-b border-gray-100 last:border-b-0 hover:bg-gray-50/50 transition-colors duration-200">
+      <div className="flex-shrink-0 mt-2">
+        <div className={`w-2 h-2 rounded-full ${
+          experience.current ? 'bg-gray-900' : 'bg-gray-400'
         }`} />
       </div>
       
       <div className="flex-1 min-w-0">
-        <h4 className="font-semibold text-gray-900 truncate">
+        <h4 className="font-light text-gray-900 mb-1">
           {experience.role}
         </h4>
-        <p className="text-sm text-blue-600 font-medium">
+        <p className="text-sm text-gray-600 font-light">
           {experience.company}
         </p>
-        <p className="text-xs text-gray-500 mt-1">
+        <p className="text-xs text-gray-400 mt-1">
           {experience.period}
         </p>
         
         {experience.stack && (
-          <div className="mt-2">
-            <TechStack 
-              technologies={experience.stack.slice(0, 3)} 
-              size="xs"
-              showCount={false}
-              animated={false}
-            />
+          <div className="mt-2 flex flex-wrap gap-1">
+            {experience.stack.slice(0, 3).map((tech) => (
+              <span
+                key={tech}
+                className="text-xs font-light text-gray-500 bg-gray-100 px-1 py-0.5 rounded"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         )}
       </div>
@@ -208,85 +171,74 @@ export function TimelineItemCompact({ experience, index = 0 }) {
           href={experience.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 p-1 text-gray-400 hover:text-blue-600 transition-colors duration-200"
+          className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors duration-200"
         >
           <ExternalLink className="h-3 w-3" />
         </a>
       )}
-    </motion.div>
+    </div>
   )
 }
 
 // Horizontal version for timeline layouts
 export function TimelineItemHorizontal({ experience, index = 0 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
-      viewport={{ once: true }}
-      className="relative min-w-80 max-w-sm"
-    >
-      <div className={`p-6 rounded-xl border-2 transition-all duration-300 hover:shadow-lg ${
-        experience.current 
-          ? 'bg-blue-50 border-blue-200 shadow-md' 
-          : 'bg-white border-gray-200 hover:border-blue-300'
+    <div className="relative min-w-80 max-w-sm">
+      <div className={`p-6 border border-gray-200 hover:border-gray-300 transition-colors duration-200 ${
+        experience.current ? 'bg-gray-50/50' : 'bg-white'
       }`}>
         {/* Period Badge */}
-        <div className="absolute -top-3 left-4">
-          <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
+        <div className="mb-4">
+          <span className="text-xs font-light text-gray-500 bg-gray-100 px-2 py-1 rounded">
             {experience.period}
           </span>
-        </div>
-
-        {/* Current Badge */}
-        {experience.current && (
-          <div className="absolute -top-3 right-4">
-            <span className="px-2 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">
+          {experience.current && (
+            <span className="ml-2 text-xs font-light text-gray-600 bg-gray-200 px-2 py-1 rounded">
               Current
             </span>
-          </div>
-        )}
+          )}
+        </div>
 
-        <div className="mt-2">
-          <h3 className="text-lg font-bold text-gray-900 mb-1">
+        <div>
+          <h3 className="text-lg font-light text-gray-900 mb-1">
             {experience.role}
           </h3>
-          <p className="text-blue-600 font-semibold mb-2">
+          <p className="text-gray-600 font-light mb-2">
             {experience.company}
           </p>
           
           {experience.location && (
-            <div className="flex items-center gap-1 text-sm text-gray-600 mb-3">
+            <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
               <MapPin className="h-3 w-3" />
-              <span>{experience.location}</span>
+              <span className="font-light">{experience.location}</span>
             </div>
           )}
 
           {experience.bullets && experience.bullets.length > 0 && (
             <div className="space-y-2 mb-4">
               {experience.bullets.slice(0, 2).map((bullet, bulletIndex) => (
-                <div key={bulletIndex} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {bullet.length > 80 ? `${bullet.substring(0, 80)}...` : bullet}
-                  </p>
-                </div>
+                <p key={bulletIndex} className="text-sm text-gray-700 font-light leading-relaxed">
+                  — {bullet.length > 80 ? `${bullet.substring(0, 80)}...` : bullet}
+                </p>
               ))}
             </div>
           )}
 
           {experience.stack && (
-            <TechStack 
-              technologies={experience.stack} 
-              limit={4}
-              size="xs"
-              animated={false}
-            />
+            <div className="flex flex-wrap gap-1">
+              {experience.stack.slice(0, 4).map((tech) => (
+                <span
+                  key={tech}
+                  className="text-xs font-light text-gray-600 bg-gray-100 px-2 py-1 rounded"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
@@ -294,7 +246,6 @@ export function TimelineItemHorizontal({ experience, index = 0 }) {
 export function TimelineStats({ experiences }) {
   const totalYears = experiences.reduce((acc, exp) => {
     if (exp.current) return acc + 1 // Approximate current role as 1 year
-    // You could add more sophisticated date parsing here
     return acc + 1
   }, 0)
 
@@ -310,23 +261,16 @@ export function TimelineStats({ experiences }) {
   ]
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-b border-gray-100">
       {stats.map((stat, index) => (
-        <motion.div
-          key={stat.label}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1, duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center p-4 bg-white rounded-lg border border-gray-200"
-        >
-          <div className="text-2xl font-bold text-blue-600 mb-1">
+        <div key={stat.label} className="text-center">
+          <div className="text-3xl font-light text-gray-900 mb-2">
             {stat.value}
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-gray-500 font-light">
             {stat.label}
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   )

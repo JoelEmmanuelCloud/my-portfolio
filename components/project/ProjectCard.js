@@ -1,8 +1,7 @@
 'use client'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ExternalLink, ArrowRight, Calendar, MapPin } from 'lucide-react'
+import { ExternalLink, ArrowRight } from 'lucide-react'
 import TechStack from './TechStack'
 
 export default function ProjectCard({ project, index = 0, variant = 'default' }) {
@@ -10,37 +9,30 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
   const isFeatured = project.featured
   
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
-      viewport={{ once: true }}
-      className={`group relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover-lift transition-all duration-300 ${
-        isFeatured ? 'ring-2 ring-blue-500/20 shadow-lg' : 'shadow-md'
-      }`}
-    >
+    <div className={`group relative bg-white border border-gray-200 transition-all duration-200 hover:border-gray-300 ${
+      isFeatured ? 'border-gray-300' : ''
+    }`}>
       {/* Featured Badge */}
       {isFeatured && (
         <div className="absolute top-4 right-4 z-10">
-          <span className="bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+          <span className="bg-gray-900 text-white text-xs font-medium px-2 py-1">
             Featured
           </span>
         </div>
       )}
 
-      {/* Project Image/Preview */}
+      {/* Project Image */}
       {project.images && project.images.length > 0 && (
-        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500 text-sm">Project Screenshot</span>
+        <div className="relative h-48 bg-gray-100 border-b border-gray-200">
+          <div className="w-full h-full flex items-center justify-center">
+            <span className="text-gray-500 text-sm">Project Preview</span>
           </div>
           {/* Uncomment when you have actual images */}
           {/* <Image
             src={project.images[0]}
             alt={`${project.title} preview`}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover"
           /> */}
         </div>
       )}
@@ -49,17 +41,16 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-200">
+            <h3 className="text-xl font-medium text-gray-900 mb-1">
               {project.title}
             </h3>
-            <p className="text-sm font-medium text-blue-600 mb-2">
+            <p className="text-sm text-gray-600 mb-2">
               {project.role}
             </p>
             {project.period && (
-              <div className="flex items-center text-xs text-gray-500 mb-2">
-                <Calendar className="h-3 w-3 mr-1" />
+              <p className="text-xs text-gray-500">
                 {project.period}
-              </div>
+              </p>
             )}
           </div>
           
@@ -70,7 +61,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors duration-200"
+                className="p-2 border border-gray-200 hover:bg-gray-50 transition-colors"
                 onClick={(e) => e.stopPropagation()}
               >
                 <ExternalLink className="h-4 w-4" />
@@ -81,7 +72,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 transition-colors duration-200"
+                className="p-2 border border-gray-200 hover:bg-gray-50 transition-colors"
                 onClick={(e) => e.stopPropagation()}
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -104,11 +95,11 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         {/* Key Highlights */}
         {isDetailed && project.impact && (
           <div className="mb-4">
-            <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Achievements</h4>
+            <h4 className="text-sm font-medium text-gray-900 mb-2">Key Results</h4>
             <ul className="space-y-1">
               {project.impact.slice(0, 3).map((achievement, idx) => (
                 <li key={idx} className="text-sm text-gray-600 flex items-start">
-                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 mr-2 flex-shrink-0" />
+                  <span className="w-1 h-1 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0" />
                   {achievement}
                 </li>
               ))}
@@ -117,24 +108,26 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         )}
 
         {/* Technology Stack */}
-        <TechStack 
-          technologies={project.stack} 
-          limit={isDetailed ? 12 : 6}
-          size="sm"
-        />
+        <div className="mb-6">
+          <TechStack 
+            technologies={project.stack} 
+            limit={isDetailed ? 12 : 6}
+            size="sm"
+          />
+        </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div className="flex items-center space-x-4">
             {project.links?.live && (
               <a
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                 onClick={(e) => e.stopPropagation()}
               >
-                View Live
+                View Live →
               </a>
             )}
             {project.links?.github && (
@@ -142,10 +135,10 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                 onClick={(e) => e.stopPropagation()}
               >
-                Source Code
+                Source Code →
               </a>
             )}
           </div>
@@ -153,7 +146,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
           {project.slug && (
             <Link
               href={`/projects/${project.slug}`}
-              className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors flex items-center"
             >
               Case Study
               <ArrowRight className="ml-1 h-3 w-3" />
@@ -161,29 +154,20 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
           )}
         </div>
       </div>
-
-      {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-    </motion.div>
+    </div>
   )
 }
 
-// Variant for compact grid display
+// Compact version for grid layouts
 export function ProjectCardCompact({ project, index = 0 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ delay: index * 0.1, duration: 0.4 }}
-      viewport={{ once: true }}
-      className="group p-4 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200"
-    >
+    <div className="group p-4 border border-gray-200 hover:border-gray-300 transition-colors bg-white">
       <div className="flex items-start justify-between mb-3">
-        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+        <h4 className="font-medium text-gray-900">
           {project.title}
         </h4>
         {project.links?.live && (
-          <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" />
+          <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
         )}
       </div>
       
@@ -196,72 +180,60 @@ export function ProjectCardCompact({ project, index = 0 }) {
         size="xs"
         showCount={false}
       />
-    </motion.div>
+    </div>
   )
 }
 
-// Variant for featured showcase
+// Featured version for hero sections
 export function ProjectCardFeatured({ project, index = 0 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.2, duration: 0.8 }}
-      viewport={{ once: true }}
-      className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-blue-50/50 border border-blue-200/50 shadow-2xl hover:shadow-3xl transition-all duration-500"
-    >
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full -translate-y-16 translate-x-16" />
+    <div className="group relative bg-white border border-gray-300 p-8">
+      <div className="absolute top-4 right-4">
+        <span className="bg-gray-900 text-white text-xs font-medium px-2 py-1">
+          Featured
+        </span>
+      </div>
       
-      <div className="relative p-8">
-        <div className="flex items-start justify-between mb-6">
-          <div>
-            <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full mb-3">
-              Featured Project
-            </span>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              {project.title}
-            </h3>
-            <p className="text-blue-600 font-medium">
-              {project.role}
-            </p>
-          </div>
-          
-          <div className="flex space-x-2">
-            {project.links?.live && (
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200"
-              >
-                <ExternalLink className="h-5 w-5" />
-              </a>
-            )}
-          </div>
-        </div>
-
-        <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-          {project.summary}
+      <div className="mb-6">
+        <h3 className="text-2xl font-light text-gray-900 mb-2">
+          {project.title}
+        </h3>
+        <p className="text-gray-600">
+          {project.role}
         </p>
+      </div>
 
+      <p className="text-gray-600 mb-6 leading-relaxed">
+        {project.summary}
+      </p>
+
+      <div className="mb-8">
         <TechStack 
           technologies={project.stack} 
-          variant="prominent"
           limit={8}
         />
-
-        {project.slug && (
-          <div className="mt-8">
-            <Link
-              href={`/projects/${project.slug}`}
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              Explore Case Study
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        )}
       </div>
-    </motion.div>
+
+      {project.slug && (
+        <div className="flex gap-4">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="px-6 py-2 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors"
+          >
+            View Case Study
+          </Link>
+          {project.links?.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+            >
+              View Live
+            </a>
+          )}
+        </div>
+      )}
+    </div>
   )
 }

@@ -116,70 +116,56 @@ export default function Home() {
 
       {/* Companies Section */}
       <section className="py-16 bg-white">
-        <div className="container-max section-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-8">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <h2 className="text-sm font-light text-gray-500 uppercase tracking-wide mb-8">
               Trusted by leading companies
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-              {companies.map((company, index) => (
-                <motion.a
+              {companies.map((company) => (
+                <a
                   key={company.name}
                   href={company.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
                   className="group flex justify-center"
                 >
-                  <div className="h-12 w-24 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-gray-300 transition-colors duration-200">
-                    <span className="text-xs font-medium text-gray-600">{company.name}</span>
+                  <div className="w-24 h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
+                    <span className="text-xs font-light text-gray-400 group-hover:text-gray-600 transition-colors duration-300">
+                      {company.name}
+                    </span>
                   </div>
-                </motion.a>
+                </a>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Featured Projects */}
       <section className="py-24 bg-gray-50">
-        <div className="container-max section-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light text-gray-900 mb-4">
               Featured Projects
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Production systems serving real users with modern tech stacks
+            <p className="text-lg text-gray-600 font-light">
+              — Production systems serving real users
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {featuredProjects.map((project, index) => (
-              <motion.div
+          <div className="grid md:grid-cols-2 gap-12">
+            {featuredProjects.map((project) => (
+              <div
                 key={project.slug}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="glass-card rounded-2xl p-8 hover-lift"
+                className="bg-white p-8 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-light text-gray-900 mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-blue-600 font-medium">
+                    <p className="text-sm text-gray-500 font-light">
                       {project.role}
                     </p>
                   </div>
@@ -188,14 +174,14 @@ export default function Home() {
                       href={project.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors duration-200"
+                      className="text-gray-400 hover:text-gray-900 transition-colors duration-200"
                     >
                       <ExternalLink className="h-5 w-5" />
                     </a>
                   )}
                 </div>
 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed font-light">
                   {project.summary}
                 </p>
 
@@ -203,13 +189,13 @@ export default function Home() {
                   {project.stack.slice(0, 6).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full"
+                      className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-light"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.stack.length > 6 && (
-                    <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                    <span className="px-3 py-1 bg-gray-100 text-gray-500 text-xs font-light">
                       +{project.stack.length - 6} more
                     </span>
                   )}
@@ -217,63 +203,49 @@ export default function Home() {
 
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors duration-200"
+                  className="text-gray-900 hover:text-gray-600 transition-colors duration-200 font-light"
                 >
-                  View Case Study
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  View Case Study →
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-center mt-12"
-          >
-            <Link href="/projects" className="btn-primary">
-              View All Projects
+          <div className="text-center mt-12">
+            <Link href="/projects" className="text-gray-900 hover:text-gray-600 transition-colors font-light">
+              View All Projects →
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* How I Build */}
       <section className="py-24 bg-white">
-        <div className="container-max section-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light text-gray-900 mb-4">
               How I Build
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Modern tech stack for scalable, production-ready applications
+            <p className="text-lg text-gray-600 font-light">
+              — Modern tech stack for scalable applications
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {buildingApproach.map((approach, index) => (
-              <motion.div
+          <div className="grid md:grid-cols-3 gap-12">
+            {buildingApproach.map((approach) => (
+              <div
                 key={approach.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                className="text-center p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover-lift"
+                className="text-center"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <approach.icon className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                  <approach.icon className="h-8 w-8 text-gray-400" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl font-light text-gray-900 mb-4">
                   {approach.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed font-light">
                   {approach.description}
                 </p>
                 
@@ -281,48 +253,43 @@ export default function Home() {
                   {approach.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-white text-gray-700 text-sm font-medium rounded-lg border border-gray-200"
+                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-light"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="container-max section-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center text-white"
-          >
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+      <section className="py-24 bg-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="text-center text-white">
+            <h2 className="text-4xl font-light mb-4">
               Have a project or role?
             </h2>
-            <p className="mt-4 text-xl text-blue-100">
-              Let's talk—24h reply guarantee
+            <p className="text-lg text-gray-300 font-light mb-8">
+              — Let's talk, 24h reply guarantee
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                className="text-white hover:text-gray-300 transition-colors font-light"
               >
-                Book a Call
+                Book a Call →
               </Link>
               <a
                 href="mailto:ejoel00@gmail.com"
-                className="bg-transparent text-white border-2 border-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                className="text-white hover:text-gray-300 transition-colors font-light"
               >
-                Send Email
+                Send Email →
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

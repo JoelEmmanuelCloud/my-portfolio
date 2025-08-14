@@ -1,96 +1,73 @@
 export const skills = {
   frontend: {
     title: "Frontend",
-    icon: "🎨",
+    icon: "⚡",
     skills: [
-      "React.js", "Next.js", "TypeScript", "JavaScript ES6+", 
-      "Tailwind CSS", "Redux", "Material UI", "Responsive Design",
-      "HTML5", "CSS3", "Modern UI/UX"
+      "React.js", "Next.js", "TypeScript", "JavaScript", 
+      "Tailwind CSS", "HTML5", "CSS3", "Responsive Design"
     ]
   },
   backend: {
     title: "Backend",
-    icon: "⚡",
+    icon: "🔧",
     skills: [
-      "Node.js", "Express.js", "Java", "Spring Boot", "Python",
-      "Django", "Flask", "NestJS", "REST APIs", "GraphQL",
-      "Microservices", "JPA/Hibernate"
+      "Node.js", "Express.js", "Java", "Spring Boot", 
+      "Python", "REST APIs", "Microservices"
     ]
   },
   cloud: {
     title: "Cloud & DevOps",
     icon: "☁️",
     skills: [
-      "AWS (EC2, S3, Lambda, SageMaker)", "AWS Bedrock", "AWS Textract",
-      "Docker", "Kubernetes", "CI/CD", "GitHub Actions", 
-      "AWS CodeDeploy", "Nginx", "Apache", "Amplify", "Vercel"
+      "AWS (EC2, S3, Lambda)", "Docker", "CI/CD", 
+      "GitHub Actions", "Nginx", "Redis"
     ]
   },
   database: {
-    title: "Data & Infrastructure", 
+    title: "Database", 
     icon: "🗄️",
     skills: [
-      "MongoDB", "PostgreSQL", "MySQL", "Redis", "DynamoDB",
-      "SQL", "NoSQL", "Database Design", "Query Optimization",
-      "Data Modeling"
+      "MongoDB", "PostgreSQL", "MySQL", "Redis", 
+      "SQL", "Database Design"
     ]
   },
   ai: {
-    title: "AI & Machine Learning",
+    title: "AI & ML",
     icon: "🤖",
     skills: [
-      "TensorFlow", "PyTorch", "AWS SageMaker", "Amazon Bedrock",
-      "Amazon Lex", "Claude 3.5", "MLOps", "Predictive Analytics",
-      "NLP", "Computer Vision", "Model Deployment"
-    ]
-  },
-  integrations: {
-    title: "Integrations & APIs",
-    icon: "🔗",
-    skills: [
-      "SendGrid", "Twilio", "Paystack", "Google Maps API",
-      "Socket.IO", "FCM", "TidyCal", "Payment Gateways",
-      "Real-time Communication", "Third-party APIs"
+      "AWS SageMaker", "Amazon Bedrock", "Amazon Lex", 
+      "TensorFlow", "MLOps", "NLP"
     ]
   },
   tools: {
-    title: "Tools & Technologies",
+    title: "Tools",
     icon: "🛠️",
     skills: [
-      "Git", "GitHub", "VS Code", "Postman", "Maven", "Gradle",
-      "npm", "yarn", "Webpack", "Babel", "ESLint", "Prettier"
-    ]
-  },
-  testing: {
-    title: "Testing & Quality",
-    icon: "✅",
-    skills: [
-      "Jest", "JUnit", "Mockito", "TDD", "Unit Testing",
-      "Integration Testing", "API Testing", "Code Quality",
-      "Performance Testing"
+      "Git", "GitHub", "VS Code", "Postman", 
+      "npm", "Webpack", "ESLint"
     ]
   }
-};
+}
 
 export const highlights = [
   {
     title: "Production Systems",
-    description: "Built and deployed real-world applications serving thousands of users",
+    description: "Built applications serving real users in production",
     icon: "🚀"
   },
   {
     title: "AWS Certified",
-    description: "Cloud Practitioner & AI Practitioner with hands-on AWS experience",
+    description: "Cloud Practitioner & AI Practitioner certified",
     icon: "☁️"
   },
   {
-    title: "Full-Stack Expertise",
-    description: "End-to-end development from React frontends to scalable backends",
+    title: "Full-Stack",
+    description: "End-to-end development from frontend to backend",
     icon: "⚡"
   },
   {
-    title: "AI/ML Integration",
-    description: "Experience with AWS SageMaker, Bedrock, and modern ML workflows",
+    title: "AI Integration",
+    description: "Experience with modern AI/ML workflows",
     icon: "🤖"
   }
-];
+]

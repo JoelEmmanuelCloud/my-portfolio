@@ -23,91 +23,116 @@ export async function POST(request) {
       )
     }
 
-    // Rate limiting (simple in-memory approach)
-    // In production, use Redis or database for rate limiting
+    // Get client info
     const userAgent = request.headers.get('user-agent') || ''
     const clientIP = request.headers.get('x-forwarded-for') || 
                     request.headers.get('x-real-ip') || 
                     'unknown'
 
+    // Main notification email
     const msg = {
       to: 'ejoel00@gmail.com',
-      from: 'hello@joelemmanuel.dev', // Use your verified sender
-      subject: `New Contact Form Message from ${name}`,
+      from: 'hello@joelemmanuel.dev',
+      subject: `New message from ${name}`,
       text: `
-        New contact form submission:
-        
-        Name: ${name}
-        Email: ${email}
-        Company: ${company || 'Not provided'}
-        
-        Message:
-        ${message}
-        
-        ---
-        Submitted from: ${clientIP}
-        User Agent: ${userAgent}
+Name: ${name}
+Email: ${email}
+Company: ${company || 'Not provided'}
+
+Message:
+${message}
+
+---
+From: ${clientIP}
+Agent: ${userAgent}
       `,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
-            New Contact Form Message
-          </h2>
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; color: #374151;">
           
-          <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-            <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+          <div style="padding: 40px 0; border-bottom: 1px solid #e5e7eb;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 300; color: #111827;">
+              New message from ${name}
+            </h1>
           </div>
           
-          <div style="margin: 20px 0;">
-            <h3 style="color: #374151;">Message:</h3>
-            <div style="background-color: #ffffff; padding: 15px; border-left: 4px solid #2563eb; border-radius: 4px;">
-              ${message.replace(/\n/g, '<br>')}
+          <div style="padding: 40px 0;">
+            <div style="margin-bottom: 32px;">
+              <p style="margin: 0 0 8px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Name</p>
+              <p style="margin: 0; font-size: 16px; color: #111827;">${name}</p>
+            </div>
+            
+            <div style="margin-bottom: 32px;">
+              <p style="margin: 0 0 8px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Email</p>
+              <p style="margin: 0; font-size: 16px; color: #111827;">
+                <a href="mailto:${email}" style="color: #111827; text-decoration: none;">${email}</a>
+              </p>
+            </div>
+            
+            ${company ? `
+            <div style="margin-bottom: 32px;">
+              <p style="margin: 0 0 8px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Company</p>
+              <p style="margin: 0; font-size: 16px; color: #111827;">${company}</p>
+            </div>
+            ` : ''}
+            
+            <div style="margin-bottom: 32px;">
+              <p style="margin: 0 0 16px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Message</p>
+              <div style="padding: 24px; background-color: #f9fafb; border-left: 2px solid #e5e7eb;">
+                <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #111827; white-space: pre-line;">${message}</p>
+              </div>
             </div>
           </div>
           
-          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
-            <p>Submitted from: ${clientIP}</p>
-            <p>User Agent: ${userAgent}</p>
+          <div style="padding: 24px 0; border-top: 1px solid #e5e7eb;">
+            <p style="margin: 0; font-size: 12px; color: #9ca3af; font-weight: 300;">
+              Submitted from ${clientIP}
+            </p>
           </div>
         </div>
       `,
     }
 
-    // Auto-reply to sender
+    // Auto-reply email
     const autoReply = {
       to: email,
       from: 'ejoel00@gmail.com',
-      subject: 'Thanks for reaching out!',
+      subject: 'Message received',
       text: `
-        Hi ${name},
-        
-        Thanks for getting in touch! I've received your message and will get back to you within 24 hours.
-        
-        In the meantime, feel free to check out my latest projects at https://joelemmanuel.dev/projects
-        
-        Best regards,
-        Joel Emmanuel
-        Full Stack & AI/ML Developer
+Hi ${name},
+
+Thanks for your message. I'll get back to you within 24 hours.
+
+Best regards,
+Joel Emmanuel
       `,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb;">Thanks for reaching out!</h2>
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; color: #374151;">
           
-          <p>Hi ${name},</p>
+          <div style="padding: 40px 0;">
+            <h1 style="margin: 0 0 24px 0; font-size: 24px; font-weight: 300; color: #111827;">
+              Message received
+            </h1>
+            
+            <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #374151; font-weight: 300;">
+              Hi ${name},
+            </p>
+            
+            <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #374151; font-weight: 300;">
+              Thanks for your message. I'll get back to you within 24 hours.
+            </p>
+            
+            <p style="margin: 0 0 32px 0; font-size: 16px; line-height: 1.6; color: #374151; font-weight: 300;">
+              Best regards,<br>
+              Joel Emmanuel
+            </p>
+          </div>
           
-          <p>Thanks for getting in touch! I've received your message and will get back to you within 24 hours.</p>
-          
-          <p>In the meantime, feel free to check out my latest projects at 
-            <a href="https://joelemmanuel.dev/projects" style="color: #2563eb;">joelemmanuel.dev/projects</a>
-          </p>
-          
-          <div style="margin-top: 30px; padding: 20px; background-color: #f9fafb; border-radius: 8px;">
-            <p style="margin: 0;"><strong>Joel Emmanuel</strong></p>
-            <p style="margin: 5px 0; color: #6b7280;">Full Stack & AI/ML Developer</p>
-            <p style="margin: 5px 0; color: #6b7280;">
-              📧 ejoel00@gmail.com | 📱 +234 706 976 3692
+          <div style="padding: 24px 0; border-top: 1px solid #e5e7eb;">
+            <p style="margin: 0; font-size: 14px; color: #6b7280; font-weight: 300;">
+              Joel Emmanuel • Frontend Engineer
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 14px; color: #9ca3af; font-weight: 300;">
+              ejoel00@gmail.com • +234 706 976 3692
             </p>
           </div>
         </div>
@@ -126,7 +151,7 @@ export async function POST(request) {
     )
 
   } catch (error) {
-    console.error('Error sending email:', error)
+    console.error('Contact form error:', error)
     
     return Response.json(
       { error: 'Failed to send message. Please try again.' },
