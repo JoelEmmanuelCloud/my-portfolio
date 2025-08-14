@@ -42,86 +42,74 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        
-        <div className="container-max section-padding py-24 lg:py-32 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center lg:text-left"
-            >
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
-                I build reliable web platforms with{' '}
-                <span className="gradient-text">React and AWS</span>
+      <section className="relative min-h-screen bg-white overflow-hidden">
+        <div className="container mx-auto px-6 py-24 lg:py-32 relative z-10">
+          {/* Stats - Top Left */}
+          <div className="absolute top-24 left-6">
+            <div className="space-y-8">
+              <div>
+                <div className="text-4xl font-light text-gray-900">+50</div>
+                <div className="text-sm text-gray-500 mt-1">Projects completed</div>
+              </div>
+              <div>
+                <div className="text-4xl font-light text-gray-900">+10</div>
+                <div className="text-sm text-gray-500 mt-1">Companies served</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="flex items-center justify-between min-h-screen">
+            <div className="flex-1 max-w-2xl">
+              <h1 className="text-8xl lg:text-9xl font-light text-gray-900 mb-4">
+                Hello
               </h1>
-              
-              <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl">
-                Currently Frontend Engineer at <strong>Invillia</strong> • Building <strong>Freedom</strong> ride-hailing platform • 
-                Shipping production systems with React, Node.js, AWS, and modern CI/CD used by thousands of customers.
+              <p className="text-xl text-gray-600 font-light mb-12">
+                — I'm a Frontend Engineer building scalable web platforms
               </p>
               
-              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link href="/projects" className="btn-primary">
-                  View Case Studies
-                  <ArrowRight className="ml-2 h-4 w-4" />
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  Currently Frontend Engineer at <strong>Invillia</strong>
+                </p>
+                <p className="text-gray-600">
+                  Building <strong>Freedom</strong> ride-hailing platform
+                </p>
+                <p className="text-gray-600">
+                  Specializing in React, Node.js, AWS, and modern CI/CD
+                </p>
+              </div>
+
+              <div className="mt-12 flex gap-6">
+                <Link href="/projects" className="text-gray-900 hover:text-gray-600 transition-colors">
+                  View Projects →
                 </Link>
-                <Link href="/contact" className="btn-secondary">
-                  Let's Talk
+                <Link href="/contact" className="text-gray-900 hover:text-gray-600 transition-colors">
+                  Get In Touch →
                 </Link>
               </div>
-              
-              <div className="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start">
-                {highlights.map((highlight, index) => (
-                  <motion.div
-                    key={highlight.title}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1 * index, duration: 0.3 }}
-                    className="bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200/50"
-                  >
-                    <span className="mr-2">{highlight.icon}</span>
-                    {highlight.title}
-                  </motion.div>
-                ))}
+            </div>
+
+            {/* Profile Image - Right Side */}
+            <div className="flex-shrink-0 ml-12">
+              <div className="w-96 h-96 rounded-full overflow-hidden grayscale">
+                <Image
+                  src="/images/profile/profile.jpeg"
+                  alt="Profile Picture"
+                  width={384}
+                  height={384}
+                  className="object-cover w-full h-full"
+                  priority
+                />
               </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="flex justify-center"
-            >
-              <div className="relative">
-                <div className="w-80 h-80 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 p-1">
-                  <div className="w-full h-full rounded-xl bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 rounded-full bg-gray-300 mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-gray-600">JE</span>
-                      </div>
-                      <p className="text-sm text-gray-600">Profile Picture</p>
-                    </div>
-                  </div>
-                </div>
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute -top-4 -right-4 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center"
-                >
-                  <Code className="h-8 w-8 text-white" />
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-4 -left-4 w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center"
-                >
-                  <Brain className="h-8 w-8 text-white" />
-                </motion.div>
-              </div>
-            </motion.div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator - Bottom Left */}
+          <div className="absolute bottom-24 left-6">
+            <div className="text-sm text-gray-500 transform -rotate-90 origin-left">
+              Scroll down ↓
+            </div>
           </div>
         </div>
       </section>
