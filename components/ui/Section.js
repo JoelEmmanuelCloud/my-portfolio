@@ -16,7 +16,7 @@ const Section = forwardRef(({
   const variants = {
     default: '',
     hero: 'min-h-screen flex items-center justify-center',
-    feature: 'text-center',
+    feature: '',
     cta: 'text-center',
     content: ''
   }
@@ -33,11 +33,10 @@ const Section = forwardRef(({
     transparent: 'bg-transparent',
     white: 'bg-white',
     gray: 'bg-gray-50',
-    'gray-dark': 'bg-gray-100',
-    primary: 'bg-blue-600 text-white',
-    gradient: 'bg-gradient-to-br from-blue-50 via-white to-purple-50',
-    'gradient-dark': 'bg-gradient-to-r from-blue-600 to-purple-600 text-white',
-    pattern: 'bg-white bg-grid-pattern'
+    'gray-light': 'bg-gray-25',
+    'gray-subtle': 'bg-gray-100',
+    primary: 'bg-gray-900 text-white',
+    minimal: 'bg-white border-t border-gray-200'
   }
   
   const classes = cn(
@@ -66,13 +65,13 @@ const SectionContainer = forwardRef(({
 }, ref) => {
   const sizes = {
     sm: 'max-w-4xl',
-    default: 'max-w-7xl',
-    lg: 'max-w-8xl',
+    default: 'max-w-6xl',
+    lg: 'max-w-7xl',
     full: 'max-w-full'
   }
   
   const classes = cn(
-    'mx-auto px-4 sm:px-6 lg:px-8',
+    'mx-auto px-6 lg:px-8',
     sizes[size],
     className
   )
@@ -92,7 +91,7 @@ const SectionHeader = forwardRef(({
   title,
   subtitle,
   description,
-  centered = true,
+  centered = false,
   children,
   ...props
 }, ref) => {
@@ -105,17 +104,17 @@ const SectionHeader = forwardRef(({
   return (
     <div ref={ref} className={classes} {...props}>
       {subtitle && (
-        <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-4">
+        <p className="text-sm font-light text-gray-500 uppercase tracking-wide mb-4">
           {subtitle}
         </p>
       )}
       {title && (
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
+        <h2 className="text-4xl lg:text-5xl font-light tracking-tight text-gray-900 mb-6">
           {title}
         </h2>
       )}
       {description && (
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
           {description}
         </p>
       )}
@@ -151,7 +150,7 @@ export default Section
 export const HeroSection = ({ children, ...props }) => (
   <Section 
     variant="hero" 
-    background="gradient" 
+    background="white" 
     padding="lg"
     {...props}
   >
@@ -180,7 +179,7 @@ export const FeatureSection = ({ title, description, children, ...props }) => (
 export const CTASection = ({ title, description, children, ...props }) => (
   <Section 
     variant="cta" 
-    background="gradient-dark" 
+    background="primary" 
     padding="default"
     {...props}
   >
@@ -196,6 +195,14 @@ export const CTASection = ({ title, description, children, ...props }) => (
 export const ContentSection = ({ children, ...props }) => (
   <Section background="white" padding="default" {...props}>
     <SectionContainer>
+      {children}
+    </SectionContainer>
+  </Section>
+)
+
+export const MinimalSection = ({ children, ...props }) => (
+  <Section background="white" padding="default" {...props}>
+    <SectionContainer size="sm">
       {children}
     </SectionContainer>
   </Section>

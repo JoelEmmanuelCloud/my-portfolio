@@ -6,20 +6,20 @@ const Card = forwardRef(({
   className,
   variant = 'default',
   padding = 'default',
-  shadow = 'default',
+  shadow = 'none',
   hover = false,
   children,
   ...props
 }, ref) => {
-  const baseStyles = 'bg-white border border-gray-200 rounded-lg transition-all duration-200'
+  const baseStyles = 'bg-white transition-all duration-300'
   
   const variants = {
-    default: 'bg-white border-gray-200',
-    glass: 'bg-white/80 backdrop-blur-sm border-gray-200/50',
-    gradient: 'bg-gradient-to-br from-blue-50 to-purple-50 border-gray-200',
-    dark: 'bg-gray-900 border-gray-700 text-white',
-    outline: 'bg-transparent border-2 border-gray-300',
-    elevated: 'bg-white border-0 shadow-lg'
+    default: 'bg-white border border-gray-200',
+    minimal: 'bg-white border-none',
+    outline: 'bg-transparent border border-gray-300',
+    subtle: 'bg-gray-50 border border-gray-100',
+    elevated: 'bg-white border border-gray-200',
+    dark: 'bg-gray-900 border border-gray-800 text-white'
   }
   
   const paddings = {
@@ -27,7 +27,7 @@ const Card = forwardRef(({
     sm: 'p-4',
     default: 'p-6',
     lg: 'p-8',
-    xl: 'p-10'
+    xl: 'p-12'
   }
   
   const shadows = {
@@ -38,7 +38,7 @@ const Card = forwardRef(({
     xl: 'shadow-xl'
   }
   
-  const hoverEffects = hover ? 'hover:shadow-xl hover:-translate-y-1 cursor-pointer' : ''
+  const hoverEffects = hover ? 'hover:shadow-lg hover:border-gray-300 cursor-pointer' : ''
   
   const classes = cn(
     baseStyles,
@@ -46,6 +46,7 @@ const Card = forwardRef(({
     paddings[padding],
     shadows[shadow],
     hoverEffects,
+    'rounded-lg',
     className
   )
   
@@ -65,7 +66,7 @@ const CardHeader = forwardRef(({
   ...props
 }, ref) => {
   const classes = cn(
-    'flex flex-col space-y-1.5 mb-6',
+    'flex flex-col space-y-2 mb-6',
     className
   )
   
@@ -85,7 +86,7 @@ const CardTitle = forwardRef(({
   ...props
 }, ref) => {
   const classes = cn(
-    'text-xl font-semibold leading-none tracking-tight text-gray-900',
+    'text-xl font-light leading-tight tracking-tight text-gray-900',
     className
   )
   
@@ -105,7 +106,7 @@ const CardDescription = forwardRef(({
   ...props
 }, ref) => {
   const classes = cn(
-    'text-sm text-gray-600',
+    'text-sm text-gray-600 font-light',
     className
   )
   
@@ -160,20 +161,26 @@ export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 export default Card
 
 // Preset card components for common use cases
-export const GlassCard = ({ children, ...props }) => (
-  <Card variant="glass" shadow="lg" {...props}>
+export const MinimalCard = ({ children, ...props }) => (
+  <Card variant="minimal" shadow="none" {...props}>
     {children}
   </Card>
 )
 
 export const ProjectCard = ({ children, ...props }) => (
-  <Card hover shadow="default" {...props}>
+  <Card hover shadow="sm" {...props}>
     {children}
   </Card>
 )
 
 export const FeatureCard = ({ children, ...props }) => (
-  <Card variant="gradient" padding="lg" shadow="lg" {...props}>
+  <Card variant="subtle" padding="lg" shadow="sm" {...props}>
+    {children}
+  </Card>
+)
+
+export const SimpleCard = ({ children, ...props }) => (
+  <Card variant="default" padding="default" shadow="none" {...props}>
     {children}
   </Card>
 )

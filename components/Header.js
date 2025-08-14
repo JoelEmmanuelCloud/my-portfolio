@@ -5,10 +5,12 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const navigation = [
-  { name: 'About Me', href: '/about' },
-  { name: 'Portfolio', href: '/projects' },
-  { name: 'Services', href: '/services' },
-  { name: 'Blog', href: '/blog' },
+{ name: 'Home', href: '/' },
+  { name: 'Experience', href: '/experience' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Skills', href: '/skills' },
+  { name: 'Contact', href: '/contact' },
+
 ]
 
 export default function Header() {
