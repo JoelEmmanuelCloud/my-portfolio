@@ -80,11 +80,15 @@ export default function LogoCloud({
 }
 
 function CompanyLogo({ company }) {
-  const logoContent = (
+    const logoContent = (
     <div className="group w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
-      <span className="text-xs font-light text-gray-400 group-hover:text-gray-600 transition-colors duration-300">
-        {company.name}
-      </span>
+      <Image
+        src={company.logo}
+        alt={`${company.name} logo`}
+        width={96}
+        height={48}
+        className="object-contain max-w-full max-h-full transition-all duration-300"
+      />
     </div>
   )
 

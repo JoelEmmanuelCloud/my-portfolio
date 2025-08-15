@@ -1,10 +1,8 @@
 'use client'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, ExternalLink, Code, Cloud, Database, Brain } from 'lucide-react'
+import { ExternalLink, Code, Cloud, Database } from 'lucide-react'
 import { projects } from '@/data/projects'
-import { highlights } from '@/data/skills'
 
 const companies = [
   { name: 'Invillia', logo: '/logos/invillia.svg', url: 'https://invillia.ai/en/home' },
@@ -110,7 +108,7 @@ export default function Home() {
 
             {/* Profile Image - Right Side */}
             <div className="flex-shrink-0 lg:ml-12">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden grayscale">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden">
                 <Image
                   src="/images/profile/profile.jpeg"
                   alt="Profile Picture"
@@ -149,9 +147,13 @@ export default function Home() {
                   className="group flex justify-center"
                 >
                   <div className="w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
-                    <span className="text-xs font-light text-gray-400 group-hover:text-gray-600 transition-colors duration-300">
-                      {company.name}
-                    </span>
+                    <Image
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      width={96}
+                      height={48}
+                      className="object-contain max-w-full max-h-full transition-all duration-300"
+                    />
                   </div>
                 </a>
               ))}
