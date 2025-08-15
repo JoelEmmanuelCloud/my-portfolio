@@ -23,15 +23,16 @@ export default function Footer() {
           
           {/* Logo and Description */}
           <div className="space-y-4 sm:space-y-6 sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center justify-center sm:justify-start">
-              <div className="w-24 h-24 relative">
+            <Link href="/" className="flex items-center justify-center sm:justify-start gap-3">
+              <div className="w-16 h-16 relative">
                 <Image
-                  src="/logos/logo.png"
+                  src="/logos/logo.svg"
                   alt="Joel Emmanuel Logo"
                   fill
                   className="object-contain"
                 />
               </div>
+              <span className="text-white font-bold text-lg sm:text-xl">JE</span>
             </Link>
             <p className="text-gray-400 font-light leading-relaxed max-w-md text-sm sm:text-base text-center sm:text-left">
               Frontend Engineer specializing in React, Node.js, and AWS. 

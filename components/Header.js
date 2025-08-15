@@ -29,16 +29,17 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <div className="flex">
-              <Link href="/" className="flex items-center">
-                <div className="w-24 h-24 relative">
+              <Link href="/" className="flex items-center gap-3">
+                <div className="w-16 h-16 relative">
                   <Image
-                    src="/logos/logo.png"
+                    src="/logos/logo.svg"
                     alt="Joel Emmanuel Logo"
                     fill
                     className="object-contain"
                     priority
                   />
                 </div>
+                <span className="text-white font-bold text-lg sm:text-xl">JE</span>
               </Link>
             </div>
 
