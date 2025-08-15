@@ -49,10 +49,10 @@ export function TechStackGrouped({ technologies }) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {Object.entries(technologies).map(([category, techs]) => (
         <div key={category} className="space-y-2">
-          <h4 className="text-sm font-medium text-gray-900 uppercase tracking-wide">
+          <h4 className="text-xs sm:text-sm font-medium text-gray-900 uppercase tracking-wide">
             {category.replace(/([A-Z])/g, ' $1').trim()}
           </h4>
           <TechStack 
@@ -77,11 +77,45 @@ export function TechStackInline({ technologies, maxItems = 3 }) {
   const remaining = technologies.length - maxItems
 
   return (
-    <span className="text-sm text-gray-600">
+    <span className="text-xs sm:text-sm text-gray-600">
       {displayedTech.join(' • ')}
       {remaining > 0 && (
         <span className="text-gray-400"> (+{remaining} more)</span>
       )}
     </span>
+  )
+}
+
+// Compact version with oval buttons for mobile
+export function TechStackCompact({ technologies, limit = 4, onViewAll }) {
+  if (!technologies || technologies.length === 0) {
+    return null
+  }
+
+  const displayedTech = technologies.slice(0, limit)
+  const remainingCount = technologies.length - limit
+
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap gap-2">
+        {displayedTech.map((tech) => (
+          <span 
+            key={tech} 
+            className="inline-block text-xs px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-700 font-medium"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+      
+      {remainingCount > 0 && onViewAll && (
+        <button
+          onClick={onViewAll}
+          className="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-full hover:bg-gray-200 transition-colors duration-200"
+        >
+          View All {technologies.length} Technologies
+        </button>
+      )}
+    </div>
   )
 }

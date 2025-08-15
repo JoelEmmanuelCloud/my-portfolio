@@ -8,38 +8,38 @@ const socialLinks = [
 ]
 
 const quickLinks = [
-    { name: 'Experience', href: '/experience' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Skills', href: '/skills' },
-    { name: 'Contact', href: '/contact' },
+  { name: 'Experience', href: '/experience' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Skills', href: '/skills' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-black">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           
           {/* Logo and Description */}
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center">
+          <div className="space-y-4 sm:space-y-6 sm:col-span-2 lg:col-span-1">
+            <Link href="/" className="flex items-center justify-center sm:justify-start">
               <div className="w-10 h-10 bg-white rounded-sm flex items-center justify-center">
                 <span className="text-black font-bold">JE</span>
               </div>
             </Link>
-            <p className="text-gray-400 font-light leading-relaxed max-w-md">
+            <p className="text-gray-400 font-light leading-relaxed max-w-md text-sm sm:text-base text-center sm:text-left">
               Frontend Engineer specializing in React, Node.js, and AWS. 
               Building scalable web platforms and production systems.
             </p>
-            <div className="text-sm text-gray-500 font-light">
-              Lagos, Nigeria
+            <div className="text-sm text-gray-500 font-light text-center sm:text-left">
+              Metaverse
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-sm font-medium text-white mb-6">Quick Links</h3>
-            <div className="space-y-4">
+          <div className="text-center sm:text-left">
+            <h3 className="text-sm font-medium text-white mb-4 sm:mb-6">Quick Links</h3>
+            <div className="space-y-3 sm:space-y-4">
               {quickLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -53,9 +53,9 @@ export default function Footer() {
           </div>
 
           {/* Social & Contact */}
-          <div>
-            <h3 className="text-sm font-medium text-white mb-6">Connect</h3>
-            <div className="space-y-4 mb-8">
+          <div className="text-center sm:text-left">
+            <h3 className="text-sm font-medium text-white mb-4 sm:mb-6">Connect</h3>
+            <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
@@ -69,7 +69,7 @@ export default function Footer() {
               ))}
             </div>
             
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <a
                 href="mailto:ejoel00@gmail.com"
                 className="block text-sm text-gray-400 hover:text-white transition-colors duration-200 font-light"
@@ -86,12 +86,22 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Call-to-Action Button */}
+        <div className="text-center mt-8 sm:mt-12 mb-8 sm:mb-12">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-full hover:bg-gray-200 transition-colors duration-200 text-sm font-medium"
+          >
+            Get in touch
+          </Link>
+        </div>
+
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col lg:flex-row justify-between items-center">
-          <p className="text-xs text-gray-500 font-light">
+        <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-gray-500 font-light text-center sm:text-left">
             © {new Date().getFullYear()} Joel Emmanuel. All rights reserved.
           </p>
-          <div className="flex gap-6 mt-4 lg:mt-0">
+          <div className="flex gap-4 sm:gap-6">
             <Link href="/privacy" className="text-xs text-gray-500 hover:text-white transition-colors duration-200 font-light">
               Privacy Policy
             </Link>

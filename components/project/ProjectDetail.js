@@ -7,11 +7,14 @@ import TechStack, { TechStackGrouped } from './TechStack'
 const ProjectDetail = ({ project }) => {
   if (!project) {
     return (
-      <div className="min-h-screen pt-16 flex items-center justify-center">
+      <div className="min-h-screen pt-16 flex items-center justify-center px-4">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-gray-900 mb-4">Project Not Found</h1>
-          <Link href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">
-            ← Back to Projects
+          <h1 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">Project Not Found</h1>
+          <Link 
+            href="/projects" 
+            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+          >
+            Back to Projects
           </Link>
         </div>
       </div>
@@ -35,50 +38,54 @@ const ProjectDetail = ({ project }) => {
   return (
     <div className="min-h-screen pt-16 bg-white">
       {/* Header */}
-      <section className="py-24 border-b border-gray-100">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="mb-8">
+      <section className="py-16 sm:py-24 border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <div className="mb-6 sm:mb-8">
             <Link
               href="/projects"
-              className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+              className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors text-sm sm:text-base"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Projects
             </Link>
           </div>
 
-          <div className="mb-8">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded">
+          <div className="mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+              <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded w-fit">
                 {role}
               </span>
-              {links.live && (
-                <a
-                  href={links.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 border border-gray-200 rounded hover:bg-gray-50 transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              )}
-              {links.github && (
-                <a
-                  href={links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 border border-gray-200 rounded hover:bg-gray-50 transition-colors"
-                >
-                  <Github className="h-4 w-4" />
-                </a>
-              )}
+              <div className="flex gap-2">
+                {links.live && (
+                  <a
+                    href={links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 border border-gray-200 rounded hover:bg-gray-50 transition-colors"
+                    aria-label="View live project"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                )}
+                {links.github && (
+                  <a
+                    href={links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 border border-gray-200 rounded hover:bg-gray-50 transition-colors"
+                    aria-label="View source code"
+                  >
+                    <Github className="h-4 w-4" />
+                  </a>
+                )}
+              </div>
             </div>
 
-            <h1 className="text-5xl font-light text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
               {title}
             </h1>
 
-            <p className="text-xl text-gray-600 font-light leading-relaxed max-w-3xl">
+            <p className="text-lg sm:text-xl text-gray-600 font-light leading-relaxed max-w-3xl">
               {summary}
             </p>
           </div>
@@ -89,9 +96,9 @@ const ProjectDetail = ({ project }) => {
 
       {/* Project Images */}
       {images.length > 0 && (
-        <section className="py-16">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <section className="py-12 sm:py-16">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 max-w-6xl mx-auto">
               {images.map((image, index) => (
                 <div
                   key={index}
@@ -112,44 +119,44 @@ const ProjectDetail = ({ project }) => {
       )}
 
       {/* Project Details */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-16 max-w-7xl mx-auto">
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-16 max-w-7xl mx-auto">
             {/* Main Content */}
-            <div className="lg:col-span-2 space-y-12">
+            <div className="lg:col-span-2 space-y-8 sm:space-y-12">
               {/* Context */}
               {context && (
                 <div>
-                  <h2 className="text-2xl font-light text-gray-900 mb-4">Context</h2>
-                  <p className="text-gray-600 leading-relaxed">{context}</p>
+                  <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4">Context</h2>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{context}</p>
                 </div>
               )}
 
               {/* Challenge */}
               {challenge && (
                 <div>
-                  <h2 className="text-2xl font-light text-gray-900 mb-4">Challenge</h2>
-                  <p className="text-gray-600 leading-relaxed">{challenge}</p>
+                  <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4">Challenge</h2>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{challenge}</p>
                 </div>
               )}
 
               {/* Solution */}
               {solution && (
                 <div>
-                  <h2 className="text-2xl font-light text-gray-900 mb-4">Solution</h2>
-                  <p className="text-gray-600 leading-relaxed">{solution}</p>
+                  <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4">Solution</h2>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{solution}</p>
                 </div>
               )}
 
               {/* Impact */}
               {impact.length > 0 && (
                 <div>
-                  <h2 className="text-2xl font-light text-gray-900 mb-4">Impact</h2>
+                  <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4">Impact</h2>
                   <ul className="space-y-3">
                     {impact.map((item, index) => (
                       <li key={index} className="flex items-start">
                         <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3 flex-shrink-0" />
-                        <span className="text-gray-600 leading-relaxed">{item}</span>
+                        <span className="text-sm sm:text-base text-gray-600 leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -158,10 +165,10 @@ const ProjectDetail = ({ project }) => {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Project Info */}
-              <div className="border border-gray-200 rounded p-6 bg-white">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">Project Info</h3>
+              <div className="border border-gray-200 rounded p-4 sm:p-6 bg-white">
+                <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-4">Project Info</h3>
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-sm font-medium text-gray-900 mb-1">Role</h4>
@@ -175,10 +182,10 @@ const ProjectDetail = ({ project }) => {
                         href={links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-600 hover:text-gray-900 transition-colors flex items-center"
+                        className="inline-flex items-center justify-center px-4 py-2 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-200 w-full sm:w-auto"
                       >
                         Visit Site
-                        <ExternalLink className="h-3 w-3 ml-1" />
+                        <ExternalLink className="h-3 w-3 ml-2" />
                       </a>
                     </div>
                   )}
@@ -190,10 +197,10 @@ const ProjectDetail = ({ project }) => {
                         href={links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-600 hover:text-gray-900 transition-colors flex items-center"
+                        className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors duration-200 w-full sm:w-auto"
                       >
                         View Code
-                        <Github className="h-3 w-3 ml-1" />
+                        <Github className="h-3 w-3 ml-2" />
                       </a>
                     </div>
                   )}
@@ -201,8 +208,8 @@ const ProjectDetail = ({ project }) => {
               </div>
 
               {/* Technology Stack */}
-              <div className="border border-gray-200 rounded p-6 bg-white">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">Technology</h3>
+              <div className="border border-gray-200 rounded p-4 sm:p-6 bg-white">
+                <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-4">Technology</h3>
                 {technologies && Object.keys(technologies).length > 0 ? (
                   <TechStackGrouped technologies={technologies} />
                 ) : (
@@ -215,24 +222,24 @@ const ProjectDetail = ({ project }) => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 border-t border-gray-100">
-        <div className="container mx-auto px-6 text-center max-w-2xl">
-          <h2 className="text-3xl font-light text-gray-900 mb-4">
+      <section className="py-12 sm:py-16 border-t border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 text-center max-w-2xl">
+          <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-4">
             Interested in working together?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
             I'm always open to discussing new opportunities.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm"
             >
               Get In Touch
             </Link>
             <Link
               href="/projects"
-              className="px-6 py-3 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-full hover:bg-gray-50 transition-colors duration-200 text-sm"
             >
               View More Projects
             </Link>

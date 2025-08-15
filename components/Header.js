@@ -5,12 +5,11 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const navigation = [
-{ name: 'Home', href: '/' },
+  { name: 'Home', href: '/' },
   { name: 'Experience', href: '/experience' },
   { name: 'Projects', href: '/projects' },
   { name: 'Skills', href: '/skills' },
   { name: 'Contact', href: '/contact' },
-
 ]
 
 export default function Header() {
@@ -22,127 +21,99 @@ export default function Header() {
     setMobileMenuOpen(false)
   }, [pathname])
 
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-    
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [mobileMenuOpen])
-
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm">
-      <nav className="container mx-auto px-6" aria-label="Global">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex">
-            <Link href="/" className="flex items-center">
-              <div className="w-8 h-8 bg-black rounded-sm flex items-center justify-center">
-                <span className="text-white text-sm font-bold">JE</span>
-              </div>
-            </Link>
-          </div>
-          
-          {/* Desktop navigation */}
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-light transition-colors duration-200 ${
-                  pathname === item.href
-                    ? 'text-black'
-                    : 'text-gray-600 hover:text-black'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex">
-            <Link
-              href="/contact"
-              className="text-sm font-light text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2"
-            >
-              Book A Call
-              <span className="text-lg">↗</span>
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="p-2 text-gray-600"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
-      </nav>
-      
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <>
-          <div 
-            className="fixed inset-0 z-40 bg-black/20 lg:hidden"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          
-          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white px-6 py-6 lg:hidden">
-            <div className="flex items-center justify-between">
+    <>
+      <header className="fixed w-full top-0 z-50 bg-black backdrop-blur-sm">
+        <nav className="container mx-auto px-4 sm:px-6" aria-label="Global">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            {/* Logo */}
+            <div className="flex">
               <Link href="/" className="flex items-center">
-                <div className="w-8 h-8 bg-black rounded-sm flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">JE</span>
+                <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
+                  <span className="text-black text-sm font-bold">JE</span>
                 </div>
               </Link>
-              <button
-                type="button"
-                className="p-2 text-gray-600"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <X className="h-6 w-6" />
-              </button>
             </div>
-            
-            <div className="mt-12 space-y-8">
+
+            {/* Desktop navigation */}
+            <div className="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block text-lg font-light ${
+                  className={`text-sm font-light transition-colors duration-200 ${
                     pathname === item.href
-                      ? 'text-black'
-                      : 'text-gray-600'
+                      ? 'text-white'
+                      : 'text-gray-300 hover:text-white'
                   }`}
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              
-              <div className="pt-8 border-t border-gray-100">
-                <Link
-                  href="/contact"
-                  className="block text-lg font-light text-gray-600 flex items-center gap-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Book A Call
-                  <span className="text-xl">↗</span>
-                </Link>
+            </div>
+
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-200 transition-colors duration-200"
+              >
+                Get in touch
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="flex lg:hidden">
+              <button
+                type="button"
+                className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        {/* Mobile menu dropdown (no full-screen overlay) */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-black border-t border-gray-800 shadow-lg">
+            <div className="container mx-auto px-6 py-8">
+              <div className="space-y-6">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`block text-lg font-light transition-colors duration-200 ${
+                      pathname === item.href
+                        ? 'text-white'
+                        : 'text-gray-300 hover:text-white'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+
+                <div className="pt-6 border-t border-gray-800">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-200 transition-colors duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Get in touch
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   )
 }

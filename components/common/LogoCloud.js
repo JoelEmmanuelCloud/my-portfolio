@@ -44,25 +44,35 @@ export default function LogoCloud({
   const displayCompanies = maxItems ? companies.slice(0, maxItems) : companies
 
   return (
-    <section className={`py-16 bg-white ${className}`}>
-      <div className="container mx-auto px-6">
+    <section className={`py-12 sm:py-16 bg-white ${className}`}>
+      <div className="container mx-auto px-4 sm:px-6">
         {title && (
-          <div className="text-center mb-12">
-            <h2 className="text-sm font-light text-gray-500 uppercase tracking-wide mb-2">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide mb-2">
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg text-gray-600 font-light">{subtitle}</p>
+              <p className="text-base sm:text-lg text-gray-600 font-light">{subtitle}</p>
             )}
           </div>
         )}
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center">
           {displayCompanies.map((company) => (
             <div key={company.name} className="flex justify-center">
               <CompanyLogo company={company} />
             </div>
           ))}
+        </div>
+
+        {/* Optional CTA */}
+        <div className="text-center mt-8 sm:mt-12">
+          <Link
+            href="/experience"
+            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+          >
+            View Experience
+          </Link>
         </div>
       </div>
     </section>
@@ -71,7 +81,7 @@ export default function LogoCloud({
 
 function CompanyLogo({ company }) {
   const logoContent = (
-    <div className="group w-24 h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
+    <div className="group w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
       <span className="text-xs font-light text-gray-400 group-hover:text-gray-600 transition-colors duration-300">
         {company.name}
       </span>
@@ -95,31 +105,83 @@ function CompanyLogo({ company }) {
   return logoContent
 }
 
-// Compact version
+// Compact version for mobile
 export function LogoCloudCompact({ companies = defaultCompanies.slice(0, 4) }) {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-8">
-      {companies.map((company) => (
-        <div key={company.name} className="flex-shrink-0">
-          <CompanyLogo company={company} />
-        </div>
-      ))}
+    <div className="py-6 sm:py-8">
+      <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
+        {companies.map((company) => (
+          <div key={company.name} className="flex-shrink-0">
+            <CompanyLogo company={company} />
+          </div>
+        ))}
+      </div>
+      
+      {/* Mobile-friendly CTA */}
+      <div className="text-center mt-6 sm:mt-8">
+        <Link
+          href="/experience"
+          className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-light"
+        >
+          See all partnerships →
+        </Link>
+      </div>
     </div>
   )
 }
 
-// Minimal footer version
+// Minimal footer version - optimized for mobile
 export function LogoCloudMinimal({ companies = defaultCompanies.slice(0, 4) }) {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      {companies.map((company) => (
-        <div
-          key={company.name}
-          className="h-8 flex items-center justify-center text-xs font-light text-gray-400"
-        >
-          {company.name}
-        </div>
-      ))}
+    <div className="py-4 sm:py-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        {companies.map((company) => (
+          <div
+            key={company.name}
+            className="h-6 sm:h-8 flex items-center justify-center text-center"
+          >
+            <span className="text-xs font-light text-gray-400">
+              {company.name}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
+  )
+}
+
+// Mobile-first carousel version
+export function LogoCloudCarousel({ companies = defaultCompanies }) {
+  return (
+    <section className="py-8 sm:py-12 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide">
+            Trusted by leading companies
+          </h2>
+        </div>
+
+        {/* Scrollable container for mobile */}
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex space-x-8 sm:space-x-12 pb-4">
+            {companies.map((company) => (
+              <div key={company.name} className="flex-shrink-0">
+                <CompanyLogo company={company} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile CTA */}
+        <div className="text-center mt-6 sm:mt-8">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+          >
+            Work with me
+          </Link>
+        </div>
+      </div>
+    </section>
   )
 }

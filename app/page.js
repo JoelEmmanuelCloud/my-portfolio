@@ -43,9 +43,9 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen bg-white overflow-hidden">
-        <div className="container mx-auto px-6 py-24 lg:py-32 relative z-10">
-          {/* Stats - Top Left */}
-          <div className="absolute top-24 left-6">
+        <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-24 lg:py-32 relative z-10">
+          {/* Stats - Top Left (Hidden on mobile) */}
+          <div className="hidden lg:block absolute top-24 left-6">
             <div className="space-y-8">
               <div>
                 <div className="text-4xl font-light text-gray-900">+50</div>
@@ -58,41 +58,59 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Mobile Stats - Top Center */}
+          <div className="lg:hidden flex justify-center gap-12 mb-8">
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-light text-gray-900">+50</div>
+              <div className="text-xs sm:text-sm text-gray-500 mt-1">Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-light text-gray-900">+10</div>
+              <div className="text-xs sm:text-sm text-gray-500 mt-1">Companies</div>
+            </div>
+          </div>
+
           {/* Main Content */}
-          <div className="flex items-center justify-between min-h-screen">
-            <div className="flex-1 max-w-2xl">
-              <h1 className="text-8xl lg:text-9xl font-light text-gray-900 mb-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between min-h-[70vh] lg:min-h-screen">
+            <div className="flex-1 max-w-2xl text-center lg:text-left mb-8 lg:mb-0">
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 mb-4">
                 Hello
               </h1>
-              <p className="text-xl text-gray-600 font-light mb-12">
-                — I'm a Frontend Engineer building scalable web platforms
+              <p className="text-lg sm:text-xl text-gray-600 font-light mb-8 sm:mb-12">
+                — I'm a Software Engineer building scalable web platforms
               </p>
               
-              <div className="space-y-4">
-                <p className="text-gray-600">
+              <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-12">
+                <p className="text-sm sm:text-base text-gray-600">
                   Currently Frontend Engineer at <strong>Invillia</strong>
                 </p>
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600">
                   Building <strong>Freedom</strong> ride-hailing platform
                 </p>
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600">
                   Specializing in React, Node.js, AWS, and modern CI/CD
                 </p>
               </div>
 
-              <div className="mt-12 flex gap-6">
-                <Link href="/projects" className="text-gray-900 hover:text-gray-600 transition-colors">
-                  View Projects →
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
+                <Link 
+                  href="/projects" 
+                  className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+                >
+                  View Projects
                 </Link>
-                <Link href="/contact" className="text-gray-900 hover:text-gray-600 transition-colors">
+                <Link 
+                  href="/contact" 
+                  className="text-gray-900 hover:text-gray-600 transition-colors text-sm sm:text-base font-light"
+                >
                   Get In Touch →
                 </Link>
               </div>
             </div>
 
             {/* Profile Image - Right Side */}
-            <div className="flex-shrink-0 ml-12">
-              <div className="w-96 h-96 rounded-full overflow-hidden grayscale">
+            <div className="flex-shrink-0 lg:ml-12">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden grayscale">
                 <Image
                   src="/images/profile/profile.jpeg"
                   alt="Profile Picture"
@@ -105,9 +123,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Scroll Indicator - Bottom Left */}
-          <div className="absolute bottom-24 left-6">
-            <div className="text-sm text-gray-500 transform -rotate-90 origin-left">
+          {/* Scroll Indicator - Bottom Center on mobile, Bottom Left on desktop */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 lg:transform-none lg:left-6 lg:bottom-24">
+            <div className="text-sm text-gray-500 lg:transform lg:-rotate-90 lg:origin-left">
               Scroll down ↓
             </div>
           </div>
@@ -115,13 +133,13 @@ export default function Home() {
       </section>
 
       {/* Companies Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center">
-            <h2 className="text-sm font-light text-gray-500 uppercase tracking-wide mb-8">
+            <h2 className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide mb-6 sm:mb-8">
               Trusted by leading companies
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center">
               {companies.map((company) => (
                 <a
                   key={company.name}
@@ -130,7 +148,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group flex justify-center"
                 >
-                  <div className="w-24 h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
+                  <div className="w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
                     <span className="text-xs font-light text-gray-400 group-hover:text-gray-600 transition-colors duration-300">
                       {company.name}
                     </span>
@@ -143,26 +161,26 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-gray-900 mb-4">
+      <section className="py-16 sm:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4">
               Featured Projects
             </h2>
-            <p className="text-lg text-gray-600 font-light">
+            <p className="text-base sm:text-lg text-gray-600 font-light">
               — Production systems serving real users
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-8 sm:gap-12 md:grid-cols-2">
             {featuredProjects.map((project) => (
               <div
                 key={project.slug}
-                className="bg-white p-8 transition-all duration-300 hover:shadow-lg"
+                className="bg-white p-6 sm:p-8 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <h3 className="text-xl font-light text-gray-900 mb-2">
+                    <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-2">
                       {project.title}
                     </h3>
                     <p className="text-sm text-gray-500 font-light">
@@ -181,7 +199,7 @@ export default function Home() {
                   )}
                 </div>
 
-                <p className="text-gray-600 mb-6 leading-relaxed font-light">
+                <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed font-light">
                   {project.summary}
                 </p>
 
@@ -203,35 +221,38 @@ export default function Home() {
 
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="text-gray-900 hover:text-gray-600 transition-colors duration-200 font-light"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium w-full sm:w-auto"
                 >
-                  View Case Study →
+                  View Case Study
                 </Link>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Link href="/projects" className="text-gray-900 hover:text-gray-600 transition-colors font-light">
-              View All Projects →
+          <div className="text-center mt-8 sm:mt-12">
+            <Link 
+              href="/projects" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+            >
+              View All Projects
             </Link>
           </div>
         </div>
       </section>
 
       {/* How I Build */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-gray-900 mb-4">
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4">
               How I Build
             </h2>
-            <p className="text-lg text-gray-600 font-light">
+            <p className="text-base sm:text-lg text-gray-600 font-light">
               — Modern tech stack for scalable applications
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid gap-8 sm:gap-12 md:grid-cols-3">
             {buildingApproach.map((approach) => (
               <div
                 key={approach.title}
@@ -241,11 +262,11 @@ export default function Home() {
                   <approach.icon className="h-8 w-8 text-gray-400" />
                 </div>
                 
-                <h3 className="text-xl font-light text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-4">
                   {approach.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed font-light">
+                <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed font-light">
                   {approach.description}
                 </p>
                 
@@ -266,25 +287,25 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gray-900">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center text-white">
-            <h2 className="text-4xl font-light mb-4">
+            <h2 className="text-3xl sm:text-4xl font-light mb-4">
               Have a project or role?
             </h2>
-            <p className="text-lg text-gray-300 font-light mb-8">
+            <p className="text-base sm:text-lg text-gray-300 font-light mb-8">
               — Let's talk, 24h reply guarantee
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link
                 href="/contact"
-                className="text-white hover:text-gray-300 transition-colors font-light"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-full hover:bg-gray-200 transition-colors duration-200 text-sm font-medium"
               >
-                Book a Call →
+                Book a Call
               </Link>
               <a
                 href="mailto:ejoel00@gmail.com"
-                className="text-white hover:text-gray-300 transition-colors font-light"
+                className="text-white hover:text-gray-300 transition-colors font-light text-sm sm:text-base"
               >
                 Send Email →
               </a>

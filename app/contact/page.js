@@ -48,29 +48,29 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-32">
-        <div className="container mx-auto px-6">
+      <section className="py-20 sm:py-32">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-24">
-              <h1 className="text-7xl lg:text-8xl font-light text-gray-900 mb-6">
+            <div className="mb-16 sm:mb-24 text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light text-gray-900 mb-4 sm:mb-6">
                 Contact
               </h1>
-              <p className="text-xl text-gray-600 font-light max-w-2xl">
+              <p className="text-lg sm:text-xl text-gray-600 font-light max-w-2xl mx-auto lg:mx-0">
                 — Let's discuss your project or opportunity
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-24">
+            <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
               {/* Contact Form */}
-              <div>
-                <h2 className="text-3xl font-light text-gray-900 mb-12">
+              <div className="order-2 lg:order-1">
+                <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-8 sm:mb-12 text-center lg:text-left">
                   Send a Message
                 </h2>
                 
                 {isSubmitted ? (
-                  <div className="text-center py-16">
-                    <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-                    <h3 className="text-2xl font-light text-gray-900 mb-4">
+                  <div className="text-center py-12 sm:py-16">
+                    <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mx-auto mb-4 sm:mb-6" />
+                    <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
                       Message Sent
                     </h3>
                     <p className="text-gray-600">
@@ -78,8 +78,8 @@ export default function Contact() {
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="grid gap-8">
+                  <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+                    <div className="grid gap-6 sm:gap-8">
                       <div>
                         <input
                           type="text"
@@ -88,7 +88,7 @@ export default function Contact() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-0 py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-lg placeholder-gray-400 transition-colors duration-200"
+                          className="w-full px-0 py-3 sm:py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-base sm:text-lg placeholder-gray-400 transition-colors duration-200"
                           placeholder="Your name *"
                         />
                       </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-0 py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-lg placeholder-gray-400 transition-colors duration-200"
+                          className="w-full px-0 py-3 sm:py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-base sm:text-lg placeholder-gray-400 transition-colors duration-200"
                           placeholder="Your email *"
                         />
                       </div>
@@ -113,7 +113,7 @@ export default function Contact() {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full px-0 py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-lg placeholder-gray-400 transition-colors duration-200"
+                          className="w-full px-0 py-3 sm:py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-base sm:text-lg placeholder-gray-400 transition-colors duration-200"
                           placeholder="Company (optional)"
                         />
                       </div>
@@ -126,7 +126,7 @@ export default function Contact() {
                           rows={4}
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-0 py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-lg placeholder-gray-400 transition-colors duration-200 resize-none"
+                          className="w-full px-0 py-3 sm:py-4 border-0 border-b border-gray-200 focus:border-gray-900 focus:ring-0 bg-transparent text-base sm:text-lg placeholder-gray-400 transition-colors duration-200 resize-none"
                           placeholder="Tell me about your project *"
                         />
                       </div>
@@ -135,63 +135,63 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="mt-12 bg-gray-900 text-white px-8 py-4 hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full sm:w-auto mt-8 sm:mt-12 bg-gray-900 text-white px-8 py-4 rounded-full hover:bg-gray-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium"
                     >
-                      {isSubmitting ? 'Sending...' : 'Send Message →'}
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>
                 )}
               </div>
 
               {/* Contact Info */}
-              <div className="space-y-12">
-                <div>
-                  <h2 className="text-3xl font-light text-gray-900 mb-8">
+              <div className="order-1 lg:order-2 space-y-8 sm:space-y-12">
+                <div className="text-center lg:text-left">
+                  <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-6 sm:mb-8">
                     Get In Touch
                   </h2>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
                     I'm always interested in new opportunities and exciting projects. 
                     Whether you're a startup or enterprise, let's discuss how I can help.
                   </p>
                 </div>
 
-                <div className="space-y-8">
-                  <div className="border-b border-gray-100 pb-6">
+                <div className="space-y-6 sm:space-y-8">
+                  <div className="border-b border-gray-100 pb-4 sm:pb-6 text-center lg:text-left">
                     <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-2">Email</h3>
                     <a
                       href="mailto:ejoel00@gmail.com"
-                      className="text-lg text-gray-900 hover:text-gray-600 transition-colors duration-200"
+                      className="text-base sm:text-lg text-gray-900 hover:text-gray-600 transition-colors duration-200"
                     >
                       ejoel00@gmail.com
                     </a>
                   </div>
 
-                  <div className="border-b border-gray-100 pb-6">
+                  <div className="border-b border-gray-100 pb-4 sm:pb-6 text-center lg:text-left">
                     <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-2">Phone</h3>
                     <a
                       href="tel:+2347069763692"
-                      className="text-lg text-gray-900 hover:text-gray-600 transition-colors duration-200"
+                      className="text-base sm:text-lg text-gray-900 hover:text-gray-600 transition-colors duration-200"
                     >
                       +234 706 976 3692
                     </a>
                   </div>
 
-                  <div className="border-b border-gray-100 pb-6">
+                  <div className="border-b border-gray-100 pb-4 sm:pb-6 text-center lg:text-left">
                     <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-2">Location</h3>
-                    <p className="text-lg text-gray-900">Lagos, Nigeria</p>
+                    <p className="text-base sm:text-lg text-gray-900">Metaverse</p>
                     <p className="text-sm text-gray-500 mt-1">Available for remote work worldwide</p>
                   </div>
 
-                  <div className="border-b border-gray-100 pb-6">
+                  <div className="border-b border-gray-100 pb-4 sm:pb-6 text-center lg:text-left">
                     <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-2">Response Time</h3>
-                    <p className="text-lg text-gray-900">Within 24 hours</p>
+                    <p className="text-base sm:text-lg text-gray-900">Within 24 hours</p>
                     <p className="text-sm text-gray-500 mt-1">Usually much faster</p>
                   </div>
                 </div>
 
                 {/* Call Booking */}
-                <div className="mt-16">
-                  <h3 className="text-xl font-light text-gray-900 mb-4">
+                <div className="mt-12 sm:mt-16 text-center lg:text-left">
+                  <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-4">
                     Prefer to talk?
                   </h3>
                   <p className="text-gray-600 mb-6">
@@ -201,9 +201,9 @@ export default function Contact() {
                     href="https://tidycal.com/embed/placeholder"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-gray-100 text-gray-900 px-6 py-3 hover:bg-gray-200 transition-colors duration-200"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-gray-100 text-gray-900 rounded-full hover:bg-gray-200 transition-colors duration-200 text-sm font-medium"
                   >
-                    Book a Call →
+                    Book a Call
                   </a>
                 </div>
               </div>
@@ -213,19 +213,19 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 border-t border-gray-100">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 border-t border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-16">
-              <h2 className="text-4xl font-light text-gray-900 mb-6">
+            <div className="mb-12 sm:mb-16 text-center lg:text-left">
+              <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4 sm:mb-6">
                 Frequently Asked
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-base sm:text-lg text-gray-600">
                 Common questions about working together
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {[
                 {
                   question: "What's your typical project timeline?",
@@ -244,11 +244,11 @@ export default function Contact() {
                   answer: "Yes, I offer maintenance and support packages for projects I've built. This includes bug fixes, updates, feature additions, and technical support."
                 }
               ].map((faq, index) => (
-                <div key={index} className="border-b border-gray-100 pb-8">
-                  <h3 className="text-xl font-light text-gray-900 mb-4">
+                <div key={index} className="border-b border-gray-100 pb-6 sm:pb-8">
+                  <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-3 sm:mb-4">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

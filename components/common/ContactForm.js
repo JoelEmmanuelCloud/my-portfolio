@@ -161,12 +161,12 @@ export default function ContactForm({
   return (
     <div className={`bg-white ${className}`}>
       {/* Header */}
-      <div className="mb-12">
-        <h2 className="text-4xl font-light text-gray-900 mb-2">
+      <div className="mb-8 sm:mb-12 text-center sm:text-left">
+        <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-2 sm:mb-4">
           {title}
         </h2>
         {subtitle && (
-          <p className="text-lg text-gray-600 font-light">
+          <p className="text-base sm:text-lg text-gray-600 font-light">
             {subtitle}
           </p>
         )}
@@ -174,24 +174,24 @@ export default function ContactForm({
 
       {/* Success State */}
       {isSuccess ? (
-        <div className="py-12">
-          <h3 className="text-2xl font-light text-gray-900 mb-4">
+        <div className="py-8 sm:py-12 text-center sm:text-left">
+          <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
             Thank you
           </h3>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 mb-6 sm:mb-8">
             {status.message}
           </p>
           <button
             onClick={() => setStatus({ type: '', message: '' })}
-            className="text-gray-900 hover:text-gray-600 transition-colors font-light"
+            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium w-full sm:w-auto"
           >
-            Send another message →
+            Send another message
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-8" noValidate>
+        <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8" noValidate>
           {/* Name and Email Row */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             <div>
               <label htmlFor="name" className="block text-sm text-gray-600 mb-2 font-light">
                 Name *
@@ -205,7 +205,7 @@ export default function ContactForm({
                 onChange={handleChange}
                 onBlur={handleBlur}
                 disabled={isLoading}
-                className={`w-full px-0 py-3 border-0 border-b-2 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50 ${
+                className={`w-full px-0 py-3 border-0 border-b-2 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50 text-base ${
                   errors.name ? 'border-red-400' : 'border-gray-200'
                 }`}
                 placeholder="Your name"
@@ -230,7 +230,7 @@ export default function ContactForm({
                 onChange={handleChange}
                 onBlur={handleBlur}
                 disabled={isLoading}
-                className={`w-full px-0 py-3 border-0 border-b-2 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50 ${
+                className={`w-full px-0 py-3 border-0 border-b-2 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50 text-base ${
                   errors.email ? 'border-red-400' : 'border-gray-200'
                 }`}
                 placeholder="your.email@example.com"
@@ -256,7 +256,7 @@ export default function ContactForm({
                 value={formData.company}
                 onChange={handleChange}
                 disabled={isLoading}
-                className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50"
+                className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50 text-base"
                 placeholder="Your company (optional)"
               />
             </div>
@@ -276,7 +276,7 @@ export default function ContactForm({
               onChange={handleChange}
               onBlur={handleBlur}
               disabled={isLoading}
-              className={`w-full px-0 py-3 border-0 border-b-2 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50 resize-none ${
+              className={`w-full px-0 py-3 border-0 border-b-2 bg-transparent transition-all duration-200 focus:outline-none focus:border-gray-900 disabled:opacity-50 resize-none text-base ${
                 errors.message ? 'border-red-400' : 'border-gray-200'
               }`}
               placeholder="Tell me about your project..."
@@ -290,7 +290,7 @@ export default function ContactForm({
 
           {/* Status Message */}
           {status.message && status.type !== 'success' && (
-            <div className={`text-sm font-light ${
+            <div className={`text-sm font-light text-center sm:text-left ${
               status.type === 'error' 
                 ? 'text-red-600' 
                 : 'text-gray-600'
@@ -304,9 +304,9 @@ export default function ContactForm({
             <button
               type="submit"
               disabled={isLoading || Object.keys(errors).length > 0}
-              className="text-gray-900 hover:text-gray-600 transition-colors font-light disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
             >
-              {isLoading ? 'Sending...' : buttonText} →
+              {isLoading ? 'Sending...' : buttonText}
             </button>
           </div>
         </form>
@@ -346,14 +346,14 @@ export function ContactFormInline({ onSuccess, className = "" }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>
+    <form onSubmit={handleSubmit} className={`space-y-4 sm:space-y-6 ${className}`}>
       <input
         type="email"
         required
         value={formData.email}
         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
         placeholder="Your email"
-        className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent focus:outline-none focus:border-gray-900"
+        className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent focus:outline-none focus:border-gray-900 text-base"
       />
       <textarea
         required
@@ -361,14 +361,14 @@ export function ContactFormInline({ onSuccess, className = "" }) {
         value={formData.message}
         onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
         placeholder="Quick message..."
-        className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent focus:outline-none focus:border-gray-900 resize-none"
+        className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent focus:outline-none focus:border-gray-900 resize-none text-base"
       />
       <button
         type="submit"
         disabled={isSubmitting}
-        className="text-gray-900 hover:text-gray-600 transition-colors font-light disabled:opacity-50"
+        className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium disabled:opacity-50 w-full sm:w-auto"
       >
-        {isSubmitting ? 'Sending...' : 'Send message'} →
+        {isSubmitting ? 'Sending...' : 'Send message'}
       </button>
     </form>
   )
