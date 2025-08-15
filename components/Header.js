@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
@@ -29,8 +30,14 @@ export default function Header() {
             {/* Logo */}
             <div className="flex">
               <Link href="/" className="flex items-center">
-                <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
-                  <span className="text-black text-sm font-bold">JE</span>
+                <div className="w-24 h-24 relative">
+                  <Image
+                    src="/logos/logo.png"
+                    alt="Joel Emmanuel Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
               </Link>
             </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/in/joelemmanuel' },
@@ -23,8 +24,13 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="space-y-4 sm:space-y-6 sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center justify-center sm:justify-start">
-              <div className="w-10 h-10 bg-white rounded-sm flex items-center justify-center">
-                <span className="text-black font-bold">JE</span>
+              <div className="w-24 h-24 relative">
+                <Image
+                  src="/logos/logo.png"
+                  alt="Joel Emmanuel Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </Link>
             <p className="text-gray-400 font-light leading-relaxed max-w-md text-sm sm:text-base text-center sm:text-left">
