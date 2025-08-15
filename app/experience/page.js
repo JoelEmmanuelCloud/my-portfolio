@@ -34,7 +34,7 @@ export default function Experience() {
             </h2>
             
             <div className="space-y-12 sm:space-y-16">
-              {experience.map((job, index) => (
+              {experience?.map((job, index) => (
                 <div key={index} className="border-l-2 border-gray-200 pl-6 sm:pl-8 relative">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-900 rounded-full"></div>
                   
@@ -76,24 +76,28 @@ export default function Experience() {
                     </div>
                     
                     <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-                      <div className="space-y-3">
-                        {job.bullets.map((bullet, bulletIndex) => (
-                          <p key={bulletIndex} className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                            {bullet}
-                          </p>
-                        ))}
-                      </div>
+                      {job.highlights && job.highlights.length > 0 && (
+                        <div className="space-y-3">
+                          {job.highlights.map((highlight, highlightIndex) => (
+                            <p key={highlightIndex} className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                              {highlight}
+                            </p>
+                          ))}
+                        </div>
+                      )}
                       
-                      <div className="flex flex-wrap gap-2">
-                        {job.stack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 bg-white text-gray-700 text-sm border border-gray-200 rounded"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                      {job.stack && job.stack.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {job.stack.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-3 py-1 bg-white text-gray-700 text-sm border border-gray-200 rounded"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -112,7 +116,7 @@ export default function Experience() {
             </h2>
             
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-              {certifications.map((cert, index) => (
+              {certifications?.map((cert, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg p-6 sm:p-8">
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -153,7 +157,7 @@ export default function Experience() {
             </h2>
             
             <div className="space-y-6 sm:space-y-8">
-              {education.map((edu, index) => (
+              {education?.map((edu, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg p-6 sm:p-8 bg-white">
                   <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
                     <div className="lg:col-span-1">
