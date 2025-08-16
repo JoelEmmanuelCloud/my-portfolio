@@ -1,4 +1,3 @@
-// Add this to app/privacy/layout.js
 export const metadata = {
   title: 'Privacy Policy - Joel Emmanuel',
   description: 'Privacy Policy for Joel Emmanuel\'s portfolio website. Learn how we collect, use, and protect your personal information.',
@@ -15,4 +14,8 @@ export const metadata = {
     title: 'Privacy Policy - Joel Emmanuel',
     description: 'Privacy Policy for Joel Emmanuel\'s portfolio website. Learn how we collect, use, and protect your personal information.',
   }
+}
+
+export default function PrivacyLayout({ children }) {
+  return children
 }

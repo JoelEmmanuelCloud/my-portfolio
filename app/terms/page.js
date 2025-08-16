@@ -321,7 +321,7 @@ export default function TermsOfService() {
                           </a>
                         </p>
                         <p className="text-gray-700">
-                          <span className="font-medium">Location:</span> Lagos, Nigeria
+                          <span className="font-medium">Location:</span> Metaverse
                         </p>
                       </div>
                     </div>

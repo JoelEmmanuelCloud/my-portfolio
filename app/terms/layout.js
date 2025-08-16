@@ -1,4 +1,3 @@
-// Add this to app/terms/layout.js
 export const metadata = {
   title: 'Terms of Service - Joel Emmanuel',
   description: 'Terms of Service for Joel Emmanuel\'s portfolio website. Understand the terms and conditions for using our services.',
@@ -15,4 +14,8 @@ export const metadata = {
     title: 'Terms of Service - Joel Emmanuel',
     description: 'Terms of Service for Joel Emmanuel\'s portfolio website. Understand the terms and conditions for using our services.',
   }
+}
+
+export default function TermsLayout({ children }) {
+  return children
 }

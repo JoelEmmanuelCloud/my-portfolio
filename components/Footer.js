@@ -37,10 +37,9 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-white font-bold text-lg sm:text-xl">JE</span>
             </Link>
             <p className="text-gray-400 font-light leading-relaxed max-w-md text-sm sm:text-base text-center sm:text-left">
-              Frontend Engineer specializing in React, Node.js, and AWS. 
+              Software Engineer specializing in React, Node.js, and AWS. 
               Building scalable web platforms and production systems.
             </p>
             <div className="text-sm text-gray-500 font-light text-center sm:text-left">

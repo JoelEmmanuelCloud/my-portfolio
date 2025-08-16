@@ -39,7 +39,6 @@ export default function Header() {
                     priority
                   />
                 </div>
-                <span className="text-white font-bold text-lg sm:text-xl">JE</span>
               </Link>
             </div>
 

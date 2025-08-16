@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { ArrowLeft, Shield, Eye, Database, } from 'lucide-react'
+import { ArrowLeft, Shield, Eye, Database } from 'lucide-react'
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
           subtitle: 'Information You Provide',
           items: [
             'Contact form submissions (name, email, company, message)',
-            'Booking information through TidyCal integration',
+            'Booking information through Calendly integration',
             'Email communications when you contact us directly',
             'Any other information you voluntarily provide'
           ]
@@ -65,9 +65,8 @@ export default function PrivacyPolicy() {
           subtitle: 'Third-Party Services',
           items: [
             'SendGrid: Email delivery and contact form processing',
-            'TidyCal: Appointment scheduling and calendar integration',
-            'Vercel/AWS: Website hosting and performance',
-            'Analytics services: Anonymous traffic analysis (if enabled)'
+            'Calendly: Appointment scheduling and calendar integration',
+            'Vercel: Website hosting and performance',
           ]
         },
         {
