@@ -1,0 +1,55 @@
+# Robots.txt for Joel Emmanuel Portfolio
+# https://joelemmanuel.dev
+
+User-agent: *
+Allow: /
+
+# Allow all pages for SEO
+Allow: /experience
+Allow: /projects
+Allow: /skills
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+
+# Block sensitive areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /.env*
+Disallow: /node_modules/
+
+# Allow access to static assets
+Allow: /images/
+Allow: /logos/
+Allow: /documents/
+Allow: /icons/
+
+# Sitemap location
+Sitemap: https://joelemmanuel.dev/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block known bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
