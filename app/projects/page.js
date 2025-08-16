@@ -12,8 +12,33 @@ const categories = [
   { id: 'cloud', name: 'Cloud' },
 ]
 
+// Fallback data in case import fails
+const fallbackEngagements = [
+  {
+    name: "Compass UOL",
+    url: "https://compass.uol/en/about-us/",
+    role: "Full Stack Developer",
+    period: "Feb 2023 – Present"
+  },
+  {
+    name: "SLB",
+    url: "https://www.slb.com/",
+    role: "Automation Project",
+    period: "Project"
+  },
+  {
+    name: "Rewod Technologies", 
+    url: "https://www.rewodtechnologies.com/",
+    role: "Backend Developer",
+    period: "Oct 2022 – Mar 2023"
+  }
+]
+
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all')
+  
+  // Use fallback if otherEngagements is undefined
+  const engagements = otherEngagements || fallbackEngagements
   
   const filteredProjects = selectedCategory === 'all' 
     ? projects 
@@ -83,7 +108,8 @@ export default function Projects() {
                         src={project.images[0]}
                         alt={project.title}
                         fill
-                        className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                        className="object-cover hover:scale-105 transition-all duration-500"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     ) : (
                       <div className="flex items-center justify-center h-full">
@@ -169,7 +195,7 @@ export default function Projects() {
           </div>
 
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {otherEngagements.map((engagement, index) => (
+            {engagements.map((engagement, index) => (
               <a
                 key={engagement.name}
                 href={engagement.url}

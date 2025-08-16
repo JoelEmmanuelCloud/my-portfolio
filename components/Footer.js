@@ -15,11 +15,16 @@ const quickLinks = [
   { name: 'Contact', href: '/contact' },
 ]
 
+const legal = [
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-black">
       <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           
           {/* Logo and Description */}
           <div className="space-y-4 sm:space-y-6 sm:col-span-2 lg:col-span-1">
@@ -89,6 +94,22 @@ export default function Footer() {
               >
                 +234 706 976 3692
               </a>
+            </div>
+          </div>
+
+          {/* Legal Links */}
+          <div className="text-center sm:text-left">
+            <h3 className="text-sm font-medium text-white mb-4 sm:mb-6">Legal</h3>
+            <div className="space-y-3 sm:space-y-4">
+              {legal.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="block text-sm text-gray-400 hover:text-white transition-colors duration-200 font-light"
+                >
+                  {link.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
