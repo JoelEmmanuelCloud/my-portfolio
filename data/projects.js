@@ -11,6 +11,7 @@ export const projects = [
       "React", "Node.js", "MongoDB", "AWS EC2", "Socket.IO", 
       "Google Maps", "Paystack", "Redis", "GitHub Actions"
     ],
+    images: ["/images/projects/freedom.png"],
     summary: "Production ride-hailing platform serving passengers and drivers in Ghana with real-time matching and secure payments.",
     challenge: "Building a complete ride-hailing ecosystem with real-time features, payment integration, and scalable infrastructure.",
     solution: "Full-stack solution with React frontend, Node.js backend, real-time Socket.IO communication, and comprehensive AWS deployment.",
@@ -36,6 +37,7 @@ export const projects = [
       live: "https://invillia.ai/en/home" 
     },
     stack: ["React", "TypeScript", "Enterprise UI"],
+    images: ["/images/projects/invillia.png"],
     summary: "Frontend development for enterprise AI/automation platforms with complex business workflows.",
     challenge: "Building robust frontend interfaces for enterprise AI applications with high performance requirements.",
     solution: "React components with TypeScript for type safety, modern UI patterns, and seamless API integration.",
@@ -57,6 +59,7 @@ export const projects = [
       live: "https://www.mumalieff.com/" 
     },
     stack: ["React", "Node.js", "MongoDB", "Paystack"],
+    images: ["/images/projects/mumalieff.png"],
     summary: "Complete e-commerce solution for branded T-shirts with modern storefront and secure payments.",
     challenge: "Creating a full e-commerce experience with product catalog, cart, and payment processing.",
     solution: "React storefront with Node.js backend, integrated payments, and automated communications.",
@@ -79,6 +82,7 @@ export const projects = [
       live: "https://giltcounselling.com/" 
     },
     stack: ["Next.js", "TidyCal", "SendGrid"],
+    images: ["/images/projects/gilt.png"],
     summary: "Professional counselling website with integrated booking and secure authentication.",
     challenge: "Creating a trustworthy healthcare website with booking integration and client communications.",
     solution: "Next.js website with TidyCal booking, magic-link authentication, and automated emails.",
@@ -100,6 +104,7 @@ export const projects = [
       company: "https://nsightlive.com/" 
     },
     stack: ["Amazon Lex", "Bedrock", "React", "Lambda"],
+    images: ["/images/projects/nsight.png"],
     summary: "AI-powered customer support bot for car dealerships with knowledge base integration.",
     challenge: "Building sophisticated AI chatbot with natural language understanding and multi-channel communication.",
     solution: "Amazon Lex and Bedrock implementation with React admin panel and comprehensive knowledge base.",
@@ -135,4 +140,4 @@ export const otherEngagements = [
     role: "Backend Developer",
     period: "Oct 2022 – Mar 2023"
   }
-]
+];

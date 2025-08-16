@@ -24,19 +24,15 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
       {/* Project Image */}
       {project.images && project.images.length > 0 && (
         <div className="relative h-40 sm:h-48 bg-gray-100 border-b border-gray-200">
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="text-gray-500 text-sm">Project Preview</span>
-          </div>
-          {/* Uncomment when you have actual images */}
-          {/* <Image
+          <Image
             src={project.images[0]}
             alt={`${project.title} preview`}
             fill
             className="object-cover"
-          /> */}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
       )}
-
       <div className="p-4 sm:p-6">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">

@@ -1,16 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  // Remove experimental.appDir - it's now stable in Next.js 14
   
-  // Image optimization
+  // Updated image optimization
   images: {
-    domains: [
-      'localhost',
-      'images.unsplash.com',
-      'via.placeholder.com',
-      // Add your image domains here
+    // Replace domains with remotePatterns for external images
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+      },
+      // Add other external domains as needed
     ],
     formats: ['image/webp', 'image/avif'],
   },
