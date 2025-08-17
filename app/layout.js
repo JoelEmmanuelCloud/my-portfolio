@@ -7,13 +7,35 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Joel Emmanuel - Software & AI/ML Developer',
-  description: 'Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
+  description: 'Software specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
   keywords: 'Software Developer, React, Node.js, AWS, AI/ML, Frontend Developer, Backend Developer',
   authors: [{ name: 'Joel Emmanuel' }],
   creator: 'Joel Emmanuel',
+  
+  // Favicon and icon configuration
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        url: '/favicon-16x16.png',
+      },
+    ],
+  },
+  
   openGraph: {
     title: 'Joel Emmanuel - Software & AI/ML Developer',
-    description: 'Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
+    description: 'Software specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
     url: 'https://joelemmanuel.dev',
     siteName: 'Joel Emmanuel Portfolio',
     images: [
@@ -29,7 +51,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Joel Emmanuel - Software & AI/ML Developer',
-    description: 'Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
+    description: 'Software specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
     images: ['/og-image.png'],
   },
 }
@@ -48,7 +70,7 @@ export default function RootLayout({ children }) {
               "@type": "Person",
               "name": "Joel Emmanuel",
               "jobTitle": "Software & AI/ML Developer",
-              "description": "Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.",
+              "description": "Software specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.",
               "url": "https://joelemmanuel.dev",
               "sameAs": [
                 "https://linkedin.com/in/joelemmanuel",
