@@ -291,7 +291,7 @@ export default function Skills() {
               Ready to Collaborate?
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12">
-              Let's discuss how these skills can help solve your technical challenges.
+              Let&apos;s discuss how these skills can help solve your technical challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link

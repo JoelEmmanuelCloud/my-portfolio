@@ -318,7 +318,7 @@ export default function ProjectDetail({ params }) {
             Interested in similar work?
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 font-light">
-            Let's discuss your project requirements
+            Let&apos;s discuss your project requirements
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <Link

@@ -42,8 +42,8 @@ export default function NotFound() {
           </h2>
           
           <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12 font-light leading-relaxed max-w-lg mx-auto sm:mx-0">
-            The page you're looking for doesn't exist or has been moved. 
-            Let's get you back on track.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved. 
+            Let&apos;s get you back on track.
           </p>
 
           {/* Primary Actions - Mobile Optimized */}
@@ -106,10 +106,10 @@ export default function NotFound() {
           <div className="mt-12 sm:mt-16 text-center sm:text-left">
             <div className="p-6 bg-gray-50 rounded-lg">
               <h4 className="text-sm font-medium text-gray-900 mb-2">
-                Still can't find what you're looking for?
+                Still can&apos;t find what you&apos;re looking for?
               </h4>
               <p className="text-xs sm:text-sm text-gray-600 font-light mb-4">
-                I'm here to help. Feel free to reach out directly.
+                I&apos;m here to help. Feel free to reach out directly.
               </p>
               <Link
                 href="/contact"

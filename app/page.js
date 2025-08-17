@@ -75,7 +75,7 @@ export default function Home() {
                 Hello
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 font-light mb-8 sm:mb-12">
-                — I'm a Software Engineer building scalable web platforms
+                — I&apos;m Joel Emmanuel a Software Engineer building scalable Applications and web platforms
               </p>
               
               <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-12">
@@ -131,35 +131,35 @@ export default function Home() {
       </section>
 
       {/* Companies Section */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center">
-            <h2 className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide mb-6 sm:mb-8">
-              Trusted by leading companies
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center">
-              {companies.map((company) => (
-                <a
-                  key={company.name}
-                  href={company.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex justify-center"
-                >
-                  <div className="w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60 relative">
-                    <Image
-                      src={company.logo}
-                      alt={`${company.name} logo`}
-                      fill
-                      className="object-contain transition-all duration-300"
-                    />
-                  </div>
-                </a>
-              ))}
+        <section className="py-12 sm:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center">
+              <h2 className="text-xs sm:text-sm font-light text-gray-500 uppercase tracking-wide mb-6 sm:mb-8">
+                Trusted by leading companies
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center">
+                {companies.map((company) => (
+                  <a
+                    key={company.name}
+                    href={company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex justify-center"
+                  >
+                    <div className="w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60 relative">
+                      <Image
+                        src={company.logo}
+                        alt={`${company.name} logo`}
+                        fill
+                        className="object-contain transition-all duration-300"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Featured Projects */}
       <section className="py-16 sm:py-24 bg-gray-50">
@@ -295,7 +295,7 @@ export default function Home() {
               Have a project or role?
             </h2>
             <p className="text-base sm:text-lg text-gray-300 font-light mb-8">
-              — Let's talk, 24h reply guarantee
+              — Let&apos;s talk, 24h reply guarantee
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link

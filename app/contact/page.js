@@ -55,7 +55,7 @@ function BookingSuccessModal({ isOpen, onClose }) {
             Meeting Scheduled!
           </h3>
           <p className="text-gray-600 mb-6">
-            Thanks for booking a call. I'll reach out to you shortly with more details and prepare for our conversation.
+            Thanks for booking a call. I&apos;ll reach out to you shortly with more details and prepare for our conversation.
           </p>
           <button
             onClick={onClose}
@@ -151,7 +151,7 @@ export default function Contact() {
                 Contact
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 font-light max-w-2xl mx-auto lg:mx-0">
-                — Let's discuss your project or opportunity
+                — Let&apos;s discuss your project or opportunity
               </p>
             </div>
 
@@ -169,7 +169,7 @@ export default function Contact() {
                       Message Sent
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      I'll get back to you within 24 hours.
+                      I&apos;ll get back to you within 24 hours.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
@@ -251,8 +251,8 @@ export default function Contact() {
                     Get In Touch
                   </h2>
                   <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Whether you're a startup or enterprise, let's discuss how I can help.
+                    I&apos;m always interested in new opportunities and exciting projects. 
+                    Whether you&apos;re a startup or enterprise, let&apos;s discuss how I can help.
                   </p>
                 </div>
 

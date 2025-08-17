@@ -192,7 +192,7 @@ export default function Experience() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl text-center lg:text-left">
             <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4 sm:mb-6">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8">
               Ready to discuss how my experience can help your next project succeed?
