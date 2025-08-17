@@ -31,7 +31,7 @@ export const experience = [
   },
   {
     company: "Compass UOL",
-    role: "Sotfware Developer",
+    role: "Software Developer",
     period: "Feb 2023 – Present", 
     location: "Remote",
     website: "https://compass.uol/en/about-us/",

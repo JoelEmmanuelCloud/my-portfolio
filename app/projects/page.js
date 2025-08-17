@@ -7,7 +7,7 @@ import { projects, otherEngagements } from '@/data/projects'
 
 const categories = [
   { id: 'all', name: 'All' },
-  { id: 'fullstack', name: 'Sotfware' },
+  { id: 'fullstack', name: 'Software' },
   { id: 'ai', name: 'AI/ML' },
   { id: 'cloud', name: 'Cloud' },
 ]
@@ -17,7 +17,7 @@ const fallbackEngagements = [
   {
     name: "Compass UOL",
     url: "https://compass.uol/en/about-us/",
-    role: "Sotfware Developer",
+    role: "Software Developer",
     period: "Feb 2023 – Present"
   },
   {
@@ -100,9 +100,9 @@ export default function Projects() {
                   index % 2 === 1 ? 'lg:grid-cols-2' : ''
                 }`}
               >
-                {/* Project Image */}
+                {/* Project Image - FIXED: Added relative positioning */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="aspect-[4/3] bg-gray-100 overflow-hidden rounded-lg">
+                  <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-lg">
                     {project.images && project.images[0] ? (
                       <Image
                         src={project.images[0]}

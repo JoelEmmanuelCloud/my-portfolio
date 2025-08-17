@@ -125,7 +125,7 @@ export const otherEngagements = [
   {
     name: "Compass UOL",
     url: "https://compass.uol/en/about-us/",
-    role: "Sotfware Developer",
+    role: "Software Developer",
     period: "Feb 2023 – Present"
   },
   {

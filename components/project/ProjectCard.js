@@ -21,7 +21,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         </div>
       )}
 
-      {/* Project Image */}
+      {/* Project Image - FIXED: Added relative positioning */}
       {project.images && project.images.length > 0 && (
         <div className="relative h-40 sm:h-48 bg-gray-100 border-b border-gray-200">
           <Image
@@ -155,7 +155,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
   )
 }
 
-// Compact version for grid layouts
+// Compact version for grid layouts - FIXED
 export function ProjectCardCompact({ project, index = 0 }) {
   return (
     <div className="group p-4 border border-gray-200 hover:border-gray-300 transition-colors bg-white rounded">
@@ -190,7 +190,7 @@ export function ProjectCardCompact({ project, index = 0 }) {
   )
 }
 
-// Featured version for hero sections
+// Featured version for hero sections - FIXED
 export function ProjectCardFeatured({ project, index = 0 }) {
   return (
     <div className="group relative bg-white border border-gray-300 p-6 sm:p-8 rounded">

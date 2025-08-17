@@ -146,13 +146,12 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group flex justify-center"
                 >
-                  <div className="w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60">
+                  <div className="w-20 sm:w-24 h-10 sm:h-12 flex items-center justify-center text-center transition-all duration-300 hover:opacity-60 relative">
                     <Image
                       src={company.logo}
                       alt={`${company.name} logo`}
-                      width={96}
-                      height={48}
-                      className="object-contain max-w-full max-h-full transition-all duration-300"
+                      fill
+                      className="object-contain transition-all duration-300"
                     />
                   </div>
                 </a>
