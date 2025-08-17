@@ -1,6 +1,73 @@
 'use client'
-import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { CheckCircle, Calendar, ExternalLink } from 'lucide-react'
+
+// Calendly integration component
+function CalendlyEmbed({ onSuccess }) {
+  useEffect(() => {
+    // Load Calendly CSS
+    const existingCSS = document.querySelector('link[href*="calendly.com"]');
+    if (!existingCSS) {
+      const link = document.createElement('link');
+      link.href = 'https://assets.calendly.com/assets/external/widget.css';
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+    }
+    
+    // Load Calendly script
+    const existingScript = document.querySelector('script[src*="calendly.com"]');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    // Listen for Calendly events
+    const handleCalendlyEvent = (e) => {
+      if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+        if (e.data.event === 'calendly.event_scheduled') {
+          onSuccess();
+        }
+      }
+    };
+
+    window.addEventListener('message', handleCalendlyEvent);
+
+    return () => {
+      window.removeEventListener('message', handleCalendlyEvent);
+    };
+  }, [onSuccess]);
+
+  return null;
+}
+
+// Success modal for calendar booking
+function BookingSuccessModal({ isOpen, onClose }) {
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+        <div className="text-center">
+          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+          <h3 className="text-2xl font-light text-gray-900 mb-4">
+            Meeting Scheduled!
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Thanks for booking a call. I'll reach out to you shortly with more details and prepare for our conversation.
+          </p>
+          <button
+            onClick={onClose}
+            className="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-700 transition-colors duration-200"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +78,7 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [showBookingSuccess, setShowBookingSuccess] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,11 +93,13 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
         setIsSubmitted(true)
         setFormData({ name: '', email: '', company: '', message: '' })
       } else {
-        alert('Failed to send message. Please try again.')
+        alert(data.error || 'Failed to send message. Please try again.')
       }
     } catch (error) {
       alert('Failed to send message. Please try again.')
@@ -43,6 +113,31 @@ export default function Contact() {
       ...formData,
       [e.target.name]: e.target.value
     })
+  }
+
+  const handleCalendlySuccess = () => {
+    setShowBookingSuccess(true)
+  }
+
+  const handleBookCallClick = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/joelemmanuel/meet',
+        pageSettings: {
+          backgroundColor: 'ffffff',
+          hideEventTypeDetails: false,
+          hideLandingPageDetails: false,
+          primaryColor: '1f2937',
+          textColor: '374151'
+        },
+        prefill: {},
+        utm: {
+          utmCampaign: 'website-contact',
+          utmSource: 'joelemmanuel.dev',
+          utmMedium: 'contact-page'
+        }
+      });
+    }
   }
 
   return (
@@ -73,9 +168,15 @@ export default function Contact() {
                     <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
                       Message Sent
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 mb-6">
                       I'll get back to you within 24 hours.
                     </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    >
+                      Send another message
+                    </button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
@@ -178,8 +279,8 @@ export default function Contact() {
 
                   <div className="border-b border-gray-100 pb-4 sm:pb-6 text-center lg:text-left">
                     <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-2">Location</h3>
-                    <p className="text-base sm:text-lg text-gray-900">Metaverse</p>
-                    <p className="text-sm text-gray-500 mt-1">Available for remote work worldwide</p>
+                    <p className="text-base sm:text-lg text-gray-900">Remote Worldwide</p>
+                    <p className="text-sm text-gray-500 mt-1">Available across all time zones</p>
                   </div>
 
                   <div className="border-b border-gray-100 pb-4 sm:pb-6 text-center lg:text-left">
@@ -195,16 +296,40 @@ export default function Contact() {
                     Prefer to talk?
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Schedule a call to discuss your project in detail.
+                    Schedule a 30-minute call to discuss your project in detail.
                   </p>
-                  <a
-                    href="https://tidycal.com/embed/placeholder"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={handleBookCallClick}
                     className="inline-flex items-center justify-center px-8 py-4 bg-gray-100 text-gray-900 rounded-full hover:bg-gray-200 transition-colors duration-200 text-sm font-medium"
                   >
+                    <Calendar className="h-4 w-4 mr-2" />
                     Book a Call
-                  </a>
+                  </button>
+                </div>
+
+                {/* Quick Links */}
+                <div className="mt-12 sm:mt-16 text-center lg:text-left">
+                  <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-6">
+                    Quick Links
+                  </h3>
+                  <div className="space-y-3">
+                    <a
+                      href="https://linkedin.com/in/joelemmanuel"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center lg:justify-start text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      LinkedIn Profile
+                    </a>
+                    <a
+                      href="/projects"
+                      className="flex items-center justify-center lg:justify-start text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      View Portfolio
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -242,6 +367,14 @@ export default function Contact() {
                 {
                   question: "Do you provide ongoing support?",
                   answer: "Yes, I offer maintenance and support packages for projects I've built. This includes bug fixes, updates, feature additions, and technical support."
+                },
+                {
+                  question: "How do you handle project communication?",
+                  answer: "I believe in transparent communication. I provide regular updates via email, Slack, or your preferred method. We can schedule weekly check-ins and I'm always available for urgent matters."
+                },
+                {
+                  question: "What's your preferred way to start a project?",
+                  answer: "I prefer to start with a discovery call to understand your goals, followed by a detailed proposal. Once approved, we kick off with project planning and wireframing before development begins."
                 }
               ].map((faq, index) => (
                 <div key={index} className="border-b border-gray-100 pb-6 sm:pb-8">
@@ -257,6 +390,15 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Calendly Integration */}
+      <CalendlyEmbed onSuccess={handleCalendlySuccess} />
+
+      {/* Booking Success Modal */}
+      <BookingSuccessModal 
+        isOpen={showBookingSuccess}
+        onClose={() => setShowBookingSuccess(false)}
+      />
     </div>
   )
 }
