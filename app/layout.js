@@ -6,13 +6,13 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Joel Emmanuel - Full Stack & AI/ML Developer',
+  title: 'Joel Emmanuel - Sotfware & AI/ML Developer',
   description: 'Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
-  keywords: 'Full Stack Developer, React, Node.js, AWS, AI/ML, Frontend Developer, Backend Developer',
+  keywords: 'Sotfware Developer, React, Node.js, AWS, AI/ML, Frontend Developer, Backend Developer',
   authors: [{ name: 'Joel Emmanuel' }],
   creator: 'Joel Emmanuel',
   openGraph: {
-    title: 'Joel Emmanuel - Full Stack & AI/ML Developer',
+    title: 'Joel Emmanuel - Sotfware & AI/ML Developer',
     description: 'Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
     url: 'https://joelemmanuel.dev',
     siteName: 'Joel Emmanuel Portfolio',
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Joel Emmanuel - Full Stack & AI/ML Developer',
+    title: 'Joel Emmanuel - Sotfware & AI/ML Developer',
     description: 'Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.',
     images: ['/og-image.png'],
   },
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Joel Emmanuel",
-              "jobTitle": "Full Stack & AI/ML Developer",
+              "jobTitle": "Sotfware & AI/ML Developer",
               "description": "Frontend specialist + full-stack builder who ships production systems on React/Next.js, Node.js, AWS, and modern CI/CD—used by real customers today.",
               "url": "https://joelemmanuel.dev",
               "sameAs": [

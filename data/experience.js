@@ -31,7 +31,7 @@ export const experience = [
   },
   {
     company: "Compass UOL",
-    role: "Full Stack Developer",
+    role: "Sotfware Developer",
     period: "Feb 2023 – Present", 
     location: "Remote",
     website: "https://compass.uol/en/about-us/",

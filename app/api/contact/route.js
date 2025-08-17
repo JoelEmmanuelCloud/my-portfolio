@@ -1,15 +1,38 @@
-import sgMail from '@sendgrid/mail'
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+import { sendContactEmails, checkRateLimit, validateEmailConfig } from '@/lib/sendgrid'
 
 export async function POST(request) {
   try {
+    // Validate email configuration first
+    const emailConfig = validateEmailConfig()
+    if (!emailConfig.isValid) {
+      console.error('Email configuration issues:', emailConfig.issues)
+      return Response.json(
+        { error: 'Email service not properly configured' },
+        { status: 500 }
+      )
+    }
+
     const { name, email, company, message } = await request.json()
 
     // Basic validation
     if (!name || !email || !message) {
       return Response.json(
         { error: 'Name, email, and message are required' },
+        { status: 400 }
+      )
+    }
+
+    // Enhanced validation
+    if (name.trim().length < 2) {
+      return Response.json(
+        { error: 'Name must be at least 2 characters long' },
+        { status: 400 }
+      )
+    }
+
+    if (message.trim().length < 10) {
+      return Response.json(
+        { error: 'Message must be at least 10 characters long' },
         { status: 400 }
       )
     }
@@ -23,135 +46,96 @@ export async function POST(request) {
       )
     }
 
-    // Get client info
-    const userAgent = request.headers.get('user-agent') || ''
+    // Rate limiting
     const clientIP = request.headers.get('x-forwarded-for') || 
                     request.headers.get('x-real-ip') || 
+                    request.headers.get('cf-connecting-ip') ||
                     'unknown'
-
-    // Main notification email
-    const msg = {
-      to: 'ejoel00@gmail.com',
-      from: 'hello@joelemmanuel.dev',
-      subject: `New message from ${name}`,
-      text: `
-Name: ${name}
-Email: ${email}
-Company: ${company || 'Not provided'}
-
-Message:
-${message}
-
----
-From: ${clientIP}
-Agent: ${userAgent}
-      `,
-      html: `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; color: #374151;">
-          
-          <div style="padding: 40px 0; border-bottom: 1px solid #e5e7eb;">
-            <h1 style="margin: 0; font-size: 24px; font-weight: 300; color: #111827;">
-              New message from ${name}
-            </h1>
-          </div>
-          
-          <div style="padding: 40px 0;">
-            <div style="margin-bottom: 32px;">
-              <p style="margin: 0 0 8px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Name</p>
-              <p style="margin: 0; font-size: 16px; color: #111827;">${name}</p>
-            </div>
-            
-            <div style="margin-bottom: 32px;">
-              <p style="margin: 0 0 8px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Email</p>
-              <p style="margin: 0; font-size: 16px; color: #111827;">
-                <a href="mailto:${email}" style="color: #111827; text-decoration: none;">${email}</a>
-              </p>
-            </div>
-            
-            ${company ? `
-            <div style="margin-bottom: 32px;">
-              <p style="margin: 0 0 8px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Company</p>
-              <p style="margin: 0; font-size: 16px; color: #111827;">${company}</p>
-            </div>
-            ` : ''}
-            
-            <div style="margin-bottom: 32px;">
-              <p style="margin: 0 0 16px 0; font-size: 14px; color: #6b7280; font-weight: 300;">Message</p>
-              <div style="padding: 24px; background-color: #f9fafb; border-left: 2px solid #e5e7eb;">
-                <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #111827; white-space: pre-line;">${message}</p>
-              </div>
-            </div>
-          </div>
-          
-          <div style="padding: 24px 0; border-top: 1px solid #e5e7eb;">
-            <p style="margin: 0; font-size: 12px; color: #9ca3af; font-weight: 300;">
-              Submitted from ${clientIP}
-            </p>
-          </div>
-        </div>
-      `,
+    
+    const rateLimit = checkRateLimit(clientIP, 3, 300000) // 3 requests per 5 minutes
+    
+    if (!rateLimit.allowed) {
+      const resetTime = new Date(rateLimit.resetTime).toLocaleTimeString()
+      return Response.json(
+        { 
+          error: `Too many requests. Please try again after ${resetTime}`,
+          resetTime: rateLimit.resetTime
+        },
+        { 
+          status: 429,
+          headers: {
+            'Retry-After': Math.ceil((rateLimit.resetTime - Date.now()) / 1000).toString(),
+            'X-RateLimit-Limit': '3',
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': rateLimit.resetTime.toString()
+          }
+        }
+      )
     }
 
-    // Auto-reply email
-    const autoReply = {
-      to: email,
-      from: 'ejoel00@gmail.com',
-      subject: 'Message received',
-      text: `
-Hi ${name},
-
-Thanks for your message. I'll get back to you within 24 hours.
-
-Best regards,
-Joel Emmanuel
-      `,
-      html: `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; color: #374151;">
-          
-          <div style="padding: 40px 0;">
-            <h1 style="margin: 0 0 24px 0; font-size: 24px; font-weight: 300; color: #111827;">
-              Message received
-            </h1>
-            
-            <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #374151; font-weight: 300;">
-              Hi ${name},
-            </p>
-            
-            <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #374151; font-weight: 300;">
-              Thanks for your message. I'll get back to you within 24 hours.
-            </p>
-            
-            <p style="margin: 0 0 32px 0; font-size: 16px; line-height: 1.6; color: #374151; font-weight: 300;">
-              Best regards,<br>
-              Joel Emmanuel
-            </p>
-          </div>
-          
-          <div style="padding: 24px 0; border-top: 1px solid #e5e7eb;">
-            <p style="margin: 0; font-size: 14px; color: #6b7280; font-weight: 300;">
-              Joel Emmanuel • Frontend Engineer
-            </p>
-            <p style="margin: 4px 0 0 0; font-size: 14px; color: #9ca3af; font-weight: 300;">
-              ejoel00@gmail.com • +234 706 976 3692
-            </p>
-          </div>
-        </div>
-      `,
+    // Sanitize inputs
+    const formData = {
+      name: name.trim().substring(0, 100),
+      email: email.trim().toLowerCase().substring(0, 255),
+      company: company ? company.trim().substring(0, 100) : '',
+      message: message.trim().substring(0, 2000)
     }
 
-    // Send both emails
-    await Promise.all([
-      sgMail.send(msg),
-      sgMail.send(autoReply)
-    ])
+    // Get client info for tracking
+    const requestInfo = {
+      clientIP,
+      userAgent: request.headers.get('user-agent') || 'Unknown',
+      referer: request.headers.get('referer') || 'Direct',
+      timestamp: new Date().toISOString()
+    }
+
+    // Send emails using dynamic templates
+    const emailResults = await sendContactEmails(formData, requestInfo)
+
+    // Log successful submission for analytics
+    console.log('Contact form submission:', {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      hasMessage: !!formData.message,
+      clientIP,
+      userAgent: requestInfo.userAgent,
+      emailResults,
+      timestamp: requestInfo.timestamp
+    })
 
     return Response.json(
-      { message: 'Message sent successfully' },
-      { status: 200 }
+      { 
+        success: true,
+        message: 'Message sent successfully',
+        emailResults: {
+          notification: emailResults.notification.success,
+          autoReply: emailResults.autoReply.success
+        }
+      },
+      { 
+        status: 200,
+        headers: {
+          'X-RateLimit-Limit': '3',
+          'X-RateLimit-Remaining': rateLimit.remaining.toString(),
+          'X-RateLimit-Reset': rateLimit.resetTime.toString()
+        }
+      }
     )
 
   } catch (error) {
     console.error('Contact form error:', error)
+    
+    // Don't expose internal errors to users
+    const isConfigError = error.message.includes('configuration') || 
+                         error.message.includes('template')
+    
+    if (isConfigError) {
+      return Response.json(
+        { error: 'Service temporarily unavailable. Please try again later.' },
+        { status: 503 }
+      )
+    }
     
     return Response.json(
       { error: 'Failed to send message. Please try again.' },
@@ -165,9 +149,40 @@ export async function OPTIONS(request) {
   return new Response(null, {
     status: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': process.env.NODE_ENV === 'production' 
+        ? 'https://joelemmanuel.dev' 
+        : '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Max-Age': '86400', // 24 hours
     },
   })
+}
+
+// Health check endpoint
+export async function GET(request) {
+  try {
+    const emailConfig = validateEmailConfig()
+    
+    return Response.json({
+      status: 'healthy',
+      emailConfig: {
+        isValid: emailConfig.isValid,
+        hasApiKey: emailConfig.config.hasApiKey,
+        hasContactTemplate: emailConfig.config.hasContactTemplate,
+        hasAutoReplyTemplate: emailConfig.config.hasAutoReplyTemplate,
+        warnings: emailConfig.warnings
+      },
+      timestamp: new Date().toISOString()
+    })
+  } catch (error) {
+    return Response.json(
+      { 
+        status: 'unhealthy', 
+        error: error.message,
+        timestamp: new Date().toISOString()
+      },
+      { status: 500 }
+    )
+  }
 }
