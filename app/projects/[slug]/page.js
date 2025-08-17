@@ -62,11 +62,11 @@ export default function ProjectDetail({ params }) {
         </div>
       </section>
 
-      {/* Project Image */}
+      {/* Project Image - FIXED: Added relative positioning */}
       {project.images && project.images[0] && (
         <section className="py-8 sm:py-12">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="aspect-video bg-gray-100 overflow-hidden rounded-lg">
+            <div className="relative aspect-video bg-gray-100 overflow-hidden rounded-lg">
               <Image
                 src={project.images[0]}
                 alt={project.title}
@@ -170,7 +170,7 @@ export default function ProjectDetail({ params }) {
                 </div>
               )}
 
-              {/* Additional Images */}
+              {/* Additional Images - FIXED: Added relative positioning */}
               {project.images && project.images.length > 1 && (
                 <div>
                   <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 sm:mb-8">
@@ -178,7 +178,7 @@ export default function ProjectDetail({ params }) {
                   </h2>
                   <div className="space-y-6 sm:space-y-8">
                     {project.images.slice(1).map((image, index) => (
-                      <div key={index} className="aspect-video bg-gray-100 overflow-hidden rounded-lg">
+                      <div key={index} className="relative aspect-video bg-gray-100 overflow-hidden rounded-lg">
                         <Image
                           src={image}
                           alt={`${project.title} screenshot ${index + 2}`}
@@ -258,7 +258,7 @@ export default function ProjectDetail({ params }) {
         </div>
       </section>
 
-      {/* Related Projects */}
+      {/* Related Projects - FIXED: Added relative positioning */}
       {relatedProjects.length > 0 && (
         <section className="py-16 sm:py-24 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6">
@@ -270,8 +270,8 @@ export default function ProjectDetail({ params }) {
               {relatedProjects.map((relatedProject) => (
                 <div key={relatedProject.slug} className="group">
                   <div className="space-y-4 sm:space-y-6">
-                    {/* Project Image */}
-                    <div className="aspect-video bg-gray-100 overflow-hidden rounded-lg">
+                    {/* Project Image - FIXED: Added relative positioning */}
+                    <div className="relative aspect-video bg-gray-100 overflow-hidden rounded-lg">
                       {relatedProject.images && relatedProject.images[0] ? (
                         <Image
                           src={relatedProject.images[0]}

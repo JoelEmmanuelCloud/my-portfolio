@@ -16,13 +16,13 @@ import {
 const defaultSocialLinks = [
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/joelemmanuel',
+    url: 'https://www.linkedin.com/in/joel-emmanuel-149708202/',
     icon: Linkedin,
     description: 'Connect on LinkedIn'
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/joelemmanuel',
+    url: 'https://github.com/JoelEmmanuelCloud/',
     icon: Github,
     description: 'View my code'
   },

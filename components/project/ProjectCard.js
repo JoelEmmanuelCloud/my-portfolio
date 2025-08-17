@@ -21,9 +21,9 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         </div>
       )}
 
-      {/* Project Image - FIXED: Added relative positioning */}
+      {/* Project Image - FIXED: Added proper height and sizes */}
       {project.images && project.images.length > 0 && (
-        <div className="relative h-40 sm:h-48 bg-gray-100 border-b border-gray-200">
+        <div className="relative w-full h-40 sm:h-48 bg-gray-100 border-b border-gray-200">
           <Image
             src={project.images[0]}
             alt={`${project.title} preview`}
