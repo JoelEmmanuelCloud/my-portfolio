@@ -5,8 +5,6 @@ import {
   Phone, 
   Linkedin, 
   Github, 
-  Twitter, 
-  Globe,
   Download,
   ExternalLink,
   MessageCircle,
@@ -63,15 +61,15 @@ export default function SocialLinks({
             target={link.url.startsWith('http') ? '_blank' : '_self'}
             rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
             className={`
-              flex items-center text-gray-400 hover:text-gray-900 transition-colors duration-300 font-light
+              flex items-center text-black hover:text-blue-600 transition-colors duration-300 font-medium
               ${showLabels ? 'space-x-2' : ''}
               ${showLabels ? 'p-2' : 'p-3'}
             `}
             aria-label={link.description || link.name}
           >
-            <Icon className="h-5 w-5 flex-shrink-0" />
+            <Icon className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
             {showLabels && (
-              <span className="text-sm">{link.name}</span>
+              <span className="text-sm sm:text-base">{link.name}</span>
             )}
           </a>
         )
@@ -88,13 +86,13 @@ export function SocialLinksCard({
   className = ""
 }) {
   return (
-    <div className={`bg-white p-6 sm:p-8 ${className}`}>
-      <div className="mb-6 sm:mb-8 text-center sm:text-left">
-        <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-2">
+    <div className={`bg-white p-6 sm:p-8 lg:p-10 ${className}`}>
+      <div className="mb-6 sm:mb-8 lg:mb-10 text-center sm:text-left">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-black mb-2">
           {title}
         </h3>
         {subtitle && (
-          <p className="text-base sm:text-lg text-gray-600 font-light">
+          <p className="text-base sm:text-lg lg:text-xl text-black font-medium">
             {subtitle}
           </p>
         )}
@@ -109,12 +107,12 @@ export function SocialLinksCard({
               href={link.url}
               target={link.url.startsWith('http') ? '_blank' : '_self'}
               rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
-              className="flex items-center space-x-4 text-gray-600 hover:text-gray-900 transition-colors duration-300 group p-3 sm:p-4 rounded-lg hover:bg-gray-50"
+              className="flex items-center space-x-4 text-black hover:text-blue-600 transition-colors duration-300 group p-3 sm:p-4 rounded-lg hover:bg-blue-50"
             >
-              <Icon className="h-5 w-5 flex-shrink-0" />
+              <Icon className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="font-light">{link.name}</p>
-                <p className="text-sm text-gray-400 font-light truncate">
+                <p className="font-medium text-sm sm:text-base">{link.name}</p>
+                <p className="text-xs sm:text-sm text-black/70 font-medium truncate">
                   {link.description}
                 </p>
               </div>
@@ -128,14 +126,14 @@ export function SocialLinksCard({
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
         <a
           href="mailto:ejoel00@gmail.com"
-          className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+          className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base font-medium"
         >
           <Mail className="h-4 w-4 mr-2" />
           Send Email
         </a>
         <a
           href="/contact"
-          className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-colors duration-200 text-sm font-medium"
+          className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 text-sm sm:text-base font-medium"
         >
           <Calendar className="h-4 w-4 mr-2" />
           Schedule Call
@@ -157,10 +155,10 @@ export function SocialLinksCompact({ links = defaultSocialLinks }) {
             href={link.url}
             target={link.url.startsWith('http') ? '_blank' : '_self'}
             rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
-            className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors duration-300 rounded-full border border-gray-200 hover:border-gray-300"
+            className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-black hover:text-blue-600 transition-colors duration-300 rounded-full border-2 border-black hover:border-blue-600"
             aria-label={link.description || link.name}
           >
-            <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+            <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
           </a>
         )
       })}
@@ -205,10 +203,10 @@ export function SocialActionButtons({ className = "" }) {
             target={button.url.startsWith('http') ? '_blank' : '_self'}
             rel={button.url.startsWith('http') ? 'noopener noreferrer' : ''}
             className={`
-              inline-flex items-center justify-center px-6 py-3 rounded-full transition-colors duration-200 text-sm font-medium
+              inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-colors duration-200 text-sm sm:text-base font-medium
               ${button.primary 
-                ? 'bg-black text-white hover:bg-gray-800' 
-                : 'border border-gray-300 text-gray-900 hover:bg-gray-50'
+                ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                : 'border-2 border-black text-black hover:bg-black hover:text-white'
               }
             `}
           >
@@ -237,15 +235,15 @@ export function SocialLinksFloating({
     <div className={`${positionClasses[position]} z-50`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-900 text-white rounded-full shadow-lg hover:bg-gray-700 focus:outline-none flex items-center justify-center transition-all duration-300"
+        className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 flex items-center justify-center transition-all duration-300"
         aria-label="Contact options"
       >
         {isOpen ? (
-          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
-          <MessageCircle className="h-5 w-5" />
+          <MessageCircle className="h-6 w-6" />
         )}
       </button>
 
@@ -257,7 +255,7 @@ export function SocialLinksFloating({
             onClick={() => setIsOpen(false)}
           />
           
-          <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-xl border border-gray-200 p-4 space-y-3 min-w-[200px]">
+          <div className="absolute bottom-16 sm:bottom-20 right-0 bg-white rounded-lg shadow-xl border-2 border-black p-4 space-y-3 min-w-[220px]">
             {links.map((link) => {
               const Icon = link.icon
               return (
@@ -266,20 +264,20 @@ export function SocialLinksFloating({
                   href={link.url}
                   target={link.url.startsWith('http') ? '_blank' : '_self'}
                   rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
-                  className="flex items-center space-x-3 text-gray-600 hover:text-gray-900 transition-colors duration-300 font-light p-2 rounded hover:bg-gray-50"
+                  className="flex items-center space-x-3 text-black hover:text-blue-600 transition-colors duration-300 font-medium p-2 rounded hover:bg-blue-50"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Icon className="h-4 w-4 flex-shrink-0" />
-                  <span className="text-sm">{link.name}</span>
+                  <Icon className="h-5 w-5 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">{link.name}</span>
                 </a>
               )
             })}
             
             {/* Quick CTA */}
-            <div className="pt-3 border-t border-gray-100">
+            <div className="pt-3 border-t-2 border-black/10">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center w-full px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+                className="inline-flex items-center justify-center w-full px-4 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 Book a Call
@@ -299,13 +297,13 @@ export function SocialContactSection({
   className = "" 
 }) {
   return (
-    <section className={`py-12 sm:py-16 bg-gray-50 ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className={`py-12 sm:py-16 lg:py-20 bg-white ${className}`}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl font-light text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-4">
             {title}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 font-light">
+          <p className="text-base sm:text-lg lg:text-xl text-black font-medium">
             {subtitle}
           </p>
         </div>
@@ -313,22 +311,22 @@ export function SocialContactSection({
         <div className="max-w-md mx-auto space-y-4">
           <a
             href="mailto:ejoel00@gmail.com"
-            className="inline-flex items-center justify-center w-full px-6 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+            className="inline-flex items-center justify-center w-full px-6 py-4 sm:px-8 sm:py-5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base lg:text-lg font-medium"
           >
-            <Mail className="h-4 w-4 mr-2" />
+            <Mail className="h-5 w-5 mr-3" />
             Send Email
           </a>
           
           <a
             href="/contact"
-            className="inline-flex items-center justify-center w-full px-6 py-4 border border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-colors duration-200 text-sm font-medium"
+            className="inline-flex items-center justify-center w-full px-6 py-4 sm:px-8 sm:py-5 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 text-sm sm:text-base lg:text-lg font-medium"
           >
-            <Calendar className="h-4 w-4 mr-2" />
+            <Calendar className="h-5 w-5 mr-3" />
             Schedule Call
           </a>
         </div>
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 sm:mt-12">
           <SocialLinksCompact />
         </div>
       </div>

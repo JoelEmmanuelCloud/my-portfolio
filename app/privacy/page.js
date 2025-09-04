@@ -135,24 +135,24 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="pt-24 pb-16">
-        <div className="container mx-auto px-6">
+      <section className="pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 lg:pb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="inline-flex items-center text-gray-900 hover:text-gray-600 transition-colors mb-12"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors mb-8 sm:mb-12 text-sm sm:text-base font-semibold"
           >
-            <ArrowLeft className="h-4 w-4 mr-2" />
+            <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
             Back to Home
           </Link>
           
           <div className="max-w-4xl">
-            <h1 className="text-6xl font-light text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 sm:mb-6 leading-tight">
               Privacy Policy
             </h1>
-            <p className="text-xl text-gray-600 font-light mb-4">
+            <p className="text-lg sm:text-xl lg:text-2xl text-black font-medium mb-4 sm:mb-6 leading-relaxed">
               — How we collect, use, and protect your information
             </p>
-            <p className="text-gray-500">
+            <p className="text-black font-medium text-sm sm:text-base">
               Last updated: {new Date().toLocaleDateString()}
             </p>
           </div>
@@ -160,28 +160,28 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* Content */}
-      <section className="pb-24">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-4 gap-16">
+      <section className="pb-16 sm:pb-20 lg:pb-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
             {/* Table of Contents */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24">
-                <h3 className="text-sm font-medium text-gray-900 uppercase tracking-wide mb-6">
+              <div className="sticky top-20 sm:top-24">
+                <h3 className="text-sm sm:text-base font-bold text-black uppercase tracking-wide mb-4 sm:mb-6">
                   Contents
                 </h3>
-                <nav className="space-y-3">
+                <nav className="space-y-2 sm:space-y-3">
                   {sections.map((section) => (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block text-gray-600 hover:text-gray-900 transition-colors"
+                      className="block text-black hover:text-blue-600 transition-colors text-sm sm:text-base font-medium py-1 border-l-2 border-transparent hover:border-blue-600 pl-3"
                     >
                       {section.title}
                     </a>
                   ))}
                   <a
                     href="#contact-info"
-                    className="block text-gray-600 hover:text-gray-900 transition-colors"
+                    className="block text-black hover:text-blue-600 transition-colors text-sm sm:text-base font-medium py-1 border-l-2 border-transparent hover:border-blue-600 pl-3"
                   >
                     Contact Information
                   </a>
@@ -196,23 +196,26 @@ export default function PrivacyPolicy() {
                   <div
                     key={section.id}
                     id={section.id}
-                    className="mb-16"
+                    className="mb-12 sm:mb-16 lg:mb-20"
                   >
-                    <h2 className="text-3xl font-light text-gray-900 mb-8">
-                      {section.title}
-                    </h2>
+                    <div className="flex items-center mb-6 sm:mb-8">
+                      <section.icon className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-black leading-tight">
+                        {section.title}
+                      </h2>
+                    </div>
 
-                    <div className="space-y-8">
+                    <div className="space-y-6 sm:space-y-8">
                       {section.content.map((subsection, subIndex) => (
-                        <div key={subIndex}>
-                          <h3 className="text-xl font-medium text-gray-900 mb-4">
+                        <div key={subIndex} className="border-l-4 border-blue-600 pl-4 sm:pl-6">
+                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-3 sm:mb-4 leading-tight">
                             {subsection.subtitle}
                           </h3>
-                          <div className="space-y-3">
+                          <div className="space-y-3 sm:space-y-4">
                             {subsection.items.map((item, itemIndex) => (
                               <div key={itemIndex} className="flex items-start">
-                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-4 flex-shrink-0"></span>
-                                <p className="text-gray-700 leading-relaxed">{item}</p>
+                                <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 sm:mt-2.5 mr-3 sm:mr-4 flex-shrink-0"></span>
+                                <p className="text-black leading-relaxed font-medium text-sm sm:text-base lg:text-lg">{item}</p>
                               </div>
                             ))}
                           </div>
@@ -223,35 +226,47 @@ export default function PrivacyPolicy() {
                 ))}
 
                 {/* Contact Information */}
-                <div id="contact-info" className="mb-16">
-                  <h2 className="text-3xl font-light text-gray-900 mb-8">
-                    Contact Information
-                  </h2>
+                <div id="contact-info" className="mb-12 sm:mb-16">
+                  <div className="flex items-center mb-6 sm:mb-8">
+                    <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-black leading-tight">
+                      Contact Information
+                    </h2>
+                  </div>
 
-                  <div className="border border-gray-200 rounded-lg p-8">
-                    <p className="text-gray-700 mb-6 leading-relaxed">
+                  <div className="border-2 border-black rounded-xl p-6 sm:p-8 lg:p-10 bg-white hover:shadow-lg transition-shadow duration-300">
+                    <p className="text-black mb-6 leading-relaxed font-medium text-sm sm:text-base lg:text-lg">
                       If you have any questions about this Privacy Policy or how we handle your data, 
                       please contact us:
                     </p>
                     
-                    <div className="space-y-3">
-                      <p className="text-gray-900 font-medium text-lg">Joel Emmanuel</p>
-                      <div className="space-y-2">
-                        <p className="text-gray-700">
-                          <span className="font-medium">Email:</span>{' '}
-                          <a href="mailto:ejoel00@gmail.com" className="text-gray-900 hover:text-gray-600">
+                    <div className="space-y-4 sm:space-y-6">
+                      <p className="text-black font-bold text-lg sm:text-xl lg:text-2xl">Joel Emmanuel</p>
+                      <div className="space-y-3 sm:space-y-4">
+                        <p className="text-black text-sm sm:text-base lg:text-lg">
+                          <span className="font-bold">Email:</span>{' '}
+                          <a 
+                            href="mailto:ejoel00@gmail.com" 
+                            className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
+                          >
                             ejoel00@gmail.com
                           </a>
                         </p>
-                        <p className="text-gray-700">
-                          <span className="font-medium">Phone:</span>{' '}
-                          <a href="tel:+2347069763692" className="text-gray-900 hover:text-gray-600">
+                        <p className="text-black text-sm sm:text-base lg:text-lg">
+                          <span className="font-bold">Phone:</span>{' '}
+                          <a 
+                            href="tel:+2347069763692" 
+                            className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
+                          >
                             +234 706 976 3692
                           </a>
                         </p>
-                        <p className="text-gray-700">
-                          <span className="font-medium">Website:</span>{' '}
-                          <a href="https://joelemmanuel.dev" className="text-gray-900 hover:text-gray-600">
+                        <p className="text-black text-sm sm:text-base lg:text-lg">
+                          <span className="font-bold">Website:</span>{' '}
+                          <a 
+                            href="https://joelemmanuel.dev" 
+                            className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
+                          >
                             joelemmanuel.dev
                           </a>
                         </p>
@@ -261,11 +276,14 @@ export default function PrivacyPolicy() {
                 </div>
 
                 {/* Updates Notice */}
-                <div className="border border-gray-200 rounded-lg p-8">
-                  <h3 className="text-xl font-medium text-gray-900 mb-4">
-                    Policy Updates
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                <div className="border-2 border-black rounded-xl p-6 sm:p-8 lg:p-10 bg-white hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-center mb-4 sm:mb-6">
+                    <Eye className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-2 sm:mr-3 flex-shrink-0" />
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black leading-tight">
+                      Policy Updates
+                    </h3>
+                  </div>
+                  <p className="text-black leading-relaxed font-medium text-sm sm:text-base lg:text-lg">
                     We may update this Privacy Policy from time to time. Any changes will be posted on this page 
                     with an updated revision date. We encourage you to review this policy periodically.
                   </p>

@@ -17,13 +17,13 @@ export default function TechStack({
   
   const sizeClasses = {
     xs: 'text-xs px-2 py-1',
-    sm: 'text-xs px-3 py-1',
-    md: 'text-sm px-3 py-1',
-    lg: 'text-sm px-4 py-2'
+    sm: 'text-xs sm:text-sm px-3 py-2',
+    md: 'text-sm px-3 py-2',
+    lg: 'text-sm sm:text-base px-4 py-3'
   }
 
-  const containerClass = `flex flex-wrap gap-2 ${className}`
-  const baseClass = `inline-block rounded border border-gray-200 bg-gray-50 text-gray-700 font-medium transition-colors hover:bg-gray-100 ${sizeClasses[size]}`
+  const containerClass = `flex flex-wrap gap-2 sm:gap-3 ${className}`
+  const baseClass = `inline-block rounded border-2 border-black bg-white text-black font-semibold transition-all hover:bg-blue-600 hover:text-white hover:border-blue-600 ${sizeClasses[size]}`
 
   return (
     <div className={containerClass}>
@@ -34,7 +34,7 @@ export default function TechStack({
       ))}
       
       {remainingCount > 0 && showCount && (
-        <span className={`${baseClass} text-gray-500`}>
+        <span className={`${baseClass} bg-blue-600 text-white border-blue-600`}>
           +{remainingCount} more
         </span>
       )}
@@ -49,10 +49,10 @@ export function TechStackGrouped({ technologies }) {
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-6 sm:space-y-8">
       {Object.entries(technologies).map(([category, techs]) => (
-        <div key={category} className="space-y-2">
-          <h4 className="text-xs sm:text-sm font-medium text-gray-900 uppercase tracking-wide">
+        <div key={category} className="space-y-3 sm:space-y-4">
+          <h4 className="text-sm sm:text-base font-bold text-black uppercase tracking-wide">
             {category.replace(/([A-Z])/g, ' $1').trim()}
           </h4>
           <TechStack 
@@ -77,10 +77,10 @@ export function TechStackInline({ technologies, maxItems = 3 }) {
   const remaining = technologies.length - maxItems
 
   return (
-    <span className="text-xs sm:text-sm text-gray-600">
+    <span className="text-sm sm:text-base text-black font-medium">
       {displayedTech.join(' • ')}
       {remaining > 0 && (
-        <span className="text-gray-400"> (+{remaining} more)</span>
+        <span className="text-blue-600 font-semibold"> (+{remaining} more)</span>
       )}
     </span>
   )
@@ -96,12 +96,12 @@ export function TechStackCompact({ technologies, limit = 4, onViewAll }) {
   const remainingCount = technologies.length - limit
 
   return (
-    <div className="space-y-3">
-      <div className="flex flex-wrap gap-2">
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2 sm:gap-3">
         {displayedTech.map((tech) => (
           <span 
             key={tech} 
-            className="inline-block text-xs px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-700 font-medium"
+            className="inline-block text-xs sm:text-sm px-3 py-2 rounded border-2 border-black bg-white text-black font-semibold hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all"
           >
             {tech}
           </span>
@@ -111,7 +111,7 @@ export function TechStackCompact({ technologies, limit = 4, onViewAll }) {
       {remainingCount > 0 && onViewAll && (
         <button
           onClick={onViewAll}
-          className="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-full hover:bg-gray-200 transition-colors duration-200"
+          className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-full hover:bg-blue-700 transition-colors duration-200 w-full sm:w-auto"
         >
           View All {technologies.length} Technologies
         </button>

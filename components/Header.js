@@ -24,15 +24,15 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed w-full top-0 z-50 bg-black backdrop-blur-sm">
+      <header className="fixed w-full top-0 z-50 bg-white shadow-md backdrop-blur-sm border-b border-gray-100">
         <nav className="container mx-auto px-4 sm:px-6" aria-label="Global">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <div className="flex">
               <Link href="/" className="flex items-center gap-3">
-                <div className="w-16 h-16 relative">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 relative">
                   <Image
-                    src="/logos/logo.svg"
+                    src="/logos/logo2.png"
                     alt="Joel Emmanuel Logo"
                     fill
                     className="object-contain"
@@ -43,15 +43,15 @@ export default function Header() {
             </div>
 
             {/* Desktop navigation */}
-            <div className="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
+            <div className="hidden lg:flex lg:gap-x-6 xl:gap-x-10">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-light transition-colors duration-200 ${
+                  className={`text-sm sm:text-base font-medium transition-colors duration-200 ${
                     pathname === item.href
-                      ? 'text-white'
-                      : 'text-gray-300 hover:text-white'
+                      ? 'text-black font-semibold'
+                      : 'text-black hover:text-blue-600'
                   }`}
                 >
                   {item.name}
@@ -63,7 +63,7 @@ export default function Header() {
             <div className="hidden lg:flex">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-200 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-blue-600 text-white text-sm sm:text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
               >
                 Get in touch
               </Link>
@@ -73,7 +73,7 @@ export default function Header() {
             <div className="flex lg:hidden">
               <button
                 type="button"
-                className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
+                className="p-2 text-black hover:text-blue-600 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
                 aria-label="Toggle menu"
               >
@@ -87,19 +87,19 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Mobile menu dropdown (no full-screen overlay) */}
+        {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-black border-t border-gray-800 shadow-lg">
-            <div className="container mx-auto px-6 py-8">
-              <div className="space-y-6">
+          <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+            <div className="container mx-auto px-6 py-6">
+              <div className="space-y-4">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block text-lg font-light transition-colors duration-200 ${
+                    className={`block text-lg font-medium transition-colors duration-200 py-2 ${
                       pathname === item.href
-                        ? 'text-white'
-                        : 'text-gray-300 hover:text-white'
+                        ? 'text-black font-semibold'
+                        : 'text-black hover:text-blue-600'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -107,10 +107,10 @@ export default function Header() {
                   </Link>
                 ))}
 
-                <div className="pt-6 border-t border-gray-800">
+                <div className="pt-4 border-t border-gray-200">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-200 transition-colors duration-200"
+                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Get in touch

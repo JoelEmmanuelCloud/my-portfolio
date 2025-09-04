@@ -13,26 +13,26 @@ const Button = forwardRef(({
   rightIcon,
   ...props
 }, ref) => {
-  const baseStyles = 'inline-flex items-center justify-center font-light transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed'
+  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
   
   const variants = {
-    primary: 'bg-gray-900 text-white hover:bg-gray-800 border border-gray-900',
-    secondary: 'bg-transparent text-gray-900 border border-gray-900 hover:bg-gray-900 hover:text-white',
-    outline: 'bg-transparent text-gray-700 border border-gray-300 hover:border-gray-900 hover:text-gray-900',
-    ghost: 'bg-transparent text-gray-700 hover:text-gray-900 border-none',
-    minimal: 'bg-transparent text-gray-900 hover:text-gray-600 border-none underline-offset-4 hover:underline',
-    danger: 'bg-red-600 text-white hover:bg-red-700 border border-red-600',
-    success: 'bg-green-600 text-white hover:bg-green-700 border border-green-600',
-    white: 'bg-white text-gray-900 border border-gray-200 hover:border-gray-300 shadow-sm',
-    link: 'bg-transparent text-gray-900 hover:text-gray-600 p-0 h-auto font-normal underline-offset-4 hover:underline'
+    primary: 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 border border-blue-600 shadow-sm',
+    secondary: 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 active:bg-blue-100 shadow-sm',
+    outline: 'bg-white text-slate-900 border-2 border-slate-300 hover:border-blue-600 hover:text-blue-600 active:border-blue-700 shadow-sm',
+    ghost: 'bg-transparent text-slate-900 hover:bg-blue-50 hover:text-blue-600 border-none',
+    minimal: 'bg-transparent text-blue-600 hover:text-blue-700 border-none underline-offset-4 hover:underline font-normal',
+    danger: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 border border-red-600 shadow-sm',
+    success: 'bg-green-600 text-white hover:bg-green-700 active:bg-green-800 border border-green-600 shadow-sm',
+    white: 'bg-white text-slate-900 border-2 border-slate-200 hover:border-slate-300 shadow-md hover:shadow-lg',
+    link: 'bg-transparent text-blue-600 hover:text-blue-700 p-0 h-auto font-normal underline-offset-4 hover:underline'
   }
   
   const sizes = {
-    sm: 'px-4 py-2 text-sm rounded-md',
-    md: 'px-6 py-3 text-base rounded-lg',
-    lg: 'px-8 py-4 text-lg rounded-lg',
-    xl: 'px-10 py-5 text-xl rounded-xl',
-    icon: 'p-3 rounded-lg'
+    sm: 'px-3 py-1.5 text-sm rounded-md min-h-[32px]',
+    md: 'px-4 py-2 text-base rounded-lg min-h-[40px] sm:px-6 sm:py-3',
+    lg: 'px-6 py-3 text-lg rounded-lg min-h-[48px] sm:px-8 sm:py-4',
+    xl: 'px-8 py-4 text-xl rounded-xl min-h-[56px] sm:px-10 sm:py-5',
+    icon: 'p-2 rounded-lg min-h-[40px] min-w-[40px] sm:p-3'
   }
   
   const classes = cn(
@@ -40,6 +40,7 @@ const Button = forwardRef(({
     variants[variant],
     sizes[size],
     loading && 'cursor-wait',
+    'touch-manipulation select-none', // Mobile optimization
     className
   )
   
@@ -53,13 +54,14 @@ const Button = forwardRef(({
       {loading ? (
         <>
           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current mr-2" />
-          Loading...
+          <span className="hidden sm:inline">Loading...</span>
+          <span className="sm:hidden">...</span>
         </>
       ) : (
         <>
-          {leftIcon && <span className="mr-2">{leftIcon}</span>}
-          {children}
-          {rightIcon && <span className="ml-2">{rightIcon}</span>}
+          {leftIcon && <span className="mr-1.5 sm:mr-2 flex-shrink-0">{leftIcon}</span>}
+          <span className="truncate">{children}</span>
+          {rightIcon && <span className="ml-1.5 sm:ml-2 flex-shrink-0">{rightIcon}</span>}
         </>
       )}
     </button>

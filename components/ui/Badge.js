@@ -12,47 +12,48 @@ const Badge = forwardRef(({
   onRemove,
   ...props
 }, ref) => {
-  const baseStyles = 'inline-flex items-center font-light transition-all duration-300'
+  const baseStyles = 'inline-flex items-center font-medium transition-all duration-300 whitespace-nowrap'
   
   const variants = {
-    default: 'bg-gray-50 text-gray-700 border border-gray-200',
-    primary: 'bg-blue-50 text-blue-700 border border-blue-200',
-    secondary: 'bg-purple-50 text-purple-700 border border-purple-200',
-    success: 'bg-green-50 text-green-700 border border-green-200',
-    warning: 'bg-yellow-50 text-yellow-700 border border-yellow-200',
-    danger: 'bg-red-50 text-red-700 border border-red-200',
-    info: 'bg-cyan-50 text-cyan-700 border border-cyan-200',
-    dark: 'bg-gray-900 text-white border border-gray-800',
-    outline: 'bg-transparent border border-gray-300 text-gray-700',
-    minimal: 'bg-transparent text-gray-600 border-none',
-    tech: 'bg-white text-gray-800 border border-gray-200 shadow-sm',
-    skill: 'bg-gray-50 text-gray-700 border border-gray-200'
+    default: 'bg-white text-slate-800 border-2 border-slate-300 shadow-sm',
+    primary: 'bg-blue-50 text-blue-700 border-2 border-blue-200',
+    secondary: 'bg-purple-50 text-purple-700 border-2 border-purple-200',
+    success: 'bg-green-50 text-green-700 border-2 border-green-200',
+    warning: 'bg-yellow-50 text-yellow-700 border-2 border-yellow-200',
+    danger: 'bg-red-50 text-red-700 border-2 border-red-200',
+    info: 'bg-cyan-50 text-cyan-700 border-2 border-cyan-200',
+    dark: 'bg-slate-900 text-white border-2 border-slate-700',
+    outline: 'bg-white border-2 border-slate-400 text-slate-800',
+    minimal: 'bg-white text-slate-700 border-none shadow-sm',
+    tech: 'bg-white text-slate-800 border-2 border-slate-300 shadow-md',
+    skill: 'bg-white text-slate-800 border-2 border-slate-300 shadow-sm'
   }
   
   const sizes = {
-    sm: 'px-3 py-1 text-xs rounded-full',
-    md: 'px-4 py-1.5 text-sm rounded-full',
-    lg: 'px-5 py-2 text-base rounded-full'
+    sm: 'px-2 py-0.5 text-xs rounded-full min-h-[20px]',
+    md: 'px-3 py-1 text-sm rounded-full min-h-[24px] sm:px-4 sm:py-1.5',
+    lg: 'px-4 py-1.5 text-base rounded-full min-h-[32px] sm:px-5 sm:py-2'
   }
   
   const classes = cn(
     baseStyles,
     variants[variant],
     sizes[size],
+    'touch-manipulation select-none', // Mobile optimization
     className
   )
   
   return (
     <span ref={ref} className={classes} {...props}>
-      {icon && <span className="mr-1.5">{icon}</span>}
-      {children}
+      {icon && <span className="mr-1 sm:mr-1.5 flex-shrink-0">{icon}</span>}
+      <span className="truncate">{children}</span>
       {removable && onRemove && (
         <button
           onClick={(e) => {
             e.stopPropagation()
             onRemove()
           }}
-          className="ml-2 hover:bg-gray-200 rounded-full p-0.5 transition-colors duration-200"
+          className="ml-1 sm:ml-2 hover:bg-slate-200 rounded-full p-0.5 transition-colors duration-200 flex-shrink-0 touch-manipulation"
           aria-label="Remove"
         >
           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
@@ -136,7 +137,7 @@ export const BadgeGroup = ({
   const remainingCount = badges.length - maxVisible
   
   return (
-    <div className={cn('flex flex-wrap gap-2', className)} {...props}>
+    <div className={cn('flex flex-wrap gap-1.5 sm:gap-2', className)} {...props}>
       {visibleBadges.map((badge, index) => (
         <Badge key={index} {...badge.props}>
           {badge.label}
@@ -145,7 +146,7 @@ export const BadgeGroup = ({
       {!showMore && remainingCount > 0 && (
         <Badge 
           variant="outline" 
-          className="cursor-pointer hover:bg-gray-50"
+          className="cursor-pointer hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 touch-manipulation"
           onClick={onShowMore}
         >
           +{remainingCount} more

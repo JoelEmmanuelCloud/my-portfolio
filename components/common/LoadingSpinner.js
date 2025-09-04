@@ -20,13 +20,13 @@ export default function LoadingSpinner({
       <div
         className={`
           ${sizeClasses[size]} 
-          border border-gray-300 border-t-gray-900 rounded-full animate-spin
+          border border-black border-t-blue-600 rounded-full animate-spin
         `}
         role="status"
         aria-label="Loading"
       />
       {text && (
-        <p className="mt-3 text-sm text-gray-600 font-light text-center px-4">
+        <p className="mt-3 text-sm sm:text-base text-black font-medium text-center px-4">
           {text}
         </p>
       )}
@@ -51,7 +51,7 @@ export function LoadingDots({
       {[0, 1, 2].map((index) => (
         <div
           key={index}
-          className={`${dotSizes[size]} bg-gray-400 rounded-full animate-pulse`}
+          className={`${dotSizes[size]} bg-blue-600 rounded-full animate-pulse`}
           style={{
             animationDelay: `${index * 0.2}s`,
             animationDuration: '1s'
@@ -73,7 +73,7 @@ export function LoadingSkeleton({
         {Array.from({ length: lines }).map((_, index) => (
           <div
             key={index}
-            className={`h-3 sm:h-4 bg-gray-200 rounded ${
+            className={`h-3 sm:h-4 bg-black/10 rounded ${
               index === lines - 1 ? 'w-3/4' : 'w-full'
             }`}
           />
@@ -91,13 +91,13 @@ export function LoadingProgress({
 }) {
   return (
     <div className={`space-y-3 sm:space-y-4 px-4 sm:px-0 ${className}`}>
-      <div className="flex justify-between text-sm text-gray-600 font-light">
+      <div className="flex justify-between text-sm sm:text-base text-black font-medium">
         <span className="truncate">{text}</span>
         <span className="ml-2 flex-shrink-0">{Math.round(progress)}%</span>
       </div>
-      <div className="w-full bg-gray-200 h-1 rounded-full">
+      <div className="w-full bg-black/10 h-2 rounded-full">
         <div
-          className="bg-gray-900 h-1 rounded-full transition-all duration-300"
+          className="bg-blue-600 h-2 rounded-full transition-all duration-300"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -113,10 +113,10 @@ export function LoadingOverlay({
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-90 p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-95 p-4">
       <div className="text-center max-w-sm">
         <LoadingSpinner size="lg" />
-        <p className="mt-4 text-gray-600 font-light">{text}</p>
+        <p className="mt-4 text-black font-medium text-base sm:text-lg">{text}</p>
       </div>
     </div>
   )
@@ -131,15 +131,15 @@ export function LoadingButton({
   ...props
 }) {
   const variantClasses = {
-    primary: 'bg-black text-white hover:bg-gray-800',
-    secondary: 'border border-gray-300 text-gray-900 hover:bg-gray-50'
+    primary: 'bg-blue-600 text-white hover:bg-blue-700',
+    secondary: 'border-2 border-black text-black hover:bg-black hover:text-white'
   }
 
   return (
     <button
       disabled={isLoading}
       className={`
-        inline-flex items-center justify-center px-6 py-3 rounded-full transition-colors duration-200 text-sm font-medium
+        inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-colors duration-200 text-sm sm:text-base font-medium
         disabled:opacity-50 disabled:cursor-not-allowed
         ${variantClasses[variant]}
         ${className}
@@ -159,9 +159,9 @@ export function PageLoader({ isLoading = false }) {
   if (!isLoading) return null
 
   return (
-    <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
+    <div className="fixed top-0 left-0 w-full h-1 bg-black/10 z-50">
       <div 
-        className="h-full bg-gray-900 transition-all duration-300 ease-out" 
+        className="h-full bg-blue-600 transition-all duration-300 ease-out" 
         style={{ 
           width: '30%',
           animation: 'loading-slide 2s ease-in-out infinite'
@@ -200,7 +200,7 @@ export function LoadingText({
   }, [text])
 
   return (
-    <div className={`font-light text-center sm:text-left ${className}`}>
+    <div className={`font-medium text-center sm:text-left text-black ${className}`}>
       {displayText}
       <span className="animate-pulse">|</span>
     </div>
@@ -218,17 +218,17 @@ export function LoadingCard({
   return (
     <div className={`bg-white p-6 sm:p-8 text-center ${className}`}>
       <LoadingSpinner size="lg" className="mb-4" />
-      <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-2">
+      <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-black mb-2">
         {title}
       </h3>
-      <p className="text-sm sm:text-base text-gray-600 font-light mb-6">
+      <p className="text-sm sm:text-base lg:text-lg text-black font-medium mb-6">
         {subtitle}
       </p>
       
       {showButton && onRetry && (
         <button
           onClick={onRetry}
-          className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+          className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base font-medium"
         >
           Try again
         </button>
@@ -247,17 +247,17 @@ export function FormLoadingState({
   if (successMessage) {
     return (
       <div className="text-center py-6 sm:py-8">
-        <div className="w-12 h-12 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+          <svg className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-lg font-light text-gray-900 mb-2">Success!</h3>
-        <p className="text-gray-600 font-light mb-6">{successMessage}</p>
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-black mb-2">Success!</h3>
+        <p className="text-black font-medium mb-6 text-base sm:text-lg">{successMessage}</p>
         {onReset && (
           <button
             onClick={onReset}
-            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+            className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base font-medium"
           >
             Send another message
           </button>
@@ -269,17 +269,17 @@ export function FormLoadingState({
   if (errorMessage) {
     return (
       <div className="text-center py-6 sm:py-8">
-        <div className="w-12 h-12 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
-          <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+          <svg className="w-6 h-6 sm:w-7 sm:h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </div>
-        <h3 className="text-lg font-light text-gray-900 mb-2">Error</h3>
-        <p className="text-gray-600 font-light mb-6">{errorMessage}</p>
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-black mb-2">Error</h3>
+        <p className="text-black font-medium mb-6 text-base sm:text-lg">{errorMessage}</p>
         {onReset && (
           <button
             onClick={onReset}
-            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+            className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base font-medium"
           >
             Try again
           </button>
@@ -292,7 +292,7 @@ export function FormLoadingState({
     return (
       <div className="text-center py-6 sm:py-8">
         <LoadingSpinner size="lg" className="mb-4" />
-        <p className="text-gray-600 font-light">Sending your message...</p>
+        <p className="text-black font-medium text-base sm:text-lg">Sending your message...</p>
       </div>
     )
   }
@@ -307,7 +307,7 @@ export function PulseLoader({ className = "" }) {
       {[0, 1, 2].map((index) => (
         <div
           key={index}
-          className="w-3 h-3 bg-gray-400 rounded-full animate-bounce"
+          className="w-3 h-3 bg-blue-600 rounded-full animate-bounce"
           style={{
             animationDelay: `${index * 0.1}s`,
             animationDuration: '1.4s'
@@ -325,7 +325,7 @@ export function SlideLoader({ className = "" }) {
       {[0, 1, 2, 3].map((index) => (
         <div
           key={index}
-          className="w-1 h-8 bg-gray-400 animate-pulse"
+          className="w-1 h-8 bg-blue-600 animate-pulse"
           style={{
             animationDelay: `${index * 0.15}s`,
             animationDuration: '1.2s'
@@ -343,7 +343,7 @@ export function WaveLoader({ className = "" }) {
       {[0, 1, 2, 3, 4].map((index) => (
         <div
           key={index}
-          className="w-2 bg-gray-400 animate-pulse"
+          className="w-2 bg-blue-600 animate-pulse"
           style={{
             height: `${Math.random() * 20 + 10}px`,
             animationDelay: `${index * 0.1}s`,
@@ -365,13 +365,13 @@ export function ContentPlaceholder({
     <div className={`animate-pulse ${className}`}>
       <div className="flex space-x-4">
         {avatar && (
-          <div className="w-10 h-10 bg-gray-200 rounded-full flex-shrink-0" />
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black/10 rounded-full flex-shrink-0" />
         )}
         <div className="flex-1 space-y-3">
           {Array.from({ length: lines }).map((_, index) => (
             <div
               key={index}
-              className={`h-4 bg-gray-200 rounded ${
+              className={`h-4 bg-black/10 rounded ${
                 index === lines - 1 ? 'w-3/4' : 'w-full'
               }`}
             />
@@ -397,11 +397,11 @@ export function FullScreenLoader({
       <div className="text-center max-w-sm w-full">
         <LoadingSpinner size="xl" className="mb-6" />
         
-        <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-3">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black mb-3">
           {title}
         </h2>
         
-        <p className="text-gray-600 font-light mb-6">
+        <p className="text-black font-medium mb-6 text-base sm:text-lg">
           {subtitle}
         </p>
         
@@ -413,7 +413,7 @@ export function FullScreenLoader({
           />
         )}
         
-        <LoadingDots className="opacity-50" />
+        <LoadingDots className="opacity-70" />
       </div>
     </div>
   )

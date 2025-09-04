@@ -9,21 +9,21 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
   const isFeatured = project.featured
   
   return (
-    <div className={`group relative bg-white border border-gray-200 transition-all duration-200 hover:border-gray-300 hover:shadow-md ${
-      isFeatured ? 'border-gray-300' : ''
+    <div className={`group relative bg-white border-2 border-black transition-all duration-200 hover:shadow-xl ${
+      isFeatured ? 'border-blue-600' : ''
     }`}>
       {/* Featured Badge */}
       {isFeatured && (
         <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10">
-          <span className="bg-gray-900 text-white text-xs font-medium px-2 py-1 rounded">
+          <span className="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
             Featured
           </span>
         </div>
       )}
 
-      {/* Project Image - FIXED: Added proper height and sizes */}
+      {/* Project Image */}
       {project.images && project.images.length > 0 && (
-        <div className="relative w-full h-40 sm:h-48 bg-gray-100 border-b border-gray-200">
+        <div className="relative w-full h-40 sm:h-48 bg-white border-b-2 border-black">
           <Image
             src={project.images[0]}
             alt={`${project.title} preview`}
@@ -37,14 +37,14 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg sm:text-xl font-medium text-gray-900 mb-1 truncate">
+            <h3 className="text-lg sm:text-xl font-bold text-black mb-2 truncate">
               {project.title}
             </h3>
-            <p className="text-sm text-gray-600 mb-2">
+            <p className="text-sm sm:text-base text-black font-medium mb-2">
               {project.role}
             </p>
             {project.period && (
-              <p className="text-xs text-gray-500">
+              <p className="text-xs sm:text-sm text-black">
                 {project.period}
               </p>
             )}
@@ -57,7 +57,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-gray-200 hover:bg-gray-50 transition-colors rounded"
+                className="p-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-all rounded"
                 onClick={(e) => e.stopPropagation()}
                 aria-label="View live project"
               >
@@ -69,7 +69,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-gray-200 hover:bg-gray-50 transition-colors rounded"
+                className="p-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-all rounded"
                 onClick={(e) => e.stopPropagation()}
                 aria-label="View source code"
               >
@@ -82,7 +82,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         </div>
 
         {/* Summary */}
-        <p className="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed">
+        <p className="text-sm sm:text-base text-black mb-4 leading-relaxed font-medium">
           {isDetailed ? project.summary : 
            project.summary.length > 120 ? 
            `${project.summary.substring(0, 120)}...` : 
@@ -93,11 +93,11 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         {/* Key Highlights */}
         {isDetailed && project.impact && (
           <div className="mb-4">
-            <h4 className="text-sm font-medium text-gray-900 mb-2">Key Results</h4>
-            <ul className="space-y-1">
+            <h4 className="text-sm sm:text-base font-bold text-black mb-3">Key Results</h4>
+            <ul className="space-y-2">
               {project.impact.slice(0, 3).map((achievement, idx) => (
-                <li key={idx} className="text-sm text-gray-600 flex items-start">
-                  <span className="w-1 h-1 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                <li key={idx} className="text-sm sm:text-base text-black flex items-start font-medium">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0" />
                   {achievement}
                 </li>
               ))}
@@ -115,14 +115,14 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         </div>
 
         {/* Footer Actions */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 pt-4 border-t border-gray-100">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 pt-4 border-t-2 border-black">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
             {project.links?.live && (
               <a
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-sm sm:text-base text-black hover:text-blue-600 transition-colors font-semibold"
                 onClick={(e) => e.stopPropagation()}
               >
                 View Live →
@@ -133,7 +133,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-sm sm:text-base text-black hover:text-blue-600 transition-colors font-semibold"
                 onClick={(e) => e.stopPropagation()}
               >
                 Source Code →
@@ -144,7 +144,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
           {project.slug && (
             <Link
               href={`/projects/${project.slug}`}
-              className="inline-flex items-center justify-center px-4 py-2 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-200 w-full sm:w-auto mt-2 sm:mt-0"
+              className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-full hover:bg-blue-700 transition-colors duration-200 w-full sm:w-auto mt-2 sm:mt-0"
             >
               Case Study
             </Link>
@@ -155,20 +155,20 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
   )
 }
 
-// Compact version for grid layouts - FIXED
+// Compact version for grid layouts
 export function ProjectCardCompact({ project, index = 0 }) {
   return (
-    <div className="group p-4 border border-gray-200 hover:border-gray-300 transition-colors bg-white rounded">
-      <div className="flex items-start justify-between mb-3">
-        <h4 className="font-medium text-gray-900 text-sm sm:text-base truncate pr-2">
+    <div className="group p-4 sm:p-5 border-2 border-black hover:shadow-xl transition-all bg-white rounded">
+      <div className="flex items-start justify-between mb-4">
+        <h4 className="font-bold text-black text-sm sm:text-base truncate pr-2">
           {project.title}
         </h4>
         {project.links?.live && (
-          <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-colors flex-shrink-0" />
+          <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 text-black group-hover:text-blue-600 transition-colors flex-shrink-0" />
         )}
       </div>
       
-      <p className="text-sm text-gray-600 mb-3 line-clamp-2 leading-relaxed">
+      <p className="text-sm sm:text-base text-black mb-4 line-clamp-2 leading-relaxed font-medium">
         {project.summary}
       </p>
       
@@ -181,7 +181,7 @@ export function ProjectCardCompact({ project, index = 0 }) {
       {project.slug && (
         <Link
           href={`/projects/${project.slug}`}
-          className="inline-flex items-center justify-center px-4 py-2 bg-black text-white text-xs font-medium rounded-full hover:bg-gray-800 transition-colors duration-200 w-full mt-3"
+          className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-blue-700 transition-colors duration-200 w-full mt-4"
         >
           View Details
         </Link>
@@ -190,26 +190,26 @@ export function ProjectCardCompact({ project, index = 0 }) {
   )
 }
 
-// Featured version for hero sections - FIXED
+// Featured version for hero sections
 export function ProjectCardFeatured({ project, index = 0 }) {
   return (
-    <div className="group relative bg-white border border-gray-300 p-6 sm:p-8 rounded">
+    <div className="group relative bg-white border-2 border-blue-600 p-6 sm:p-8 rounded">
       <div className="absolute top-4 right-4">
-        <span className="bg-gray-900 text-white text-xs font-medium px-2 py-1 rounded">
+        <span className="bg-blue-600 text-white text-xs sm:text-sm font-semibold px-3 py-2 rounded-full">
           Featured
         </span>
       </div>
       
       <div className="mb-6">
-        <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-2">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-3">
           {project.title}
         </h3>
-        <p className="text-sm sm:text-base text-gray-600">
+        <p className="text-sm sm:text-base lg:text-lg text-black font-semibold">
           {project.role}
         </p>
       </div>
 
-      <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
+      <p className="text-sm sm:text-base lg:text-lg text-black mb-6 sm:mb-8 leading-relaxed font-medium">
         {project.summary}
       </p>
 
@@ -224,7 +224,7 @@ export function ProjectCardFeatured({ project, index = 0 }) {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm"
+            className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base"
           >
             View Case Study
           </Link>
@@ -233,7 +233,7 @@ export function ProjectCardFeatured({ project, index = 0 }) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-full hover:bg-gray-50 transition-colors duration-200 text-sm"
+              className="inline-flex items-center justify-center px-6 py-3 border-2 border-black text-black font-semibold rounded-full hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-200 text-sm sm:text-base"
             >
               View Live
             </a>
