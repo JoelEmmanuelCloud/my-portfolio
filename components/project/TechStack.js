@@ -1,5 +1,5 @@
 'use client'
-
+//components/project/TechStack.js
 // Minimal technology stack component with clean design
 export default function TechStack({ 
   technologies = [], 

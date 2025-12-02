@@ -1,3 +1,4 @@
+//data/projects.js
 export const projects = [
   {
     slug: "freedom-ride-hailing",

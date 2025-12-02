@@ -1,4 +1,5 @@
 'use client'
+//components/experience/CompanyCard.js
 import { useState } from 'react'
 import { ExternalLink, MapPin, Users } from 'lucide-react'
 

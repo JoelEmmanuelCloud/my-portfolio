@@ -1,3 +1,4 @@
+//data/skills.js
 export const skills = {
   frontend: {
     title: "Frontend",
