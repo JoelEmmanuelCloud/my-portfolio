@@ -1,4 +1,5 @@
 'use client'
+//app/skills/page.js
 import { useState } from 'react'
 import Link from 'next/link'
 import { skills, highlights } from '@/data/skills'

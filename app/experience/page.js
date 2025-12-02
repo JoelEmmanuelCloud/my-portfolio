@@ -1,4 +1,5 @@
 'use client'
+//app/experience/page.js
 import Link from 'next/link'
 import { ExternalLink, Calendar, MapPin } from 'lucide-react'
 import { experience, certifications, education } from '@/data/experience'

@@ -1,4 +1,5 @@
 'use client'
+//app/projects/[slug]/page.js
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
