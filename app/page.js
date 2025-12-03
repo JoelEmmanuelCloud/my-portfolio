@@ -1,5 +1,5 @@
 'use client'
-//app/page.js - Optimized version with fixed spacing
+//app/page.js - Cross-browser compatible version
 import Link from 'next/link'
 import Image from 'next/image'
 import { ExternalLink, Code, Cloud, Database, Box } from 'lucide-react'
@@ -46,28 +46,11 @@ const buildingApproach = [
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Fixed spacing with header */}
+      {/* Hero Section - Fixed for cross-browser compatibility */}
       <section className="relative min-h-screen bg-white overflow-hidden pt-16 sm:pt-18 lg:pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 relative z-10">
-          {/* Stats - Top Left (Desktop) */}
-          <div className="hidden xl:block absolute top-6 left-4">
-            <div className="space-y-5">
-              <div>
-                <div className="text-lg font-bold text-black">+50</div>
-                <div className="text-xs font-medium text-black mt-0.5">Projects</div>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-black">+10</div>
-                <div className="text-xs font-medium text-black mt-0.5">Companies</div>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-black">Co-Founder</div>
-                <div className="text-xs font-medium text-black mt-0.5">Avigate</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile & Tablet Stats */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+          
+          {/* Mobile & Tablet Stats - Always visible on small screens */}
           <div className="xl:hidden flex justify-center gap-8 sm:gap-12 mb-6 sm:mb-8 pt-2">
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-black">+50</div>
@@ -83,65 +66,88 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Main Content */}
-          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-10 xl:gap-14 min-h-[50vh] lg:pl-16 xl:pl-20">
-            <div className="flex-1 max-w-2xl xl:max-w-3xl text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-3 lg:mb-5">
-                Hello
-              </h1>
-              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-black font-medium mb-5 lg:mb-7 leading-relaxed">
-                — I&apos;m Joel Emmanuel, a Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems
-              </p>
-              
-              <div className="space-y-1.5 lg:space-y-2 mb-5 lg:mb-7">
-                <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
-                  <strong className="font-bold">Co-Founder & CTO</strong> at Avigate (Transportation Navigation Startup)
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
-                  <strong className="font-bold">Backend Developer</strong> at Learnway (Blockchain Education on Lisk)
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
-                  <strong className="font-bold">Frontend Engineer</strong> at Invillia (Enterprise AI Platforms)
-                </p>
-                <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
-                  Specializing in Blockchain, React, NestJS, AWS, and AI/ML
-                </p>
+          {/* Main Content Wrapper with Grid Layout for Desktop */}
+          <div className="xl:grid xl:grid-cols-[auto_1fr_auto] xl:gap-8 xl:items-center xl:min-h-[70vh]">
+            
+            {/* Desktop Stats - Left Sidebar */}
+            <div className="hidden xl:flex xl:flex-col xl:gap-6 xl:justify-center xl:self-center">
+              <div>
+                <div className="text-lg font-bold text-black">+50</div>
+                <div className="text-xs font-medium text-black mt-0.5">Projects</div>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <Link 
-                  href="/projects" 
-                  className="inline-flex items-center justify-center px-5 lg:px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-200 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  View Projects
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="inline-flex items-center justify-center px-5 lg:px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-200 text-sm lg:text-base font-semibold"
-                >
-                  Get In Touch →
-                </Link>
+              <div>
+                <div className="text-lg font-bold text-black">+10</div>
+                <div className="text-xs font-medium text-black mt-0.5">Companies</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-black">Co-Founder</div>
+                <div className="text-xs font-medium text-black mt-0.5">Avigate</div>
               </div>
             </div>
 
-            {/* Profile Image */}
-            <div className="flex-shrink-0">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/profile/profile.jpeg"
-                  alt="Profile Picture"
-                  width={320}
-                  height={320}
-                  className="object-cover w-full h-full"
-                  priority
-                />
+            {/* Main Content - Center */}
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 xl:gap-14">
+              <div className="flex-1 max-w-2xl text-center lg:text-left">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-3 lg:mb-5">
+                  Hello
+                </h1>
+                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-black font-medium mb-5 lg:mb-7 leading-relaxed">
+                  — I&apos;m Joel Emmanuel, a Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems
+                </p>
+                
+                <div className="space-y-1.5 lg:space-y-2 mb-5 lg:mb-7">
+                  <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
+                    <strong className="font-bold">Co-Founder & CTO</strong> at Avigate (Transportation Navigation Startup)
+                  </p>
+                  <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
+                    <strong className="font-bold">Backend Developer</strong> at Learnway (Blockchain Education on Lisk)
+                  </p>
+                  <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
+                    <strong className="font-bold">Frontend Engineer</strong> at Invillia (Enterprise AI Platforms)
+                  </p>
+                  <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
+                    Specializing in Blockchain, React, NestJS, AWS, and AI/ML
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <Link 
+                    href="/projects" 
+                    className="inline-flex items-center justify-center px-5 lg:px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-200 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    View Projects
+                  </Link>
+                  <Link 
+                    href="/contact" 
+                    className="inline-flex items-center justify-center px-5 lg:px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-200 text-sm lg:text-base font-semibold"
+                  >
+                    Get In Touch →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Profile Image */}
+              <div className="flex-shrink-0">
+                <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/profile/profile.jpeg"
+                    alt="Profile Picture"
+                    width={320}
+                    height={320}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
               </div>
             </div>
+
+            {/* Desktop Scroll Indicator - Right Side (empty column for symmetry) */}
+            <div className="hidden xl:block w-8"></div>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 xl:transform-none xl:left-4 xl:bottom-12">
-            <div className="text-xs font-medium text-black xl:transform xl:-rotate-90 xl:origin-left">
+          {/* Scroll Indicator - Bottom Center for all screens */}
+          <div className="flex justify-center mt-8 lg:mt-12">
+            <div className="text-xs font-medium text-black">
               Scroll down ↓
             </div>
           </div>
