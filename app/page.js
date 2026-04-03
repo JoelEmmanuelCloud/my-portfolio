@@ -156,32 +156,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-12 lg:py-14 bg-white dark:bg-gray-900 border-t border-black/10 dark:border-white/10">
+      <section className="py-10 sm:py-12 lg:py-14 bg-white dark:bg-gray-900 border-t border-black/10 dark:border-white/10 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-xs sm:text-sm font-bold text-black dark:text-gray-400 uppercase tracking-wider mb-6 sm:mb-8">
-              Trusted by leading companies
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 items-center">
-              {companies.map((company) => (
-                <a
-                  key={company.name}
-                  href={company.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex justify-center"
-                >
-                  <div className="w-16 sm:w-20 h-8 sm:h-10 flex items-center justify-center transition-all duration-300 hover:scale-110 relative">
-                    <Image
-                      src={company.logo}
-                      alt={`${company.name} logo`}
-                      fill
-                      className="object-contain filter transition-all duration-300 hover:brightness-75 dark:brightness-75 dark:hover:brightness-100"
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
+          <h2 className="text-xs sm:text-sm font-bold text-black dark:text-gray-400 uppercase tracking-wider mb-6 sm:mb-8 text-center">
+            Trusted by leading companies
+          </h2>
+        </div>
+        <div className="relative overflow-hidden">
+          <div className="flex animate-marquee gap-12 sm:gap-16 lg:gap-20 w-max">
+            {[...companies, ...companies].map((company, i) => (
+              <a
+                key={i}
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 flex items-center justify-center"
+              >
+                <div className="w-20 sm:w-24 h-10 sm:h-12 relative">
+                  <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    fill
+                    className="object-contain filter transition-all duration-300 hover:brightness-50 dark:brightness-75 dark:hover:brightness-100"
+                  />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
