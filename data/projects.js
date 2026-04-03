@@ -34,21 +34,21 @@ export const projects = [
   {
     slug: "learnway-blockchain",
     title: "Learnway – Blockchain Education Platform",
-    role: "Backend Developer",
+    role: "Fullstack Developer",
     featured: true,
     links: {
       live: "https://learnway.xyz/",
       company: "https://learnway.xyz/"
     },
     stack: [
-      "NestJS", "TypeScript", "Lisk Blockchain", "PostgreSQL", 
+      "NestJS", "TypeScript", "Lisk Blockchain", "PostgreSQL",
       "Redis", "Smart Contracts", "Web3"
     ],
     images: ["/images/projects/learnway.png"],
-    summary: "Backend infrastructure for blockchain-based educational platform on Lisk blockchain that gamifies learning through point-based rewards and token incentives.",
+    summary: "Full-stack platform for a blockchain-based educational application on Lisk blockchain that gamifies learning through point-based rewards and token incentives.",
     context: "Learnway combines education with blockchain technology to create engaging learning experiences. Students earn tokens for completing milestones, creating a gamified ecosystem that incentivizes continuous learning.",
-    challenge: "Architecting scalable backend to handle user progress tracking, achievement systems, and blockchain reward distribution while maintaining performance and security.",
-    solution: "Designed NestJS APIs with TypeScript for robust type safety. Integrated Lisk smart contracts for token rewards, built gamification systems with leaderboards and badges, optimized with PostgreSQL and Redis.",
+    challenge: "Building a scalable full-stack system to handle user progress tracking, achievement systems, and blockchain reward distribution while maintaining performance and security.",
+    solution: "Designed and built the full platform using NestJS APIs with TypeScript for robust type safety. Integrated Lisk smart contracts for token rewards, built gamification systems with leaderboards and badges, optimized with PostgreSQL and Redis.",
     impact: [
       "Scalable APIs handling user progress tracking and achievement systems on Lisk blockchain",
       "Secure wallet connections and blockchain transaction monitoring for milestone completions",

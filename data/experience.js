@@ -25,21 +25,21 @@ export const experience = [
   },
   {
     company: "Learnway",
-    role: "Backend Developer",
+    role: "Fullstack Developer",
     period: "Dec 2024 – Present",
     location: "Remote",
     current: true,
-    website: "https://learnway.xyz", 
+    website: "https://learnway.xyz",
     stack: ["NestJS", "TypeScript", "Lisk Blockchain", "PostgreSQL", "Redis", "Smart Contracts"],
-    description: "Backend infrastructure for blockchain-based educational platform on Lisk",
+    description: "Full-stack development for blockchain-based educational platform on Lisk",
     highlights: [
-      "Architecting backend for blockchain education platform gamifying learning through point-based rewards and tokens",
+      "Building full-stack platform for blockchain education app gamifying learning through point-based rewards and tokens",
       "Designing scalable NestJS APIs for user progress tracking, achievement systems, and Lisk blockchain reward distribution",
       "Integrating Lisk smart contracts for token rewards with secure wallet connections and transaction monitoring",
       "Building gamification systems with leaderboards, badges, and point-to-token conversion using PostgreSQL and Redis"
     ],
     bullets: [
-      "Architecting backend for Learnway blockchain education platform built on Lisk blockchain",
+      "Building full-stack platform for Learnway blockchain education app on Lisk blockchain",
       "Implementing scalable NestJS APIs for progress tracking and reward distribution",
       "Integrating Lisk smart contracts for token-based educational rewards",
       "Building gamification features including leaderboards and achievement systems"

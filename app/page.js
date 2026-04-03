@@ -99,7 +99,7 @@ export default function Home() {
                     <strong className="font-bold">Co-Founder & CTO</strong> at Avigate (Transportation Navigation Startup)
                   </p>
                   <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
-                    <strong className="font-bold">Backend Developer</strong> at Learnway (Blockchain Education on Lisk)
+                    <strong className="font-bold">Fullstack Developer</strong> at Learnway (Blockchain Education on Lisk)
                   </p>
                   <p className="text-xs sm:text-sm lg:text-base text-black font-medium">
                     <strong className="font-bold">Frontend Engineer</strong> at Invillia (Enterprise AI Platforms)
