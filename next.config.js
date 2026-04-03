@@ -34,10 +34,10 @@ const nextConfig = {
       "font-src 'self' https://fonts.gstatic.com",
       // unsafe-eval needed by Next.js in dev; unsafe-inline needed for JSON-LD inline script
       isDev
-        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com"
-        : "script-src 'self' 'unsafe-inline' https://assets.calendly.com",
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://plausible.io"
+        : "script-src 'self' 'unsafe-inline' https://assets.calendly.com https://plausible.io",
       "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://api.sendgrid.com",
+      "connect-src 'self' https://api.sendgrid.com https://plausible.io",
       "frame-src https://calendly.com",
       "object-src 'none'",
       "base-uri 'self'",

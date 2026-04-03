@@ -1,7 +1,9 @@
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ErrorBoundary from '@/components/ErrorBoundary'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -87,7 +89,7 @@ export default function RootLayout({ children }) {
               "sameAs": [
                 "https://www.linkedin.com/in/joel-emmanuel-149708202/",
                 "https://github.com/joelemmanuel",
-                "https://twitter.com/joelemmanuel"
+                "https://x.com/joelemmanuel"
               ],
               "alumniOf": {
                 "@type": "CollegeOrUniversity",
@@ -139,8 +141,18 @@ export default function RootLayout({ children }) {
           Skip to main content
         </a>
         <Header />
-        <main id="main-content">{children}</main>
+        <ErrorBoundary>
+          <main id="main-content">{children}</main>
+        </ErrorBoundary>
         <Footer />
+        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
+          <Script
+            defer
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+            src="https://plausible.io/js/script.js"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   )

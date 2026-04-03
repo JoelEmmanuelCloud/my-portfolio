@@ -93,18 +93,6 @@ export async function POST(request) {
     // Send emails using dynamic templates
     const emailResults = await sendContactEmails(formData, requestInfo)
 
-    // Log successful submission for analytics
-    console.log('Contact form submission:', {
-      name: formData.name,
-      email: formData.email,
-      company: formData.company,
-      hasMessage: !!formData.message,
-      clientIP,
-      userAgent: requestInfo.userAgent,
-      emailResults,
-      timestamp: requestInfo.timestamp
-    })
-
     return Response.json(
       { 
         success: true,

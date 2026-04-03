@@ -337,7 +337,7 @@ export default function Contact() {
                   </h3>
                   <div className="space-y-3 sm:space-y-4">
                     <a
-                      href="https://linkedin.com/in/joelemmanuel"
+                      href="https://www.linkedin.com/in/joel-emmanuel-149708202/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center lg:justify-start text-black hover:text-blue-600 transition-colors duration-200 text-sm sm:text-base font-medium"

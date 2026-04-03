@@ -2,9 +2,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/joelemmanuel' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/joel-emmanuel-149708202/' },
   { name: 'GitHub', href: 'https://github.com/joelemmanuel' },
-  { name: 'Twitter', href: 'https://twitter.com/joelemmanuel' },
+  { name: 'X (Twitter)', href: 'https://x.com/joelemmanuel' },
   { name: 'Instagram', href: 'https://instagram.com/joelemmanuel' },
 ]
 
@@ -18,6 +18,7 @@ const quickLinks = [
 const legal = [
   { name: 'Privacy Policy', href: '/privacy' },
   { name: 'Terms of Service', href: '/terms' },
+  { name: 'Resume / CV', href: '/documents/joel-emmanuel-resume.pdf', download: true },
 ]
 
 export default function Footer() {
@@ -101,13 +102,24 @@ export default function Footer() {
             <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Legal</h3>
             <div className="space-y-2 sm:space-y-2.5">
               {legal.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
-                >
-                  {link.name}
-                </Link>
+                link.download ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    download
+                    className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>

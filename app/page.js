@@ -1,7 +1,7 @@
 //app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
-import { ExternalLink, Code, Cloud, Database, Box } from 'lucide-react'
+import { ExternalLink, Code, Cloud, Database, Box, Download } from 'lucide-react'
 import { projects } from '@/data/projects'
 
 const companies = [
@@ -110,18 +110,26 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <Link 
-                    href="/projects" 
+                  <Link
+                    href="/projects"
                     className="inline-flex items-center justify-center px-5 lg:px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-200 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     View Projects
                   </Link>
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center justify-center px-5 lg:px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-200 text-sm lg:text-base font-semibold"
                   >
                     Get In Touch →
                   </Link>
+                  <a
+                    href="/documents/joel-emmanuel-resume.pdf"
+                    download
+                    className="inline-flex items-center justify-center gap-2 px-5 lg:px-6 py-2.5 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-all duration-200 text-sm lg:text-base font-semibold"
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    Resume
+                  </a>
                 </div>
               </div>
 
