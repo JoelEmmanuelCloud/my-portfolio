@@ -156,15 +156,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-12 lg:py-14 bg-white dark:bg-gray-900 border-t border-black/10 dark:border-white/10">
+      <section className="py-10 sm:py-12 lg:py-14 bg-gray-50 dark:bg-gray-800/50 border-t border-b border-black/8 dark:border-white/8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xs sm:text-sm font-bold text-black dark:text-gray-400 uppercase tracking-wider mb-6 sm:mb-8 text-center">
+          <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-6 sm:mb-8 text-center">
             Trusted by leading companies
-          </h2>
+          </p>
         </div>
         <div className="marquee-wrapper relative overflow-hidden flex">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-r from-white dark:from-gray-900 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-l from-white dark:from-gray-900 to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-r from-gray-50 dark:from-gray-800/90 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-l from-gray-50 dark:from-gray-800/90 to-transparent" />
           {[0, 1].map((clone) => (
             <div key={clone} className="flex flex-shrink-0 items-center animate-marquee" aria-hidden={clone === 1 ? 'true' : undefined}>
               {companies.map((company) => (
@@ -180,7 +180,7 @@ export default function Home() {
                       src={company.logo}
                       alt={`${company.name} logo`}
                       fill
-                      className="object-contain transition-opacity duration-300 opacity-50 hover:opacity-100 dark:opacity-30 dark:hover:opacity-70"
+                      className="object-contain transition-opacity duration-300 opacity-50 hover:opacity-90 dark:invert dark:opacity-40 dark:hover:opacity-80"
                     />
                   </div>
                 </a>
