@@ -51,14 +51,14 @@ function BookingSuccessModal({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-modal-title"
-        className="bg-white rounded-lg p-6 sm:p-8 max-w-md w-full mx-4 shadow-xl"
+        className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 max-w-md w-full mx-4 shadow-xl"
       >
         <div className="text-center">
           <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mx-auto mb-4" aria-hidden="true" />
-          <h3 id="booking-modal-title" className="text-xl sm:text-2xl font-semibold text-black mb-4">
+          <h3 id="booking-modal-title" className="text-xl sm:text-2xl font-semibold text-black dark:text-white mb-4">
             Meeting Scheduled!
           </h3>
-          <p className="text-black text-sm sm:text-base mb-6 leading-relaxed">
+          <p className="text-black dark:text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
             Thanks for booking a call. I&apos;ll reach out to you shortly with more details and prepare for our conversation.
           </p>
           <button
@@ -148,16 +148,16 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
 
       <section className="py-16 sm:py-24 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 sm:mb-16 lg:mb-24 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black dark:text-white mb-4 sm:mb-6 leading-tight">
                 Contact
               </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-black max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Let's discuss your project or opportunity
               </p>
             </div>
@@ -165,22 +165,22 @@ export default function Contact() {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
 
               <div className="order-2 lg:order-1">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-8 sm:mb-12 text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-8 sm:mb-12 text-center lg:text-left">
                   Send a Message
                 </h2>
-                
+
                 {isSubmitted ? (
                   <div className="text-center py-12 sm:py-16">
                     <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mx-auto mb-4 sm:mb-6" />
-                    <h3 className="text-xl sm:text-2xl font-bold text-black mb-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4">
                       Message Sent
                     </h3>
-                    <p className="text-black mb-6 text-sm sm:text-base">
+                    <p className="text-black dark:text-gray-300 mb-6 text-sm sm:text-base">
                       I'll get back to you within 24 hours.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
-                      className="text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium"
+                      className="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
                     >
                       Send another message
                     </button>
@@ -198,7 +198,7 @@ export default function Contact() {
                           aria-required="true"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black focus:border-blue-600 focus:ring-0 bg-white text-black text-base sm:text-lg placeholder-black placeholder-opacity-60 transition-all duration-200 rounded-lg"
+                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 rounded-lg"
                           placeholder="Your name *"
                         />
                       </div>
@@ -213,7 +213,7 @@ export default function Contact() {
                           aria-required="true"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black focus:border-blue-600 focus:ring-0 bg-white text-black text-base sm:text-lg placeholder-black placeholder-opacity-60 transition-all duration-200 rounded-lg"
+                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 rounded-lg"
                           placeholder="Your email *"
                         />
                       </div>
@@ -226,7 +226,7 @@ export default function Contact() {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black focus:border-blue-600 focus:ring-0 bg-white text-black text-base sm:text-lg placeholder-black placeholder-opacity-60 transition-all duration-200 rounded-lg"
+                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 rounded-lg"
                           placeholder="Company (optional)"
                         />
                       </div>
@@ -241,7 +241,7 @@ export default function Contact() {
                           rows={5}
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black focus:border-blue-600 focus:ring-0 bg-white text-black text-base sm:text-lg placeholder-black placeholder-opacity-60 transition-all duration-200 resize-none rounded-lg"
+                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 resize-none rounded-lg"
                           placeholder="Tell me about your project *"
                         />
                       </div>
@@ -267,54 +267,54 @@ export default function Contact() {
 
               <div className="order-1 lg:order-2 space-y-8 sm:space-y-12">
                 <div className="text-center lg:text-left">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6 sm:mb-8">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-6 sm:mb-8">
                     Get In Touch
                   </h2>
-                  <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                    I'm always interested in new opportunities and exciting projects. 
+                  <p className="text-black dark:text-gray-300 leading-relaxed text-base sm:text-lg lg:text-xl">
+                    I'm always interested in new opportunities and exciting projects.
                     Whether you're a startup or enterprise, let's discuss how I can help.
                   </p>
                 </div>
 
                 <div className="space-y-6 sm:space-y-8">
-                  <div className="border-b-2 border-black pb-4 sm:pb-6 text-center lg:text-left">
-                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black font-bold mb-2">Email</h3>
+                  <div className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6 text-center lg:text-left">
+                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black dark:text-gray-400 font-bold mb-2">Email</h3>
                     <a
                       href="mailto:ejoel00@gmail.com"
-                      className="text-base sm:text-lg lg:text-xl text-black hover:text-blue-600 transition-colors duration-200 font-medium"
+                      className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
                     >
                       ejoel00@gmail.com
                     </a>
                   </div>
 
-                  <div className="border-b-2 border-black pb-4 sm:pb-6 text-center lg:text-left">
-                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black font-bold mb-2">Phone</h3>
+                  <div className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6 text-center lg:text-left">
+                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black dark:text-gray-400 font-bold mb-2">Phone</h3>
                     <a
                       href="tel:+2347069763692"
-                      className="text-base sm:text-lg lg:text-xl text-black hover:text-blue-600 transition-colors duration-200 font-medium"
+                      className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
                     >
                       +234 706 976 3692
                     </a>
                   </div>
 
-                  <div className="border-b-2 border-black pb-4 sm:pb-6 text-center lg:text-left">
-                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black font-bold mb-2">Location</h3>
-                    <p className="text-base sm:text-lg lg:text-xl text-black font-medium">Remote Worldwide</p>
-                    <p className="text-sm sm:text-base text-black mt-1">Available across all time zones</p>
+                  <div className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6 text-center lg:text-left">
+                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black dark:text-gray-400 font-bold mb-2">Location</h3>
+                    <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 font-medium">Remote Worldwide</p>
+                    <p className="text-sm sm:text-base text-black dark:text-gray-400 mt-1">Available across all time zones</p>
                   </div>
 
-                  <div className="border-b-2 border-black pb-4 sm:pb-6 text-center lg:text-left">
-                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black font-bold mb-2">Response Time</h3>
-                    <p className="text-base sm:text-lg lg:text-xl text-black font-medium">Within 24 hours</p>
-                    <p className="text-sm sm:text-base text-black mt-1">Usually much faster</p>
+                  <div className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6 text-center lg:text-left">
+                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black dark:text-gray-400 font-bold mb-2">Response Time</h3>
+                    <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 font-medium">Within 24 hours</p>
+                    <p className="text-sm sm:text-base text-black dark:text-gray-400 mt-1">Usually much faster</p>
                   </div>
                 </div>
 
                 <div className="mt-12 sm:mt-16 text-center lg:text-left">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-4">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-4">
                     Prefer to talk?
                   </h3>
-                  <p className="text-black mb-6 text-sm sm:text-base lg:text-lg">
+                  <p className="text-black dark:text-gray-300 mb-6 text-sm sm:text-base lg:text-lg">
                     Schedule a 30-minute call to discuss your project in detail.
                   </p>
                   <button
@@ -327,7 +327,7 @@ export default function Contact() {
                 </div>
 
                 <div className="mt-12 sm:mt-16 text-center lg:text-left">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-6">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-6">
                     Quick Links
                   </h3>
                   <div className="space-y-3 sm:space-y-4">
@@ -335,14 +335,14 @@ export default function Contact() {
                       href="https://www.linkedin.com/in/joel-emmanuel-149708202/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center lg:justify-start text-black hover:text-blue-600 transition-colors duration-200 text-sm sm:text-base font-medium"
+                      className="flex items-center justify-center lg:justify-start text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 text-sm sm:text-base font-medium"
                     >
                       <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                       LinkedIn Profile
                     </a>
                     <a
                       href="/projects"
-                      className="flex items-center justify-center lg:justify-start text-black hover:text-blue-600 transition-colors duration-200 text-sm sm:text-base font-medium"
+                      className="flex items-center justify-center lg:justify-start text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 text-sm sm:text-base font-medium"
                     >
                       <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                       View Portfolio
@@ -355,14 +355,14 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 border-t-2 border-black">
+      <section className="py-16 sm:py-24 border-t-2 border-black dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="mb-12 sm:mb-16 text-center lg:text-left">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4 sm:mb-6">
                 Frequently Asked
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-black">
+              <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300">
                 Common questions about working together
               </p>
             </div>
@@ -394,11 +394,11 @@ export default function Contact() {
                   answer: "I prefer to start with a discovery call to understand your goals, followed by a detailed proposal. Once approved, we kick off with project planning and wireframing before development begins."
                 }
               ].map((faq, index) => (
-                <div key={index} className="border-b-2 border-black pb-6 sm:pb-8">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-3 sm:mb-4">
+                <div key={index} className="border-b-2 border-black dark:border-gray-700 pb-6 sm:pb-8">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-3 sm:mb-4">
                     {faq.question}
                   </h3>
-                  <p className="text-sm sm:text-base lg:text-lg text-black leading-relaxed">
+                  <p className="text-sm sm:text-base lg:text-lg text-black dark:text-gray-300 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -410,7 +410,7 @@ export default function Contact() {
 
       <CalendlyEmbed onSuccess={handleCalendlySuccess} />
 
-      <BookingSuccessModal 
+      <BookingSuccessModal
         isOpen={showBookingSuccess}
         onClose={() => setShowBookingSuccess(false)}
       />

@@ -26,7 +26,7 @@ const fallbackEngagements = [
     period: "Project"
   },
   {
-    name: "Rewod Technologies", 
+    name: "Rewod Technologies",
     url: "https://www.rewodtechnologies.com/",
     role: "Backend Developer",
     period: "Oct 2022 – Mar 2023"
@@ -35,11 +35,11 @@ const fallbackEngagements = [
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all')
-  
+
   const engagements = otherEngagements || fallbackEngagements
-  
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
+
+  const filteredProjects = selectedCategory === 'all'
+    ? projects
     : projects.filter(project => {
         const projectTech = project.stack.join(' ').toLowerCase()
         switch (selectedCategory) {
@@ -55,18 +55,17 @@ export default function Projects() {
       })
 
   return (
-    <div className="min-h-screen pt-16 bg-white">
+    <div className="min-h-screen pt-16 bg-white dark:bg-gray-900">
 
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-5xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light text-black mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light text-black dark:text-white mb-4 sm:mb-6 leading-tight">
               Projects
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-black font-normal mb-8 sm:mb-12 max-w-4xl">
+            <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 font-normal mb-8 sm:mb-12 max-w-4xl">
               Production systems and innovative solutions built with modern technologies.
             </p>
-            
 
             <div className="flex flex-wrap gap-4 sm:gap-8 mb-8 sm:mb-12 lg:mb-16">
               {categories.map((category) => (
@@ -76,7 +75,7 @@ export default function Projects() {
                   className={`text-base sm:text-lg lg:text-xl font-medium transition-all duration-200 pb-2 px-1 ${
                     selectedCategory === category.id
                       ? 'text-blue-600 border-b-2 border-blue-600'
-                      : 'text-black hover:text-blue-600'
+                      : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                   }`}
                 >
                   {category.name}
@@ -99,7 +98,7 @@ export default function Projects() {
               >
 
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative aspect-[4/3] bg-black/5 overflow-hidden rounded-xl shadow-lg group">
+                  <div className="relative aspect-[4/3] bg-black/5 dark:bg-white/5 overflow-hidden rounded-xl shadow-lg group">
                     {project.images && project.images[0] ? (
                       <Image
                         src={project.images[0]}
@@ -111,8 +110,8 @@ export default function Projects() {
                     ) : (
                       <div className="flex items-center justify-center h-full">
                         <div className="text-center">
-                          <div className="w-16 h-16 bg-black/10 mx-auto mb-4 rounded-xl"></div>
-                          <p className="text-base text-black font-medium">Project Image</p>
+                          <div className="w-16 h-16 bg-black/10 dark:bg-white/10 mx-auto mb-4 rounded-xl"></div>
+                          <p className="text-base text-black dark:text-gray-400 font-medium">Project Image</p>
                         </div>
                       </div>
                     )}
@@ -122,11 +121,11 @@ export default function Projects() {
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                     <div>
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-black mb-2 sm:mb-3 leading-tight">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-black dark:text-white mb-2 sm:mb-3 leading-tight">
                         {project.title}
                       </h2>
-                      <p className="text-black mb-3 sm:mb-4 text-base sm:text-lg lg:text-xl font-medium">{project.role}</p>
-                      <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
+                      <p className="text-black dark:text-gray-300 mb-3 sm:mb-4 text-base sm:text-lg lg:text-xl font-medium">{project.role}</p>
+                      <p className="text-black dark:text-gray-300 leading-relaxed text-base sm:text-lg lg:text-xl">
                         {project.summary}
                       </p>
                     </div>
@@ -135,7 +134,7 @@ export default function Projects() {
                       {project.stack.slice(0, 6).map((tech) => (
                         <span
                           key={tech}
-                          className="text-sm sm:text-base text-black border border-black/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white hover:bg-black/5 transition-colors"
+                          className="text-sm sm:text-base text-black dark:text-gray-300 border border-black/20 dark:border-white/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white dark:bg-gray-800 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
                         >
                           {tech}
                         </span>
@@ -154,7 +153,7 @@ export default function Projects() {
                           href={project.links.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-black hover:text-blue-600 transition-colors flex items-center gap-2 justify-center sm:justify-start text-base sm:text-lg font-medium"
+                          className="text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2 justify-center sm:justify-start text-base sm:text-lg font-medium"
                         >
                           Live Site
                           <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -169,20 +168,20 @@ export default function Projects() {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-12 sm:py-16">
-              <h3 className="text-xl sm:text-2xl font-medium text-black mb-2">No projects found</h3>
-              <p className="text-black text-base sm:text-lg">Try selecting a different category.</p>
+              <h3 className="text-xl sm:text-2xl font-medium text-black dark:text-white mb-2">No projects found</h3>
+              <p className="text-black dark:text-gray-400 text-base sm:text-lg">Try selecting a different category.</p>
             </div>
           )}
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-black/2">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black dark:text-white mb-4">
               Other Collaborations
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-black font-normal">
+            <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 font-normal">
               Additional professional engagements across various industries
             </p>
           </div>
@@ -194,17 +193,17 @@ export default function Projects() {
                 href={engagement.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white p-6 sm:p-8 hover:bg-blue-50 transition-colors duration-200 rounded-xl border border-black/10 shadow-sm hover:shadow-lg"
+                className="group bg-white dark:bg-gray-900 p-6 sm:p-8 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 rounded-xl border border-black/10 dark:border-gray-700 shadow-sm hover:shadow-lg"
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-black group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {engagement.name}
                   </h3>
-                  <ExternalLink className="h-5 w-5 text-black group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                  <ExternalLink className="h-5 w-5 text-black dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex-shrink-0" />
                 </div>
-                
-                <p className="text-black mb-2 text-base sm:text-lg font-medium">{engagement.role}</p>
-                <p className="text-sm sm:text-base text-black/70">{engagement.period}</p>
+
+                <p className="text-black dark:text-gray-300 mb-2 text-base sm:text-lg font-medium">{engagement.role}</p>
+                <p className="text-sm sm:text-base text-black/70 dark:text-gray-400">{engagement.period}</p>
               </a>
             ))}
           </div>

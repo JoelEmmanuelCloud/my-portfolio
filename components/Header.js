@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -23,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed w-full top-0 z-50 bg-white shadow-md backdrop-blur-sm border-b border-gray-100">
+      <header className="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Global">
           <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
 
@@ -48,8 +49,8 @@ export default function Header() {
                   href={item.href}
                   className={`text-sm lg:text-base font-medium transition-colors duration-200 ${
                     pathname === item.href
-                      ? 'text-black font-semibold'
-                      : 'text-black hover:text-blue-600'
+                      ? 'text-black dark:text-white font-semibold'
+                      : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                   }`}
                 >
                   {item.name}
@@ -57,7 +58,8 @@ export default function Header() {
               ))}
             </div>
 
-            <div className="hidden lg:flex">
+            <div className="hidden lg:flex items-center gap-3">
+              <ThemeToggle />
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-5 lg:px-6 py-2 lg:py-2.5 bg-blue-600 text-white text-sm lg:text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
@@ -66,10 +68,11 @@ export default function Header() {
               </Link>
             </div>
 
-            <div className="flex lg:hidden">
+            <div className="flex lg:hidden items-center gap-2">
+              <ThemeToggle />
               <button
                 type="button"
-                className="p-2 text-black hover:text-blue-600 transition-colors duration-200"
+                className="p-2 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
                 aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={mobileMenuOpen}
@@ -86,7 +89,7 @@ export default function Header() {
         </nav>
 
         {mobileMenuOpen && (
-          <div id="mobile-menu" className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div id="mobile-menu" className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg">
             <div className="container mx-auto px-5 py-5">
               <div className="space-y-3">
                 {navigation.map((item) => (
@@ -95,8 +98,8 @@ export default function Header() {
                     href={item.href}
                     className={`block text-base font-medium transition-colors duration-200 py-2 ${
                       pathname === item.href
-                        ? 'text-black font-semibold'
-                        : 'text-black hover:text-blue-600'
+                        ? 'text-black dark:text-white font-semibold'
+                        : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -104,7 +107,7 @@ export default function Header() {
                   </Link>
                 ))}
 
-                <div className="pt-3 border-t border-gray-200">
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                   <Link
                     href="/contact"
                     className="inline-flex items-center justify-center w-full px-5 py-2.5 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
