@@ -44,14 +44,6 @@ export const metadata = {
     description: 'Building scalable Web3 applications and AI-powered platforms. Co-Founder of Avigate transportation startup. Expert in Blockchain (Lisk, Ethereum), React, NestJS, and AWS.',
     url: 'https://joelemmanuel.dev',
     siteName: 'Joel Emmanuel Portfolio',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Joel Emmanuel - Blockchain & Fullstack Developer'
-      },
-    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -59,7 +51,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Joel Emmanuel - Fullstack & Blockchain Developer',
     description: 'Building Web3 applications, AI platforms, and production systems. Co-Founder of Avigate. Expert in Blockchain, React, NestJS, and AWS.',
-    images: ['/og-image.png'],
     creator: '@joelemmanuel',
   },
   robots: {
