@@ -1,10 +1,41 @@
-'use client'
 //app/projects/[slug]/page.js
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { ExternalLink, ArrowLeft } from 'lucide-react'
 import { projects } from '@/data/projects'
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }))
+}
+
+export async function generateMetadata({ params }) {
+  const project = projects.find(p => p.slug === params.slug)
+  if (!project) return {}
+
+  return {
+    title: `${project.title} — Joel Emmanuel`,
+    description: project.summary,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} — Joel Emmanuel`,
+      description: project.summary,
+      url: `https://joelemmanuel.dev/projects/${project.slug}`,
+      images: project.images?.[0]
+        ? [{ url: project.images[0], alt: project.title }]
+        : [],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} — Joel Emmanuel`,
+      description: project.summary,
+      images: project.images?.[0] ? [project.images[0]] : [],
+    },
+  }
+}
 
 export default function ProjectDetail({ params }) {
   const project = projects.find(p => p.slug === params.slug)

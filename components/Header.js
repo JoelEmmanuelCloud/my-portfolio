@@ -75,12 +75,14 @@ export default function Header() {
                 type="button"
                 className="p-2 text-black hover:text-blue-600 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
-                aria-label="Toggle menu"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {mobileMenuOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="h-6 w-6" aria-hidden="true" />
                 ) : (
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6" aria-hidden="true" />
                 )}
               </button>
             </div>
@@ -89,7 +91,7 @@ export default function Header() {
 
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div id="mobile-menu" className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
             <div className="container mx-auto px-5 py-5">
               <div className="space-y-3">
                 {navigation.map((item) => (

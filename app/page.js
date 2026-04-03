@@ -1,5 +1,4 @@
-'use client'
-//app/page.js - Cross-browser compatible version
+//app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
 import { ExternalLink, Code, Cloud, Database, Box } from 'lucide-react'
@@ -131,9 +130,10 @@ export default function Home() {
                 <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
                   <Image
                     src="/images/profile/profile.jpeg"
-                    alt="Profile Picture"
+                    alt="Joel Emmanuel - Fullstack & Blockchain Developer"
                     width={320}
                     height={320}
+                    sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
                     className="object-cover w-full h-full"
                     priority
                   />
@@ -217,9 +217,10 @@ export default function Home() {
                       href={project.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Visit ${project.title} live site (opens in new tab)`}
                       className="text-black hover:text-blue-600 transition-colors duration-200"
                     >
-                      <ExternalLink className="h-5 w-5" />
+                      <ExternalLink className="h-5 w-5" aria-hidden="true" />
                     </a>
                   )}
                 </div>

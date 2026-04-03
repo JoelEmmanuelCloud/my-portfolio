@@ -11,7 +11,13 @@ export const metadata = {
   keywords: 'Blockchain Developer, Web3 Developer, Fullstack Developer, React Developer, NestJS, Lisk Blockchain, Ethereum, Solidity, Smart Contracts, DeFi, AI/ML Developer, AWS Certified, Startup Founder, Tech Entrepreneur, Node.js, TypeScript, PostgreSQL',
   authors: [{ name: 'Joel Emmanuel' }],
   creator: 'Joel Emmanuel',
-  
+
+  metadataBase: new URL('https://joelemmanuel.dev'),
+
+  alternates: {
+    canonical: '/',
+  },
+
   // Favicon and icon configuration
   icons: {
     icon: '/favicon.ico',
@@ -32,7 +38,7 @@ export const metadata = {
       },
     ],
   },
-  
+
   openGraph: {
     title: 'Joel Emmanuel - Fullstack & Blockchain Developer | Tech Entrepreneur',
     description: 'Building scalable Web3 applications and AI-powered platforms. Co-Founder of Avigate transportation startup. Expert in Blockchain (Lisk, Ethereum), React, NestJS, and AWS.',
@@ -75,6 +81,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <meta name="theme-color" content="#2563eb" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -87,7 +94,7 @@ export default function RootLayout({ children }) {
               "url": "https://joelemmanuel.dev",
               "image": "https://joelemmanuel.dev/images/profile/profile.jpeg",
               "sameAs": [
-                "https://linkedin.com/in/joelemmanuel",
+                "https://www.linkedin.com/in/joel-emmanuel-149708202/",
                 "https://github.com/joelemmanuel",
                 "https://twitter.com/joelemmanuel"
               ],
@@ -134,8 +141,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:font-medium"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

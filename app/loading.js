@@ -18,7 +18,7 @@ const LoadingDots = () => {
 
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6">
+    <div role="status" aria-live="polite" aria-label="Loading page" className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6">
       <div className="text-center max-w-sm mx-auto">
         {/* Large Initial */}
         <div className="mb-6 sm:mb-8">

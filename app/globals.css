@@ -100,6 +100,17 @@
   @apply focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-2;
 }
 
+/* Visible focus for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Remove focus ring for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Rotated text utility */
 .rotate-text-vertical {
   writing-mode: vertical-lr;

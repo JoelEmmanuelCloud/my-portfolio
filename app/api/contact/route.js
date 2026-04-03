@@ -37,9 +37,10 @@ export async function POST(request) {
       )
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
+    // Email validation (RFC 5321 practical subset)
+    // eslint-disable-next-line no-useless-escape
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/
+    if (!emailRegex.test(email) || email.length > 254) {
       return Response.json(
         { error: 'Invalid email format' },
         { status: 400 }

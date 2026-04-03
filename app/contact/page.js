@@ -1,29 +1,11 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Script from 'next/script'
 import { CheckCircle, Calendar, ExternalLink } from 'lucide-react'
 
 // Calendly integration component
 function CalendlyEmbed({ onSuccess }) {
   useEffect(() => {
-    // Load Calendly CSS
-    const existingCSS = document.querySelector('link[href*="calendly.com"]');
-    if (!existingCSS) {
-      const link = document.createElement('link');
-      link.href = 'https://assets.calendly.com/assets/external/widget.css';
-      link.rel = 'stylesheet';
-      document.head.appendChild(link);
-    }
-    
-    // Load Calendly script
-    const existingScript = document.querySelector('script[src*="calendly.com"]');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      document.head.appendChild(script);
-    }
-
-    // Listen for Calendly events
     const handleCalendlyEvent = (e) => {
       if (e.data.event && e.data.event.indexOf('calendly') === 0) {
         if (e.data.event === 'calendly.event_scheduled') {
@@ -33,31 +15,56 @@ function CalendlyEmbed({ onSuccess }) {
     };
 
     window.addEventListener('message', handleCalendlyEvent);
-
     return () => {
       window.removeEventListener('message', handleCalendlyEvent);
     };
   }, [onSuccess]);
 
-  return null;
+  return (
+    <>
+      <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+      />
+    </>
+  );
 }
 
 // Success modal for calendar booking
 function BookingSuccessModal({ isOpen, onClose }) {
+  const closeBtnRef = useRef(null)
+
+  useEffect(() => {
+    if (isOpen) {
+      closeBtnRef.current?.focus()
+    }
+  }, [isOpen])
+
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg p-6 sm:p-8 max-w-md w-full mx-4 shadow-xl">
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      role="presentation"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="booking-modal-title"
+        className="bg-white rounded-lg p-6 sm:p-8 max-w-md w-full mx-4 shadow-xl"
+      >
         <div className="text-center">
-          <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mx-auto mb-4" />
-          <h3 className="text-xl sm:text-2xl font-semibold text-black mb-4">
+          <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mx-auto mb-4" aria-hidden="true" />
+          <h3 id="booking-modal-title" className="text-xl sm:text-2xl font-semibold text-black mb-4">
             Meeting Scheduled!
           </h3>
           <p className="text-black text-sm sm:text-base mb-6 leading-relaxed">
-            Thanks for booking a call. I'll reach out to you shortly with more details and prepare for our conversation.
+            Thanks for booking a call. I&apos;ll reach out to you shortly with more details and prepare for our conversation.
           </p>
           <button
+            ref={closeBtnRef}
             onClick={onClose}
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-200 font-medium"
           >
@@ -78,11 +85,13 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const [showBookingSuccess, setShowBookingSuccess] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitError('')
 
     try {
       const response = await fetch('/api/contact', {
@@ -99,10 +108,10 @@ export default function Contact() {
         setIsSubmitted(true)
         setFormData({ name: '', email: '', company: '', message: '' })
       } else {
-        alert(data.error || 'Failed to send message. Please try again.')
+        setSubmitError(data.error || 'Failed to send message. Please try again.')
       }
-    } catch (error) {
-      alert('Failed to send message. Please try again.')
+    } catch {
+      setSubmitError('Failed to send message. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -182,32 +191,37 @@ export default function Contact() {
                   <div className="space-y-6 sm:space-y-8">
                     <div className="grid gap-6 sm:gap-8">
                       <div>
+                        <label htmlFor="name" className="sr-only">Your name (required)</label>
                         <input
                           type="text"
                           id="name"
                           name="name"
                           required
+                          aria-required="true"
                           value={formData.name}
                           onChange={handleChange}
                           className="w-full px-4 py-4 sm:py-5 border-2 border-black focus:border-blue-600 focus:ring-0 bg-white text-black text-base sm:text-lg placeholder-black placeholder-opacity-60 transition-all duration-200 rounded-lg"
                           placeholder="Your name *"
                         />
                       </div>
-                      
+
                       <div>
+                        <label htmlFor="email" className="sr-only">Your email (required)</label>
                         <input
                           type="email"
                           id="email"
                           name="email"
                           required
+                          aria-required="true"
                           value={formData.email}
                           onChange={handleChange}
                           className="w-full px-4 py-4 sm:py-5 border-2 border-black focus:border-blue-600 focus:ring-0 bg-white text-black text-base sm:text-lg placeholder-black placeholder-opacity-60 transition-all duration-200 rounded-lg"
                           placeholder="Your email *"
                         />
                       </div>
-                      
+
                       <div>
+                        <label htmlFor="company" className="sr-only">Company (optional)</label>
                         <input
                           type="text"
                           id="company"
@@ -218,12 +232,14 @@ export default function Contact() {
                           placeholder="Company (optional)"
                         />
                       </div>
-                      
+
                       <div>
+                        <label htmlFor="message" className="sr-only">Message (required)</label>
                         <textarea
                           id="message"
                           name="message"
                           required
+                          aria-required="true"
                           rows={5}
                           value={formData.message}
                           onChange={handleChange}
@@ -232,7 +248,13 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    
+
+                    {submitError && (
+                      <p role="alert" className="text-red-600 text-sm font-medium mt-2">
+                        {submitError}
+                      </p>
+                    )}
+
                     <button
                       type="button"
                       onClick={handleSubmit}
