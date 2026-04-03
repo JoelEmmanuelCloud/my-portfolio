@@ -12,7 +12,7 @@ export default async function Image() {
         style={{
           width: '1200px',
           height: '630px',
-          background: '#000000',
+          background: '#ffffff',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -31,7 +31,7 @@ export default async function Image() {
             width: '500px',
             height: '500px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 70%)',
           }}
         />
 
@@ -44,7 +44,7 @@ export default async function Image() {
             width: '360px',
             height: '360px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 70%)',
           }}
         />
 
@@ -74,7 +74,7 @@ export default async function Image() {
             />
             <span
               style={{
-                color: '#9ca3af',
+                color: '#6b7280',
                 fontSize: '20px',
                 letterSpacing: '0.05em',
               }}
@@ -89,8 +89,8 @@ export default async function Image() {
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
-              background: 'rgba(37,99,235,0.15)',
-              border: '1px solid rgba(37,99,235,0.4)',
+              background: 'rgba(37,99,235,0.08)',
+              border: '1px solid rgba(37,99,235,0.3)',
               borderRadius: '100px',
               padding: '8px 18px',
             }}
@@ -103,7 +103,7 @@ export default async function Image() {
                 background: '#22c55e',
               }}
             />
-            <span style={{ color: '#93c5fd', fontSize: '16px' }}>
+            <span style={{ color: '#2563eb', fontSize: '16px' }}>
               Available for work
             </span>
           </div>
@@ -115,7 +115,7 @@ export default async function Image() {
             style={{
               fontSize: '72px',
               fontWeight: 700,
-              color: '#ffffff',
+              color: '#000000',
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
             }}
@@ -154,11 +154,11 @@ export default async function Image() {
               <div
                 key={tag}
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.12)',
+                  background: '#f3f4f6',
+                  border: '1px solid #e5e7eb',
                   borderRadius: '6px',
                   padding: '8px 16px',
-                  color: '#d1d5db',
+                  color: '#374151',
                   fontSize: '16px',
                   fontWeight: 500,
                 }}
