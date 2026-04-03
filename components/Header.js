@@ -47,10 +47,10 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm lg:text-base font-medium transition-colors duration-200 ${
+                  className={`text-sm lg:text-base font-medium transition-colors duration-200 pb-1 ${
                     pathname === item.href
-                      ? 'text-black dark:text-white font-semibold'
-                      : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                      ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                      : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 border-b-2 border-transparent'
                   }`}
                 >
                   {item.name}
@@ -96,10 +96,10 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block text-base font-medium transition-colors duration-200 py-2 ${
+                    className={`block text-base font-medium transition-colors duration-200 py-2 pl-3 border-l-4 ${
                       pathname === item.href
-                        ? 'text-black dark:text-white font-semibold'
-                        : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                        ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
+                        : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 border-transparent'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
