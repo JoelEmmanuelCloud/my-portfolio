@@ -1,5 +1,4 @@
 'use client'
-//components/experience/CompanyCard.js
 import { useState } from 'react'
 import { ExternalLink, MapPin, Users } from 'lucide-react'
 
@@ -13,19 +12,17 @@ export default function CompanyCard({
   const isDetailed = variant === 'detailed'
   const isCompact = variant === 'compact'
   
-  // Get the most recent/current role
   const currentRole = experiences.find(exp => exp.current) || experiences[0]
   const totalRoles = experiences.length
   const hasMultipleRoles = totalRoles > 1
   
-  // Combine all technologies from all roles
   const allTechnologies = [...new Set(experiences.flatMap(exp => exp.stack || []))]
 
   return (
     <div className={`group border-b-2 border-slate-200 py-6 sm:py-8 px-4 sm:px-0 hover:bg-blue-50 transition-colors duration-200 bg-white ${
       currentRole?.current ? 'bg-blue-50 border-blue-200' : ''
     }`}>
-      {/* Header Row */}
+
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-3 sm:gap-4">
         <div className="flex-1">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
@@ -62,7 +59,7 @@ export default function CompanyCard({
           </div>
         </div>
         
-        {/* External Link */}
+
         {currentRole?.website && (
           <div className="flex justify-end sm:justify-start">
             <a
@@ -78,7 +75,6 @@ export default function CompanyCard({
         )}
       </div>
 
-      {/* Key Achievements */}
       {currentRole?.bullets && currentRole.bullets.length > 0 && (
         <div className="mb-4 sm:mb-6">
           {(isExpanded ? currentRole.bullets : currentRole.bullets.slice(0, isCompact ? 1 : 2)).map((bullet, bulletIndex) => (
@@ -89,7 +85,7 @@ export default function CompanyCard({
             </div>
           ))}
           
-          {/* Expand button */}
+
           {!isCompact && currentRole.bullets.length > 2 && (
             <button
               onClick={(e) => {
@@ -104,7 +100,6 @@ export default function CompanyCard({
         </div>
       )}
 
-      {/* Technology Stack */}
       {allTechnologies.length > 0 && (
         <div className="mb-4">
           <div className="flex flex-wrap gap-2">
@@ -125,7 +120,6 @@ export default function CompanyCard({
         </div>
       )}
 
-      {/* Multiple Roles */}
       {hasMultipleRoles && !isCompact && (
         <div className="pt-4 border-t-2 border-slate-200">
           <p className="text-sm font-semibold text-slate-700 mb-3">All positions</p>
@@ -143,7 +137,6 @@ export default function CompanyCard({
   )
 }
 
-// Compact grid version
 export function CompanyCardCompact({ company, experiences = [], index = 0 }) {
   const currentRole = experiences.find(exp => exp.current) || experiences[0]
   
@@ -167,7 +160,6 @@ export function CompanyCardCompact({ company, experiences = [], index = 0 }) {
         )}
       </div>
 
-      {/* View Details Button */}
       <div className="mt-4">
         <button className="inline-flex items-center justify-center px-4 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-xs font-medium w-full sm:w-auto">
           View Details
@@ -177,7 +169,6 @@ export function CompanyCardCompact({ company, experiences = [], index = 0 }) {
   )
 }
 
-// Featured company showcase
 export function CompanyCardFeatured({ company, experiences = [], index = 0 }) {
   const currentRole = experiences.find(exp => exp.current) || experiences[0]
   const allTechnologies = [...new Set(experiences.flatMap(exp => exp.stack || []))]
@@ -204,7 +195,6 @@ export function CompanyCardFeatured({ company, experiences = [], index = 0 }) {
         )}
       </div>
 
-      {/* Key Achievement */}
       {currentRole?.bullets && currentRole.bullets[0] && (
         <div className="mb-6 sm:mb-8">
           <p className="text-base sm:text-lg text-slate-800 font-medium leading-relaxed max-w-3xl">
@@ -213,7 +203,6 @@ export function CompanyCardFeatured({ company, experiences = [], index = 0 }) {
         </div>
       )}
 
-      {/* Technologies */}
       <div className="mb-6 sm:mb-8">
         <div className="flex flex-wrap gap-2">
           {allTechnologies.slice(0, 10).map((tech) => (
@@ -227,7 +216,6 @@ export function CompanyCardFeatured({ company, experiences = [], index = 0 }) {
         </div>
       </div>
 
-      {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         {currentRole?.website && (
           <a
@@ -247,7 +235,6 @@ export function CompanyCardFeatured({ company, experiences = [], index = 0 }) {
   )
 }
 
-// Statistics card for companies overview
 export function CompanyStats({ companies }) {
   const totalCompanies = companies.length
   const currentCompanies = companies.filter(comp => 

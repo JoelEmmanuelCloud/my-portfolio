@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react'
 import Script from 'next/script'
 import { CheckCircle, Calendar, ExternalLink } from 'lucide-react'
 
-// Calendly integration component
 function CalendlyEmbed({ onSuccess }) {
   useEffect(() => {
     const handleCalendlyEvent = (e) => {
@@ -31,7 +30,6 @@ function CalendlyEmbed({ onSuccess }) {
   );
 }
 
-// Success modal for calendar booking
 function BookingSuccessModal({ isOpen, onClose }) {
   const closeBtnRef = useRef(null)
 
@@ -151,7 +149,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+
       <section className="py-16 sm:py-24 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -165,7 +163,7 @@ export default function Contact() {
             </div>
 
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
-              {/* Contact Form */}
+
               <div className="order-2 lg:order-1">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-8 sm:mb-12 text-center lg:text-left">
                   Send a Message
@@ -267,7 +265,6 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Contact Info */}
               <div className="order-1 lg:order-2 space-y-8 sm:space-y-12">
                 <div className="text-center lg:text-left">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6 sm:mb-8">
@@ -313,7 +310,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Call Booking */}
                 <div className="mt-12 sm:mt-16 text-center lg:text-left">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-4">
                     Prefer to talk?
@@ -330,7 +326,6 @@ export default function Contact() {
                   </button>
                 </div>
 
-                {/* Quick Links */}
                 <div className="mt-12 sm:mt-16 text-center lg:text-left">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-6">
                     Quick Links
@@ -360,7 +355,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="py-16 sm:py-24 border-t-2 border-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
@@ -414,10 +408,8 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Calendly Integration */}
       <CalendlyEmbed onSuccess={handleCalendlySuccess} />
 
-      {/* Booking Success Modal */}
       <BookingSuccessModal 
         isOpen={showBookingSuccess}
         onClose={() => setShowBookingSuccess(false)}

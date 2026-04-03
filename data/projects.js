@@ -1,4 +1,3 @@
-//data/projects.js - Updated with resume data
 export const projects = [
   {
     slug: "avigate-navigation",

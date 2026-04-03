@@ -46,7 +46,7 @@ const Card = forwardRef(({
     paddings[padding],
     shadows[shadow],
     hoverEffects,
-    'overflow-hidden', // Mobile optimization
+    'overflow-hidden',
     className
   )
   
@@ -59,7 +59,6 @@ const Card = forwardRef(({
 
 Card.displayName = 'Card'
 
-// Card Header Component
 const CardHeader = forwardRef(({
   className,
   children,
@@ -79,7 +78,6 @@ const CardHeader = forwardRef(({
 
 CardHeader.displayName = 'CardHeader'
 
-// Card Title Component
 const CardTitle = forwardRef(({
   className,
   children,
@@ -99,7 +97,6 @@ const CardTitle = forwardRef(({
 
 CardTitle.displayName = 'CardTitle'
 
-// Card Description Component
 const CardDescription = forwardRef(({
   className,
   children,
@@ -119,7 +116,6 @@ const CardDescription = forwardRef(({
 
 CardDescription.displayName = 'CardDescription'
 
-// Card Content Component
 const CardContent = forwardRef(({
   className,
   children,
@@ -136,7 +132,6 @@ const CardContent = forwardRef(({
 
 CardContent.displayName = 'CardContent'
 
-// Card Footer Component
 const CardFooter = forwardRef(({
   className,
   children,
@@ -156,11 +151,9 @@ const CardFooter = forwardRef(({
 
 CardFooter.displayName = 'CardFooter'
 
-// Export all components
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 export default Card
 
-// Preset card components for common use cases
 export const MinimalCard = ({ children, ...props }) => (
   <Card variant="minimal" shadow="sm" {...props}>
     {children}

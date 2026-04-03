@@ -22,7 +22,7 @@ export default async function Image() {
           overflow: 'hidden',
         }}
       >
-        {/* Background accent — top-right glow */}
+
         <div
           style={{
             position: 'absolute',
@@ -35,7 +35,6 @@ export default async function Image() {
           }}
         />
 
-        {/* Background accent — bottom-left glow */}
         <div
           style={{
             position: 'absolute',
@@ -48,7 +47,6 @@ export default async function Image() {
           }}
         />
 
-        {/* Top row: domain */}
         <div
           style={{
             display: 'flex',
@@ -63,7 +61,7 @@ export default async function Image() {
               gap: '10px',
             }}
           >
-            {/* Blue dot logo */}
+
             <div
               style={{
                 width: '12px',
@@ -83,7 +81,6 @@ export default async function Image() {
             </span>
           </div>
 
-          {/* Available badge */}
           <div
             style={{
               display: 'flex',
@@ -109,7 +106,6 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* Main content */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div
             style={{
@@ -147,7 +143,6 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* Bottom row: tech tags */}
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           {['React', 'NestJS', 'Lisk Blockchain', 'AWS', 'TypeScript', 'AI/ML'].map(
             (tag) => (

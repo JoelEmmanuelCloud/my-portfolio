@@ -1,12 +1,10 @@
 'use client'
-//app/skills/page.js
 import { useState } from 'react'
 import Link from 'next/link'
 import { skills, highlights } from '@/data/skills'
 
 const skillCategories = Object.entries(skills)
 
-// Skill proficiency mapping
 const skillProficiency = {
   'React.js': 'Expert',
   'Next.js': 'Expert', 
@@ -31,7 +29,7 @@ export default function Skills() {
   
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
+
       <section className="py-20 sm:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl">
@@ -50,7 +48,6 @@ export default function Skills() {
         </div>
       </section>
 
-      {/* Highlights */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
@@ -69,14 +66,13 @@ export default function Skills() {
         </div>
       </section>
 
-      {/* Skills Categories */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-light text-black mb-12 sm:mb-16 text-center">Technical Skills</h2>
             
             <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
-              {/* Category Navigation */}
+
               <div className="lg:col-span-1">
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
                   {skillCategories.map(([key, category]) => (
@@ -96,7 +92,6 @@ export default function Skills() {
                 </div>
               </div>
 
-              {/* Skills Content */}
               <div className="lg:col-span-3">
                 {skillCategories.map(([key, category]) => (
                   <div
@@ -128,7 +123,7 @@ export default function Skills() {
                               </span>
                             </div>
                             
-                            {/* Proficiency Bar */}
+
                             <div className="w-full bg-white rounded h-2 border border-black">
                               <div
                                 className={`h-full rounded ${
@@ -151,14 +146,13 @@ export default function Skills() {
         </div>
       </section>
 
-      {/* Certifications */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-light text-black mb-12 sm:mb-16 text-center">Professional Certifications</h2>
             
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-              {/* AWS Cloud Practitioner */}
+
               <div className="border border-black rounded-lg p-6 sm:p-8 bg-white">
                 <div className="mb-4 sm:mb-6">
                   <h3 className="text-lg sm:text-xl font-medium text-black mb-2">AWS Certified Cloud Practitioner</h3>
@@ -183,7 +177,6 @@ export default function Skills() {
                 </div>
               </div>
 
-              {/* AWS AI Practitioner */}
               <div className="border border-black rounded-lg p-6 sm:p-8 bg-white">
                 <div className="mb-4 sm:mb-6">
                   <h3 className="text-lg sm:text-xl font-medium text-black mb-2">AWS Certified AI Practitioner</h3>
@@ -212,7 +205,6 @@ export default function Skills() {
         </div>
       </section>
 
-      {/* Learning */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
@@ -250,7 +242,6 @@ export default function Skills() {
         </div>
       </section>
 
-      {/* Proficiency Guide */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
@@ -284,7 +275,6 @@ export default function Skills() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 sm:py-24 bg-white border-t border-black">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl text-center mx-auto">

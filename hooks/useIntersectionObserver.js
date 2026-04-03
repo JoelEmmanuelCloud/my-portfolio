@@ -1,9 +1,6 @@
 'use client'
 import { useEffect, useState, useRef, useCallback } from 'react'
 
-/**
- * Simple Intersection Observer hook
- */
 export function useIntersectionObserver(options = {}) {
   const {
     threshold = 0.1,
@@ -48,9 +45,6 @@ export function useIntersectionObserver(options = {}) {
   return [elementRef, isIntersecting, entry]
 }
 
-/**
- * Hook for lazy loading images
- */
 export function useLazyImage(options = {}) {
   const {
     threshold = 0.1,
@@ -91,9 +85,6 @@ export function useLazyImage(options = {}) {
   }
 }
 
-/**
- * Hook for scroll animations
- */
 export function useScrollAnimation(options = {}) {
   const {
     threshold = 0.2,

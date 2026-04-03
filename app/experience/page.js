@@ -1,5 +1,4 @@
 'use client'
-//app/experience/page.js
 import Link from 'next/link'
 import { ExternalLink, Calendar, MapPin } from 'lucide-react'
 import { experience, certifications, education } from '@/data/experience'
@@ -7,7 +6,7 @@ import { experience, certifications, education } from '@/data/experience'
 export default function Experience() {
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
+
       <section className="py-12 sm:py-20 lg:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl text-center lg:text-left mx-auto lg:mx-0">
@@ -26,7 +25,6 @@ export default function Experience() {
         </div>
       </section>
 
-      {/* Experience Timeline */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white border-t-2 border-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
@@ -108,7 +106,6 @@ export default function Experience() {
         </div>
       </section>
 
-      {/* Certifications */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white border-t-2 border-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
@@ -149,7 +146,6 @@ export default function Experience() {
         </div>
       </section>
 
-      {/* Education */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white border-t-2 border-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
@@ -188,7 +184,6 @@ export default function Experience() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white border-t-2 border-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl text-center lg:text-left mx-auto lg:mx-0">

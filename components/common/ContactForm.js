@@ -17,14 +17,13 @@ export default function ContactForm({
   })
   
   const [status, setStatus] = useState({
-    type: '', // 'loading', 'success', 'error'
+    type: '',
     message: ''
   })
   
   const [errors, setErrors] = useState({})
   const [touched, setTouched] = useState({})
 
-  // Validate individual field
   const validateField = (name, value) => {
     switch (name) {
       case 'name':
@@ -38,7 +37,6 @@ export default function ContactForm({
     }
   }
 
-  // Validate entire form
   const validateForm = () => {
     const newErrors = {}
     
@@ -46,7 +44,6 @@ export default function ContactForm({
     newErrors.email = validateField('email', formData.email)
     newErrors.message = validateField('message', formData.message)
     
-    // Remove empty error messages
     Object.keys(newErrors).forEach(key => {
       if (!newErrors[key]) delete newErrors[key]
     })
@@ -63,7 +60,6 @@ export default function ContactForm({
       [name]: value
     }))
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -71,7 +67,6 @@ export default function ContactForm({
       }))
     }
 
-    // Show error after user stops typing (for touched fields)
     if (touched[name]) {
       const error = validateField(name, value)
       if (error) {
@@ -160,7 +155,7 @@ export default function ContactForm({
 
   return (
     <div className={`bg-white ${className}`}>
-      {/* Header */}
+
       <div className="mb-8 sm:mb-12 text-center sm:text-left">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-2 sm:mb-4">
           {title}
@@ -172,7 +167,6 @@ export default function ContactForm({
         )}
       </div>
 
-      {/* Success State */}
       {isSuccess ? (
         <div className="py-8 sm:py-12 text-center sm:text-left">
           <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-black mb-4">
@@ -190,7 +184,7 @@ export default function ContactForm({
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8" noValidate>
-          {/* Name and Email Row */}
+
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             <div>
               <label htmlFor="name" className="block text-sm sm:text-base text-black mb-2 font-medium">
@@ -243,7 +237,6 @@ export default function ContactForm({
             </div>
           </div>
 
-          {/* Company Field */}
           {showCompanyField && (
             <div>
               <label htmlFor="company" className="block text-sm sm:text-base text-black mb-2 font-medium">
@@ -262,7 +255,6 @@ export default function ContactForm({
             </div>
           )}
 
-          {/* Message Field */}
           <div>
             <label htmlFor="message" className="block text-sm sm:text-base text-black mb-2 font-medium">
               Message *
@@ -288,7 +280,6 @@ export default function ContactForm({
             )}
           </div>
 
-          {/* Status Message */}
           {status.message && status.type !== 'success' && (
             <div className={`text-sm sm:text-base font-medium text-center sm:text-left ${
               status.type === 'error' 
@@ -299,7 +290,6 @@ export default function ContactForm({
             </div>
           )}
 
-          {/* Submit Button */}
           <div className="pt-4">
             <button
               type="submit"
@@ -315,7 +305,6 @@ export default function ContactForm({
   )
 }
 
-// Inline compact version
 export function ContactFormInline({ onSuccess, className = "" }) {
   const [formData, setFormData] = useState({ email: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)

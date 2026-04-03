@@ -20,14 +20,13 @@ export default function Loading() {
   return (
     <div role="status" aria-live="polite" aria-label="Loading page" className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6">
       <div className="text-center max-w-sm mx-auto">
-        {/* Large Initial */}
+
         <div className="mb-6 sm:mb-8">
           <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full bg-gray-100 flex items-center justify-center shadow-sm">
             <span className="text-xl sm:text-2xl font-light text-gray-900">JE</span>
           </div>
         </div>
 
-        {/* Loading Text */}
         <h1 className="text-xl sm:text-2xl font-light text-gray-900 mb-2">
           Joel Emmanuel
         </h1>
@@ -36,7 +35,6 @@ export default function Loading() {
           Loading portfolio...
         </p>
 
-        {/* Mobile-optimized Spinner */}
         <div className="flex justify-center mb-6 sm:mb-8">
           <div className="hidden sm:block">
             <LoadingSpinner />
@@ -46,7 +44,6 @@ export default function Loading() {
           </div>
         </div>
 
-        {/* Progress Bar */}
         <div className="max-w-xs mx-auto mb-4">
           <div className="w-full bg-gray-200 rounded-full h-1 overflow-hidden">
             <div 
@@ -59,14 +56,12 @@ export default function Loading() {
           </div>
         </div>
 
-        {/* Loading percentage (mobile enhancement) */}
         <div className="sm:hidden">
           <p className="text-xs text-gray-400 font-light">
             Please wait...
           </p>
         </div>
 
-        {/* Subtle message for slow connections */}
         <div className="mt-8 sm:mt-12">
           <p className="text-xs text-gray-400 font-light max-w-xs mx-auto leading-relaxed">
             Optimizing experience for your device
@@ -90,7 +85,7 @@ export default function Loading() {
           }
         }
         
-        /* Enhanced mobile animations */
+        
         @media (max-width: 640px) {
           @keyframes loading {
             0% { width: 0%; }
@@ -101,7 +96,7 @@ export default function Loading() {
           }
         }
         
-        /* Reduce motion for accessibility */
+        
         @media (prefers-reduced-motion: reduce) {
           .animate-spin,
           .animate-pulse {

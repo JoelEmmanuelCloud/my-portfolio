@@ -1,4 +1,3 @@
-//app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
 import { ExternalLink, Code, Cloud, Database, Box, Download } from 'lucide-react'
@@ -45,11 +44,11 @@ const buildingApproach = [
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Fixed for cross-browser compatibility */}
+
       <section className="relative min-h-screen bg-white overflow-hidden pt-16 sm:pt-18 lg:pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
           
-          {/* Mobile & Tablet Stats - Always visible on small screens */}
+
           <div className="xl:hidden flex justify-center gap-8 sm:gap-12 mb-6 sm:mb-8 pt-2">
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-black">+50</div>
@@ -65,10 +64,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Main Content Wrapper with Grid Layout for Desktop */}
           <div className="xl:grid xl:grid-cols-[auto_1fr_auto] xl:gap-8 xl:items-center xl:min-h-[70vh]">
             
-            {/* Desktop Stats - Left Sidebar */}
+
             <div className="hidden xl:flex xl:flex-col xl:gap-6 xl:justify-center xl:self-center">
               <div>
                 <div className="text-lg font-bold text-black">+50</div>
@@ -84,7 +82,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Main Content - Center */}
             <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 xl:gap-14">
               <div className="flex-1 max-w-2xl text-center lg:text-left">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-3 lg:mb-5">
@@ -133,7 +130,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Profile Image */}
               <div className="flex-shrink-0">
                 <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
                   <Image
@@ -149,11 +145,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Desktop Scroll Indicator - Right Side (empty column for symmetry) */}
             <div className="hidden xl:block w-8"></div>
           </div>
 
-          {/* Scroll Indicator - Bottom Center for all screens */}
           <div className="flex justify-center mt-8 lg:mt-12">
             <div className="text-xs font-medium text-black">
               Scroll down ↓
@@ -162,7 +156,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Companies Section */}
       <section className="py-10 sm:py-12 lg:py-14 bg-white border-t border-black/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -193,7 +186,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12 lg:mb-14">
@@ -274,7 +266,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How I Build */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white border-t border-black/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12 lg:mb-14">
@@ -320,7 +311,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">

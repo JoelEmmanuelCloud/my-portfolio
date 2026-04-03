@@ -1,4 +1,3 @@
-//data/experience.js - Updated with resume data
 
 export const experience = [
   {
@@ -170,7 +169,6 @@ export const education = [
   }
 ]
 
-// Additional hackathon/competition experience
 export const hackathons = [
   {
     name: "EthGlobal Unite DeFi Hackathon",

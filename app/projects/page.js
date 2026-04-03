@@ -1,5 +1,4 @@
 'use client'
-//app/projects/page.js
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -13,7 +12,6 @@ const categories = [
   { id: 'cloud', name: 'Cloud' },
 ]
 
-// Fallback data in case import fails
 const fallbackEngagements = [
   {
     name: "Compass UOL",
@@ -38,7 +36,6 @@ const fallbackEngagements = [
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   
-  // Use fallback if otherEngagements is undefined
   const engagements = otherEngagements || fallbackEngagements
   
   const filteredProjects = selectedCategory === 'all' 
@@ -59,7 +56,7 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen pt-16 bg-white">
-      {/* Hero Section */}
+
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-5xl">
@@ -70,7 +67,7 @@ export default function Projects() {
               Production systems and innovative solutions built with modern technologies.
             </p>
             
-            {/* Category Filter */}
+
             <div className="flex flex-wrap gap-4 sm:gap-8 mb-8 sm:mb-12 lg:mb-16">
               {categories.map((category) => (
                 <button
@@ -90,7 +87,6 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Projects Grid */}
       <section className="pb-12 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="space-y-12 sm:space-y-16 lg:space-y-20">
@@ -101,7 +97,7 @@ export default function Projects() {
                   index % 2 === 1 ? 'lg:grid-cols-2' : ''
                 }`}
               >
-                {/* Project Image */}
+
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="relative aspect-[4/3] bg-black/5 overflow-hidden rounded-xl shadow-lg group">
                     {project.images && project.images[0] ? (
@@ -123,7 +119,6 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Project Content */}
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                     <div>
@@ -136,7 +131,6 @@ export default function Projects() {
                       </p>
                     </div>
 
-                    {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2 sm:gap-3">
                       {project.stack.slice(0, 6).map((tech) => (
                         <span
@@ -148,7 +142,6 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    {/* Links */}
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-2 sm:pt-4">
                       <Link
                         href={`/projects/${project.slug}`}
@@ -183,7 +176,6 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Other Engagements */}
       <section className="py-12 sm:py-16 lg:py-20 bg-black/2">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="mb-8 sm:mb-12 lg:mb-16">
@@ -219,7 +211,6 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white mb-4 sm:mb-6">

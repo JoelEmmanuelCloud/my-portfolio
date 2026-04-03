@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-// Minimal default spinner - mobile optimized
 export default function LoadingSpinner({ 
   size = 'md', 
   className = "",
@@ -34,7 +33,6 @@ export default function LoadingSpinner({
   )
 }
 
-// Mobile-optimized dots
 export function LoadingDots({ 
   size = 'md',
   className = ""
@@ -62,7 +60,6 @@ export function LoadingDots({
   )
 }
 
-// Mobile-friendly skeleton
 export function LoadingSkeleton({ 
   lines = 3,
   className = ""
@@ -83,7 +80,6 @@ export function LoadingSkeleton({
   )
 }
 
-// Mobile-optimized progress
 export function LoadingProgress({ 
   progress = 0,
   text = "Loading...",
@@ -105,7 +101,6 @@ export function LoadingProgress({
   )
 }
 
-// Mobile-optimized overlay
 export function LoadingOverlay({ 
   isVisible = false,
   text = "Loading..."
@@ -122,11 +117,10 @@ export function LoadingOverlay({
   )
 }
 
-// Mobile-optimized button loading state
 export function LoadingButton({ 
   isLoading = false,
   children,
-  variant = 'primary', // 'primary', 'secondary'
+  variant = 'primary',
   className = "",
   ...props
 }) {
@@ -154,7 +148,6 @@ export function LoadingButton({
   )
 }
 
-// Mobile-optimized page loader
 export function PageLoader({ isLoading = false }) {
   if (!isLoading) return null
 
@@ -178,7 +171,6 @@ export function PageLoader({ isLoading = false }) {
   )
 }
 
-// Mobile-optimized typing text
 export function LoadingText({ 
   text = "Loading...",
   className = ""
@@ -207,7 +199,6 @@ export function LoadingText({
   )
 }
 
-// Mobile-first loading card
 export function LoadingCard({ 
   title = "Loading...",
   subtitle = "Please wait",
@@ -237,7 +228,6 @@ export function LoadingCard({
   )
 }
 
-// Mobile-optimized loading states for forms
 export function FormLoadingState({ 
   isLoading = false,
   successMessage = null,
@@ -300,7 +290,6 @@ export function FormLoadingState({
   return null
 }
 
-// Mobile-optimized pulse loader
 export function PulseLoader({ className = "" }) {
   return (
     <div className={`flex justify-center space-x-2 ${className}`}>
@@ -318,7 +307,6 @@ export function PulseLoader({ className = "" }) {
   )
 }
 
-// Mobile-optimized slide loader
 export function SlideLoader({ className = "" }) {
   return (
     <div className={`flex space-x-1 ${className}`}>
@@ -336,7 +324,6 @@ export function SlideLoader({ className = "" }) {
   )
 }
 
-// Mobile-optimized wave loader
 export function WaveLoader({ className = "" }) {
   return (
     <div className={`flex items-end space-x-1 ${className}`}>
@@ -355,7 +342,6 @@ export function WaveLoader({ className = "" }) {
   )
 }
 
-// Mobile-optimized content placeholder
 export function ContentPlaceholder({ 
   avatar = false,
   lines = 3,
@@ -382,7 +368,6 @@ export function ContentPlaceholder({
   )
 }
 
-// Mobile-optimized full screen loader
 export function FullScreenLoader({ 
   isVisible = false,
   title = "Loading",

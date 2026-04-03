@@ -2,7 +2,6 @@ import { sendContactEmails, checkRateLimit, validateEmailConfig } from '@/lib/se
 
 export async function POST(request) {
   try {
-    // Validate email configuration first
     const emailConfig = validateEmailConfig()
     if (!emailConfig.isValid) {
       console.error('Email configuration issues:', emailConfig.issues)
@@ -14,7 +13,6 @@ export async function POST(request) {
 
     const { name, email, company, message } = await request.json()
 
-    // Basic validation
     if (!name || !email || !message) {
       return Response.json(
         { error: 'Name, email, and message are required' },
@@ -22,7 +20,6 @@ export async function POST(request) {
       )
     }
 
-    // Enhanced validation
     if (name.trim().length < 2) {
       return Response.json(
         { error: 'Name must be at least 2 characters long' },
@@ -37,8 +34,6 @@ export async function POST(request) {
       )
     }
 
-    // Email validation (RFC 5321 practical subset)
-    // eslint-disable-next-line no-useless-escape
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/
     if (!emailRegex.test(email) || email.length > 254) {
       return Response.json(
@@ -47,13 +42,12 @@ export async function POST(request) {
       )
     }
 
-    // Rate limiting
     const clientIP = request.headers.get('x-forwarded-for') || 
                     request.headers.get('x-real-ip') || 
                     request.headers.get('cf-connecting-ip') ||
                     'unknown'
     
-    const rateLimit = checkRateLimit(clientIP, 3, 300000) // 3 requests per 5 minutes
+    const rateLimit = checkRateLimit(clientIP, 3, 300000)
     
     if (!rateLimit.allowed) {
       const resetTime = new Date(rateLimit.resetTime).toLocaleTimeString()
@@ -74,7 +68,6 @@ export async function POST(request) {
       )
     }
 
-    // Sanitize inputs
     const formData = {
       name: name.trim().substring(0, 100),
       email: email.trim().toLowerCase().substring(0, 255),
@@ -82,7 +75,6 @@ export async function POST(request) {
       message: message.trim().substring(0, 2000)
     }
 
-    // Get client info for tracking
     const requestInfo = {
       clientIP,
       userAgent: request.headers.get('user-agent') || 'Unknown',
@@ -90,7 +82,6 @@ export async function POST(request) {
       timestamp: new Date().toISOString()
     }
 
-    // Send emails using dynamic templates
     const emailResults = await sendContactEmails(formData, requestInfo)
 
     return Response.json(
@@ -115,7 +106,6 @@ export async function POST(request) {
   } catch (error) {
     console.error('Contact form error:', error)
     
-    // Don't expose internal errors to users
     const isConfigError = error.message.includes('configuration') || 
                          error.message.includes('template')
     
@@ -133,7 +123,6 @@ export async function POST(request) {
   }
 }
 
-// Handle OPTIONS for CORS
 export async function OPTIONS(request) {
   return new Response(null, {
     status: 200,
@@ -143,12 +132,11 @@ export async function OPTIONS(request) {
         : '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'Access-Control-Max-Age': '86400', // 24 hours
+      'Access-Control-Max-Age': '86400',
     },
   })
 }
 
-// Health check endpoint
 export async function GET(request) {
   try {
     const emailConfig = validateEmailConfig()

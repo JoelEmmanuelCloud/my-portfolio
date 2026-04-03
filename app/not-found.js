@@ -11,19 +11,19 @@ export default function NotFound() {
       title: 'Projects',
       description: 'View case studies',
       href: '/projects',
-      icon: '💼'
+      icon: ''
     },
     {
       title: 'Experience',
       description: 'See my background',
       href: '/experience',
-      icon: '🚀'
+      icon: ''
     },
     {
       title: 'Contact',
       description: 'Get in touch',
       href: '/contact',
-      icon: '💬'
+      icon: ''
     }
   ]
 
@@ -31,12 +31,11 @@ export default function NotFound() {
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
         <div className="max-w-2xl mx-auto text-center sm:text-left">
-          {/* Large 404 - Responsive */}
+
           <h1 className="text-6xl sm:text-8xl lg:text-9xl font-light text-gray-900 mb-6 sm:mb-8">
             404
           </h1>
 
-          {/* Error Message */}
           <h2 className="text-xl sm:text-2xl font-light text-gray-900 mb-3 sm:mb-4">
             Page not found
           </h2>
@@ -46,7 +45,6 @@ export default function NotFound() {
             Let&apos;s get you back on track.
           </p>
 
-          {/* Primary Actions - Mobile Optimized */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">
             <button
               onClick={() => router.back()}
@@ -65,7 +63,6 @@ export default function NotFound() {
             </Link>
           </div>
 
-          {/* Quick Links */}
           <div className="border-t border-gray-200 pt-8 sm:pt-12">
             <h3 className="text-base sm:text-lg font-light text-gray-900 mb-6 sm:mb-8 flex items-center justify-center sm:justify-start">
               <Search className="h-5 w-5 mr-2 text-gray-400" />
@@ -102,7 +99,6 @@ export default function NotFound() {
             </div>
           </div>
 
-          {/* Help Section */}
           <div className="mt-12 sm:mt-16 text-center sm:text-left">
             <div className="p-6 bg-gray-50 rounded-lg">
               <h4 className="text-sm font-medium text-gray-900 mb-2">
@@ -121,7 +117,6 @@ export default function NotFound() {
           </div>
         </div>
 
-        {/* Mobile-optimized Contact CTA - Bottom */}
         <div className="sm:hidden fixed bottom-4 left-4 right-4 z-10">
           <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-lg">
             <div className="flex items-center justify-between">
@@ -143,7 +138,6 @@ export default function NotFound() {
           </div>
         </div>
 
-        {/* Desktop Contact CTA - Bottom Right */}
         <div className="hidden sm:block fixed bottom-6 right-6 lg:bottom-8 lg:right-8">
           <div className="text-right">
             <p className="text-sm text-gray-500 mb-2 font-light">

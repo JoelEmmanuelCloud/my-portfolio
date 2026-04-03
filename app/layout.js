@@ -20,7 +20,6 @@ export const metadata = {
     canonical: '/',
   },
 
-  // Favicon and icon configuration
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',

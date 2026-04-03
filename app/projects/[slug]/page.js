@@ -1,4 +1,3 @@
-//app/projects/[slug]/page.js
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
@@ -44,14 +43,13 @@ export default function ProjectDetail({ params }) {
     notFound()
   }
 
-  // Get related projects (exclude current project)
   const relatedProjects = projects
     .filter(p => p.slug !== params.slug)
     .slice(0, 2)
 
   return (
     <div className="min-h-screen pt-16 bg-white">
-      {/* Back Navigation */}
+
       <section className="py-6 sm:py-8 border-b border-black/10">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <Link
@@ -64,7 +62,6 @@ export default function ProjectDetail({ params }) {
         </div>
       </section>
 
-      {/* Hero Section */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-5xl">
@@ -94,7 +91,6 @@ export default function ProjectDetail({ params }) {
         </div>
       </section>
 
-      {/* Project Image */}
       {project.images && project.images[0] && (
         <section className="py-8 sm:py-12">
           <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
@@ -112,13 +108,12 @@ export default function ProjectDetail({ params }) {
         </section>
       )}
 
-      {/* Project Details */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
-            {/* Main Content */}
+
             <div className="lg:col-span-2 space-y-10 sm:space-y-12 lg:space-y-16">
-              {/* Context */}
+
               {project.context && (
                 <div>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black mb-4 sm:mb-6">
@@ -130,7 +125,6 @@ export default function ProjectDetail({ params }) {
                 </div>
               )}
 
-              {/* Challenge */}
               {project.challenge && (
                 <div>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black mb-4 sm:mb-6">
@@ -142,7 +136,6 @@ export default function ProjectDetail({ params }) {
                 </div>
               )}
 
-              {/* Solution */}
               {project.solution && (
                 <div>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black mb-4 sm:mb-6">
@@ -154,7 +147,6 @@ export default function ProjectDetail({ params }) {
                 </div>
               )}
 
-              {/* Technology Breakdown */}
               {project.technologies && (
                 <div>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black mb-6 sm:mb-8">
@@ -182,7 +174,6 @@ export default function ProjectDetail({ params }) {
                 </div>
               )}
 
-              {/* Impact */}
               {project.impact && project.impact.length > 0 && (
                 <div>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black mb-6 sm:mb-8">
@@ -203,7 +194,6 @@ export default function ProjectDetail({ params }) {
                 </div>
               )}
 
-              {/* Additional Images */}
               {project.images && project.images.length > 1 && (
                 <div>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black mb-6 sm:mb-8">
@@ -226,9 +216,8 @@ export default function ProjectDetail({ params }) {
               )}
             </div>
 
-            {/* Sidebar */}
             <div className="space-y-8 lg:space-y-12 lg:sticky lg:top-24 lg:self-start">
-              {/* Tech Stack Summary */}
+
               <div className="bg-white border border-black/10 rounded-xl p-6 sm:p-8 shadow-sm">
                 <h3 className="font-medium text-black mb-4 sm:mb-6 text-lg sm:text-xl">
                   Technologies
@@ -242,7 +231,6 @@ export default function ProjectDetail({ params }) {
                 </div>
               </div>
 
-              {/* Project Links */}
               {(project.links?.live || project.links?.github || project.links?.company) && (
                 <div className="bg-white border border-black/10 rounded-xl p-6 sm:p-8 shadow-sm">
                   <h3 className="font-medium text-black mb-4 sm:mb-6 text-lg sm:text-xl">
@@ -292,7 +280,6 @@ export default function ProjectDetail({ params }) {
         </div>
       </section>
 
-      {/* Related Projects */}
       {relatedProjects.length > 0 && (
         <section className="py-12 sm:py-16 lg:py-20 bg-black/2">
           <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
@@ -304,7 +291,7 @@ export default function ProjectDetail({ params }) {
               {relatedProjects.map((relatedProject) => (
                 <div key={relatedProject.slug} className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="space-y-0">
-                    {/* Project Image */}
+
                     <div className="relative aspect-video bg-black/5 overflow-hidden">
                       {relatedProject.images && relatedProject.images[0] ? (
                         <Image
@@ -321,7 +308,6 @@ export default function ProjectDetail({ params }) {
                       )}
                     </div>
 
-                    {/* Project Info */}
                     <div className="p-6 sm:p-8">
                       <h3 className="text-xl sm:text-2xl font-medium text-black mb-2 group-hover:text-blue-600 transition-colors">
                         {relatedProject.title}
@@ -346,7 +332,6 @@ export default function ProjectDetail({ params }) {
         </section>
       )}
 
-      {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white mb-4 sm:mb-6">

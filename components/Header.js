@@ -17,7 +17,6 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setMobileMenuOpen(false)
   }, [pathname])
@@ -27,7 +26,7 @@ export default function Header() {
       <header className="fixed w-full top-0 z-50 bg-white shadow-md backdrop-blur-sm border-b border-gray-100">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Global">
           <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
-            {/* Logo */}
+
             <div className="flex">
               <Link href="/" className="flex items-center gap-2 sm:gap-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 relative">
@@ -42,7 +41,6 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Desktop navigation */}
             <div className="hidden lg:flex lg:gap-x-5 xl:gap-x-8">
               {navigation.map((item) => (
                 <Link
@@ -59,7 +57,6 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Desktop CTA */}
             <div className="hidden lg:flex">
               <Link
                 href="/contact"
@@ -69,7 +66,6 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Mobile menu button */}
             <div className="flex lg:hidden">
               <button
                 type="button"
@@ -89,7 +85,6 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
           <div id="mobile-menu" className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
             <div className="container mx-auto px-5 py-5">

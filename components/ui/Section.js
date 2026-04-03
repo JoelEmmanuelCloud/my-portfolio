@@ -54,7 +54,6 @@ const Section = forwardRef(({
 
 Section.displayName = 'Section'
 
-// Section Container Component
 const SectionContainer = forwardRef(({
   className,
   size = 'default',
@@ -83,7 +82,6 @@ const SectionContainer = forwardRef(({
 
 SectionContainer.displayName = 'SectionContainer'
 
-// Section Header Component
 const SectionHeader = forwardRef(({
   className,
   title,
@@ -123,7 +121,6 @@ const SectionHeader = forwardRef(({
 
 SectionHeader.displayName = 'SectionHeader'
 
-// Section Content Component
 const SectionContent = forwardRef(({
   className,
   children,
@@ -140,11 +137,9 @@ const SectionContent = forwardRef(({
 
 SectionContent.displayName = 'SectionContent'
 
-// Export all components
 export { Section, SectionContainer, SectionHeader, SectionContent }
 export default Section
 
-// Preset section components for common use cases
 export const HeroSection = ({ children, ...props }) => (
   <Section 
     variant="hero" 

@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           
-          {/* Logo and Description */}
+
           <div className="space-y-3 sm:space-y-4 sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center justify-center sm:justify-start gap-2">
               <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 relative">
@@ -48,7 +48,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="text-center sm:text-left">
             <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Quick Links</h3>
             <div className="space-y-2 sm:space-y-2.5">
@@ -64,7 +63,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social & Contact */}
           <div className="text-center sm:text-left">
             <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Connect</h3>
             <div className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-6">
@@ -97,7 +95,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Legal Links */}
           <div className="text-center sm:text-left">
             <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Legal</h3>
             <div className="space-y-2 sm:space-y-2.5">
@@ -125,7 +122,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Call-to-Action Button */}
         <div className="text-center mt-10 sm:mt-12 lg:mt-14 mb-10 sm:mb-12 lg:mb-14">
           <Link
             href="/contact"
@@ -135,7 +131,6 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Bottom Section */}
         <div className="border-t border-white/20 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
           <p className="text-xs sm:text-sm text-white text-center sm:text-left">
             © {new Date().getFullYear()} Joel Emmanuel. All rights reserved.
