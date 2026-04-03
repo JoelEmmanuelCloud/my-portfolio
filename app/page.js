@@ -162,29 +162,31 @@ export default function Home() {
             Trusted by leading companies
           </h2>
         </div>
-        <div className="relative overflow-hidden">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-32 z-10 bg-gradient-to-r from-white dark:from-gray-900 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-32 z-10 bg-gradient-to-l from-white dark:from-gray-900 to-transparent" />
-          <div className="flex items-center animate-marquee">
-            {[...companies, ...companies, ...companies, ...companies].map((company, i) => (
-              <a
-                key={i}
-                href={company.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-none flex items-center justify-center mx-8 sm:mx-10"
-              >
-                <div className="relative h-7 sm:h-9 w-24 sm:w-28">
-                  <Image
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    fill
-                    className="object-contain transition-all duration-300 opacity-50 hover:opacity-100 dark:opacity-30 dark:hover:opacity-70"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
+        <div className="marquee-wrapper relative overflow-hidden flex">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-r from-white dark:from-gray-900 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-l from-white dark:from-gray-900 to-transparent" />
+          {[0, 1].map((clone) => (
+            <div key={clone} className="flex flex-shrink-0 items-center animate-marquee" aria-hidden={clone === 1 ? 'true' : undefined}>
+              {companies.map((company) => (
+                <a
+                  key={company.name}
+                  href={company.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-none flex items-center justify-center px-8 sm:px-10"
+                >
+                  <div className="relative h-7 sm:h-9 w-24 sm:w-28">
+                    <Image
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      fill
+                      className="object-contain transition-opacity duration-300 opacity-50 hover:opacity-100 dark:opacity-30 dark:hover:opacity-70"
+                    />
+                  </div>
+                </a>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
