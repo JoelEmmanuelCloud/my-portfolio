@@ -1,5 +1,5 @@
 'use client'
-import { Download, Printer } from 'lucide-react'
+import { Download } from 'lucide-react'
 import { experience, certifications, education } from '@/data/experience'
 import { skills } from '@/data/skills'
 
@@ -18,20 +18,13 @@ export default function ResumePage() {
   return (
     <div className="min-h-screen bg-gray-100 pt-20 pb-10 print:bg-white print:pt-0 print:pb-0">
 
-      <div className="no-print flex justify-center gap-3 mb-6 px-4">
+      <div className="no-print flex justify-center mb-6 px-4">
         <button
           onClick={() => window.print()}
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-md"
         >
           <Download className="h-4 w-4" />
           Download PDF
-        </button>
-        <button
-          onClick={() => window.print()}
-          className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 bg-white text-gray-700 rounded-full text-sm font-semibold hover:bg-gray-50 transition-colors shadow-sm"
-        >
-          <Printer className="h-4 w-4" />
-          Print
         </button>
       </div>
 
