@@ -32,15 +32,15 @@ export default function NotFound() {
       <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
         <div className="max-w-2xl mx-auto text-center sm:text-left">
 
-          <h1 className="text-6xl sm:text-8xl lg:text-9xl font-light text-gray-900 dark:text-white mb-6 sm:mb-8">
+          <h1 className="text-6xl sm:text-8xl lg:text-9xl font-normal text-gray-900 dark:text-white mb-6 sm:mb-8">
             404
           </h1>
 
-          <h2 className="text-xl sm:text-2xl font-light text-gray-900 dark:text-white mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl font-normal text-gray-900 dark:text-white mb-3 sm:mb-4">
             Page not found
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 font-light leading-relaxed max-w-lg mx-auto sm:mx-0">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 font-normal leading-relaxed max-w-lg mx-auto sm:mx-0">
             The page you&apos;re looking for doesn&apos;t exist or has been moved.
             Let&apos;s get you back on track.
           </p>
@@ -64,7 +64,7 @@ export default function NotFound() {
           </div>
 
           <div className="border-t border-gray-200 dark:border-gray-700 pt-8 sm:pt-12">
-            <h3 className="text-base sm:text-lg font-light text-gray-900 dark:text-white mb-6 sm:mb-8 flex items-center justify-center sm:justify-start">
+            <h3 className="text-base sm:text-lg font-normal text-gray-900 dark:text-white mb-6 sm:mb-8 flex items-center justify-center sm:justify-start">
               <Search className="h-5 w-5 mr-2 text-gray-400 dark:text-gray-500" />
               Explore instead
             </h3>
@@ -82,10 +82,10 @@ export default function NotFound() {
                         {link.icon}
                       </span>
                       <div>
-                        <h4 className="text-sm sm:text-base font-light text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                        <h4 className="text-sm sm:text-base font-normal text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
                           {link.title}
                         </h4>
-                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-light">
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-normal">
                           {link.description}
                         </p>
                       </div>
@@ -104,7 +104,7 @@ export default function NotFound() {
               <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">
                 Still can&apos;t find what you&apos;re looking for?
               </h4>
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-light mb-4">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-normal mb-4">
                 I&apos;m here to help. Feel free to reach out directly.
               </p>
               <Link
@@ -140,7 +140,7 @@ export default function NotFound() {
 
         <div className="hidden sm:block fixed bottom-6 right-6 lg:bottom-8 lg:right-8">
           <div className="text-right">
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 font-light">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 font-normal">
               Need help?
             </p>
             <Link

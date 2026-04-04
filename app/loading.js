@@ -23,15 +23,15 @@ export default function Loading() {
 
         <div className="mb-6 sm:mb-8">
           <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center shadow-sm">
-            <span className="text-xl sm:text-2xl font-light text-gray-900 dark:text-white">JE</span>
+            <span className="text-xl sm:text-2xl font-normal text-gray-900 dark:text-white">JE</span>
           </div>
         </div>
 
-        <h1 className="text-xl sm:text-2xl font-light text-gray-900 dark:text-white mb-2">
+        <h1 className="text-xl sm:text-2xl font-normal text-gray-900 dark:text-white mb-2">
           Joel Emmanuel
         </h1>
 
-        <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 font-light">
+        <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 font-normal">
           Loading portfolio...
         </p>
 
@@ -57,13 +57,13 @@ export default function Loading() {
         </div>
 
         <div className="sm:hidden">
-          <p className="text-xs text-gray-400 dark:text-gray-500 font-light">
+          <p className="text-xs text-gray-400 dark:text-gray-500 font-normal">
             Please wait...
           </p>
         </div>
 
         <div className="mt-8 sm:mt-12">
-          <p className="text-xs text-gray-400 dark:text-gray-500 font-light max-w-xs mx-auto leading-relaxed">
+          <p className="text-xs text-gray-400 dark:text-gray-500 font-normal max-w-xs mx-auto leading-relaxed">
             Optimizing experience for your device
           </p>
         </div>

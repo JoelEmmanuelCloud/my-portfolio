@@ -8,7 +8,8 @@
   }
    
   body {
-    @apply bg-white text-gray-900 font-light;
+    @apply bg-white text-gray-900 font-normal;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
   .dark body {
@@ -39,16 +40,15 @@
    
   /* Updated button styles for minimalist design */
   .btn-primary {
-    @apply bg-gray-900 text-white px-8 py-3 rounded-none font-light text-sm tracking-wide transition-all duration-300 hover:bg-gray-700;
-  }
-   
-  .btn-secondary {
-    @apply bg-transparent text-gray-900 border border-gray-300 px-8 py-3 rounded-none font-light text-sm tracking-wide transition-all duration-300 hover:bg-gray-900 hover:text-white;
+    @apply bg-gray-900 text-white px-8 py-3 rounded-none font-medium text-sm tracking-wide transition-all duration-300 hover:bg-gray-700;
   }
 
-  /* Minimalist link styles */
+  .btn-secondary {
+    @apply bg-transparent text-gray-900 border border-gray-300 px-8 py-3 rounded-none font-medium text-sm tracking-wide transition-all duration-300 hover:bg-gray-900 hover:text-white;
+  }
+
   .link-minimal {
-    @apply text-gray-900 font-light tracking-wide transition-colors duration-300 hover:text-gray-600;
+    @apply text-gray-900 font-normal tracking-wide transition-colors duration-300 hover:text-gray-600;
   }
 
   /* Typography classes for the new design */

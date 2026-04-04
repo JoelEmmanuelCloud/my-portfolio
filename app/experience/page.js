@@ -10,10 +10,10 @@ export default function Experience() {
       <section className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl text-center lg:text-left mx-auto lg:mx-0">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-black dark:text-white mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-black dark:text-white mb-4 sm:mb-6 leading-tight">
               Experience
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 font-light mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 font-normal mb-6 sm:mb-8 leading-relaxed">
               — Building production systems across innovative companies
             </p>
             <div className="text-sm sm:text-base lg:text-lg text-black dark:text-gray-300 space-y-3 sm:space-y-2">
@@ -28,7 +28,7 @@ export default function Experience() {
       <section className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-gray-900 border-t-2 border-black dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-black dark:text-white mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-black dark:text-white mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
               Work History
             </h2>
 
@@ -109,7 +109,7 @@ export default function Experience() {
       <section className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-gray-900 border-t-2 border-black dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-black dark:text-white mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-black dark:text-white mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
               Certifications
             </h2>
 
@@ -149,7 +149,7 @@ export default function Experience() {
       <section className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-gray-900 border-t-2 border-black dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-black dark:text-white mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-black dark:text-white mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
               Education
             </h2>
 
@@ -187,7 +187,7 @@ export default function Experience() {
       <section className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-gray-900 border-t-2 border-black dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl text-center lg:text-left mx-auto lg:mx-0">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-black dark:text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal text-black dark:text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
               Let&apos;s Work Together
             </h2>
             <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 mb-6 sm:mb-8 lg:mb-12 leading-relaxed font-medium">

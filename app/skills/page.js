@@ -33,10 +33,10 @@ export default function Skills() {
       <section className="py-20 sm:py-32 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-black dark:text-white mb-4 sm:mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-black dark:text-white mb-4 sm:mb-6">
               Skills
             </h1>
-            <p className="text-lg sm:text-xl text-black dark:text-gray-300 font-light mb-6 sm:mb-8">
+            <p className="text-lg sm:text-xl text-black dark:text-gray-300 font-normal mb-6 sm:mb-8">
               — Modern technologies for scalable web development
             </p>
             <div className="text-black dark:text-gray-300 space-y-2 text-sm sm:text-base">
@@ -51,7 +51,7 @@ export default function Skills() {
       <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-12 sm:mb-16 text-center">Key Strengths</h2>
+            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Key Strengths</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {highlights.map((highlight, index) => (
@@ -69,7 +69,7 @@ export default function Skills() {
       <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-12 sm:mb-16 text-center">Technical Skills</h2>
+            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Technical Skills</h2>
 
             <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
 
@@ -99,7 +99,7 @@ export default function Skills() {
                     className={selectedCategory === key ? 'block' : 'hidden'}
                   >
                     <div className="mb-6 sm:mb-8">
-                      <h3 className="text-xl sm:text-2xl font-light text-black dark:text-white mb-2 flex items-center gap-3">
+                      <h3 className="text-xl sm:text-2xl font-normal text-black dark:text-white mb-2 flex items-center gap-3">
                         <span>{category.icon}</span>
                         {category.title}
                       </h3>
@@ -148,7 +148,7 @@ export default function Skills() {
       <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-12 sm:mb-16 text-center">Professional Certifications</h2>
+            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Professional Certifications</h2>
 
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
 
@@ -207,7 +207,7 @@ export default function Skills() {
       <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-light text-black dark:text-white mb-12 sm:mb-16 text-center">Continuous Learning</h2>
+            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Continuous Learning</h2>
 
             <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
               {[
@@ -244,7 +244,7 @@ export default function Skills() {
       <section className="py-12 sm:py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-lg sm:text-xl font-light text-black dark:text-white mb-6 sm:mb-8 text-center">
+            <h3 className="text-lg sm:text-xl font-normal text-black dark:text-white mb-6 sm:mb-8 text-center">
               Proficiency Levels
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
@@ -277,7 +277,7 @@ export default function Skills() {
       <section className="py-16 sm:py-24 bg-white dark:bg-gray-900 border-t border-black dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl text-center mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-light text-black dark:text-white mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl font-normal text-black dark:text-white mb-4 sm:mb-6">
               Ready to Collaborate?
             </h2>
             <p className="text-lg sm:text-xl text-black dark:text-gray-300 mb-8 sm:mb-12">

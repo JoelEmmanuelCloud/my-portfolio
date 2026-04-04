@@ -60,7 +60,7 @@ export default function Projects() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-5xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light text-black dark:text-white mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-normal text-black dark:text-white mb-4 sm:mb-6 leading-tight">
               Projects
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 font-normal mb-8 sm:mb-12 max-w-4xl">
@@ -121,7 +121,7 @@ export default function Projects() {
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                     <div>
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-black dark:text-white mb-2 sm:mb-3 leading-tight">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal text-black dark:text-white mb-2 sm:mb-3 leading-tight">
                         {project.title}
                       </h2>
                       <p className="text-black dark:text-gray-300 mb-3 sm:mb-4 text-base sm:text-lg lg:text-xl font-medium">{project.role}</p>

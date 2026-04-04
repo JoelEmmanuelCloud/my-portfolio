@@ -65,7 +65,7 @@ export default function ProjectDetail({ params }) {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-5xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light text-black dark:text-white mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-normal text-black dark:text-white mb-4 sm:mb-6 leading-tight">
               {project.title}
             </h1>
 
