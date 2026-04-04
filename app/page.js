@@ -48,7 +48,6 @@ export default function Home() {
       <section className="relative min-h-screen bg-white dark:bg-gray-900 overflow-hidden pt-16 sm:pt-18 lg:pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
 
-
           <div className="xl:hidden flex justify-center gap-8 sm:gap-12 mb-6 sm:mb-8 pt-2">
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-black dark:text-white">+50</div>
@@ -65,7 +64,6 @@ export default function Home() {
           </div>
 
           <div className="xl:grid xl:grid-cols-[auto_1fr_auto] xl:gap-8 xl:items-center xl:min-h-[70vh]">
-
 
             <div className="hidden xl:flex xl:flex-col xl:gap-6 xl:justify-center xl:self-center">
               <div>
