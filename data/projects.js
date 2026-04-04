@@ -2,7 +2,7 @@ export const projects = [
   {
     slug: "avigate-navigation",
     title: "Avigate – Smart Transportation Navigation",
-    role: "Co-Founder & Chief Technology Officer",
+    role: "Personal Side Project",
     featured: true,
     links: {
       live: "https://avigate.co./",
@@ -13,8 +13,8 @@ export const projects = [
       "Google Maps API", "Redis", "JWT", "TOTP 2FA"
     ],
     images: ["/images/projects/avigate.png"],
-    summary: "Smart transportation navigation startup solving local transit challenges in Nigerian cities with buses, keke napep, taxis, and okada. Leading full-stack development with real-time route matching and community features.",
-    context: "Co-founded Avigate to address the lack of reliable navigation solutions for local Nigerian transportation. Users struggle to find efficient routes using multiple transit modes, leading to wasted time and poor travel experiences.",
+    summary: "Personal side project building a smart transportation navigation app for Nigerian cities — helping users find routes using buses, keke napep, taxis, and okada with real-time matching and community features.",
+    context: "Built Avigate to address the lack of reliable navigation solutions for local Nigerian transportation. Users struggle to find efficient routes using multiple transit modes, leading to wasted time and poor travel experiences.",
     challenge: "Building comprehensive route matching with complex transfer logic, real-time location sharing, and scalable infrastructure optimized for Nigerian transportation patterns and traffic conditions.",
     solution: "Architected full-stack solution with React Native mobile apps, NestJS backend, PostgreSQL database, and Redis caching. Implemented sophisticated routing algorithms, Google Maps integration, and enterprise-grade security with Google OAuth and TOTP 2FA.",
     impact: [

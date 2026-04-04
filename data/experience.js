@@ -2,22 +2,22 @@
 export const experience = [
   {
     company: "Avigate",
-    role: "Co-Founder & Chief Technology Officer",
+    role: "Personal Project",
     period: "2024 – Present",
     location: "Nigeria (Remote)",
     current: true,
-    website: "https://avigate.co/", 
+    website: "https://avigate.co/",
     stack: ["TypeScript", "React Native", "NestJS", "PostgreSQL", "Google Maps API", "Redis"],
-    description: "Co-founded smart transportation navigation startup for Nigerian cities",
+    description: "Personal side project — smart transportation navigation app for Nigerian cities",
     highlights: [
-      "Leading full-stack product development from concept to launch with comprehensive route matching systems",
-      "Architecting real-time location sharing, Google Maps integration, and routing algorithms optimized for Nigerian infrastructure",
+      "Building full-stack mobile app from concept to launch with comprehensive route matching systems",
+      "Implementing real-time location sharing, Google Maps integration, and routing algorithms optimized for Nigerian infrastructure",
       "Building scalable NestJS backend with PostgreSQL and Redis supporting thousands of concurrent users",
       "Implementing enterprise-grade security with Google OAuth, TOTP 2FA, JWT tokens, and device tracking"
     ],
     bullets: [
-      "Co-founded Avigate to solve local transit challenges helping users navigate using buses, keke napep, taxis, and okada",
-      "Leading full-stack development with TypeScript, React Native, NestJS, and PostgreSQL",
+      "Building Avigate to solve local transit challenges helping users navigate using buses, keke napep, taxis, and okada",
+      "Full-stack development with TypeScript, React Native, NestJS, and PostgreSQL",
       "Implemented real-time route matching with complex transfer logic and community-driven features",
       "Built scalable backend APIs with comprehensive security including Google OAuth and TOTP 2FA"
     ]
