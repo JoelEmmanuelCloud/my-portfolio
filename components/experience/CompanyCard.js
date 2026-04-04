@@ -26,9 +26,14 @@ export default function CompanyCard({
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-3 sm:gap-4">
         <div className="flex-1">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-              {company}
-            </h3>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+                {company}
+              </h3>
+              {currentRole?.client && (
+                <p className="text-sm text-slate-500 font-medium mt-0.5">Client: {currentRole.client}</p>
+              )}
+            </div>
             {currentRole?.current && (
               <span className="text-xs font-bold text-green-800 bg-green-100 px-3 py-1.5 rounded-full w-fit">
                 Current

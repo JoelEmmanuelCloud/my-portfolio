@@ -46,23 +46,25 @@ export const experience = [
   },
   {
     company: "Invillia",
-    role: "Frontend Engineer",
-    period: "Present",
+    client: "AIQuickMatch",
+    role: "Front-End Developer",
+    period: "Apr 2025 – Mar 2026",
     location: "Brazil (Remote)",
-    current: true,
     website: "https://invillia.ai/en/home",
-    stack: ["React", "TypeScript", "Enterprise UI", "REST APIs"],
-    description: "Frontend development for enterprise AI/automation platforms",
+    stack: ["React 18", "TypeScript 5", "TanStack Table", "TanStack Query", "Axios", "Keycloak", "Zod", "Cypress", "Jest", "Vitest", "React Hook Form", "React Router DOM", "Vite", "TailwindCSS", "shadcn/ui", "Azure Application Insights", "i18next"],
+    description: "Front-end development for AIQuickMatch, an AI-powered recruitment platform accelerating talent acquisition through intelligent candidate matching and automated screening workflows",
     highlights: [
-      "Building enterprise web applications using React and TypeScript for AI/automation platforms",
-      "Collaborating with cross-functional teams on scalable solutions across Brazil, USA, and Canada",
-      "Implementing modern UI patterns for complex business workflows with high performance requirements",
-      "Contributing to Laila AI hiring platform conducting automated technical assessments"
+      "Transitioned from Front-end QA to Developer within the same engagement, leveraging dual QA-dev background to streamline feature delivery",
+      "Developed UI features using React 18, TypeScript 5, and TanStack Table for complex data-driven recruitment workflows",
+      "Integrated REST APIs via Axios with Keycloak OIDC/SSO authentication and Zod schema validation",
+      "Wrote Cypress E2E and Jest unit tests, significantly improving test coverage across the platform",
+      "Operated in a Scrum environment contributing across both QA and development tracks"
     ],
     bullets: [
-      "Built enterprise web applications using React and TypeScript",
-      "Collaborated with cross-functional teams on scalable solutions",
-      "Implemented modern UI patterns for complex business workflows"
+      "Transitioned from Front-end QA to Developer within the same engagement",
+      "Built UI features with React 18, TypeScript, and TanStack Table",
+      "Integrated REST APIs with Keycloak SSO authentication and Zod validation",
+      "Wrote Cypress E2E and Jest unit tests improving overall test coverage"
     ]
   },
   {
