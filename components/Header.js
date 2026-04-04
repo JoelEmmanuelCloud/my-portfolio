@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+      <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-md backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Global">
           <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
 
