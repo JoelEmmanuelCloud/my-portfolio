@@ -75,52 +75,7 @@ function BookingSuccessModal({ isOpen, onClose }) {
 }
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [submitError, setSubmitError] = useState('')
   const [showBookingSuccess, setShowBookingSuccess] = useState(false)
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitError('')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        setIsSubmitted(true)
-        setFormData({ name: '', email: '', company: '', message: '' })
-      } else {
-        setSubmitError(data.error || 'Failed to send message. Please try again.')
-      }
-    } catch {
-      setSubmitError('Failed to send message. Please try again.')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
 
   const handleCalendlySuccess = () => {
     setShowBookingSuccess(true)
@@ -162,110 +117,9 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+            <div className="max-w-2xl">
 
-              <div className="order-2 lg:order-1">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-8 sm:mb-12 text-center lg:text-left">
-                  Send a Message
-                </h2>
-
-                {isSubmitted ? (
-                  <div className="text-center py-12 sm:py-16">
-                    <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mx-auto mb-4 sm:mb-6" />
-                    <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4">
-                      Message Sent
-                    </h3>
-                    <p className="text-black dark:text-gray-300 mb-6 text-sm sm:text-base">
-                      I'll get back to you within 24 hours.
-                    </p>
-                    <button
-                      onClick={() => setIsSubmitted(false)}
-                      className="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
-                    >
-                      Send another message
-                    </button>
-                  </div>
-                ) : (
-                  <div className="space-y-6 sm:space-y-8">
-                    <div className="grid gap-6 sm:gap-8">
-                      <div>
-                        <label htmlFor="name" className="sr-only">Your name (required)</label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          required
-                          aria-required="true"
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 rounded-lg"
-                          placeholder="Your name *"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="email" className="sr-only">Your email (required)</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          aria-required="true"
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 rounded-lg"
-                          placeholder="Your email *"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="company" className="sr-only">Company (optional)</label>
-                        <input
-                          type="text"
-                          id="company"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 rounded-lg"
-                          placeholder="Company (optional)"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="message" className="sr-only">Message (required)</label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          required
-                          aria-required="true"
-                          rows={5}
-                          value={formData.message}
-                          onChange={handleChange}
-                          className="w-full px-4 py-4 sm:py-5 border-2 border-black dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-0 bg-white dark:bg-gray-800 text-black dark:text-white text-base sm:text-lg placeholder-black/60 dark:placeholder-gray-500 transition-all duration-200 resize-none rounded-lg"
-                          placeholder="Tell me about your project *"
-                        />
-                      </div>
-                    </div>
-
-                    {submitError && (
-                      <p role="alert" className="text-red-600 text-sm font-medium mt-2">
-                        {submitError}
-                      </p>
-                    )}
-
-                    <button
-                      type="button"
-                      onClick={handleSubmit}
-                      disabled={isSubmitting}
-                      className="w-full sm:w-auto mt-8 sm:mt-12 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-base font-semibold shadow-lg hover:shadow-xl"
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="text-center lg:text-left">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-6 sm:mb-8">
                     Get In Touch
