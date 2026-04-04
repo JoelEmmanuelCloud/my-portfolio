@@ -117,14 +117,13 @@ export default function Home() {
                   >
                     Get In Touch →
                   </Link>
-                  <a
-                    href="/documents/joel-emmanuel-resume.pdf"
-                    download
+                  <Link
+                    href="/resume"
                     className="inline-flex items-center justify-center gap-2 px-5 lg:px-6 py-2.5 border-2 border-black dark:border-white text-black dark:text-white rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 text-sm lg:text-base font-semibold"
                   >
                     <Download className="h-4 w-4" aria-hidden="true" />
                     Resume
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -326,7 +325,7 @@ export default function Home() {
                 Start a Conversation
               </Link>
               <a
-                href="mailto:ejoel00@gmail.com"
+                href="mailto:ejoel0035@gmail.com"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-200 text-sm sm:text-base font-semibold"
               >
                 Send Email →

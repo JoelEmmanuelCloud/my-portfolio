@@ -132,6 +132,25 @@
   text-orientation: mixed;
 }
 
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .resume-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  @page {
+    margin: 0;
+    size: A4;
+  }
+}
+
 /* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
   width: 6px;
