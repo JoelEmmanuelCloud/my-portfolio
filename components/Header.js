@@ -107,17 +107,9 @@ export default function Header() {
         </nav>
       </header>
 
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-          onClick={() => setMobileMenuOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
       <div
         id="mobile-menu"
-        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm z-50 bg-white dark:bg-gray-900 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-0 z-50 bg-white dark:bg-gray-900 flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-hidden={!mobileMenuOpen}
