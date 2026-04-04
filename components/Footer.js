@@ -12,8 +12,6 @@ const navLinks = [
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/joel-emmanuel-149708202/' },
   { name: 'GitHub', href: 'https://github.com/joelemmanuel' },
-  { name: 'X', href: 'https://x.com/joelemmanuel' },
-  { name: 'Instagram', href: 'https://instagram.com/joelemmanuel' },
 ]
 
 export default function Footer() {
