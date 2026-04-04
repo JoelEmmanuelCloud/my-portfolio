@@ -23,39 +23,44 @@ const legal = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black">
+    <footer className="bg-white dark:bg-gray-900 border-t border-black/10 dark:border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
-          
 
           <div className="space-y-3 sm:space-y-4 sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center justify-center sm:justify-start gap-2">
               <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 relative">
                 <Image
+                  src="/logos/logo2.png"
+                  alt="Joel Emmanuel Logo"
+                  fill
+                  className="object-contain dark:hidden"
+                />
+                <Image
                   src="/logos/logo.svg"
                   alt="Joel Emmanuel Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain hidden dark:block"
                 />
               </div>
             </Link>
-            <p className="text-white leading-relaxed max-w-md text-sm sm:text-base text-center sm:text-left">
-              Software Engineer specializing in React, Node.js, and AWS. 
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-md text-sm sm:text-base text-center sm:text-left">
+              Software Engineer specializing in React, Node.js, and AWS.
               Building scalable web platforms and production systems.
             </p>
-            <div className="text-sm sm:text-base text-white font-medium text-center sm:text-left">
+            <div className="text-sm sm:text-base text-gray-500 dark:text-gray-500 font-medium text-center sm:text-left">
               Metaverse
             </div>
           </div>
 
           <div className="text-center sm:text-left">
-            <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Quick Links</h3>
+            <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Quick Links</h3>
             <div className="space-y-2 sm:space-y-2.5">
               {quickLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
+                  className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
@@ -64,7 +69,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center sm:text-left">
-            <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Connect</h3>
+            <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Connect</h3>
             <div className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-6">
               {socialLinks.map((link) => (
                 <a
@@ -72,23 +77,23 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
+                  className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
                   {link.name}
                 </a>
               ))}
             </div>
-            
+
             <div className="space-y-2 sm:space-y-2.5">
               <a
                 href="mailto:ejoel00@gmail.com"
-                className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200 break-all sm:break-normal"
+                className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 break-all sm:break-normal"
               >
                 ejoel00@gmail.com
               </a>
               <a
                 href="tel:+2347069763692"
-                className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
+                className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
               >
                 +234 706 976 3692
               </a>
@@ -96,7 +101,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center sm:text-left">
-            <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Legal</h3>
+            <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Legal</h3>
             <div className="space-y-2 sm:space-y-2.5">
               {legal.map((link) => (
                 link.download ? (
@@ -104,7 +109,7 @@ export default function Footer() {
                     key={link.name}
                     href={link.href}
                     download
-                    className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
+                    className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -112,7 +117,7 @@ export default function Footer() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="block text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-200"
+                    className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -131,20 +136,20 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="border-t border-white/20 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-          <p className="text-xs sm:text-sm text-white text-center sm:text-left">
+        <div className="border-t border-black/10 dark:border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 text-center sm:text-left">
             © {new Date().getFullYear()} Joel Emmanuel. All rights reserved.
           </p>
           <div className="flex gap-4 sm:gap-6">
-            <Link 
-              href="/privacy" 
-              className="text-xs sm:text-sm text-white hover:text-blue-400 transition-colors duration-200"
+            <Link
+              href="/privacy"
+              className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
             >
               Privacy Policy
             </Link>
-            <Link 
-              href="/terms" 
-              className="text-xs sm:text-sm text-white hover:text-blue-400 transition-colors duration-200"
+            <Link
+              href="/terms"
+              className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
             >
               Terms of Service
             </Link>

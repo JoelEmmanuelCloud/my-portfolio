@@ -35,7 +35,14 @@ export default function Header() {
                     src="/logos/logo2.png"
                     alt="Joel Emmanuel Logo"
                     fill
-                    className="object-contain"
+                    className="object-contain dark:hidden"
+                    priority
+                  />
+                  <Image
+                    src="/logos/logo.svg"
+                    alt="Joel Emmanuel Logo"
+                    fill
+                    className="object-contain hidden dark:block"
                     priority
                   />
                 </div>
