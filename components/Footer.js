@@ -18,7 +18,7 @@ const quickLinks = [
 const legal = [
   { name: 'Privacy Policy', href: '/privacy' },
   { name: 'Terms of Service', href: '/terms' },
-  { name: 'Resume / CV', href: '/documents/joel-emmanuel-resume.pdf', download: true },
+  { name: 'Resume / CV', href: '/resume' },
 ]
 
 export default function Footer() {
@@ -86,10 +86,10 @@ export default function Footer() {
 
             <div className="space-y-2 sm:space-y-2.5">
               <a
-                href="mailto:ejoel00@gmail.com"
+                href="mailto:ejoel0035@gmail.com"
                 className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 break-all sm:break-normal"
               >
-                ejoel00@gmail.com
+                ejoel0035@gmail.com
               </a>
               <a
                 href="tel:+2347069763692"
@@ -104,24 +104,13 @@ export default function Footer() {
             <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Legal</h3>
             <div className="space-y-2 sm:space-y-2.5">
               {legal.map((link) => (
-                link.download ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    download
-                    className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
-                )
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                >
+                  {link.name}
+                </Link>
               ))}
             </div>
           </div>
