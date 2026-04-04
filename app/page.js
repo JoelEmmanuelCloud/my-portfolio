@@ -158,35 +158,31 @@ export default function Home() {
 
       <section className="py-10 sm:py-12 lg:py-14 bg-white dark:bg-gray-900 border-t border-black/10 dark:border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xs sm:text-sm font-bold text-black dark:text-gray-400 uppercase tracking-wider mb-6 sm:mb-8 text-center">
-            Trusted by leading companies
-          </h2>
-        </div>
-        <div className="marquee-wrapper relative overflow-hidden flex">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-r from-white dark:from-gray-900 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-28 z-10 bg-gradient-to-l from-white dark:from-gray-900 to-transparent" />
-          {[0, 1].map((clone) => (
-            <div key={clone} className="flex flex-shrink-0 items-center animate-marquee" aria-hidden={clone === 1 ? 'true' : undefined}>
+          <div className="text-center">
+            <h2 className="text-xs sm:text-sm font-bold text-black dark:text-gray-400 uppercase tracking-wider mb-6 sm:mb-8">
+              Trusted by leading companies
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 items-center">
               {companies.map((company) => (
                 <a
                   key={company.name}
                   href={company.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-none flex items-center justify-center px-8 sm:px-10"
+                  className="group flex justify-center"
                 >
-                  <div className="relative h-7 sm:h-9 w-24 sm:w-28">
+                  <div className="w-16 sm:w-20 h-8 sm:h-10 flex items-center justify-center transition-all duration-300 hover:scale-110 relative">
                     <Image
                       src={company.logo}
                       alt={`${company.name} logo`}
                       fill
-                      className="object-contain transition-opacity duration-300 opacity-50 hover:opacity-100 dark:opacity-30 dark:hover:opacity-70"
+                      className="object-contain transition-all duration-300 hover:brightness-75"
                     />
                   </div>
                 </a>
               ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
