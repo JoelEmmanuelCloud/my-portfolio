@@ -51,7 +51,12 @@ export default function TimelineItem({
               </div>
               
               <div className="space-y-2 text-sm text-slate-700">
-                <p className="font-medium text-base">{experience.company}</p>
+                <div>
+                  <p className="font-medium text-base">{experience.company}</p>
+                  {experience.client && (
+                    <p className="text-sm text-slate-500 font-medium">Client: {experience.client}</p>
+                  )}
+                </div>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-slate-600">
                   <span className="font-medium">{experience.period}</span>
                   {experience.location && (
