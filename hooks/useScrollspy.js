@@ -2,9 +2,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { throttle } from '@/lib/utils'
 
-/**
- * Simple scroll spy hook for tracking active sections
- */
 export function useScrollspy(sectionIds = [], options = {}) {
   const {
     offset = 100,
@@ -13,7 +10,6 @@ export function useScrollspy(sectionIds = [], options = {}) {
 
   const [activeSection, setActiveSection] = useState('')
 
-  // Simple scroll handler
   const handleScroll = useCallback(
     throttle(() => {
       if (!sectionIds.length) return
@@ -21,7 +17,6 @@ export function useScrollspy(sectionIds = [], options = {}) {
       const scrollY = window.scrollY + offset
       let currentSection = ''
 
-      // Find the section that's currently in view
       for (const sectionId of sectionIds) {
         const element = document.getElementById(sectionId)
         if (element) {
@@ -33,7 +28,6 @@ export function useScrollspy(sectionIds = [], options = {}) {
         }
       }
 
-      // If no section is exactly in view, find the closest one
       if (!currentSection && sectionIds.length > 0) {
         let closestSection = sectionIds[0]
         let closestDistance = Infinity
@@ -61,7 +55,7 @@ export function useScrollspy(sectionIds = [], options = {}) {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Set initial active section
+    handleScroll()
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -71,9 +65,6 @@ export function useScrollspy(sectionIds = [], options = {}) {
   return activeSection
 }
 
-/**
- * Hook for smooth scrolling to sections
- */
 export function useSmoothScroll() {
   const scrollToSection = useCallback((sectionId, offset = 100) => {
     const element = document.getElementById(sectionId)
@@ -98,9 +89,6 @@ export function useSmoothScroll() {
   return { scrollToSection, scrollToTop }
 }
 
-/**
- * Hook for detecting scroll position
- */
 export function useScrollPosition(options = {}) {
   const { threshold = 100, throttleMs = 100 } = options
   
@@ -122,7 +110,7 @@ export function useScrollPosition(options = {}) {
     }, throttleMs)
 
     window.addEventListener('scroll', updateScrollInfo, { passive: true })
-    updateScrollInfo() // Initial call
+    updateScrollInfo()
 
     return () => window.removeEventListener('scroll', updateScrollInfo)
   }, [threshold, throttleMs])

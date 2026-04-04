@@ -1,5 +1,4 @@
 'use client'
-//components/project/ProjectCard.js
 import Link from 'next/link'
 import Image from 'next/image'
 import { ExternalLink, ArrowRight } from 'lucide-react'
@@ -13,7 +12,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
     <div className={`group relative bg-white border-2 border-black transition-all duration-200 hover:shadow-xl ${
       isFeatured ? 'border-blue-600' : ''
     }`}>
-      {/* Featured Badge */}
+
       {isFeatured && (
         <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10">
           <span className="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
@@ -22,7 +21,6 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         </div>
       )}
 
-      {/* Project Image */}
       {project.images && project.images.length > 0 && (
         <div className="relative w-full h-40 sm:h-48 bg-white border-b-2 border-black">
           <Image
@@ -35,7 +33,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
         </div>
       )}
       <div className="p-4 sm:p-6">
-        {/* Header */}
+
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1 min-w-0">
             <h3 className="text-lg sm:text-xl font-bold text-black mb-2 truncate">
@@ -51,7 +49,7 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
             )}
           </div>
           
-          {/* External Links */}
+
           <div className="flex space-x-2 ml-3 sm:ml-4 flex-shrink-0">
             {project.links?.live && (
               <a
@@ -82,7 +80,6 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
           </div>
         </div>
 
-        {/* Summary */}
         <p className="text-sm sm:text-base text-black mb-4 leading-relaxed font-medium">
           {isDetailed ? project.summary : 
            project.summary.length > 120 ? 
@@ -91,7 +88,6 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
           }
         </p>
 
-        {/* Key Highlights */}
         {isDetailed && project.impact && (
           <div className="mb-4">
             <h4 className="text-sm sm:text-base font-bold text-black mb-3">Key Results</h4>
@@ -106,7 +102,6 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
           </div>
         )}
 
-        {/* Technology Stack */}
         <div className="mb-6">
           <TechStack 
             technologies={project.stack} 
@@ -115,7 +110,6 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
           />
         </div>
 
-        {/* Footer Actions */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 pt-4 border-t-2 border-black">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
             {project.links?.live && (
@@ -156,7 +150,6 @@ export default function ProjectCard({ project, index = 0, variant = 'default' })
   )
 }
 
-// Compact version for grid layouts
 export function ProjectCardCompact({ project, index = 0 }) {
   return (
     <div className="group p-4 sm:p-5 border-2 border-black hover:shadow-xl transition-all bg-white rounded">
@@ -191,7 +184,6 @@ export function ProjectCardCompact({ project, index = 0 }) {
   )
 }
 
-// Featured version for hero sections
 export function ProjectCardFeatured({ project, index = 0 }) {
   return (
     <div className="group relative bg-white border-2 border-blue-600 p-6 sm:p-8 rounded">

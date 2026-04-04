@@ -39,7 +39,7 @@ const Badge = forwardRef(({
     baseStyles,
     variants[variant],
     sizes[size],
-    'touch-manipulation select-none', // Mobile optimization
+    'touch-manipulation select-none',
     className
   )
   
@@ -73,7 +73,6 @@ Badge.displayName = 'Badge'
 
 export default Badge
 
-// Preset badge components for common use cases
 export const TechBadge = ({ children, ...props }) => (
   <Badge variant="tech" size="sm" {...props}>
     {children}
@@ -124,7 +123,6 @@ export const PriorityBadge = ({ priority, ...props }) => {
   )
 }
 
-// Badge group component for multiple badges
 export const BadgeGroup = ({ 
   badges = [], 
   className,

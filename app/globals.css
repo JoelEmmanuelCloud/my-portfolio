@@ -8,7 +8,12 @@
   }
    
   body {
-    @apply bg-white text-gray-900 font-light;
+    @apply bg-white text-gray-900 font-normal;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
   }
 }
 
@@ -35,16 +40,15 @@
    
   /* Updated button styles for minimalist design */
   .btn-primary {
-    @apply bg-gray-900 text-white px-8 py-3 rounded-none font-light text-sm tracking-wide transition-all duration-300 hover:bg-gray-700;
-  }
-   
-  .btn-secondary {
-    @apply bg-transparent text-gray-900 border border-gray-300 px-8 py-3 rounded-none font-light text-sm tracking-wide transition-all duration-300 hover:bg-gray-900 hover:text-white;
+    @apply bg-gray-900 text-white px-8 py-3 rounded-none font-medium text-sm tracking-wide transition-all duration-300 hover:bg-gray-700;
   }
 
-  /* Minimalist link styles */
+  .btn-secondary {
+    @apply bg-transparent text-gray-900 border border-gray-300 px-8 py-3 rounded-none font-medium text-sm tracking-wide transition-all duration-300 hover:bg-gray-900 hover:text-white;
+  }
+
   .link-minimal {
-    @apply text-gray-900 font-light tracking-wide transition-colors duration-300 hover:text-gray-600;
+    @apply text-gray-900 font-normal tracking-wide transition-colors duration-300 hover:text-gray-600;
   }
 
   /* Typography classes for the new design */
@@ -95,15 +99,56 @@
   animation: gentleFloat 8s ease-in-out infinite;
 }
 
+@keyframes progressBar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(500%); }
+}
+
+.animate-progress-bar {
+  animation: progressBar 1.4s ease-in-out infinite;
+  width: 20%;
+}
+
+
 /* Focus styles for accessibility */
 .focus-ring {
   @apply focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-2;
+}
+
+/* Visible focus for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Remove focus ring for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Rotated text utility */
 .rotate-text-vertical {
   writing-mode: vertical-lr;
   text-orientation: mixed;
+}
+
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .resume-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  @page {
+    margin: 0;
+    size: A4;
+  }
 }
 
 /* Custom scrollbar for webkit browsers */

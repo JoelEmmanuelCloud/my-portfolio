@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
         {
           subtitle: 'How to Exercise Rights',
           items: [
-            'Email us at ejoel00@gmail.com with your request',
+            'Email us at ejoel0035@gmail.com with your request',
             'Include sufficient information to verify your identity',
             'We will respond within 30 days of receiving your request',
             'No fees for reasonable requests'
@@ -134,7 +134,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
+
       <section className="pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link
@@ -159,11 +159,10 @@ export default function PrivacyPolicy() {
         </div>
       </section>
 
-      {/* Content */}
       <section className="pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
-            {/* Table of Contents */}
+
             <div className="lg:col-span-1">
               <div className="sticky top-20 sm:top-24">
                 <h3 className="text-sm sm:text-base font-bold text-black uppercase tracking-wide mb-4 sm:mb-6">
@@ -189,7 +188,6 @@ export default function PrivacyPolicy() {
               </div>
             </div>
 
-            {/* Main Content */}
             <div className="lg:col-span-3">
               <div className="max-w-none">
                 {sections.map((section) => (
@@ -225,7 +223,6 @@ export default function PrivacyPolicy() {
                   </div>
                 ))}
 
-                {/* Contact Information */}
                 <div id="contact-info" className="mb-12 sm:mb-16">
                   <div className="flex items-center mb-6 sm:mb-8">
                     <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
@@ -246,10 +243,10 @@ export default function PrivacyPolicy() {
                         <p className="text-black text-sm sm:text-base lg:text-lg">
                           <span className="font-bold">Email:</span>{' '}
                           <a 
-                            href="mailto:ejoel00@gmail.com" 
+                            href="mailto:ejoel0035@gmail.com" 
                             className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
                           >
-                            ejoel00@gmail.com
+                            ejoel0035@gmail.com
                           </a>
                         </p>
                         <p className="text-black text-sm sm:text-base lg:text-lg">
@@ -275,7 +272,6 @@ export default function PrivacyPolicy() {
                   </div>
                 </div>
 
-                {/* Updates Notice */}
                 <div className="border-2 border-black rounded-xl p-6 sm:p-8 lg:p-10 bg-white hover:shadow-lg transition-shadow duration-300">
                   <div className="flex items-center mb-4 sm:mb-6">
                     <Eye className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-2 sm:mr-3 flex-shrink-0" />

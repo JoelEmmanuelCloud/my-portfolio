@@ -72,7 +72,6 @@ export default function LogoCloud({
           ))}
         </div>
 
-        {/* Optional CTA */}
         <div className="text-center mt-8 sm:mt-12 lg:mt-16">
           <Link
             href="/experience"
@@ -116,7 +115,6 @@ function CompanyLogo({ company }) {
   return logoContent
 }
 
-// Compact version for mobile
 export function LogoCloudCompact({ companies = defaultCompanies.slice(0, 4) }) {
   return (
     <div className="py-6 sm:py-8 lg:py-10">
@@ -128,7 +126,7 @@ export function LogoCloudCompact({ companies = defaultCompanies.slice(0, 4) }) {
         ))}
       </div>
       
-      {/* Mobile-friendly CTA */}
+
       <div className="text-center mt-6 sm:mt-8 lg:mt-10">
         <Link
           href="/experience"
@@ -141,7 +139,6 @@ export function LogoCloudCompact({ companies = defaultCompanies.slice(0, 4) }) {
   )
 }
 
-// Minimal footer version - optimized for mobile
 export function LogoCloudMinimal({ companies = defaultCompanies.slice(0, 4) }) {
   return (
     <div className="py-4 sm:py-6 lg:py-8">
@@ -161,7 +158,6 @@ export function LogoCloudMinimal({ companies = defaultCompanies.slice(0, 4) }) {
   )
 }
 
-// Mobile-first carousel version
 export function LogoCloudCarousel({ companies = defaultCompanies }) {
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white overflow-hidden">
@@ -172,7 +168,6 @@ export function LogoCloudCarousel({ companies = defaultCompanies }) {
           </h2>
         </div>
 
-        {/* Scrollable container for mobile */}
         <div className="overflow-x-auto scrollbar-hide">
           <div className="flex space-x-8 sm:space-x-12 lg:space-x-16 pb-4 min-w-max">
             {companies.map((company) => (
@@ -183,7 +178,6 @@ export function LogoCloudCarousel({ companies = defaultCompanies }) {
           </div>
         </div>
 
-        {/* Mobile CTA */}
         <div className="text-center mt-6 sm:mt-8 lg:mt-12">
           <Link
             href="/contact"

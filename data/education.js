@@ -31,7 +31,6 @@ export const education = [
   }
 ]
 
-// Helper functions
 export function getEducationByLevel(level = 'all') {
   const levels = {
     undergraduate: education.filter(edu => edu.degree.toLowerCase().includes('bachelor')),

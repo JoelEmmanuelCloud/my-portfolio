@@ -1,9 +1,8 @@
-//data/skills.js - Updated with blockchain and enhanced technical skills
 
 export const skills = {
   blockchain: {
     title: "Blockchain & Web3",
-    icon: "⛓️",
+    icon: "",
     skills: [
       "Lisk Blockchain", "Ethereum Development", "Solidity", "Smart Contracts",
       "DeFi Protocols", "Web3.js", "Ethers.js", "dApp Development",
@@ -12,7 +11,7 @@ export const skills = {
   },
   frontend: {
     title: "Frontend Development",
-    icon: "⚡",
+    icon: "",
     skills: [
       "React.js", "Next.js", "TypeScript", "JavaScript ES6+", 
       "React Native", "Tailwind CSS", "Material UI", "Redux",
@@ -21,7 +20,7 @@ export const skills = {
   },
   backend: {
     title: "Backend Development",
-    icon: "🔧",
+    icon: "",
     skills: [
       "Node.js", "NestJS", "Express.js", "Java", "Spring Boot",
       "Python", "REST APIs", "GraphQL", "Microservices", 
@@ -30,7 +29,7 @@ export const skills = {
   },
   cloud: {
     title: "Cloud & DevOps",
-    icon: "☁️",
+    icon: "",
     skills: [
       "AWS (EC2, S3, Lambda, SageMaker, Bedrock, RDS, DynamoDB)",
       "Docker", "Kubernetes", "CI/CD", "GitHub Actions", 
@@ -39,7 +38,7 @@ export const skills = {
   },
   database: {
     title: "Databases & Caching", 
-    icon: "🗄️",
+    icon: "",
     skills: [
       "MongoDB", "PostgreSQL", "MySQL", "Redis", 
       "Vector Databases", "SQL", "Database Design",
@@ -48,7 +47,7 @@ export const skills = {
   },
   ai: {
     title: "AI & Machine Learning",
-    icon: "🤖",
+    icon: "",
     skills: [
       "AWS SageMaker", "Amazon Bedrock", "Amazon Lex", 
       "TensorFlow", "PyTorch", "LangChain", "RAG Systems",
@@ -58,7 +57,7 @@ export const skills = {
   },
   tools: {
     title: "Development Tools",
-    icon: "🛠️",
+    icon: "",
     skills: [
       "Git", "GitHub", "VS Code", "Postman", 
       "npm", "Webpack", "ESLint", "Jest",
@@ -69,50 +68,48 @@ export const skills = {
 
 export const highlights = [
   {
-    title: "Startup Co-Founder",
-    description: "Building Avigate transportation navigation startup",
-    icon: "🚀"
+    title: "Side Project Builder",
+    description: "Building Avigate, a personal transportation navigation app for Nigerian cities",
+    icon: ""
   },
   {
     title: "Blockchain Developer",
     description: "Experience with Lisk, Ethereum, and DeFi protocols",
-    icon: "⛓️"
+    icon: ""
   },
   {
     title: "AWS Certified",
     description: "Cloud Practitioner & AI Practitioner certified",
-    icon: "☁️"
+    icon: ""
   },
   {
     title: "Production Systems",
     description: "Built applications serving real users at scale",
-    icon: "⚡"
+    icon: ""
   },
   {
     title: "Full-Stack Expert",
     description: "End-to-end development from frontend to blockchain",
-    icon: "💻"
+    icon: ""
   },
   {
     title: "AI/ML Integration",
     description: "RAG systems, LLMs, and automated document processing",
-    icon: "🤖"
+    icon: ""
   },
   {
     title: "Hackathon Winner",
     description: "EthGlobal hackathons with innovative solutions",
-    icon: "🏆"
+    icon: ""
   },
   {
     title: "International Teams",
     description: "Collaborated across Brazil, USA, Canada, Nigeria, Ghana",
-    icon: "🌍"
+    icon: ""
   }
 ]
 
-// Detailed skill proficiency mapping for skills page
 export const skillProficiency = {
-  // Blockchain & Web3
   "Lisk Blockchain": "Advanced",
   "Ethereum Development": "Advanced",
   "Solidity": "Advanced",
@@ -125,7 +122,6 @@ export const skillProficiency = {
   "Tokenomics": "Intermediate",
   "Avail Nexus SDK": "Intermediate",
   
-  // Frontend
   "React.js": "Expert",
   "Next.js": "Expert", 
   "TypeScript": "Expert",
@@ -138,7 +134,6 @@ export const skillProficiency = {
   "HTML5": "Expert",
   "CSS3": "Expert",
   
-  // Backend
   "Node.js": "Expert",
   "NestJS": "Expert",
   "Express.js": "Expert",
@@ -151,7 +146,6 @@ export const skillProficiency = {
   "WebSockets": "Advanced",
   "Event-Driven Architecture": "Advanced",
   
-  // Cloud & DevOps
   "AWS (EC2, S3, Lambda, SageMaker, Bedrock, RDS, DynamoDB)": "Advanced",
   "Docker": "Intermediate",
   "Kubernetes": "Intermediate",
@@ -162,7 +156,6 @@ export const skillProficiency = {
   "Vercel": "Advanced",
   "Netlify": "Advanced",
   
-  // Databases
   "MongoDB": "Advanced",
   "PostgreSQL": "Advanced",
   "MySQL": "Advanced",
@@ -173,7 +166,6 @@ export const skillProficiency = {
   "Query Optimization": "Advanced",
   "Geospatial Indexing": "Advanced",
   
-  // AI & ML
   "AWS SageMaker": "Advanced",
   "Amazon Bedrock": "Advanced",
   "Amazon Lex": "Advanced",
@@ -188,7 +180,6 @@ export const skillProficiency = {
   "Document Processing": "Advanced",
   "MLOps": "Intermediate",
   
-  // Tools
   "Git": "Expert",
   "GitHub": "Expert",
   "VS Code": "Expert",
@@ -202,46 +193,45 @@ export const skillProficiency = {
   "React Testing Library": "Advanced"
 }
 
-// Core competencies from resume
 export const coreCompetencies = [
   {
     title: "Technical Leadership",
     description: "Leading architecture design for blockchain-integrated platforms and complex backend systems",
-    icon: "👨‍💼"
+    icon: ""
   },
   {
     title: "Entrepreneurship",
     description: "Co-founded Avigate, demonstrating ability to identify opportunities and build solutions from concept to product",
-    icon: "🚀"
+    icon: ""
   },
   {
     title: "Team Collaboration",
     description: "Proven ability to work effectively in cross-functional teams across multiple time zones",
-    icon: "🤝"
+    icon: ""
   },
   {
     title: "Problem-Solving",
     description: "Expert at analyzing complex challenges and implementing innovative solutions in blockchain, AI/ML, and distributed systems",
-    icon: "🧩"
+    icon: ""
   },
   {
     title: "Adaptability",
     description: "Quick learner rapidly mastering emerging technologies, from Web3 frameworks to AI/ML tools",
-    icon: "🔄"
+    icon: ""
   },
   {
     title: "Communication",
     description: "Strong ability to translate technical concepts for diverse stakeholders and document complex systems",
-    icon: "💬"
+    icon: ""
   },
   {
     title: "Attention to Detail",
     description: "Meticulous code quality, security-first mindset, and commitment to best practices",
-    icon: "🔍"
+    icon: ""
   },
   {
     title: "Self-Motivated",
     description: "Entrepreneurial drive through successful freelance projects, startup co-founding, and continuous learning",
-    icon: "⚡"
+    icon: ""
   }
 ]

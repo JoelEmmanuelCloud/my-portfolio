@@ -1,18 +1,31 @@
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ErrorBoundary from '@/components/ErrorBoundary'
+import ThemeProvider from '@/components/ThemeProvider'
+import AppRefresher from '@/components/AppRefresher'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+})
 
 export const metadata = {
   title: 'Joel Emmanuel - Fullstack & Blockchain Developer | Tech Entrepreneur',
-  description: 'Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems. Co-Founder of Avigate. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML. Building on Lisk, Ethereum, and modern cloud infrastructure.',
+  description: 'Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems. Building Avigate, a personal transportation navigation app. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML.',
   keywords: 'Blockchain Developer, Web3 Developer, Fullstack Developer, React Developer, NestJS, Lisk Blockchain, Ethereum, Solidity, Smart Contracts, DeFi, AI/ML Developer, AWS Certified, Startup Founder, Tech Entrepreneur, Node.js, TypeScript, PostgreSQL',
   authors: [{ name: 'Joel Emmanuel' }],
   creator: 'Joel Emmanuel',
-  
-  // Favicon and icon configuration
+
+  metadataBase: new URL('https://joelemmanuel.dev'),
+
+  alternates: {
+    canonical: '/',
+  },
+
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -32,28 +45,19 @@ export const metadata = {
       },
     ],
   },
-  
+
   openGraph: {
     title: 'Joel Emmanuel - Fullstack & Blockchain Developer | Tech Entrepreneur',
-    description: 'Building scalable Web3 applications and AI-powered platforms. Co-Founder of Avigate transportation startup. Expert in Blockchain (Lisk, Ethereum), React, NestJS, and AWS.',
+    description: 'Building scalable Web3 applications and AI-powered platforms. Working on Avigate, a personal transportation navigation app. Expert in Blockchain (Lisk, Ethereum), React, NestJS, and AWS.',
     url: 'https://joelemmanuel.dev',
     siteName: 'Joel Emmanuel Portfolio',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Joel Emmanuel - Blockchain & Fullstack Developer'
-      },
-    ],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Joel Emmanuel - Fullstack & Blockchain Developer',
-    description: 'Building Web3 applications, AI platforms, and production systems. Co-Founder of Avigate. Expert in Blockchain, React, NestJS, and AWS.',
-    images: ['/og-image.png'],
+    description: 'Building Web3 applications, AI platforms, and production systems. Working on Avigate, a personal navigation app. Expert in Blockchain, React, NestJS, and AWS.',
     creator: '@joelemmanuel',
   },
   robots: {
@@ -75,6 +79,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <meta name="theme-color" content="#2563eb" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -83,13 +88,13 @@ export default function RootLayout({ children }) {
               "@type": "Person",
               "name": "Joel Emmanuel",
               "jobTitle": "Fullstack & Blockchain Developer",
-              "description": "Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems. Co-Founder & CTO of Avigate transportation startup.",
+              "description": "Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems. Building Avigate, a personal transportation navigation app for Nigerian cities.",
               "url": "https://joelemmanuel.dev",
               "image": "https://joelemmanuel.dev/images/profile/profile.jpeg",
               "sameAs": [
-                "https://linkedin.com/in/joelemmanuel",
+                "https://www.linkedin.com/in/joel-emmanuel-149708202/",
                 "https://github.com/joelemmanuel",
-                "https://twitter.com/joelemmanuel"
+                "https://x.com/joelemmanuel"
               ],
               "alumniOf": {
                 "@type": "CollegeOrUniversity",
@@ -124,19 +129,43 @@ export default function RootLayout({ children }) {
                   "credentialCategory": "certification"
                 }
               ],
-              "founder": {
-                "@type": "Organization",
+              "sideProject": {
+                "@type": "SoftwareApplication",
                 "name": "Avigate",
-                "description": "Smart transportation navigation startup for Nigerian cities"
+                "description": "Personal transportation navigation app for Nigerian cities"
               }
             })
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})();`
+          }}
+        />
       </head>
       <body className={inter.className}>
+        <ThemeProvider>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:font-medium"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main>{children}</main>
+        <ErrorBoundary>
+          <main id="main-content">{children}</main>
+        </ErrorBoundary>
         <Footer />
+        <AppRefresher />
+        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
+          <Script
+            defer
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+            src="https://plausible.io/js/script.js"
+            strategy="afterInteractive"
+          />
+        )}
+        </ThemeProvider>
       </body>
     </html>
   )

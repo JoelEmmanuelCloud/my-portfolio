@@ -1,6 +1,4 @@
 'use client'
-//components/project/TechStack.js
-// Minimal technology stack component with clean design
 export default function TechStack({ 
   technologies = [], 
   limit = 6, 
@@ -42,7 +40,6 @@ export default function TechStack({
   )
 }
 
-// Grouped version for categories
 export function TechStackGrouped({ technologies }) {
   if (!technologies || typeof technologies !== 'object') {
     return null
@@ -67,7 +64,6 @@ export function TechStackGrouped({ technologies }) {
   )
 }
 
-// Simple inline version
 export function TechStackInline({ technologies, maxItems = 3 }) {
   if (!technologies || technologies.length === 0) {
     return null
@@ -86,7 +82,6 @@ export function TechStackInline({ technologies, maxItems = 3 }) {
   )
 }
 
-// Compact version with oval buttons for mobile
 export function TechStackCompact({ technologies, limit = 4, onViewAll }) {
   if (!technologies || technologies.length === 0) {
     return null

@@ -55,22 +55,21 @@ export const certifications = [
 export const certificationCategories = {
   cloud: {
     name: 'Cloud Computing',
-    icon: '☁️',
+    icon: '',
     color: 'blue'
   },
   ai: {
     name: 'Artificial Intelligence',
-    icon: '🤖',
+    icon: '',
     color: 'purple'
   },
   networking: {
     name: 'Networking',
-    icon: '🌐',
+    icon: '',
     color: 'green'
   }
 }
 
-// Helper functions
 export function getActiveCertifications() {
   return certifications.filter(cert => cert.status === 'active')
 }

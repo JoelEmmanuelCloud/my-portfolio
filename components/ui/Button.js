@@ -40,7 +40,7 @@ const Button = forwardRef(({
     variants[variant],
     sizes[size],
     loading && 'cursor-wait',
-    'touch-manipulation select-none', // Mobile optimization
+    'touch-manipulation select-none',
     className
   )
   
@@ -72,7 +72,6 @@ Button.displayName = 'Button'
 
 export default Button
 
-// Preset button components for common use cases
 export const PrimaryButton = ({ children, ...props }) => (
   <Button variant="primary" {...props}>{children}</Button>
 )

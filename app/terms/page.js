@@ -159,7 +159,7 @@ export default function TermsOfService() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
+
       <section className="pt-24 pb-16">
         <div className="container mx-auto px-4 sm:px-6">
           <Link
@@ -184,11 +184,10 @@ export default function TermsOfService() {
         </div>
       </section>
 
-      {/* Content */}
       <section className="pb-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-4 gap-8 lg:gap-16">
-            {/* Table of Contents */}
+
             <div className="lg:col-span-1">
               <div className="sticky top-24">
                 <h3 className="text-sm font-bold text-black uppercase tracking-wide mb-6">
@@ -220,7 +219,6 @@ export default function TermsOfService() {
               </div>
             </div>
 
-            {/* Main Content */}
             <div className="lg:col-span-3">
               <div className="max-w-none">
                 {sections.map((section) => (
@@ -253,7 +251,6 @@ export default function TermsOfService() {
                   </div>
                 ))}
 
-                {/* Governing Law */}
                 <div id="governing-law" className="mb-16">
                   <h2 className="text-2xl sm:text-3xl font-light text-black mb-8">
                     Governing Law and Dispute Resolution
@@ -288,7 +285,6 @@ export default function TermsOfService() {
                   </div>
                 </div>
 
-                {/* Contact Information */}
                 <div id="contact-info" className="mb-16">
                   <h2 className="text-2xl sm:text-3xl font-light text-black mb-8">
                     Questions About These Terms
@@ -304,8 +300,8 @@ export default function TermsOfService() {
                       <div className="space-y-2">
                         <p className="text-black">
                           <span className="font-bold">Email:</span>{' '}
-                          <a href="mailto:ejoel00@gmail.com" className="text-blue-600 hover:text-blue-800 font-medium">
-                            ejoel00@gmail.com
+                          <a href="mailto:ejoel0035@gmail.com" className="text-blue-600 hover:text-blue-800 font-medium">
+                            ejoel0035@gmail.com
                           </a>
                         </p>
                         <p className="text-black">
@@ -328,7 +324,6 @@ export default function TermsOfService() {
                   </div>
                 </div>
 
-                {/* Updates Notice */}
                 <div className="border border-black rounded-lg p-6 sm:p-8 mb-8 bg-white">
                   <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
                     Changes to Terms
@@ -340,7 +335,6 @@ export default function TermsOfService() {
                   </p>
                 </div>
 
-                {/* Additional Legal Info */}
                 <div className="border border-black rounded-lg p-6 sm:p-8 bg-white">
                   <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
                     Important Notice
@@ -352,7 +346,6 @@ export default function TermsOfService() {
                   </p>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-12">
                   <Link
                     href="/contact"

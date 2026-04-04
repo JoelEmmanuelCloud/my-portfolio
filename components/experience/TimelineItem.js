@@ -1,5 +1,4 @@
 'use client'
-//components/experience/TimelineItem.js
 import { useState } from 'react'
 import { ExternalLink, MapPin } from 'lucide-react'
 
@@ -15,21 +14,19 @@ export default function TimelineItem({
 
   return (
     <div className="relative px-4 sm:px-0">
-      {/* Timeline Line - Hidden on mobile, visible on tablet+ */}
+
       <div className="hidden sm:block absolute left-6 top-0 w-px bg-slate-300 h-full">
         {!isLast && (
           <div className="absolute top-12 left-0 w-px bg-slate-400 h-full" />
         )}
       </div>
 
-      {/* Timeline Dot - Hidden on mobile, visible on tablet+ */}
       <div className="hidden sm:block absolute left-6 top-6 transform -translate-x-1/2">
         <div className={`w-3 h-3 rounded-full ${
           isCurrent ? 'bg-blue-600' : 'bg-slate-500'
         }`} />
       </div>
 
-      {/* Mobile indicator */}
       <div className="sm:hidden flex items-center gap-3 mb-4">
         <div className={`w-2 h-2 rounded-full ${
           isCurrent ? 'bg-blue-600' : 'bg-slate-500'
@@ -37,10 +34,9 @@ export default function TimelineItem({
         <div className="flex-1 h-px bg-slate-300" />
       </div>
 
-      {/* Content */}
       <div className="sm:ml-16 pb-8 sm:pb-12">
         <div className={`${isCurrent ? 'bg-blue-50 border border-blue-200' : 'bg-white'} p-4 sm:p-6 sm:-ml-6 rounded-lg shadow-sm`}>
-          {/* Header */}
+
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-3">
             <div className="flex-1">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
@@ -68,7 +64,6 @@ export default function TimelineItem({
               </div>
             </div>
 
-            {/* External Link */}
             {experience.website && (
               <div className="flex justify-end sm:justify-start">
                 <a
@@ -83,7 +78,6 @@ export default function TimelineItem({
             )}
           </div>
 
-          {/* Technology Stack */}
           {experience.stack && experience.stack.length > 0 && (
             <div className="mb-4">
               <div className="flex flex-wrap gap-2">
@@ -104,7 +98,6 @@ export default function TimelineItem({
             </div>
           )}
 
-          {/* Achievements/Bullets */}
           {experience.bullets && experience.bullets.length > 0 && (
             <div className="space-y-3">
               {(isExpanded || isCompact ? experience.bullets : experience.bullets.slice(0, 2)).map((bullet, bulletIndex) => (
@@ -115,7 +108,7 @@ export default function TimelineItem({
                 </div>
               ))}
               
-              {/* Expand/Collapse Button */}
+
               {!isCompact && experience.bullets.length > 2 && (
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
@@ -127,7 +120,6 @@ export default function TimelineItem({
             </div>
           )}
 
-          {/* Additional Info */}
           {experience.description && (
             <div className="mt-4 pt-4 border-t border-slate-200">
               <p className="text-sm text-slate-700 font-medium leading-relaxed">
@@ -141,7 +133,6 @@ export default function TimelineItem({
   )
 }
 
-// Compact version for sidebar or summary views
 export function TimelineItemCompact({ experience, index = 0 }) {
   return (
     <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 border-b border-slate-200 last:border-b-0 hover:bg-blue-50 transition-colors duration-200 bg-white">
@@ -175,7 +166,6 @@ export function TimelineItemCompact({ experience, index = 0 }) {
           </div>
         )}
 
-        {/* Action Button */}
         <div className="mt-3">
           <button className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-xs font-medium">
             View Details
@@ -197,14 +187,13 @@ export function TimelineItemCompact({ experience, index = 0 }) {
   )
 }
 
-// Horizontal version for timeline layouts
 export function TimelineItemHorizontal({ experience, index = 0 }) {
   return (
     <div className="relative w-full sm:min-w-80 sm:max-w-sm">
       <div className={`p-4 sm:p-6 border-2 border-slate-300 hover:border-blue-300 transition-colors duration-200 rounded-lg ${
         experience.current ? 'bg-blue-50 border-blue-200' : 'bg-white'
       } shadow-sm`}>
-        {/* Period Badge */}
+
         <div className="mb-4 flex flex-wrap gap-2">
           <span className="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-full">
             {experience.period}
@@ -254,7 +243,6 @@ export function TimelineItemHorizontal({ experience, index = 0 }) {
             </div>
           )}
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-2">
             <button className="inline-flex items-center justify-center px-4 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-xs font-medium flex-1 sm:flex-none">
               View Details
@@ -276,10 +264,9 @@ export function TimelineItemHorizontal({ experience, index = 0 }) {
   )
 }
 
-// Stats version for overview
 export function TimelineStats({ experiences }) {
   const totalYears = experiences.reduce((acc, exp) => {
-    if (exp.current) return acc + 1 // Approximate current role as 1 year
+    if (exp.current) return acc + 1
     return acc + 1
   }, 0)
 

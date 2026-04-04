@@ -26,7 +26,7 @@ const defaultSocialLinks = [
   },
   {
     name: 'Email',
-    url: 'mailto:ejoel00@gmail.com',
+    url: 'mailto:ejoel0035@gmail.com',
     icon: Mail,
     description: 'Send email'
   },
@@ -40,7 +40,7 @@ const defaultSocialLinks = [
 
 export default function SocialLinks({
   links = defaultSocialLinks,
-  layout = 'horizontal', // 'horizontal', 'vertical'
+  layout = 'horizontal',
   showLabels = false,
   className = ""
 }) {
@@ -78,7 +78,6 @@ export default function SocialLinks({
   )
 }
 
-// Mobile-optimized card version
 export function SocialLinksCard({ 
   links = defaultSocialLinks,
   title = "Let's connect",
@@ -122,10 +121,9 @@ export function SocialLinksCard({
         })}
       </div>
 
-      {/* Mobile CTA */}
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
         <a
-          href="mailto:ejoel00@gmail.com"
+          href="mailto:ejoel0035@gmail.com"
           className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base font-medium"
         >
           <Mail className="h-4 w-4 mr-2" />
@@ -143,7 +141,6 @@ export function SocialLinksCard({
   )
 }
 
-// Mobile-optimized compact version
 export function SocialLinksCompact({ links = defaultSocialLinks }) {
   return (
     <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
@@ -166,7 +163,6 @@ export function SocialLinksCompact({ links = defaultSocialLinks }) {
   )
 }
 
-// Mobile-first action buttons
 export function SocialActionButtons({ className = "" }) {
   const actionButtons = [
     {
@@ -185,7 +181,7 @@ export function SocialActionButtons({ className = "" }) {
     },
     {
       name: 'Send Email',
-      url: 'mailto:ejoel00@gmail.com',
+      url: 'mailto:ejoel0035@gmail.com',
       icon: Mail,
       description: 'Get in touch via email',
       primary: false
@@ -219,7 +215,6 @@ export function SocialActionButtons({ className = "" }) {
   )
 }
 
-// Mobile-optimized floating version
 export function SocialLinksFloating({ 
   links = defaultSocialLinks.slice(0, 3),
   position = 'bottom-right'
@@ -249,7 +244,7 @@ export function SocialLinksFloating({
 
       {isOpen && (
         <>
-          {/* Backdrop for mobile */}
+
           <div 
             className="fixed inset-0 bg-black bg-opacity-20 sm:hidden -z-10"
             onClick={() => setIsOpen(false)}
@@ -273,7 +268,7 @@ export function SocialLinksFloating({
               )
             })}
             
-            {/* Quick CTA */}
+
             <div className="pt-3 border-t-2 border-black/10">
               <a
                 href="/contact"
@@ -290,7 +285,6 @@ export function SocialLinksFloating({
   )
 }
 
-// Mobile-first contact section
 export function SocialContactSection({ 
   title = "Ready to work together?",
   subtitle = "Let's discuss your project",
@@ -310,7 +304,7 @@ export function SocialContactSection({
 
         <div className="max-w-md mx-auto space-y-4">
           <a
-            href="mailto:ejoel00@gmail.com"
+            href="mailto:ejoel0035@gmail.com"
             className="inline-flex items-center justify-center w-full px-6 py-4 sm:px-8 sm:py-5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base lg:text-lg font-medium"
           >
             <Mail className="h-5 w-5 mr-3" />

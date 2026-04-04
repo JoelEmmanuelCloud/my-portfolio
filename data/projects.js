@@ -1,9 +1,8 @@
-//data/projects.js - Updated with resume data
 export const projects = [
   {
     slug: "avigate-navigation",
     title: "Avigate – Smart Transportation Navigation",
-    role: "Co-Founder & Chief Technology Officer",
+    role: "Personal Side Project",
     featured: true,
     links: {
       live: "https://avigate.co./",
@@ -14,8 +13,8 @@ export const projects = [
       "Google Maps API", "Redis", "JWT", "TOTP 2FA"
     ],
     images: ["/images/projects/avigate.png"],
-    summary: "Smart transportation navigation startup solving local transit challenges in Nigerian cities with buses, keke napep, taxis, and okada. Leading full-stack development with real-time route matching and community features.",
-    context: "Co-founded Avigate to address the lack of reliable navigation solutions for local Nigerian transportation. Users struggle to find efficient routes using multiple transit modes, leading to wasted time and poor travel experiences.",
+    summary: "Personal side project building a smart transportation navigation app for Nigerian cities — helping users find routes using buses, keke napep, taxis, and okada with real-time matching and community features.",
+    context: "Built Avigate to address the lack of reliable navigation solutions for local Nigerian transportation. Users struggle to find efficient routes using multiple transit modes, leading to wasted time and poor travel experiences.",
     challenge: "Building comprehensive route matching with complex transfer logic, real-time location sharing, and scalable infrastructure optimized for Nigerian transportation patterns and traffic conditions.",
     solution: "Architected full-stack solution with React Native mobile apps, NestJS backend, PostgreSQL database, and Redis caching. Implemented sophisticated routing algorithms, Google Maps integration, and enterprise-grade security with Google OAuth and TOTP 2FA.",
     impact: [
@@ -34,21 +33,21 @@ export const projects = [
   {
     slug: "learnway-blockchain",
     title: "Learnway – Blockchain Education Platform",
-    role: "Backend Developer",
+    role: "Fullstack Developer",
     featured: true,
     links: {
       live: "https://learnway.xyz/",
       company: "https://learnway.xyz/"
     },
     stack: [
-      "NestJS", "TypeScript", "Lisk Blockchain", "PostgreSQL", 
+      "NestJS", "TypeScript", "Lisk Blockchain", "PostgreSQL",
       "Redis", "Smart Contracts", "Web3"
     ],
     images: ["/images/projects/learnway.png"],
-    summary: "Backend infrastructure for blockchain-based educational platform on Lisk blockchain that gamifies learning through point-based rewards and token incentives.",
+    summary: "Full-stack platform for a blockchain-based educational application on Lisk blockchain that gamifies learning through point-based rewards and token incentives.",
     context: "Learnway combines education with blockchain technology to create engaging learning experiences. Students earn tokens for completing milestones, creating a gamified ecosystem that incentivizes continuous learning.",
-    challenge: "Architecting scalable backend to handle user progress tracking, achievement systems, and blockchain reward distribution while maintaining performance and security.",
-    solution: "Designed NestJS APIs with TypeScript for robust type safety. Integrated Lisk smart contracts for token rewards, built gamification systems with leaderboards and badges, optimized with PostgreSQL and Redis.",
+    challenge: "Building a scalable full-stack system to handle user progress tracking, achievement systems, and blockchain reward distribution while maintaining performance and security.",
+    solution: "Designed and built the full platform using NestJS APIs with TypeScript for robust type safety. Integrated Lisk smart contracts for token rewards, built gamification systems with leaderboards and badges, optimized with PostgreSQL and Redis.",
     impact: [
       "Scalable APIs handling user progress tracking and achievement systems on Lisk blockchain",
       "Secure wallet connections and blockchain transaction monitoring for milestone completions",
@@ -148,6 +147,34 @@ export const projects = [
       blockchain: ["Avail Nexus SDK", "Solidity", "Multi-chain"],
       features: ["Bridge & Execute", "Cross-chain Swaps", "Intent Systems"],
       frontend: ["React", "Web3.js", "dApp Interface"]
+    }
+  },
+  {
+    slug: "vivo-b2b-ecommerce",
+    title: "Vivo – B2B Fixed-Sales E-commerce",
+    role: "Frontend Developer",
+    featured: false,
+    links: {
+      company: "https://vivo.com.br",
+    },
+    stack: [
+      "React", "TypeScript", "Node.js", "Java", "Framework Brasil", "Design System", "Microservices"
+    ],
+    images: ["/images/projects/vivo.png"],
+    summary: "Frontend development for Vivo's new B2B fixed-sales e-commerce platform as part of a newly ramped-up squad, building on Brazil's largest telecom infrastructure.",
+    context: "Vivo requested the ramp-up of a new squad to build a dedicated e-commerce platform for B2B fixed-sales. The platform required strict adherence to Vivo's proprietary Framework Brasil design system and integration with a layered microservices architecture.",
+    challenge: "Building a consistent and scalable React frontend aligned with Framework Brasil's design system premises, while integrating seamlessly with Node.js BFF layers and Java-based microservices decoupling architecture.",
+    solution: "Developed React components following Framework Brasil design system guidelines, integrated with Node.js BFF APIs, and collaborated with the cross-functional squad to deliver a cohesive B2B e-commerce experience.",
+    impact: [
+      "Delivered React frontend for Vivo's new B2B fixed-sales e-commerce platform",
+      "Implemented Framework Brasil design system ensuring brand compliance and UI consistency",
+      "Integrated with Node.js BFF and Java microservices decoupling layer",
+      "Contributed to successful squad ramp-up for Vivo's B2B e-commerce expansion"
+    ],
+    technologies: {
+      frontend: ["React", "TypeScript", "Framework Brasil", "Design System"],
+      backend: ["Node.js", "BFF Layer"],
+      microservices: ["Java", "Decoupling Architecture"],
     }
   },
   {

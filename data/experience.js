@@ -1,45 +1,44 @@
-//data/experience.js - Updated with resume data
 
 export const experience = [
   {
     company: "Avigate",
-    role: "Co-Founder & Chief Technology Officer",
+    role: "Personal Project",
     period: "2024 – Present",
     location: "Nigeria (Remote)",
     current: true,
-    website: "https://avigate.co/", 
+    website: "https://avigate.co/",
     stack: ["TypeScript", "React Native", "NestJS", "PostgreSQL", "Google Maps API", "Redis"],
-    description: "Co-founded smart transportation navigation startup for Nigerian cities",
+    description: "Personal side project — smart transportation navigation app for Nigerian cities",
     highlights: [
-      "Leading full-stack product development from concept to launch with comprehensive route matching systems",
-      "Architecting real-time location sharing, Google Maps integration, and routing algorithms optimized for Nigerian infrastructure",
+      "Building full-stack mobile app from concept to launch with comprehensive route matching systems",
+      "Implementing real-time location sharing, Google Maps integration, and routing algorithms optimized for Nigerian infrastructure",
       "Building scalable NestJS backend with PostgreSQL and Redis supporting thousands of concurrent users",
       "Implementing enterprise-grade security with Google OAuth, TOTP 2FA, JWT tokens, and device tracking"
     ],
     bullets: [
-      "Co-founded Avigate to solve local transit challenges helping users navigate using buses, keke napep, taxis, and okada",
-      "Leading full-stack development with TypeScript, React Native, NestJS, and PostgreSQL",
+      "Building Avigate to solve local transit challenges helping users navigate using buses, keke napep, taxis, and okada",
+      "Full-stack development with TypeScript, React Native, NestJS, and PostgreSQL",
       "Implemented real-time route matching with complex transfer logic and community-driven features",
       "Built scalable backend APIs with comprehensive security including Google OAuth and TOTP 2FA"
     ]
   },
   {
     company: "Learnway",
-    role: "Backend Developer",
+    role: "Fullstack Developer",
     period: "Dec 2024 – Present",
     location: "Remote",
     current: true,
-    website: "https://learnway.xyz", 
+    website: "https://learnway.xyz",
     stack: ["NestJS", "TypeScript", "Lisk Blockchain", "PostgreSQL", "Redis", "Smart Contracts"],
-    description: "Backend infrastructure for blockchain-based educational platform on Lisk",
+    description: "Full-stack development for blockchain-based educational platform on Lisk",
     highlights: [
-      "Architecting backend for blockchain education platform gamifying learning through point-based rewards and tokens",
+      "Building full-stack platform for blockchain education app gamifying learning through point-based rewards and tokens",
       "Designing scalable NestJS APIs for user progress tracking, achievement systems, and Lisk blockchain reward distribution",
       "Integrating Lisk smart contracts for token rewards with secure wallet connections and transaction monitoring",
       "Building gamification systems with leaderboards, badges, and point-to-token conversion using PostgreSQL and Redis"
     ],
     bullets: [
-      "Architecting backend for Learnway blockchain education platform built on Lisk blockchain",
+      "Building full-stack platform for Learnway blockchain education app on Lisk blockchain",
       "Implementing scalable NestJS APIs for progress tracking and reward distribution",
       "Integrating Lisk smart contracts for token-based educational rewards",
       "Building gamification features including leaderboards and achievement systems"
@@ -64,6 +63,27 @@ export const experience = [
       "Built enterprise web applications using React and TypeScript",
       "Collaborated with cross-functional teams on scalable solutions",
       "Implemented modern UI patterns for complex business workflows"
+    ]
+  },
+  {
+    company: "Vivo",
+    role: "Frontend Developer",
+    period: "2024 – 2025",
+    location: "Brazil (Remote)",
+    website: "https://vivo.com.br",
+    stack: ["React", "Node.js", "Java", "Framework Brasil", "Design System", "Microservices", "TypeScript"],
+    description: "Frontend development for Vivo's B2B fixed-sales e-commerce platform",
+    highlights: [
+      "Built React frontend for Vivo's new B2B fixed-sales e-commerce platform as part of a newly ramped-up squad",
+      "Implemented Vivo's proprietary Framework Brasil design system ensuring consistent UI patterns and brand compliance",
+      "Integrated React frontend with Node.js BFF layer and Java-based microservices decoupling architecture",
+      "Collaborated within a cross-functional squad to deliver scalable e-commerce solutions for Vivo's B2B segment"
+    ],
+    bullets: [
+      "Developed React frontend for Vivo B2B fixed-sales e-commerce platform",
+      "Implemented Framework Brasil design system components and guidelines",
+      "Integrated with Node.js BFF and Java microservices decoupling layer",
+      "Part of new squad ramp-up for Vivo's B2B e-commerce expansion"
     ]
   },
   {
@@ -170,7 +190,6 @@ export const education = [
   }
 ]
 
-// Additional hackathon/competition experience
 export const hackathons = [
   {
     name: "EthGlobal Unite DeFi Hackathon",
