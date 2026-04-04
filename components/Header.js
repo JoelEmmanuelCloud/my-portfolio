@@ -22,6 +22,17 @@ export default function Header() {
     setMobileMenuOpen(false)
   }, [pathname])
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
   return (
     <>
       <header className="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
@@ -94,40 +105,75 @@ export default function Header() {
             </div>
           </div>
         </nav>
-
-        {mobileMenuOpen && (
-          <div id="mobile-menu" className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg">
-            <div className="container mx-auto px-5 py-5">
-              <div className="space-y-3">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`block text-base font-medium transition-colors duration-200 py-2 pl-3 border-l-4 ${
-                      pathname === item.href
-                        ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
-                        : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 border-transparent'
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-
-                <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center w-full px-5 py-2.5 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Get in touch
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </header>
+
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <div
+        id="mobile-menu"
+        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm z-50 bg-white dark:bg-gray-900 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <div className="flex items-center justify-between px-6 h-16 border-b border-gray-100 dark:border-gray-800">
+          <div className="w-10 h-10 relative">
+            <Image
+              src="/logos/logo2.png"
+              alt="Joel Emmanuel Logo"
+              fill
+              className="object-contain dark:hidden"
+            />
+            <Image
+              src="/logos/logo.svg"
+              alt="Joel Emmanuel Logo"
+              fill
+              className="object-contain hidden dark:block"
+            />
+          </div>
+          <button
+            type="button"
+            className="p-2 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+
+        <nav className="flex flex-col flex-1 px-6 py-8 gap-2 overflow-y-auto">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`text-lg font-medium py-3 px-4 rounded-xl transition-colors duration-200 ${
+                pathname === item.href
+                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                  : 'text-black dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="px-6 pb-8">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center w-full px-5 py-3 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Get in touch
+          </Link>
+        </div>
+      </div>
     </>
   )
 }
