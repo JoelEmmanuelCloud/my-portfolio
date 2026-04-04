@@ -34,7 +34,7 @@ export default function Experience() {
 
             <div className="space-y-8 sm:space-y-12 lg:space-y-16">
               {experience?.map((job, index) => (
-                <div key={index} className="border-l-4 border-black dark:border-gray-600 pl-6 sm:pl-8 lg:pl-10 relative">
+                <div key={index} className="border-l-4 border-black dark:border-gray-600 pl-4 sm:pl-6 lg:pl-10 relative">
                   <div className="absolute -left-2.5 top-0 w-5 h-5 bg-black dark:bg-gray-400 rounded-full"></div>
 
                   <div className="grid gap-6 sm:gap-8 lg:grid-cols-3 lg:gap-12">
@@ -115,7 +115,7 @@ export default function Experience() {
 
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:gap-10">
               {certifications?.map((cert, index) => (
-                <div key={index} className="border-2 border-black dark:border-gray-700 rounded-xl p-6 sm:p-8 lg:p-10 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-300">
+                <div key={index} className="border-2 border-black dark:border-gray-700 rounded-xl p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-300">
                   <div className="flex items-start justify-between mb-4 sm:mb-6">
                     <div className="flex-1 mr-4">
                       <h3 className="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-white mb-2 leading-tight">{cert.name}</h3>
@@ -155,7 +155,7 @@ export default function Experience() {
 
             <div className="space-y-6 sm:space-y-8 lg:space-y-10">
               {education?.map((edu, index) => (
-                <div key={index} className="border-2 border-black dark:border-gray-700 rounded-xl p-6 sm:p-8 lg:p-10 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-300">
+                <div key={index} className="border-2 border-black dark:border-gray-700 rounded-xl p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-300">
                   <div className="grid gap-6 sm:gap-8 lg:grid-cols-3 lg:gap-12">
                     <div className="lg:col-span-1">
                       <h3 className="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-white mb-3 sm:mb-4 leading-tight">{edu.degree}</h3>

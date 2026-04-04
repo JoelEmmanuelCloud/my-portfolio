@@ -28,8 +28,8 @@ export default function ResumePage() {
         </button>
       </div>
 
-      <div className="resume-page bg-white mx-auto shadow-xl print:shadow-none"
-        style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm' }}>
+      <div className="resume-page bg-white mx-auto shadow-xl print:shadow-none w-full px-5 py-8 sm:px-10 sm:py-10 md:px-14 md:py-12"
+        style={{ maxWidth: '210mm', minHeight: '297mm' }}>
 
         <div className="border-b border-gray-200 pb-5 mb-5">
           <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Joel Emmanuel</h1>

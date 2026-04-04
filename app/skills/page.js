@@ -30,10 +30,10 @@ export default function Skills() {
   return (
     <div className="min-h-screen pt-16">
 
-      <section className="py-20 sm:py-32 bg-white dark:bg-gray-900">
+      <section className="py-12 sm:py-20 lg:py-28 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-black dark:text-white mb-4 sm:mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-normal text-black dark:text-white mb-4 sm:mb-6">
               Skills
             </h1>
             <p className="text-lg sm:text-xl text-black dark:text-gray-300 font-normal mb-6 sm:mb-8">
@@ -55,7 +55,7 @@ export default function Skills() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {highlights.map((highlight, index) => (
-                <div key={highlight.title} className="text-center border border-black dark:border-gray-600 rounded-lg p-6 bg-white dark:bg-gray-800">
+                <div key={highlight.title} className="text-center border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 bg-white dark:bg-gray-800">
                   <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{highlight.icon}</div>
                   <h3 className="text-base sm:text-lg font-medium text-black dark:text-white mb-2">{highlight.title}</h3>
                   <p className="text-black dark:text-gray-300 text-sm sm:text-base">{highlight.description}</p>
@@ -286,13 +286,13 @@ export default function Skills() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
               >
                 Start a Project
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center px-8 py-4 text-black dark:text-gray-300 hover:text-white hover:bg-blue-600 border border-blue-600 rounded-lg transition-colors text-sm sm:text-base font-medium"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-black dark:text-gray-300 hover:text-white hover:bg-blue-600 border border-blue-600 rounded-lg transition-colors text-sm sm:text-base font-medium"
               >
                 View My Work →
               </Link>

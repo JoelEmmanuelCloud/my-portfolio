@@ -58,7 +58,7 @@ export default function Home() {
               <div className="text-xs sm:text-sm font-medium text-black dark:text-gray-300 mt-1">Companies</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-black dark:text-white">Founder</div>
+              <div className="text-xl sm:text-2xl font-bold text-black dark:text-white">Builder</div>
               <div className="text-xs sm:text-sm font-medium text-black dark:text-gray-300 mt-1">Avigate</div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function Home() {
                 <div className="text-xs font-medium text-black dark:text-gray-300 mt-0.5">Companies</div>
               </div>
               <div>
-                <div className="text-lg font-bold text-black dark:text-white">Co-Founder</div>
+                <div className="text-lg font-bold text-black dark:text-white">Builder</div>
                 <div className="text-xs font-medium text-black dark:text-gray-300 mt-0.5">Avigate</div>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function Home() {
               </div>
 
               <div className="flex-shrink-0">
-                <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
+                <div className="w-36 h-36 sm:w-48 sm:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
                   <Image
                     src="/images/profile/profile.jpeg"
                     alt="Joel Emmanuel - Fullstack & Blockchain Developer"

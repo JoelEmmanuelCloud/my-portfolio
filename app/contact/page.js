@@ -150,11 +150,11 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
 
-      <section className="py-16 sm:py-24 lg:py-32">
+      <section className="py-10 sm:py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-12 sm:mb-16 lg:mb-24 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black dark:text-white mb-4 sm:mb-6 leading-tight">
+            <div className="mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-4 sm:mb-6 leading-tight">
                 Contact
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -162,7 +162,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+            <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
 
               <div className="order-2 lg:order-1">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-8 sm:mb-12 text-center lg:text-left">
@@ -265,7 +265,7 @@ export default function Contact() {
                 )}
               </div>
 
-              <div className="order-1 lg:order-2 space-y-8 sm:space-y-12">
+              <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
                 <div className="text-center lg:text-left">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-6 sm:mb-8">
                     Get In Touch
@@ -310,7 +310,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="mt-12 sm:mt-16 text-center lg:text-left">
+                <div className="mt-6 sm:mt-10 text-center lg:text-left">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-4">
                     Prefer to talk?
                   </h3>
@@ -326,7 +326,7 @@ export default function Contact() {
                   </button>
                 </div>
 
-                <div className="mt-12 sm:mt-16 text-center lg:text-left">
+                <div className="mt-6 sm:mt-10 text-center lg:text-left">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-6">
                     Quick Links
                   </h3>
@@ -355,10 +355,10 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 border-t-2 border-black dark:border-gray-700">
+      <section className="py-10 sm:py-16 border-t-2 border-black dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-12 sm:mb-16 text-center lg:text-left">
+            <div className="mb-8 sm:mb-12 text-center lg:text-left">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4 sm:mb-6">
                 Frequently Asked
               </h2>
@@ -367,7 +367,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="space-y-8 sm:space-y-12">
+            <div className="space-y-6 sm:space-y-10">
               {[
                 {
                   question: "What's your typical project timeline?",
@@ -394,7 +394,7 @@ export default function Contact() {
                   answer: "I prefer to start with a discovery call to understand your goals, followed by a detailed proposal. Once approved, we kick off with project planning and wireframing before development begins."
                 }
               ].map((faq, index) => (
-                <div key={index} className="border-b-2 border-black dark:border-gray-700 pb-6 sm:pb-8">
+                <div key={index} className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-3 sm:mb-4">
                     {faq.question}
                   </h3>

@@ -88,11 +88,11 @@ export default function Projects() {
 
       <section className="pb-12 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="space-y-12 sm:space-y-16 lg:space-y-20">
+          <div className="space-y-10 sm:space-y-16 lg:space-y-20">
             {filteredProjects.map((project, index) => (
               <div
                 key={project.slug}
-                className={`grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center ${
+                className={`grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center ${
                   index % 2 === 1 ? 'lg:grid-cols-2' : ''
                 }`}
               >
@@ -193,7 +193,7 @@ export default function Projects() {
                 href={engagement.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white dark:bg-gray-900 p-6 sm:p-8 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 rounded-xl border border-black/10 dark:border-gray-700 shadow-sm hover:shadow-lg"
+                className="group bg-white dark:bg-gray-900 p-4 sm:p-6 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 rounded-xl border border-black/10 dark:border-gray-700 shadow-sm hover:shadow-lg"
               >
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
