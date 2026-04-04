@@ -300,8 +300,8 @@ export default function TermsOfService() {
                       <div className="space-y-2">
                         <p className="text-black">
                           <span className="font-bold">Email:</span>{' '}
-                          <a href="mailto:ejoel00@gmail.com" className="text-blue-600 hover:text-blue-800 font-medium">
-                            ejoel00@gmail.com
+                          <a href="mailto:ejoel0035@gmail.com" className="text-blue-600 hover:text-blue-800 font-medium">
+                            ejoel0035@gmail.com
                           </a>
                         </p>
                         <p className="text-black">

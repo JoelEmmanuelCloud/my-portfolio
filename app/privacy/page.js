@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
         {
           subtitle: 'How to Exercise Rights',
           items: [
-            'Email us at ejoel00@gmail.com with your request',
+            'Email us at ejoel0035@gmail.com with your request',
             'Include sufficient information to verify your identity',
             'We will respond within 30 days of receiving your request',
             'No fees for reasonable requests'
@@ -243,10 +243,10 @@ export default function PrivacyPolicy() {
                         <p className="text-black text-sm sm:text-base lg:text-lg">
                           <span className="font-bold">Email:</span>{' '}
                           <a 
-                            href="mailto:ejoel00@gmail.com" 
+                            href="mailto:ejoel0035@gmail.com" 
                             className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
                           >
-                            ejoel00@gmail.com
+                            ejoel0035@gmail.com
                           </a>
                         </p>
                         <p className="text-black text-sm sm:text-base lg:text-lg">

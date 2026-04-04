@@ -26,7 +26,7 @@ const defaultSocialLinks = [
   },
   {
     name: 'Email',
-    url: 'mailto:ejoel00@gmail.com',
+    url: 'mailto:ejoel0035@gmail.com',
     icon: Mail,
     description: 'Send email'
   },
@@ -123,7 +123,7 @@ export function SocialLinksCard({
 
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
         <a
-          href="mailto:ejoel00@gmail.com"
+          href="mailto:ejoel0035@gmail.com"
           className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base font-medium"
         >
           <Mail className="h-4 w-4 mr-2" />
@@ -181,7 +181,7 @@ export function SocialActionButtons({ className = "" }) {
     },
     {
       name: 'Send Email',
-      url: 'mailto:ejoel00@gmail.com',
+      url: 'mailto:ejoel0035@gmail.com',
       icon: Mail,
       description: 'Get in touch via email',
       primary: false
@@ -304,7 +304,7 @@ export function SocialContactSection({
 
         <div className="max-w-md mx-auto space-y-4">
           <a
-            href="mailto:ejoel00@gmail.com"
+            href="mailto:ejoel0035@gmail.com"
             className="inline-flex items-center justify-center w-full px-6 py-4 sm:px-8 sm:py-5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base lg:text-lg font-medium"
           >
             <Mail className="h-5 w-5 mr-3" />
