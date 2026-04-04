@@ -16,7 +16,14 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     setMobileMenuOpen(false)
@@ -35,7 +42,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-md backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+      <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? 'bg-white dark:bg-gray-900 shadow-md backdrop-blur-sm border-b border-gray-100 dark:border-gray-800'
+          : 'bg-transparent border-b border-transparent'
+      }`}>
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Global">
           <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
 
