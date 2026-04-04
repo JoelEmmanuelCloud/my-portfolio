@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import ThemeProvider from '@/components/ThemeProvider'
+import AppRefresher from '@/components/AppRefresher'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -155,6 +156,7 @@ export default function RootLayout({ children }) {
           <main id="main-content">{children}</main>
         </ErrorBoundary>
         <Footer />
+        <AppRefresher />
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
           <Script
             defer
