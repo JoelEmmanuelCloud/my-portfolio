@@ -97,9 +97,6 @@ export default function Home() {
                     <strong className="font-bold dark:text-white">Fullstack Developer</strong> at Learnway (Blockchain Education on Lisk)
                   </p>
                   <p className="text-xs sm:text-sm lg:text-base text-black dark:text-gray-300 font-medium">
-                    <strong className="font-bold dark:text-white">Frontend Engineer</strong> at Invillia (Enterprise AI Platforms)
-                  </p>
-                  <p className="text-xs sm:text-sm lg:text-base text-black dark:text-gray-300 font-medium">
                     Specializing in Blockchain, React, NestJS, AWS, and AI/ML
                   </p>
                 </div>
