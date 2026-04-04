@@ -157,7 +157,7 @@ export default function Header() {
 
         <div className="px-6 pb-8 space-y-4">
           <div className="flex items-center justify-between py-3 px-4 rounded-xl bg-gray-50 dark:bg-gray-800">
-            <span className="text-base font-medium text-black dark:text-gray-200">Theme</span>
+            <span className="text-base font-medium text-black dark:text-gray-200">Appearance</span>
             <ThemeToggle />
           </div>
           <Link
