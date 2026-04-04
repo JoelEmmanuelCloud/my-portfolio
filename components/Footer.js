@@ -1,149 +1,92 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const socialLinks = [
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/joel-emmanuel-149708202/' },
-  { name: 'GitHub', href: 'https://github.com/joelemmanuel' },
-  { name: 'X (Twitter)', href: 'https://x.com/joelemmanuel' },
-  { name: 'Instagram', href: 'https://instagram.com/joelemmanuel' },
-]
-
-const quickLinks = [
+const navLinks = [
   { name: 'Experience', href: '/experience' },
   { name: 'Projects', href: '/projects' },
   { name: 'Skills', href: '/skills' },
   { name: 'Contact', href: '/contact' },
+  { name: 'Resume', href: '/resume' },
 ]
 
-const legal = [
-  { name: 'Privacy Policy', href: '/privacy' },
-  { name: 'Terms of Service', href: '/terms' },
-  { name: 'Resume / CV', href: '/resume' },
+const socialLinks = [
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/joel-emmanuel-149708202/' },
+  { name: 'GitHub', href: 'https://github.com/joelemmanuel' },
+  { name: 'X', href: 'https://x.com/joelemmanuel' },
+  { name: 'Instagram', href: 'https://instagram.com/joelemmanuel' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-black/10 dark:border-white/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
 
-          <div className="space-y-3 sm:space-y-4 sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center justify-center sm:justify-start gap-2">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 relative">
-                <Image
-                  src="/logos/logo2.png"
-                  alt="Joel Emmanuel Logo"
-                  fill
-                  className="object-contain dark:hidden"
-                />
-                <Image
-                  src="/logos/logo.svg"
-                  alt="Joel Emmanuel Logo"
-                  fill
-                  className="object-contain hidden dark:block"
-                />
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
+
+          <div className="flex flex-col gap-4 max-w-xs">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 relative">
+                <Image src="/logos/logo2.png" alt="Joel Emmanuel" fill className="object-contain dark:hidden" />
+                <Image src="/logos/logo.svg" alt="Joel Emmanuel" fill className="object-contain hidden dark:block" />
               </div>
+              <span className="text-base font-semibold text-black dark:text-white">Joel Emmanuel</span>
             </Link>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-md text-sm sm:text-base text-center sm:text-left">
-              Software Engineer specializing in React, Node.js, and AWS.
-              Building scalable web platforms and production systems.
+            <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Fullstack & Blockchain Developer building scalable Web3 apps, AI platforms, and production systems.
             </p>
-            <div className="text-sm sm:text-base text-gray-500 dark:text-gray-500 font-medium text-center sm:text-left">
-              Metaverse
-            </div>
+            <a
+              href="mailto:ejoel0035@gmail.com"
+              className="text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              ejoel0035@gmail.com
+            </a>
           </div>
 
-          <div className="text-center sm:text-left">
-            <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Quick Links</h3>
-            <div className="space-y-2 sm:space-y-2.5">
-              {quickLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-center sm:text-left">
-            <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Connect</h3>
-            <div className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-6">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                >
-                  {link.name}
-                </a>
-              ))}
+          <div className="flex flex-col sm:flex-row gap-10 sm:gap-16">
+            <div>
+              <p className="text-xs font-semibold text-black dark:text-white uppercase tracking-widest mb-4">Pages</p>
+              <div className="flex flex-col gap-2.5">
+                {navLinks.map(link => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="space-y-2 sm:space-y-2.5">
-              <a
-                href="mailto:ejoel0035@gmail.com"
-                className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 break-all sm:break-normal"
-              >
-                ejoel0035@gmail.com
-              </a>
-              <a
-                href="tel:+2347069763692"
-                className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-              >
-                +234 706 976 3692
-              </a>
-            </div>
-          </div>
-
-          <div className="text-center sm:text-left">
-            <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white mb-3 sm:mb-4">Legal</h3>
-            <div className="space-y-2 sm:space-y-2.5">
-              {legal.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block text-sm sm:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                >
-                  {link.name}
-                </Link>
-              ))}
+            <div>
+              <p className="text-xs font-semibold text-black dark:text-white uppercase tracking-widest mb-4">Social</p>
+              <div className="flex flex-col gap-2.5">
+                {socialLinks.map(link => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="text-center mt-10 sm:mt-12 lg:mt-14 mb-10 sm:mb-12 lg:mb-14">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 active:bg-blue-800 transition-colors duration-200 text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl"
-          >
-            Get in touch
-          </Link>
-        </div>
-
-        <div className="border-t border-black/10 dark:border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 text-center sm:text-left">
+        <div className="border-t border-black/10 dark:border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-gray-400 dark:text-gray-500">
             © {new Date().getFullYear()} Joel Emmanuel. All rights reserved.
           </p>
-          <div className="flex gap-4 sm:gap-6">
-            <Link
-              href="/privacy"
-              className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-            >
-              Terms of Service
-            </Link>
+          <div className="flex gap-5">
+            <Link href="/privacy" className="text-xs text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-xs text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Terms</Link>
           </div>
         </div>
+
       </div>
     </footer>
   )
