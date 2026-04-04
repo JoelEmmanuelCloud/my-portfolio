@@ -145,11 +145,12 @@ export default function Header() {
           </div>
           <button
             type="button"
-            className="p-2 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-2 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium"
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close menu"
           >
-            <X className="h-6 w-6" aria-hidden="true" />
+            <X className="h-4 w-4" aria-hidden="true" />
+            Close
           </button>
         </div>
 
