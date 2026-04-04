@@ -99,6 +99,16 @@
   animation: gentleFloat 8s ease-in-out infinite;
 }
 
+@keyframes progressBar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(500%); }
+}
+
+.animate-progress-bar {
+  animation: progressBar 1.4s ease-in-out infinite;
+  width: 20%;
+}
+
 
 /* Focus styles for accessibility */
 .focus-ring {
