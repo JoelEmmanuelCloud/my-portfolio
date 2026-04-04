@@ -91,7 +91,7 @@ export default function Home() {
 
                 <div className="space-y-1.5 lg:space-y-2 mb-5 lg:mb-7">
                   <p className="text-xs sm:text-sm lg:text-base text-black dark:text-gray-300 font-medium">
-                    <strong className="font-bold dark:text-white">Co-Founder & CTO</strong> at Avigate (Transportation Navigation Startup)
+                    <strong className="font-bold dark:text-white">Building Avigate</strong> — personal transportation navigation app for Nigerian cities
                   </p>
                   <p className="text-xs sm:text-sm lg:text-base text-black dark:text-gray-300 font-medium">
                     <strong className="font-bold dark:text-white">Fullstack Developer</strong> at Learnway (Blockchain Education on Lisk)

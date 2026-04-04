@@ -68,8 +68,8 @@ export const skills = {
 
 export const highlights = [
   {
-    title: "Startup Co-Founder",
-    description: "Building Avigate transportation navigation startup",
+    title: "Side Project Builder",
+    description: "Building Avigate, a personal transportation navigation app for Nigerian cities",
     icon: ""
   },
   {

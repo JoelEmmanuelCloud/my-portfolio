@@ -139,7 +139,7 @@ export default async function Image() {
             }}
           >
             Building scalable Web3 apps, AI platforms, and production systems.
-            Co-Founder &amp; CTO of Avigate.
+            Working on Avigate, a personal navigation app.
           </div>
         </div>
 
