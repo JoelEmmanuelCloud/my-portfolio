@@ -66,6 +66,27 @@ export const experience = [
     ]
   },
   {
+    company: "Vivo",
+    role: "Frontend Developer",
+    period: "2024 – 2025",
+    location: "Brazil (Remote)",
+    website: "https://vivo.com.br",
+    stack: ["React", "Node.js", "Java", "Framework Brasil", "Design System", "Microservices", "TypeScript"],
+    description: "Frontend development for Vivo's B2B fixed-sales e-commerce platform",
+    highlights: [
+      "Built React frontend for Vivo's new B2B fixed-sales e-commerce platform as part of a newly ramped-up squad",
+      "Implemented Vivo's proprietary Framework Brasil design system ensuring consistent UI patterns and brand compliance",
+      "Integrated React frontend with Node.js BFF layer and Java-based microservices decoupling architecture",
+      "Collaborated within a cross-functional squad to deliver scalable e-commerce solutions for Vivo's B2B segment"
+    ],
+    bullets: [
+      "Developed React frontend for Vivo B2B fixed-sales e-commerce platform",
+      "Implemented Framework Brasil design system components and guidelines",
+      "Integrated with Node.js BFF and Java microservices decoupling layer",
+      "Part of new squad ramp-up for Vivo's B2B e-commerce expansion"
+    ]
+  },
+  {
     company: "Freedom Ghana",
     role: "Full-stack Developer", 
     period: "Present",
