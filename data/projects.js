@@ -150,6 +150,34 @@ export const projects = [
     }
   },
   {
+    slug: "vivo-b2b-ecommerce",
+    title: "Vivo – B2B Fixed-Sales E-commerce",
+    role: "Frontend Developer",
+    featured: false,
+    links: {
+      company: "https://vivo.com.br",
+    },
+    stack: [
+      "React", "TypeScript", "Node.js", "Java", "Framework Brasil", "Design System", "Microservices"
+    ],
+    images: ["/images/projects/vivo.png"],
+    summary: "Frontend development for Vivo's new B2B fixed-sales e-commerce platform as part of a newly ramped-up squad, building on Brazil's largest telecom infrastructure.",
+    context: "Vivo requested the ramp-up of a new squad to build a dedicated e-commerce platform for B2B fixed-sales. The platform required strict adherence to Vivo's proprietary Framework Brasil design system and integration with a layered microservices architecture.",
+    challenge: "Building a consistent and scalable React frontend aligned with Framework Brasil's design system premises, while integrating seamlessly with Node.js BFF layers and Java-based microservices decoupling architecture.",
+    solution: "Developed React components following Framework Brasil design system guidelines, integrated with Node.js BFF APIs, and collaborated with the cross-functional squad to deliver a cohesive B2B e-commerce experience.",
+    impact: [
+      "Delivered React frontend for Vivo's new B2B fixed-sales e-commerce platform",
+      "Implemented Framework Brasil design system ensuring brand compliance and UI consistency",
+      "Integrated with Node.js BFF and Java microservices decoupling layer",
+      "Contributed to successful squad ramp-up for Vivo's B2B e-commerce expansion"
+    ],
+    technologies: {
+      frontend: ["React", "TypeScript", "Framework Brasil", "Design System"],
+      backend: ["Node.js", "BFF Layer"],
+      microservices: ["Java", "Decoupling Architecture"],
+    }
+  },
+  {
     slug: "red-warehouse-system",
     title: "RED Transport – Warehouse Management System",
     role: "Full-stack Developer (Freelance)",
