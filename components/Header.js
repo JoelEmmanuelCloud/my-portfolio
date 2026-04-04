@@ -87,7 +87,6 @@ export default function Header() {
             </div>
 
             <div className="flex lg:hidden items-center gap-2">
-              <ThemeToggle />
               <button
                 type="button"
                 className="p-2 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
@@ -156,7 +155,11 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="px-6 pb-8">
+        <div className="px-6 pb-8 space-y-4">
+          <div className="flex items-center justify-between py-3 px-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+            <span className="text-base font-medium text-black dark:text-gray-200">Theme</span>
+            <ThemeToggle />
+          </div>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center w-full px-5 py-3 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
