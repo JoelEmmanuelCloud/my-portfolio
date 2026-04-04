@@ -7,8 +7,7 @@ const defaultCompanies = [
     name: 'Invillia',
     url: 'https://invillia.ai/en/home',
     description: 'AI & Automation Platform',
-    logo: '/logos/invillia.svg',
-    darkInvert: true
+    logo: '/logos/invillia.svg'
   },
   {
     name: 'Freedom',
@@ -94,7 +93,7 @@ function CompanyLogo({ company }) {
         alt={`${company.name} logo`}
         width={128}
         height={64}
-        className={`object-contain max-w-full max-h-full transition-all duration-300 filter brightness-0${company.darkInvert ? ' dark:invert' : ''}`}
+        className="object-contain max-w-full max-h-full transition-all duration-300 filter brightness-0"
       />
     </div>
   )
