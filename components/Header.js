@@ -57,6 +57,7 @@ export default function Header() {
                     src="/logos/logo2.png"
                     alt="Joel Emmanuel Logo"
                     fill
+                    sizes="56px"
                     className="object-contain dark:hidden"
                     priority
                   />
@@ -64,6 +65,7 @@ export default function Header() {
                     src="/logos/logo.svg"
                     alt="Joel Emmanuel Logo"
                     fill
+                    sizes="56px"
                     className="object-contain hidden dark:block"
                     priority
                   />
@@ -130,12 +132,14 @@ export default function Header() {
               src="/logos/logo2.png"
               alt="Joel Emmanuel Logo"
               fill
+              sizes="40px"
               className="object-contain dark:hidden"
             />
             <Image
               src="/logos/logo.svg"
               alt="Joel Emmanuel Logo"
               fill
+              sizes="40px"
               className="object-contain hidden dark:block"
             />
           </div>
