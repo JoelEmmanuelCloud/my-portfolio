@@ -5,7 +5,7 @@ export const projects = [
     role: "Personal Side Project",
     featured: true,
     links: {
-      live: "https://avigate.co./",
+      live: "https://avigate.co/",
       company: "https://avigate.co/"
     },
     stack: [

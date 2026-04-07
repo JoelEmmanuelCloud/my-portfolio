@@ -5,7 +5,7 @@ import { experience, certifications, education } from '@/data/experience'
 
 export default function Experience() {
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
 
       <section className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,8 +17,8 @@ export default function Experience() {
               — Building production systems across innovative companies
             </p>
             <div className="text-sm sm:text-base lg:text-lg text-black dark:text-gray-300 space-y-3 sm:space-y-2">
-              <p className="font-medium">Frontend Engineer specializing in React and modern web technologies</p>
-              <p className="font-medium">5+ years of full-stack development experience</p>
+              <p className="font-medium">Fullstack & Blockchain Developer specializing in React, NestJS, and Web3</p>
+              <p className="font-medium">3+ years of full-stack development experience</p>
               <p className="font-medium">AWS certified with expertise in cloud architecture</p>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function Experience() {
                           {job.stack.map((tech) => (
                             <span
                               key={tech}
-                              className="px-3 sm:px-4 py-2 bg-white dark:bg-gray-800 text-black dark:text-gray-300 text-sm sm:text-base border-2 border-black dark:border-gray-600 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
+                              className="px-2 py-1 xs:px-3 xs:py-1.5 sm:px-4 sm:py-2 bg-white dark:bg-gray-800 text-black dark:text-gray-300 text-xs xs:text-sm sm:text-base border-2 border-black dark:border-gray-600 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
                             >
                               {tech}
                             </span>

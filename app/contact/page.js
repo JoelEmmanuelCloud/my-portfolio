@@ -51,7 +51,7 @@ function BookingSuccessModal({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-modal-title"
-        className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 max-w-md w-full mx-4 shadow-xl"
+        className="bg-white dark:bg-gray-800 rounded-lg p-4 xs:p-6 sm:p-8 max-w-md w-full mx-4 shadow-xl"
       >
         <div className="text-center">
           <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mx-auto mb-4" aria-hidden="true" />
@@ -173,7 +173,7 @@ export default function Contact() {
                   </p>
                   <button
                     onClick={handleBookCallClick}
-                    className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 text-base font-semibold shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center justify-center w-full xs:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-200 text-base font-semibold shadow-lg hover:shadow-xl"
                   >
                     <Calendar className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                     Book a Call
@@ -249,10 +249,10 @@ export default function Contact() {
                 }
               ].map((faq, index) => (
                 <div key={index} className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-white mb-2 sm:mb-3 lg:mb-4">
                     {faq.question}
                   </h3>
-                  <p className="text-sm sm:text-base lg:text-lg text-black dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm sm:text-base text-black dark:text-gray-300 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

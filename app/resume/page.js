@@ -21,7 +21,7 @@ export default function ResumePage() {
       <div className="no-print flex justify-center mb-6 px-4">
         <button
           onClick={() => window.print()}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-md"
+          className="inline-flex items-center justify-center gap-2 w-full xs:w-auto px-5 py-2.5 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-md"
         >
           <Download className="h-4 w-4" />
           Download PDF
