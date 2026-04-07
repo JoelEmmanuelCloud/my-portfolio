@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
+import { useTheme } from './ThemeProvider'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -18,6 +19,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -156,10 +158,20 @@ export default function Header() {
         </nav>
 
         <div className="px-6 pb-8 space-y-4">
-          <div className="flex items-center justify-between py-3 px-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="w-full flex items-center justify-between py-3 px-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
             <span className="text-base font-medium text-black dark:text-gray-200">Appearance</span>
-            <ThemeToggle />
-          </div>
+            <div className="p-2 rounded-full">
+              {theme === 'dark'
+                ? <Sun className="h-5 w-5 text-black dark:text-white" aria-hidden="true" />
+                : <Moon className="h-5 w-5 text-black dark:text-white" aria-hidden="true" />
+              }
+            </div>
+          </button>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center w-full px-5 py-3 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-sm"
