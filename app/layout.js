@@ -33,23 +33,13 @@ export const metadata = {
   },
 
   icons: {
-    icon: '/icons/favicon.ico',
+    icon: [
+      { url: '/logos/logo-je.svg', type: 'image/svg+xml' },
+      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
     shortcut: '/icons/favicon.ico',
     apple: '/icons/apple-touch-icon.png',
-    other: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        url: '/icons/favicon-32x32.png',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        url: '/icons/favicon-16x16.png',
-      },
-    ],
   },
 
   openGraph: {
@@ -94,6 +84,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#2563eb" />
         <script
           type="application/ld+json"
