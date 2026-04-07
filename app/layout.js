@@ -14,10 +14,16 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'Joel Emmanuel - Fullstack & Blockchain Developer | Tech Entrepreneur',
-  description: 'Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems. Building Avigate, a personal transportation navigation app. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML.',
-  keywords: 'Blockchain Developer, Web3 Developer, Fullstack Developer, React Developer, NestJS, Lisk Blockchain, Ethereum, Solidity, Smart Contracts, DeFi, AI/ML Developer, AWS Certified, Startup Founder, Tech Entrepreneur, Node.js, TypeScript, PostgreSQL',
-  authors: [{ name: 'Joel Emmanuel' }],
+  title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
+  description: 'Fullstack & Blockchain Developer with 3+ years building scalable Web3 apps, AI platforms, and production systems for companies across Nigeria, Brazil, USA, Canada, and Ghana. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML. Founder of Avigate.',
+  keywords: [
+    'Fullstack Developer', 'Blockchain Developer', 'Web3 Developer', 'React Developer',
+    'NestJS Developer', 'Lisk Blockchain', 'Ethereum', 'Solidity', 'Smart Contracts',
+    'DeFi', 'AI Developer', 'ML Engineer', 'AWS Certified', 'Node.js', 'TypeScript',
+    'Next.js', 'Spring Boot', 'PostgreSQL', 'MongoDB', 'Docker', 'LangChain', 'RAG',
+    'Joel Emmanuel', 'Nigeria Developer', 'Remote Developer', 'Avigate'
+  ],
+  authors: [{ name: 'Joel Emmanuel', url: 'https://joelemmanuel.dev' }],
   creator: 'Joel Emmanuel',
 
   metadataBase: new URL('https://joelemmanuel.dev'),
@@ -27,38 +33,47 @@ export const metadata = {
   },
 
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/icons/favicon.ico',
+    shortcut: '/icons/favicon.ico',
+    apple: '/icons/apple-touch-icon.png',
     other: [
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        url: '/favicon-32x32.png',
+        url: '/icons/favicon-32x32.png',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        url: '/favicon-16x16.png',
+        url: '/icons/favicon-16x16.png',
       },
     ],
   },
 
   openGraph: {
-    title: 'Joel Emmanuel - Fullstack & Blockchain Developer | Tech Entrepreneur',
-    description: 'Building scalable Web3 applications and AI-powered platforms. Working on Avigate, a personal transportation navigation app. Expert in Blockchain (Lisk, Ethereum), React, NestJS, and AWS.',
+    title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
+    description: 'Fullstack & Blockchain Developer building scalable Web3 apps, AI platforms, and production systems. Founder of Avigate. Expert in React, NestJS, Lisk Blockchain, Ethereum, and AWS.',
     url: 'https://joelemmanuel.dev',
-    siteName: 'Joel Emmanuel Portfolio',
+    siteName: 'Joel Emmanuel',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Joel Emmanuel — Fullstack & Blockchain Developer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Joel Emmanuel - Fullstack & Blockchain Developer',
-    description: 'Building Web3 applications, AI platforms, and production systems. Working on Avigate, a personal navigation app. Expert in Blockchain, React, NestJS, and AWS.',
-    creator: '@joelemmanuel',
+    title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
+    description: 'Building Web3 apps, AI platforms, and production systems. Founder of Avigate. Expert in Blockchain, React, NestJS, and AWS.',
+    creator: '@joelCloud899799',
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
@@ -94,7 +109,7 @@ export default function RootLayout({ children }) {
               "sameAs": [
                 "https://www.linkedin.com/in/joel-emmanuel-149708202/",
                 "https://github.com/joelemmanuel",
-                "https://x.com/joelemmanuel"
+                "https://x.com/joelCloud899799"
               ],
               "alumniOf": {
                 "@type": "CollegeOrUniversity",
