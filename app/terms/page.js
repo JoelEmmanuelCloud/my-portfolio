@@ -160,7 +160,7 @@ export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-white">
 
-      <section className="pt-24 pb-16">
+      <section className="pt-8 sm:pt-12 pb-16">
         <div className="container mx-auto px-4 sm:px-6">
           <Link
             href="/"

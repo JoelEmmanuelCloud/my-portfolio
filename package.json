@@ -13,7 +13,6 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@sendgrid/mail": "^8.1.0",
     "framer-motion": "^10.16.5",
     "lucide-react": "^0.263.1",
     "next": "^14.0.0",

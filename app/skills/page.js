@@ -28,7 +28,7 @@ export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState(skillCategories[0][0])
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
 
       <section className="py-12 sm:py-20 lg:py-28 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
@@ -53,9 +53,9 @@ export default function Skills() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Key Strengths</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 xs:gap-6 lg:gap-8">
               {highlights.map((highlight, index) => (
-                <div key={highlight.title} className="text-center border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 bg-white dark:bg-gray-800">
+                <div key={highlight.title} className="text-center border border-black dark:border-gray-600 rounded-lg p-3 xs:p-4 sm:p-6 bg-white dark:bg-gray-800">
                   <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{highlight.icon}</div>
                   <h3 className="text-base sm:text-lg font-medium text-black dark:text-white mb-2">{highlight.title}</h3>
                   <p className="text-black dark:text-gray-300 text-sm sm:text-base">{highlight.description}</p>
@@ -71,10 +71,10 @@ export default function Skills() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Technical Skills</h2>
 
-            <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid md:grid-cols-4 gap-6 lg:gap-8">
 
-              <div className="lg:col-span-1">
-                <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
+              <div className="md:col-span-1">
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-1 gap-2">
                   {skillCategories.map(([key, category]) => (
                     <button
                       key={key}
@@ -92,7 +92,7 @@ export default function Skills() {
                 </div>
               </div>
 
-              <div className="lg:col-span-3">
+              <div className="md:col-span-3">
                 {skillCategories.map(([key, category]) => (
                   <div
                     key={key}
@@ -152,7 +152,7 @@ export default function Skills() {
 
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
 
-              <div className="border border-black dark:border-gray-600 rounded-lg p-6 sm:p-8 bg-white dark:bg-gray-800">
+              <div className="border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-800">
                 <div className="mb-4 sm:mb-6">
                   <h3 className="text-lg sm:text-xl font-medium text-black dark:text-white mb-2">AWS Certified Cloud Practitioner</h3>
                   <p className="text-black dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base font-medium">Amazon Web Services</p>
@@ -176,7 +176,7 @@ export default function Skills() {
                 </div>
               </div>
 
-              <div className="border border-black dark:border-gray-600 rounded-lg p-6 sm:p-8 bg-white dark:bg-gray-800">
+              <div className="border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-800">
                 <div className="mb-4 sm:mb-6">
                   <h3 className="text-lg sm:text-xl font-medium text-black dark:text-white mb-2">AWS Certified AI Practitioner</h3>
                   <p className="text-black dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base font-medium">Amazon Web Services</p>
@@ -209,7 +209,7 @@ export default function Skills() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Continuous Learning</h2>
 
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3">
               {[
                 {
                   title: 'Current Focus',
@@ -217,14 +217,14 @@ export default function Skills() {
                 },
                 {
                   title: 'Next Learning',
-                  items: ['Rust Programming', 'Web3/Blockchain', 'GraphQL Advanced']
+                  items: ['Rust Programming', 'ZK Proofs', 'GraphQL Advanced']
                 },
                 {
                   title: 'Practice Areas',
                   items: ['System Design', 'DevOps Culture', 'Team Leadership']
                 }
               ].map((area, index) => (
-                <div key={area.title} className="border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 bg-white dark:bg-gray-800">
+                <div key={area.title} className="border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 bg-white dark:bg-gray-800 break-inside-avoid">
                   <h3 className="text-base sm:text-lg font-medium text-black dark:text-white mb-3 sm:mb-4">{area.title}</h3>
                   <ul className="space-y-2">
                     {area.items.map((item) => (
@@ -286,13 +286,13 @@ export default function Skills() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
               >
                 Start a Project
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-black dark:text-gray-300 hover:text-white hover:bg-blue-600 border border-blue-600 rounded-lg transition-colors text-sm sm:text-base font-medium"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-black dark:text-gray-300 hover:text-white hover:bg-blue-600 border border-blue-600 rounded-full transition-colors text-sm sm:text-base font-medium"
               >
                 View My Work →
               </Link>

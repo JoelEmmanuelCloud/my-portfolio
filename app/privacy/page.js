@@ -135,7 +135,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white">
 
-      <section className="pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 lg:pb-20">
+      <section className="pt-8 sm:pt-12 pb-12 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/"

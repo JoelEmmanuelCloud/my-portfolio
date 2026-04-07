@@ -19,13 +19,12 @@ export default function Footer() {
     <footer className="bg-white dark:bg-gray-900 border-t border-black/10 dark:border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
 
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 lg:gap-10">
 
-          <div className="flex flex-col gap-4 max-w-xs">
+          <div className="flex flex-col gap-4 max-w-full sm:max-w-xs">
             <Link href="/" className="flex items-center gap-3">
               <div className="w-12 h-12 relative">
-                <Image src="/logos/logo2.png" alt="Joel Emmanuel" fill className="object-contain dark:hidden" />
-                <Image src="/logos/logo.svg" alt="Joel Emmanuel" fill className="object-contain hidden dark:block" />
+                <Image src="/logos/logo-je.svg" alt="Joel Emmanuel" fill className="object-contain" />
               </div>
               <span className="text-base font-semibold text-black dark:text-white">Joel Emmanuel</span>
             </Link>
@@ -40,7 +39,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-10 sm:gap-16">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 md:gap-16">
             <div>
               <p className="text-xs font-semibold text-black dark:text-white uppercase tracking-widest mb-4">Pages</p>
               <div className="flex flex-col gap-2.5">

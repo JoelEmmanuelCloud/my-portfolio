@@ -54,19 +54,11 @@ export default function Header() {
               <Link href="/" className="flex items-center gap-2 sm:gap-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 relative">
                   <Image
-                    src="/logos/logo2.png"
+                    src="/logos/logo-je.svg"
                     alt="Joel Emmanuel Logo"
                     fill
                     sizes="56px"
-                    className="object-contain dark:hidden"
-                    priority
-                  />
-                  <Image
-                    src="/logos/logo.svg"
-                    alt="Joel Emmanuel Logo"
-                    fill
-                    sizes="56px"
-                    className="object-contain hidden dark:block"
+                    className="object-contain"
                     priority
                   />
                 </div>
@@ -129,18 +121,11 @@ export default function Header() {
         <div className="flex items-center justify-between px-6 h-16 border-b border-gray-100 dark:border-gray-800">
           <div className="w-10 h-10 relative">
             <Image
-              src="/logos/logo2.png"
+              src="/logos/logo-je.svg"
               alt="Joel Emmanuel Logo"
               fill
               sizes="40px"
-              className="object-contain dark:hidden"
-            />
-            <Image
-              src="/logos/logo.svg"
-              alt="Joel Emmanuel Logo"
-              fill
-              sizes="40px"
-              className="object-contain hidden dark:block"
+              className="object-contain"
             />
           </div>
           <button
@@ -158,7 +143,7 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-lg font-medium py-3 px-4 rounded-xl transition-colors duration-200 ${
+              className={`text-base sm:text-lg font-medium py-3 px-4 rounded-xl transition-colors duration-200 ${
                 pathname === item.href
                   ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                   : 'text-black dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'

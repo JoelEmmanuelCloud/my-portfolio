@@ -1,19 +1,14 @@
 export const metadata = {
-  title: 'Privacy Policy - Joel Emmanuel',
-  description: 'Privacy Policy for Joel Emmanuel\'s portfolio website. Learn how we collect, use, and protect your personal information.',
-  keywords: 'privacy policy, data protection, personal information, GDPR compliance',
-  robots: 'index, follow',
+  title: 'Privacy Policy — Joel Emmanuel',
+  description: 'Privacy Policy for joelemmanuel.dev. Learn how personal data is collected and used when you visit this portfolio website.',
+  alternates: { canonical: '/privacy' },
+  robots: { index: true, follow: false },
   openGraph: {
-    title: 'Privacy Policy - Joel Emmanuel',
-    description: 'Privacy Policy for Joel Emmanuel\'s portfolio website. Learn how we collect, use, and protect your personal information.',
+    title: 'Privacy Policy — Joel Emmanuel',
+    description: 'Privacy Policy for joelemmanuel.dev.',
     type: 'website',
     url: 'https://joelemmanuel.dev/privacy',
   },
-  twitter: {
-    card: 'summary',
-    title: 'Privacy Policy - Joel Emmanuel',
-    description: 'Privacy Policy for Joel Emmanuel\'s portfolio website. Learn how we collect, use, and protect your personal information.',
-  }
 }
 
 export default function PrivacyLayout({ children }) {

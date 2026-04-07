@@ -90,8 +90,8 @@ export const experience = [
   },
   {
     company: "Freedom Ghana",
-    role: "Full-stack Developer", 
-    period: "Present",
+    role: "Full-stack Developer",
+    period: "2023 – Present",
     location: "Ghana (Remote)",
     current: true,
     website: "https://www.freedomghana.com/",

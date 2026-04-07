@@ -45,10 +45,10 @@ export default function Home() {
   return (
     <div className="min-h-screen">
 
-      <section className="relative min-h-screen bg-white dark:bg-gray-900 overflow-hidden pt-16 sm:pt-18 lg:pt-20">
+      <section className="relative min-h-screen bg-white dark:bg-gray-900 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
 
-          <div className="xl:hidden flex justify-center gap-8 sm:gap-12 mb-6 sm:mb-8 pt-2">
+          <div className="xl:hidden flex justify-center gap-4 xs:gap-8 sm:gap-12 mb-6 sm:mb-8 pt-2">
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-black dark:text-white">+50</div>
               <div className="text-xs sm:text-sm font-medium text-black dark:text-gray-300 mt-1">Projects</div>
@@ -101,7 +101,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <div className="flex flex-col xs:flex-row flex-wrap gap-3 justify-center lg:justify-start">
                   <Link
                     href="/projects"
                     className="inline-flex items-center justify-center px-5 lg:px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-200 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -125,7 +125,7 @@ export default function Home() {
               </div>
 
               <div className="flex-shrink-0">
-                <div className="w-36 h-36 sm:w-48 sm:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
+                <div className="w-28 h-28 xs:w-36 xs:h-36 sm:w-48 sm:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl">
                   <Image
                     src="/images/profile/profile.jpeg"
                     alt="Joel Emmanuel - Fullstack & Blockchain Developer"
@@ -156,7 +156,7 @@ export default function Home() {
             <h2 className="text-xs sm:text-sm font-bold text-black dark:text-gray-400 uppercase tracking-wider mb-6 sm:mb-8">
               Trusted by leading companies
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 items-center">
+            <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 items-center">
               {companies.map((company) => (
                 <a
                   key={company.name}
@@ -170,7 +170,8 @@ export default function Home() {
                       src={company.logo}
                       alt={`${company.name} logo`}
                       fill
-                      className="object-contain transition-all duration-300 hover:brightness-75"
+                      sizes="80px"
+                      className="object-contain transition-all duration-300 dark:brightness-0 dark:invert hover:opacity-70"
                     />
                   </div>
                 </a>
@@ -271,7 +272,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:gap-10 lg:grid-cols-2">
+          <div className="grid gap-8 sm:gap-10 sm:grid-cols-2">
             {buildingApproach.map((approach) => (
               <div
                 key={approach.title}

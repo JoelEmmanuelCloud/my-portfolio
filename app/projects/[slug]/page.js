@@ -48,7 +48,7 @@ export default function ProjectDetail({ params }) {
     .slice(0, 2)
 
   return (
-    <div className="min-h-screen pt-16 bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
 
       <section className="py-6 sm:py-8 border-b border-black/10 dark:border-white/10">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">

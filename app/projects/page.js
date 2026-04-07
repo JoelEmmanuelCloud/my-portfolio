@@ -55,7 +55,7 @@ export default function Projects() {
       })
 
   return (
-    <div className="min-h-screen pt-16 bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
 
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
@@ -67,12 +67,12 @@ export default function Projects() {
               Production systems and innovative solutions built with modern technologies.
             </p>
 
-            <div className="flex flex-wrap gap-4 sm:gap-8 mb-8 sm:mb-12 lg:mb-16">
+            <div className="flex flex-wrap gap-3 xs:gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`text-base sm:text-lg lg:text-xl font-medium transition-all duration-200 pb-2 px-1 ${
+                  className={`text-sm xs:text-base sm:text-lg lg:text-xl font-medium transition-all duration-200 pb-2 px-1 ${
                     selectedCategory === category.id
                       ? 'text-blue-600 border-b-2 border-blue-600'
                       : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
@@ -102,7 +102,7 @@ export default function Projects() {
                     {project.images && project.images[0] ? (
                       <Image
                         src={project.images[0]}
-                        alt={project.title}
+                        alt={`${project.title} screenshot`}
                         fill
                         className="object-cover group-hover:scale-105 transition-all duration-500"
                         sizes="(max-width: 1024px) 100vw, 50vw"
@@ -220,7 +220,7 @@ export default function Projects() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 active:bg-blue-800 transition-colors text-base shadow-lg"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 active:bg-blue-800 transition-colors text-sm sm:text-base shadow-lg"
           >
             Get In Touch
           </Link>
