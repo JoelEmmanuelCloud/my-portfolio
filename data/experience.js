@@ -1,28 +1,6 @@
 
 export const experience = [
   {
-    company: "Avigate",
-    role: "Personal Project",
-    period: "2024 – Present",
-    location: "Nigeria (Remote)",
-    current: true,
-    website: "https://avigate.co/",
-    stack: ["TypeScript", "React Native", "NestJS", "PostgreSQL", "Google Maps API", "Redis"],
-    description: "Personal side project — smart transportation navigation app for Nigerian cities",
-    highlights: [
-      "Building full-stack mobile app from concept to launch with comprehensive route matching systems",
-      "Implementing real-time location sharing, Google Maps integration, and routing algorithms optimized for Nigerian infrastructure",
-      "Building scalable NestJS backend with PostgreSQL and Redis supporting thousands of concurrent users",
-      "Implementing enterprise-grade security with Google OAuth, TOTP 2FA, JWT tokens, and device tracking"
-    ],
-    bullets: [
-      "Building Avigate to solve local transit challenges helping users navigate using buses, keke napep, taxis, and okada",
-      "Full-stack development with TypeScript, React Native, NestJS, and PostgreSQL",
-      "Implemented real-time route matching with complex transfer logic and community-driven features",
-      "Built scalable backend APIs with comprehensive security including Google OAuth and TOTP 2FA"
-    ]
-  },
-  {
     company: "Learnway",
     role: "Fullstack Developer",
     period: "Dec 2024 – Present",
@@ -91,9 +69,8 @@ export const experience = [
   {
     company: "Freedom Ghana",
     role: "Full-stack Developer",
-    period: "2023 – Present",
+    period: "2023 – Dec 2024",
     location: "Ghana (Remote)",
-    current: true,
     website: "https://www.freedomghana.com/",
     stack: ["React", "Node.js", "Express", "MongoDB", "AWS", "Socket.IO", "Google Maps"],
     description: "Full-stack ride-hailing platform serving thousands of daily requests",
@@ -193,6 +170,20 @@ export const education = [
 ]
 
 export const hackathons = [
+  {
+    name: "MLH Production Engineering Hackfest 2026",
+    organizer: "Major League Hacking (MLH)",
+    period: "April 2026",
+    role: "Production Engineer",
+    description: "Built a production-grade URL shortener demonstrating SRE practices including horizontal scaling, Redis caching, full observability, and load testing under real traffic conditions.",
+    achievements: [
+      "Deployed 2 Flask instances behind Nginx on DigitalOcean with Docker Compose",
+      "Implemented Redis caching on redirect and list endpoints, reducing error rate by 24% under 200 concurrent users",
+      "Instrumented with Prometheus metrics and Grafana dashboards for real-time observability",
+      "Load tested with k6 at 200 VUs, documented bottleneck analysis and before/after results",
+      "Wrote failure mode documentation, runbook, and CI/CD pipeline with GitHub Actions"
+    ]
+  },
   {
     name: "EthGlobal Unite DeFi Hackathon",
     organizer: "EthGlobal, 1inch & Ethereum Developer Community",

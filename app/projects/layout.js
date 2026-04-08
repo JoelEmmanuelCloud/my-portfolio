@@ -1,8 +1,8 @@
 export const metadata = {
   title: 'Projects — Joel Emmanuel',
-  description: 'Portfolio of blockchain platforms, AI-powered apps, ride-hailing systems, and enterprise applications. Includes Avigate (navigation), Learnway (blockchain education on Lisk), Freedom (ride-hailing), and 10+ more production projects.',
+  description: 'Portfolio of blockchain platforms, AI-powered apps, ride-hailing systems, and enterprise applications. Includes Learnway (blockchain education on Lisk), Freedom (ride-hailing), and 10+ more production projects.',
   keywords: [
-    'Joel Emmanuel projects', 'blockchain projects', 'Web3 portfolio', 'Avigate app',
+    'Joel Emmanuel projects', 'blockchain projects', 'Web3 portfolio',
     'Learnway Lisk', 'Freedom ride-hailing', 'React projects', 'NestJS projects',
     'AI ML projects', 'AWS projects', 'fullstack portfolio Nigeria'
   ],
@@ -16,7 +16,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Projects — Joel Emmanuel',
-    description: 'Blockchain platforms, AI apps, and fullstack systems. 10+ production projects including Avigate, Learnway, and Freedom.',
+    description: 'Blockchain platforms, AI apps, and fullstack systems. 10+ production projects including Learnway and Freedom.',
     creator: '@joelCloud899799',
   },
 }

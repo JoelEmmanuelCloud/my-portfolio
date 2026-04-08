@@ -32,8 +32,19 @@ export const skills = {
     icon: "☁️",
     skills: [
       "AWS (EC2, S3, Lambda, SageMaker, Bedrock, RDS, DynamoDB)",
-      "Docker", "Kubernetes", "CI/CD", "GitHub Actions", 
+      "Docker", "Kubernetes", "CI/CD", "GitHub Actions",
       "Nginx", "Apache", "Vercel", "Netlify"
+    ]
+  },
+  sre: {
+    title: "Production Engineering & SRE",
+    icon: "🔧",
+    skills: [
+      "Prometheus", "Grafana", "k6 Load Testing",
+      "Structured Logging", "Health Checks", "Alerting",
+      "Incident Runbooks", "Failure Mode Analysis",
+      "Horizontal Scaling", "Cache Invalidation",
+      "Docker Compose", "DigitalOcean"
     ]
   },
   database: {
@@ -69,7 +80,7 @@ export const skills = {
 export const highlights = [
   {
     title: "Side Project Builder",
-    description: "Building Avigate, a personal transportation navigation app for Nigerian cities",
+    description: "Building side projects that solve real-world problems from concept to production",
     icon: "🚀"
   },
   {
@@ -98,8 +109,13 @@ export const highlights = [
     icon: "🤖"
   },
   {
+    title: "Production Engineer",
+    description: "MLH PE Hackfest: load testing, Redis caching, Prometheus/Grafana observability, runbooks",
+    icon: "🔧"
+  },
+  {
     title: "Hackathon Competitor",
-    description: "EthGlobal hackathons with innovative solutions",
+    description: "MLH PE Hackfest, EthGlobal Unite, EthGlobal x Avail",
     icon: "🏆"
   },
   {
@@ -201,7 +217,7 @@ export const coreCompetencies = [
   },
   {
     title: "Entrepreneurship",
-    description: "Founded Avigate, demonstrating ability to identify opportunities and build solutions from concept to product",
+    description: "Demonstrated ability to identify opportunities and build solutions from concept to product",
     icon: "💡"
   },
   {

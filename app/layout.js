@@ -15,13 +15,13 @@ const inter = Inter({
 
 export const metadata = {
   title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
-  description: 'Fullstack & Blockchain Developer with 3+ years building scalable Web3 apps, AI platforms, and production systems for companies across Nigeria, Brazil, USA, Canada, and Ghana. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML. Founder of Avigate.',
+  description: 'Fullstack & Blockchain Developer with 3+ years building scalable Web3 apps, AI platforms, and production systems for companies across Nigeria, Brazil, USA, Canada, and Ghana. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML.',
   keywords: [
     'Fullstack Developer', 'Blockchain Developer', 'Web3 Developer', 'React Developer',
     'NestJS Developer', 'Lisk Blockchain', 'Ethereum', 'Solidity', 'Smart Contracts',
     'DeFi', 'AI Developer', 'ML Engineer', 'AWS Certified', 'Node.js', 'TypeScript',
     'Next.js', 'Spring Boot', 'PostgreSQL', 'MongoDB', 'Docker', 'LangChain', 'RAG',
-    'Joel Emmanuel', 'Nigeria Developer', 'Remote Developer', 'Avigate'
+    'Joel Emmanuel', 'Nigeria Developer', 'Remote Developer'
   ],
   authors: [{ name: 'Joel Emmanuel', url: 'https://joelemmanuel.dev' }],
   creator: 'Joel Emmanuel',
@@ -44,7 +44,7 @@ export const metadata = {
 
   openGraph: {
     title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
-    description: 'Fullstack & Blockchain Developer building scalable Web3 apps, AI platforms, and production systems. Founder of Avigate. Expert in React, NestJS, Lisk Blockchain, Ethereum, and AWS.',
+    description: 'Fullstack & Blockchain Developer building scalable Web3 apps, AI platforms, and production systems. Expert in React, NestJS, Lisk Blockchain, Ethereum, and AWS.',
     url: 'https://joelemmanuel.dev',
     siteName: 'Joel Emmanuel',
     locale: 'en_US',
@@ -61,7 +61,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
-    description: 'Building Web3 apps, AI platforms, and production systems. Founder of Avigate. Expert in Blockchain, React, NestJS, and AWS.',
+    description: 'Building Web3 apps, AI platforms, and production systems. Expert in Blockchain, React, NestJS, and AWS.',
     creator: '@joelCloud899799',
     images: ['/og-image.png'],
   },
@@ -94,7 +94,7 @@ export default function RootLayout({ children }) {
               "@type": "Person",
               "name": "Joel Emmanuel",
               "jobTitle": "Fullstack & Blockchain Developer",
-              "description": "Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems. Building Avigate, a personal transportation navigation app for Nigerian cities.",
+              "description": "Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems.",
               "url": "https://joelemmanuel.dev",
               "image": "https://joelemmanuel.dev/images/profile/profile.jpeg",
               "sameAs": [
@@ -134,12 +134,7 @@ export default function RootLayout({ children }) {
                   "name": "AWS Certified AI Practitioner",
                   "credentialCategory": "certification"
                 }
-              ],
-              "sideProject": {
-                "@type": "SoftwareApplication",
-                "name": "Avigate",
-                "description": "Personal transportation navigation app for Nigerian cities"
-              }
+              ]
             })
           }}
         />

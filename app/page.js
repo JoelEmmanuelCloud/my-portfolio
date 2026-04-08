@@ -59,7 +59,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-black dark:text-white">Builder</div>
-              <div className="text-xs sm:text-sm font-medium text-black dark:text-gray-300 mt-1">Avigate</div>
+              <div className="text-xs sm:text-sm font-medium text-black dark:text-gray-300 mt-1">Side Projects</div>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export default function Home() {
               </div>
               <div>
                 <div className="text-lg font-bold text-black dark:text-white">Builder</div>
-                <div className="text-xs font-medium text-black dark:text-gray-300 mt-0.5">Avigate</div>
+                <div className="text-xs font-medium text-black dark:text-gray-300 mt-0.5">Side Projects</div>
               </div>
             </div>
 
@@ -91,7 +91,7 @@ export default function Home() {
 
                 <div className="space-y-1.5 lg:space-y-2 mb-5 lg:mb-7">
                   <p className="text-xs sm:text-sm lg:text-base text-black dark:text-gray-300 font-medium">
-                    <strong className="font-bold dark:text-white">Building Avigate</strong> — personal transportation navigation app for Nigerian cities
+                    <strong className="font-bold dark:text-white">Former Front-End Developer</strong> at Invillia, AI-powered recruitment platforms
                   </p>
                   <p className="text-xs sm:text-sm lg:text-base text-black dark:text-gray-300 font-medium">
                     <strong className="font-bold dark:text-white">Fullstack Developer</strong> at Learnway (Blockchain Education on Lisk)
