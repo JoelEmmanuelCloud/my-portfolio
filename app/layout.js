@@ -51,7 +51,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/opengraph-image',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Joel Emmanuel — Fullstack & Blockchain Developer',
@@ -63,7 +63,7 @@ export const metadata = {
     title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
     description: 'Building Web3 apps, AI platforms, and production systems. Founder of Avigate. Expert in Blockchain, React, NestJS, and AWS.',
     creator: '@joelCloud899799',
-    images: ['/opengraph-image'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,

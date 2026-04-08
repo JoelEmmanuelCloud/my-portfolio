@@ -11,7 +11,7 @@ export const metadata = {
     title: 'Experience — Joel Emmanuel',
     description: '3+ years building production systems at Invillia, Learnway, Freedom, and Compass UOL. AWS Certified. Expert in React, NestJS, Lisk Blockchain, and AWS.',
     url: 'https://joelemmanuel.dev/experience',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joel Emmanuel Experience' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Joel Emmanuel Experience' }],
   },
   twitter: {
     card: 'summary_large_image',
