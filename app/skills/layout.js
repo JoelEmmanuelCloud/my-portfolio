@@ -11,7 +11,7 @@ export const metadata = {
     title: 'Skills — Joel Emmanuel',
     description: 'Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, TypeScript, Spring Boot, LangChain, and RAG systems. AWS Certified Cloud and AI Practitioner.',
     url: 'https://joelemmanuel.dev/skills',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joel Emmanuel Skills' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Joel Emmanuel Skills' }],
   },
   twitter: {
     card: 'summary_large_image',

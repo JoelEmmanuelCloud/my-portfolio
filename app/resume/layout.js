@@ -11,7 +11,7 @@ export const metadata = {
     title: 'Resume — Joel Emmanuel',
     description: 'Fullstack & Blockchain Developer with 3+ years experience. AWS Certified. Expert in React, NestJS, Lisk Blockchain, and AWS.',
     url: 'https://joelemmanuel.dev/resume',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joel Emmanuel Resume' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Joel Emmanuel Resume' }],
   },
   twitter: {
     card: 'summary_large_image',

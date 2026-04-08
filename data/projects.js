@@ -1,6 +1,7 @@
 export const projects = [
   {
     slug: "avigate-navigation",
+    category: "mobile",
     title: "Avigate – Smart Transportation Navigation",
     role: "Personal Side Project",
     featured: true,
@@ -12,7 +13,6 @@ export const projects = [
       "TypeScript", "React Native", "NestJS", "PostgreSQL", 
       "Google Maps API", "Redis", "JWT", "TOTP 2FA"
     ],
-    images: ["/images/projects/avigate.png"],
     summary: "Personal side project building a smart transportation navigation app for Nigerian cities — helping users find routes using buses, keke napep, taxis, and okada with real-time matching and community features.",
     context: "Built Avigate to address the lack of reliable navigation solutions for local Nigerian transportation. Users struggle to find efficient routes using multiple transit modes, leading to wasted time and poor travel experiences.",
     challenge: "Building comprehensive route matching with complex transfer logic, real-time location sharing, and scalable infrastructure optimized for Nigerian transportation patterns and traffic conditions.",
@@ -32,6 +32,7 @@ export const projects = [
   },
   {
     slug: "learnway-blockchain",
+    category: "blockchain",
     title: "Learnway – Blockchain Education Platform",
     role: "Fullstack Developer",
     featured: true,
@@ -43,7 +44,6 @@ export const projects = [
       "NestJS", "TypeScript", "Lisk Blockchain", "PostgreSQL",
       "Redis", "Smart Contracts", "Web3"
     ],
-    images: ["/images/projects/learnway.png"],
     summary: "Full-stack platform for a blockchain-based educational application on Lisk blockchain that gamifies learning through point-based rewards and token incentives.",
     context: "Learnway combines education with blockchain technology to create engaging learning experiences. Students earn tokens for completing milestones, creating a gamified ecosystem that incentivizes continuous learning.",
     challenge: "Building a scalable full-stack system to handle user progress tracking, achievement systems, and blockchain reward distribution while maintaining performance and security.",
@@ -63,6 +63,7 @@ export const projects = [
   },
   {
     slug: "freedom-ride-hailing",
+    category: "ridehailing",
     title: "Freedom – Ride Hailing Platform",
     role: "Full-stack Developer",
     featured: true,
@@ -73,7 +74,6 @@ export const projects = [
       "React", "Node.js", "MongoDB", "AWS EC2", "Socket.IO", 
       "Google Maps", "Paystack", "Redis", "GitHub Actions"
     ],
-    images: ["/images/projects/freedom.png"],
     summary: "Production ride-hailing platform serving thousands of daily ride requests across multiple Ghanaian cities with real-time matching and secure payments.",
     context: "Freedom provides reliable transportation services in Ghana, connecting passengers with drivers through an intuitive mobile platform. The system handles real-time ride booking, driver dispatch, and payment processing.",
     challenge: "Building complete ride-hailing ecosystem with real-time features, payment integration, scalable infrastructure, and 99.9% uptime for production traffic.",
@@ -93,6 +93,7 @@ export const projects = [
   },
   {
     slug: "ethglobal-defi",
+    category: "defi",
     title: "EthGlobal Unite DeFi – Cross-chain Solutions",
     role: "Blockchain Developer",
     featured: false,
@@ -103,7 +104,6 @@ export const projects = [
       "Solidity", "Ethereum", "1inch", "Web3.js", "React", 
       "Smart Contracts", "DeFi Protocols"
     ],
-    images: ["/images/projects/ethglobal-defi.png"],
     summary: "Innovative cross-chain DeFi solutions addressing interoperability challenges, competing for $525,000 in bounties at EthGlobal Unite hackathon.",
     context: "Cross-chain interoperability remains a major challenge in DeFi. Users struggle to move assets between networks efficiently, limiting liquidity access and trading opportunities.",
     challenge: "Building seamless multi-chain applications enabling users to move assets effortlessly between blockchain networks while maintaining security and minimizing costs.",
@@ -122,6 +122,7 @@ export const projects = [
   },
   {
     slug: "ethglobal-avail",
+    category: "blockchain",
     title: "EthGlobal x Avail – Unchained Apps",
     role: "Web3 Developer",
     featured: false,
@@ -132,7 +133,6 @@ export const projects = [
       "Avail Nexus SDK", "Solidity", "Web3", "React", 
       "Cross-chain", "DeFi", "Smart Contracts"
     ],
-    images: ["/images/projects/ethglobal-avail.png"],
     summary: "Cross-chain applications leveraging Avail Nexus SDK for seamless asset transfer and liquidity sharing across multiple blockchain networks.",
     context: "Traditional blockchain bridges create fragmentation, requiring users to manage multiple wallets, switch networks constantly, and pay high fees for cross-chain operations.",
     challenge: "Building unified cross-chain experiences allowing users to interact with multiple blockchains simultaneously without traditional bridge limitations.",
@@ -151,6 +151,7 @@ export const projects = [
   },
   {
     slug: "vivo-b2b-ecommerce",
+    category: "ecommerce",
     title: "Vivo – B2B Fixed-Sales E-commerce",
     role: "Frontend Developer",
     featured: false,
@@ -160,7 +161,6 @@ export const projects = [
     stack: [
       "React", "TypeScript", "Node.js", "Java", "Framework Brasil", "Design System", "Microservices"
     ],
-    images: ["/images/projects/vivo.png"],
     summary: "Frontend development for Vivo's new B2B fixed-sales e-commerce platform as part of a newly ramped-up squad, building on Brazil's largest telecom infrastructure.",
     context: "Vivo requested the ramp-up of a new squad to build a dedicated e-commerce platform for B2B fixed-sales. The platform required strict adherence to Vivo's proprietary Framework Brasil design system and integration with a layered microservices architecture.",
     challenge: "Building a consistent and scalable React frontend aligned with Framework Brasil's design system premises, while integrating seamlessly with Node.js BFF layers and Java-based microservices decoupling architecture.",
@@ -179,6 +179,7 @@ export const projects = [
   },
   {
     slug: "red-warehouse-system",
+    category: "logistics",
     title: "RED Transport – Warehouse Management System",
     role: "Full-stack Developer (Freelance)",
     featured: false,
@@ -189,7 +190,6 @@ export const projects = [
       "Odoo Framework", "Python", "XML", "PostgreSQL", 
       "QR Codes", "JavaScript", "Custom Modules"
     ],
-    images: ["/images/projects/red-warehouse.png"],
     summary: "Complete warehouse management system for RED Transport Limited, a leading maritime logistics company in Lagos, Nigeria.",
     context: "RED Transport manages complex maritime cargo operations requiring efficient inventory tracking, vessel management, and automated billing for Nigerian customs compliance.",
     challenge: "Building comprehensive warehouse system with inventory tracking, prepaid storage, vessel management, and automated billing tailored to maritime logistics requirements.",
@@ -208,6 +208,7 @@ export const projects = [
   },
   {
     slug: "laila-ai-hiring",
+    category: "ai",
     title: "Laila – AI Hiring Platform",
     role: "Frontend Developer",
     featured: false,
@@ -218,7 +219,6 @@ export const projects = [
       "React", "Redux", "Tailwind CSS", "Material UI", 
       "WebSockets", "REST APIs"
     ],
-    images: ["/images/projects/laila-ai.png"],
     summary: "AI-powered interview platform conducting automated technical and behavioral assessments for candidates across Brazil, Canada, and USA.",
     context: "Invillia needed scalable interview solution to evaluate candidates efficiently across international markets while maintaining consistency and reducing recruiter workload.",
     challenge: "Building responsive interview interfaces with real-time AI interactions, complex state management, and seamless integration with AI backend services.",
@@ -237,6 +237,7 @@ export const projects = [
   },
   {
     slug: "usp-rag-education",
+    category: "ai",
     title: "USP – Educational RAG Application",
     role: "AI/ML Developer",
     featured: false,
@@ -247,7 +248,6 @@ export const projects = [
       "LangChain", "AWS Textract", "AWS Bedrock", "Pinecone", 
       "React", "Python", "Vector Databases"
     ],
-    images: ["/images/projects/usp-rag.png"],
     summary: "Retrieval-Augmented Generation application for Universidade de São Paulo enabling intelligent question-answering for educational content.",
     context: "USP needed intelligent system allowing students and faculty to interact conversationally with vast academic materials, lecture notes, and research papers.",
     challenge: "Building accurate question-answering system with document processing pipelines, semantic search, and optimized retrieval for educational queries.",
@@ -267,6 +267,7 @@ export const projects = [
   },
   {
     slug: "invillia-enterprise-ai",
+    category: "enterprise",
     title: "Invillia – Enterprise AI Applications",
     role: "Frontend Engineer", 
     featured: false,
@@ -274,7 +275,6 @@ export const projects = [
       live: "https://invillia.ai/en/home" 
     },
     stack: ["React", "TypeScript", "Enterprise UI"],
-    images: ["/images/projects/invillia.png"],
     summary: "Frontend development for enterprise AI/automation platforms with complex business workflows and high performance requirements.",
     challenge: "Building robust frontend interfaces for enterprise AI applications with seamless API integration and type safety.",
     solution: "React components with TypeScript for type safety, modern UI patterns, and effective cross-functional team collaboration.",
@@ -290,6 +290,7 @@ export const projects = [
   },
   {
     slug: "mumalieff-ecommerce",
+    category: "ecommerce",
     title: "Mumalieff – E-commerce Platform",
     role: "Full-stack Developer",
     featured: false,
@@ -297,7 +298,6 @@ export const projects = [
       live: "https://www.mumalieff.com/" 
     },
     stack: ["React", "Node.js", "MongoDB", "Paystack"],
-    images: ["/images/projects/mumalieff.png"],
     summary: "Complete e-commerce solution for branded T-shirts with modern storefront, product catalog, and secure payment processing.",
     challenge: "Creating full e-commerce experience with shopping cart, inventory management, and payment integration.",
     solution: "React storefront with Node.js backend, MongoDB database, integrated Paystack payments, and automated customer communications.",
@@ -314,6 +314,7 @@ export const projects = [
   },
   {
     slug: "gilt-counselling",
+    category: "healthcare",
     title: "Gilt Counselling – Professional Website",
     role: "Full-stack Developer",
     featured: false,
@@ -321,7 +322,6 @@ export const projects = [
       live: "https://giltcounselling.com/" 
     },
     stack: ["Next.js", "TidyCal", "SendGrid"],
-    images: ["/images/projects/gilt.png"],
     summary: "Professional counselling website with integrated booking system and secure passwordless authentication.",
     challenge: "Creating trustworthy healthcare website with seamless appointment booking and secure client communications.",
     solution: "Next.js website with TidyCal booking integration, magic-link authentication, and automated email communications via SendGrid.",
@@ -337,6 +337,7 @@ export const projects = [
   },
   {
     slug: "nsight-ai-chatbot",
+    category: "ai",
     title: "nSight Live – AI Customer Support",
     role: "AI Developer",
     featured: false,
@@ -344,7 +345,6 @@ export const projects = [
       company: "https://nsightlive.com/" 
     },
     stack: ["Amazon Lex", "Bedrock", "React", "Lambda", "Twilio"],
-    images: ["/images/projects/nsight.png"],
     summary: "AI-powered customer support bot for automotive dealerships with knowledge base integration and multi-channel communication.",
     challenge: "Building sophisticated AI chatbot with natural language understanding, accurate responses, and multi-channel delivery.",
     solution: "Amazon Lex and Bedrock (Claude 3.5) implementation with React admin panel, Lambda serverless pipeline, and Twilio Flex integration.",

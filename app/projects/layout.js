@@ -11,7 +11,7 @@ export const metadata = {
     title: 'Projects — Joel Emmanuel',
     description: 'Blockchain platforms, AI apps, ride-hailing systems, and enterprise solutions. 10+ production projects across Web3, AI/ML, and fullstack development.',
     url: 'https://joelemmanuel.dev/projects',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Joel Emmanuel Projects' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Joel Emmanuel Projects' }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { ExternalLink, ArrowRight } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import { projects, otherEngagements } from '@/data/projects'
+import ProjectCardVisual from '@/components/project/ProjectCardVisual'
 
 const categories = [
   { id: 'all', name: 'All' },
@@ -98,23 +98,8 @@ export default function Projects() {
               >
 
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative aspect-[4/3] bg-black/5 dark:bg-white/5 overflow-hidden rounded-xl shadow-lg group">
-                    {project.images && project.images[0] ? (
-                      <Image
-                        src={project.images[0]}
-                        alt={`${project.title} screenshot`}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-all duration-500"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                      />
-                    ) : (
-                      <div className="flex items-center justify-center h-full">
-                        <div className="text-center">
-                          <div className="w-16 h-16 bg-black/10 dark:bg-white/10 mx-auto mb-4 rounded-xl"></div>
-                          <p className="text-base text-black dark:text-gray-400 font-medium">Project Image</p>
-                        </div>
-                      </div>
-                    )}
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                    <ProjectCardVisual category={project.category} size="card" />
                   </div>
                 </div>
 
