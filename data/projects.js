@@ -1,33 +1,32 @@
 export const projects = [
   {
-    slug: "avigate-navigation",
-    category: "mobile",
-    title: "Avigate – Smart Transportation Navigation",
-    role: "Personal Side Project",
+    slug: "pe-hackathon-url-shortener",
+    category: "devops",
+    title: "Production URL Shortener – MLH PE Hackfest 2026",
+    role: "Production Engineer",
     featured: true,
     links: {
-      live: "https://avigate.co/",
-      company: "https://avigate.co/"
+      live: "https://github.com/JoelEmmanuelCloud/pe-hackathon",
     },
     stack: [
-      "TypeScript", "React Native", "NestJS", "PostgreSQL", 
-      "Google Maps API", "Redis", "JWT", "TOTP 2FA"
+      "Flask", "PostgreSQL", "Redis", "Nginx", "Docker", "Prometheus", "Grafana", "k6", "GitHub Actions"
     ],
-    summary: "Personal side project building a smart transportation navigation app for Nigerian cities — helping users find routes using buses, keke napep, taxis, and okada with real-time matching and community features.",
-    context: "Built Avigate to address the lack of reliable navigation solutions for local Nigerian transportation. Users struggle to find efficient routes using multiple transit modes, leading to wasted time and poor travel experiences.",
-    challenge: "Building comprehensive route matching with complex transfer logic, real-time location sharing, and scalable infrastructure optimized for Nigerian transportation patterns and traffic conditions.",
-    solution: "Architected full-stack solution with React Native mobile apps, NestJS backend, PostgreSQL database, and Redis caching. Implemented sophisticated routing algorithms, Google Maps integration, and enterprise-grade security with Google OAuth and TOTP 2FA.",
+    summary: "Production-grade URL shortener built for the MLH Production Engineering Hackathon, demonstrating SRE practices: horizontal scaling, Redis caching, observability, load testing, and incident runbooks.",
+    context: "Built during the MLH PE Hackfest 2026 to demonstrate real-world production engineering skills including reliability, scalability, and observability on a constrained single-node deployment.",
+    challenge: "Designing a system that handles high concurrency on a 512MB/1vCPU droplet while maintaining low latency, full observability, and graceful failure handling across all components.",
+    solution: "Deployed 2 Flask instances behind Nginx for horizontal scaling, implemented Redis caching on redirect lookups and list endpoints with cache invalidation, instrumented with Prometheus metrics, visualised in Grafana, and load tested with k6 at 200 concurrent users.",
     impact: [
-      "Comprehensive route matching system with complex transfer logic and community-driven features",
-      "Real-time location sharing and optimized routing algorithms for Nigerian infrastructure",
-      "Scalable backend APIs supporting thousands of concurrent users",
-      "Enterprise-grade security with Google OAuth, TOTP 2FA, JWT tokens, and device tracking"
+      "Redis caching reduced error rate from 1.68% to 1.28% (24% improvement) under 200 concurrent users",
+      "Health endpoint reports DB and cache status independently, enabling precise incident diagnosis",
+      "Failure mode documentation covering 6 failure scenarios with expected responses and recovery steps",
+      "CI/CD pipeline (GitHub Actions) running tests on every push and PR",
+      "Runbook and deploy guide enabling repeatable zero-downtime deployments"
     ],
     technologies: {
-      mobile: ["React Native", "TypeScript", "Dark Mode", "Real-time Updates"],
-      backend: ["NestJS", "PostgreSQL", "Redis", "WebSockets"],
-      integrations: ["Google Maps API", "Google OAuth", "TOTP 2FA"],
-      security: ["JWT", "Device Tracking", "Session Management"]
+      backend: ["Flask", "Python", "Peewee ORM", "PostgreSQL", "Redis"],
+      infrastructure: ["Docker", "Docker Compose", "Nginx", "DigitalOcean"],
+      observability: ["Prometheus", "Grafana", "Structured JSON Logging"],
+      testing: ["k6 Load Testing", "pytest", "GitHub Actions CI"]
     }
   },
   {
