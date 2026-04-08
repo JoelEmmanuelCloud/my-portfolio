@@ -1,6 +1,6 @@
 'use client'
 import { Download } from 'lucide-react'
-import { experience, certifications, education } from '@/data/experience'
+import { experience, certifications, education, hackathons } from '@/data/experience'
 import { skills } from '@/data/skills'
 
 export default function ResumePage() {
@@ -9,10 +9,11 @@ export default function ResumePage() {
 
   const coreSkills = [
     { label: 'Frontend', items: ['React.js', 'Next.js', 'TypeScript', 'React Native', 'Tailwind CSS'] },
-    { label: 'Backend', items: ['NestJS', 'Node.js', 'Spring Boot', 'REST APIs', 'GraphQL'] },
+    { label: 'Backend', items: ['NestJS', 'Node.js', 'Spring Boot', 'Python', 'REST APIs', 'GraphQL'] },
     { label: 'Blockchain', items: ['Ethereum', 'Solidity', 'Lisk Blockchain', 'Smart Contracts', 'Web3.js'] },
     { label: 'Cloud & AI', items: ['AWS (EC2, S3, Lambda, Bedrock, SageMaker)', 'Docker', 'CI/CD', 'LangChain', 'RAG Systems'] },
     { label: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Vector Databases'] },
+    { label: 'Prod. Eng.', items: ['Prometheus', 'Grafana', 'k6 Load Testing', 'Nginx', 'Incident Runbooks', 'Horizontal Scaling'] },
   ]
 
   return (
@@ -95,17 +96,29 @@ export default function ResumePage() {
 
         <div className="mb-5">
           <h2 className="text-xs font-bold text-gray-900 uppercase tracking-widest border-b border-gray-200 pb-1 mb-3">
-            Education
+            Hackathons
           </h2>
-          {education.map((edu) => (
-            <div key={edu.school} className="flex items-start justify-between gap-2">
-              <div>
-                <span className="text-sm font-bold text-gray-900">{edu.degree}</span>
-                <p className="text-xs text-gray-600">{edu.school} — {edu.location}</p>
+          <div className="space-y-3">
+            {hackathons.map((h) => (
+              <div key={h.name} className="break-inside-avoid">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <span className="text-sm font-bold text-gray-900">{h.name}</span>
+                    <span className="text-xs text-gray-600"> — {h.role}</span>
+                  </div>
+                  <span className="text-xs text-gray-500 shrink-0">{h.period}</span>
+                </div>
+                <ul className="mt-1 space-y-0.5">
+                  {h.achievements.map((a, i) => (
+                    <li key={i} className="text-xs text-gray-600 flex gap-2">
+                      <span className="text-gray-400 shrink-0">•</span>
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <span className="text-xs text-gray-500 shrink-0">{edu.period}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div>
