@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { ExternalLink, ArrowLeft } from 'lucide-react'
 import { projects } from '@/data/projects'
+import ProjectCardVisual from '@/components/project/ProjectCardVisual'
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }))
@@ -91,22 +91,13 @@ export default function ProjectDetail({ params }) {
         </div>
       </section>
 
-      {project.images && project.images[0] && (
-        <section className="py-8 sm:py-12">
-          <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-            <div className="relative aspect-video bg-black/5 dark:bg-white/5 overflow-hidden rounded-xl shadow-lg">
-              <Image
-                src={project.images[0]}
-                alt={project.title}
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
-              />
-            </div>
+      <section className="py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="relative aspect-video overflow-hidden rounded-xl shadow-lg">
+            <ProjectCardVisual category={project.category} size="hero" />
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
@@ -194,26 +185,6 @@ export default function ProjectDetail({ params }) {
                 </div>
               )}
 
-              {project.images && project.images.length > 1 && (
-                <div>
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-black dark:text-white mb-6 sm:mb-8">
-                    Additional Views
-                  </h2>
-                  <div className="space-y-6 sm:space-y-8">
-                    {project.images.slice(1).map((image, index) => (
-                      <div key={index} className="relative aspect-video bg-black/5 dark:bg-white/5 overflow-hidden rounded-xl shadow-lg">
-                        <Image
-                          src={image}
-                          alt={`${project.title} screenshot ${index + 2}`}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
 
             <div className="space-y-8 lg:space-y-12 lg:sticky lg:top-24 lg:self-start">
@@ -292,20 +263,8 @@ export default function ProjectDetail({ params }) {
                 <div key={relatedProject.slug} className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="space-y-0">
 
-                    <div className="relative aspect-video bg-black/5 dark:bg-white/5 overflow-hidden">
-                      {relatedProject.images && relatedProject.images[0] ? (
-                        <Image
-                          src={relatedProject.images[0]}
-                          alt={relatedProject.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                      ) : (
-                        <div className="flex items-center justify-center h-full">
-                          <div className="w-16 h-16 bg-black/10 dark:bg-white/10 rounded-xl"></div>
-                        </div>
-                      )}
+                    <div className="relative aspect-video overflow-hidden">
+                      <ProjectCardVisual category={relatedProject.category} size="card" />
                     </div>
 
                     <div className="p-6 sm:p-8">
