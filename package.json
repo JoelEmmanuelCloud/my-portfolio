@@ -2,7 +2,9 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
+    "generate-resume": "node scripts/generate-resume.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -28,6 +30,7 @@
     "eslint-config-next": "^14.0.0",
     "postcss": "^8.4.32",
     "prettier": "^3.0.0",
+    "puppeteer": "^24.40.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.3.6"
   }

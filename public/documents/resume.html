@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10px;
+    color: #1a1a1a;
+    line-height: 1.4;
+    padding: 22px 32px;
+  }
+  a { color: #1a1a1a; text-decoration: none; }
+
+  /* HEADER */
+  .header { border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 14px; }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
+  .header .title { font-size: 12px; color: #444; margin-top: 2px; margin-bottom: 6px; }
+  .contact { display: flex; flex-wrap: wrap; gap: 14px; font-size: 9.5px; color: #333; }
+  .contact span::before { content: '• '; color: #888; }
+  .contact span:first-child::before { content: ''; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 8px; }
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* EXPERIENCE */
+  .entry { margin-bottom: 7px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-title { font-weight: 700; font-size: 10.5px; }
+  .entry-sub { font-size: 9.5px; color: #555; margin-top: 1px; margin-bottom: 3px; }
+  .entry-period { font-size: 9.5px; color: #666; white-space: nowrap; }
+  ul { padding-left: 13px; }
+  li { margin-bottom: 1.5px; font-size: 9.8px; }
+
+  /* SKILLS */
+  .skill-group { margin-bottom: 3px; }
+  .skill-group-title { font-weight: 700; font-size: 9.5px; color: #333; }
+  .skill-list { font-size: 9.5px; color: #444; }
+
+  /* PROJECTS */
+  .project-stack { font-size: 9px; color: #666; margin-top: 1px; font-style: italic; }
+
+  /* TWO COL LAYOUT for bottom sections */
+  .two-col { display: grid; grid-template-columns: 55% 42%; gap: 0 3%; break-inside: avoid; page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Joel Emmanuel</h1>
+  <div class="title">Full-Stack Developer &amp; Production Engineer</div>
+  <div class="contact">
+    <span>ejoel0035@gmail.com</span>
+    <span>github.com/JoelEmmanuelCloud</span>
+    <span>linkedin.com/in/joel-emmanuel-149708202</span>
+    <span>joelemmanuel.dev</span>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+  <div class="section-title">Technical Skills</div>
+  <div class="skill-group"><span class="skill-group-title">Backend: </span><span class="skill-list">Node.js, NestJS, Express.js, Python, Flask, Java, Spring Boot, REST APIs, GraphQL, Microservices, WebSockets</span></div>
+  <div class="skill-group"><span class="skill-group-title">Production Engineering &amp; SRE: </span><span class="skill-list">Prometheus, Grafana, k6 Load Testing, Structured Logging, Health Checks, Runbooks, Failure Mode Analysis, Horizontal Scaling</span></div>
+  <div class="skill-group"><span class="skill-group-title">Cloud &amp; Infrastructure: </span><span class="skill-list">AWS (EC2, S3, Lambda, RDS, SageMaker, Bedrock), Docker, Docker Compose, Nginx, GitHub Actions, CI/CD, DigitalOcean</span></div>
+  <div class="skill-group"><span class="skill-group-title">Frontend &amp; Databases: </span><span class="skill-list">React.js, Next.js, TypeScript, Redux, Tailwind CSS &nbsp;|&nbsp; PostgreSQL, MongoDB, Redis, MySQL, Query Optimisation</span></div>
+  <div class="skill-group"><span class="skill-group-title">AI &amp; Blockchain: </span><span class="skill-list">LangChain, AWS Bedrock, RAG Systems, LLMs, Vector Databases &nbsp;|&nbsp; Solidity, Web3.js, Lisk, Smart Contracts, Ethers.js</span></div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <div class="section-title">Experience</div>
+  
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Learnway</span>
+      <span class="entry-period">Dec 2024 – Present</span>
+    </div>
+    <div class="entry-sub">Fullstack Developer &nbsp;·&nbsp; Remote</div>
+    <ul>
+      <li>Building full-stack platform for Learnway blockchain education app on Lisk blockchain</li><li>Implementing scalable NestJS APIs for progress tracking and reward distribution</li><li>Integrating Lisk smart contracts for token-based educational rewards</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Invillia — AIQuickMatch</span>
+      <span class="entry-period">Apr 2025 – Mar 2026</span>
+    </div>
+    <div class="entry-sub">Front-End Developer &nbsp;·&nbsp; Brazil (Remote)</div>
+    <ul>
+      <li>Transitioned from Front-end QA to Developer within the same engagement</li><li>Built UI features with React 18, TypeScript, and TanStack Table</li><li>Integrated REST APIs with Keycloak SSO authentication and Zod validation</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Vivo</span>
+      <span class="entry-period">2024 – 2025</span>
+    </div>
+    <div class="entry-sub">Frontend Developer &nbsp;·&nbsp; Brazil (Remote)</div>
+    <ul>
+      <li>Developed React frontend for Vivo B2B fixed-sales e-commerce platform</li><li>Implemented Framework Brasil design system components and guidelines</li><li>Integrated with Node.js BFF and Java microservices decoupling layer</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Freedom Ghana</span>
+      <span class="entry-period">2023 – Dec 2024</span>
+    </div>
+    <div class="entry-sub">Full-stack Developer &nbsp;·&nbsp; Ghana (Remote)</div>
+    <ul>
+      <li>Built comprehensive ride-hailing platform with React and Node.js serving thousands of daily requests</li><li>Architected real-time ride matching with Socket.IO and Google Maps API</li><li>Deployed scalable AWS infrastructure with automated CI/CD pipelines</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Compass UOL</span>
+      <span class="entry-period">Feb 2023 – Present</span>
+    </div>
+    <div class="entry-sub">Full Stack and AI/ML Developer &nbsp;·&nbsp; Brazil (Remote)</div>
+    <ul>
+      <li>Developed e-commerce and enterprise applications with React, Spring Boot, and modern tech stack</li><li>Architected AI/ML solutions using AWS services including SageMaker and Bedrock</li><li>Built RAG system for Universidade de São Paulo with LangChain and vector databases</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Rewod Technologies</span>
+      <span class="entry-period">Oct 2022 – Mar 2023</span>
+    </div>
+    <div class="entry-sub">Backend Developer &nbsp;·&nbsp; Nigeria</div>
+    <ul>
+      <li>Developed internal tools using Python and Java Spring Boot</li><li>Created data processing pipelines handling millions of records daily</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FEATURED PROJECTS -->
+<div class="section">
+  <div class="section-title">Key Projects</div>
+  
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Production URL Shortener – MLH PE Hackfest 2026</span>
+      <span class="entry-period">Production Engineer</span>
+    </div>
+    <div class="project-stack">Flask · PostgreSQL · Redis · Nginx · Docker · Prometheus · Grafana · k6 · GitHub Actions</div>
+    <ul style="margin-top:3px">
+      <li>Redis caching reduced error rate from 1.68% to 1.28% (24% improvement) under 200 concurrent users</li><li>Health endpoint reports DB and cache status independently, enabling precise incident diagnosis</li><li>Failure mode documentation covering 6 failure scenarios with expected responses and recovery steps</li>
+    </ul>
+  </div>
+</div>
+
+<!-- HACKATHONS + CERTS + EDUCATION -->
+<div class="two-col">
+  <div>
+    <!-- HACKATHONS -->
+    <div class="section">
+      <div class="section-title">Hackathons</div>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">MLH Production Engineering Hackfest 2026</span>
+          <span class="entry-period">April 2026</span>
+        </div>
+        <div class="entry-sub">Production Engineer &nbsp;·&nbsp; Major League Hacking (MLH)</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">EthGlobal Unite DeFi Hackathon</span>
+          <span class="entry-period">July 25 – August 8, 2025</span>
+        </div>
+        <div class="entry-sub">Blockchain Developer &nbsp;·&nbsp; EthGlobal, 1inch & Ethereum Developer Community</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">EthGlobal x Avail: Building Unchained Apps</span>
+          <span class="entry-period">October 10 – 31, 2025</span>
+        </div>
+        <div class="entry-sub">Web3 Developer &nbsp;·&nbsp; EthGlobal & Avail</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+      <div class="section-title">Certifications</div>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">AWS Certified Cloud Practitioner</span>
+          <span class="entry-period">2023-10</span>
+        </div>
+        <div class="entry-sub">Amazon Web Services</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">AWS Certified AI Practitioner</span>
+          <span class="entry-period">2024-03</span>
+        </div>
+        <div class="entry-sub">Amazon Web Services</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Huawei Certified Network Associate</span>
+          <span class="entry-period">2023-06</span>
+        </div>
+        <div class="entry-sub">Huawei Technologies</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
