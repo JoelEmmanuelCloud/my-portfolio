@@ -109,6 +109,24 @@
   width: 20%;
 }
 
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+@keyframes spinArc {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-logo-pulse {
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+.animate-spin-arc {
+  animation: spinArc 1.2s linear infinite;
+}
+
 
 /* Focus styles for accessibility */
 .focus-ring {
