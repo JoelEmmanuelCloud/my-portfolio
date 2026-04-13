@@ -1,10 +1,9 @@
 'use client'
 import { useState } from 'react'
-import { 
-  Mail, 
-  Phone, 
-  Linkedin, 
-  Github, 
+import {
+  Mail,
+  Linkedin,
+  Github,
   Download,
   ExternalLink,
   MessageCircle,
@@ -29,12 +28,6 @@ const defaultSocialLinks = [
     url: 'mailto:ejoel0035@gmail.com',
     icon: Mail,
     description: 'Send email'
-  },
-  {
-    name: 'Phone',
-    url: 'tel:+2347069763692',
-    icon: Phone,
-    description: 'Call me'
   }
 ]
 
