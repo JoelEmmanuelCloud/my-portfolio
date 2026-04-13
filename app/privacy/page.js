@@ -250,15 +250,6 @@ export default function PrivacyPolicy() {
                           </a>
                         </p>
                         <p className="text-black text-sm sm:text-base lg:text-lg">
-                          <span className="font-bold">Phone:</span>{' '}
-                          <a 
-                            href="tel:+2347069763692" 
-                            className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
-                          >
-                            +234 706 976 3692
-                          </a>
-                        </p>
-                        <p className="text-black text-sm sm:text-base lg:text-lg">
                           <span className="font-bold">Website:</span>{' '}
                           <a 
                             href="https://joelemmanuel.dev" 

@@ -305,19 +305,10 @@ export default function TermsOfService() {
                           </a>
                         </p>
                         <p className="text-black">
-                          <span className="font-bold">Phone:</span>{' '}
-                          <a href="tel:+2347069763692" className="text-blue-600 hover:text-blue-800 font-medium">
-                            +234 706 976 3692
-                          </a>
-                        </p>
-                        <p className="text-black">
                           <span className="font-bold">Website:</span>{' '}
                           <a href="https://joelemmanuel.dev" className="text-blue-600 hover:text-blue-800 font-medium">
                             joelemmanuel.dev
                           </a>
-                        </p>
-                        <p className="text-black">
-                          <span className="font-bold">Location:</span> Metaverse
                         </p>
                       </div>
                     </div>

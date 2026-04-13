@@ -142,22 +142,6 @@ export default function Contact() {
                   </div>
 
                   <div className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6 text-center lg:text-left">
-                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black dark:text-gray-400 font-bold mb-2">Phone</h3>
-                    <a
-                      href="tel:+2347069763692"
-                      className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
-                    >
-                      +234 706 976 3692
-                    </a>
-                  </div>
-
-                  <div className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6 text-center lg:text-left">
-                    <h3 className="text-sm sm:text-base uppercase tracking-wide text-black dark:text-gray-400 font-bold mb-2">Location</h3>
-                    <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 font-medium">Remote Worldwide</p>
-                    <p className="text-sm sm:text-base text-black dark:text-gray-400 mt-1">Available across all time zones</p>
-                  </div>
-
-                  <div className="border-b-2 border-black dark:border-gray-700 pb-4 sm:pb-6 text-center lg:text-left">
                     <h3 className="text-sm sm:text-base uppercase tracking-wide text-black dark:text-gray-400 font-bold mb-2">Response Time</h3>
                     <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 font-medium">Within 24 hours</p>
                     <p className="text-sm sm:text-base text-black dark:text-gray-400 mt-1">Usually much faster</p>
