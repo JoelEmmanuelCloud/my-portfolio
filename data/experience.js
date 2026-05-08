@@ -171,6 +171,20 @@ export const education = [
 
 export const hackathons = [
   {
+    name: "ETHGlobal Open Agents – Ghent",
+    organizer: "ETHGlobal · 0G · Gensyn · ENS · KeeperHub",
+    period: "May 2026",
+    role: "Lead Developer",
+    description: "Built Aegis Protocol — an on-chain accountability layer for AI agents — at ETHGlobal's Open Agents hackathon in Ghent, Belgium.",
+    achievements: [
+      "Architected four Gensyn AXL nodes (Witness, Verifier, Propagator, Memory) communicating over a P2P Yggdrasil mesh with no central coordinator",
+      "Stored agent decision attestations on 0G Storage with real merkle rootHashes; 5-rule mandate engine verdict notarized via 0G Compute TEE",
+      "Deployed AegisCourt.sol and AgentRegistry.sol (ERC-7857 iNFT) on 0G testnet; KeeperHub fires remedy workflows automatically on every verdict",
+      "ENS *.aegis.eth subnames with live reputation readable from Ethereum via EIP-3668 CCIP-read — no bridge required",
+      "Live production deployment at app.aegisprotocol.uk; drop-in SDK for LangChain, LangGraph, CrewAI, AutoGen, and ElizaOS"
+    ]
+  },
+  {
     name: "MLH Production Engineering Hackfest 2026",
     organizer: "Major League Hacking (MLH)",
     period: "April 2026",

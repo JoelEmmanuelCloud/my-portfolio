@@ -6,7 +6,9 @@ export const skills = {
     skills: [
       "Lisk Blockchain", "Ethereum Development", "Solidity", "Smart Contracts",
       "DeFi Protocols", "Web3.js", "Ethers.js", "dApp Development",
-      "Cross-chain Integration", "Tokenomics", "Avail Nexus SDK"
+      "Cross-chain Integration", "Tokenomics", "Avail Nexus SDK",
+      "0G Storage/KV/Compute", "Gensyn AXL", "ENS / EIP-3668 CCIP-read",
+      "ERC-7857 iNFT", "AI Agent Attestation"
     ]
   },
   frontend: {
