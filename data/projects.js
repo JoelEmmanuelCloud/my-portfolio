@@ -1,5 +1,42 @@
 export const projects = [
   {
+    slug: "aegis-protocol",
+    category: "blockchain",
+    title: "Aegis Protocol – AI Agent Accountability Layer",
+    role: "Lead Developer",
+    featured: true,
+    links: {
+      live: "https://app.aegisprotocol.uk",
+      github: "https://github.com/JoelEmmanuelCloud/aegis-protocol",
+    },
+    stack: [
+      "TypeScript", "NestJS", "React", "Solidity", "0G Storage",
+      "0G Compute (TEE)", "Gensyn AXL", "ENS", "EIP-3668", "ERC-7857",
+      "LangGraph", "KeeperHub", "Docker", "Cloudflare"
+    ],
+    summary: "On-chain accountability layer for AI agents built at ETHGlobal Open Agents (Ghent, May 2026). Any agent can prove what it decided, why it decided it, and face consequences if it was wrong — using 0G Storage, Gensyn AXL mesh, ENS CCIP-read, and KeeperHub automation.",
+    context: "AI agents increasingly make consequential decisions autonomously. Without a transparent audit trail and enforceable accountability, there is no way to verify what an agent did, why it did it, or impose consequences for violations. Aegis acts as a witness, verifier, and on-chain court for any agent framework.",
+    challenge: "Building a production-grade decentralized accountability system at a hackathon: four independent AXL nodes communicating over a peer-to-peer mesh, 0G Storage for cryptographic decision proofs, a deterministic 5-rule mandate engine with TEE verification, ENS cross-chain reputation via EIP-3668 CCIP-read, and a live dashboard — all deployed and accessible to judges.",
+    solution: "Architected four AXL nodes (Witness, Verifier, Propagator, Memory) over the Gensyn Yggdrasil mesh. Witness nodes upload attestations to 0G Storage with real merkle rootHashes. The Verifier runs a 5-rule mandate engine and notarizes verdicts via 0G Compute TEE. AegisCourt.sol records verdicts on-chain, KeeperHub fires remedy workflows, and each agent gets a *.aegis.eth ENS subname with live reputation readable from Ethereum via EIP-3668 CCIP-read — no bridge required.",
+    impact: [
+      "Four sponsor tracks integrated end-to-end: 0G Storage/KV/Compute, Gensyn AXL mesh, ENS EIP-3668 CCIP-read, KeeperHub automation",
+      "Live production deployment at app.aegisprotocol.uk with real on-chain verdicts on 0G testnet",
+      "ERC-7857 iNFT agent registry with ENS subnames resolvable cross-chain without bridges",
+      "Deterministic 5-rule mandate engine with 0G Compute TEE notarization for tamper-proof verdicts",
+      "Drop-in SDK for LangChain, LangGraph, CrewAI, AutoGen, and ElizaOS agents — one fetch call per decision"
+    ],
+    technologies: {
+      blockchain: ["Solidity", "ERC-7857 iNFT", "AegisCourt.sol", "AgentRegistry.sol", "0G testnet", "Ethereum Sepolia"],
+      storage: ["0G Storage", "0G KV", "0G Compute TEE", "Merkle rootHash"],
+      mesh: ["Gensyn AXL", "ed25519 P2P nodes", "Yggdrasil mesh"],
+      identity: ["ENS", "EIP-3668 CCIP-read", "ENSIP-25", "AegisCCIPResolver"],
+      automation: ["KeeperHub", "Remedy workflows", "On-chain verdict execution"],
+      backend: ["NestJS", "TypeScript", "Node.js", "Docker Compose"],
+      frontend: ["React", "Vite", "Tailwind CSS", "MetaMask integration"],
+      ai: ["LangGraph 1.x", "StateGraph", "0G Compute TEE inference"]
+    }
+  },
+  {
     slug: "pe-hackathon-url-shortener",
     category: "devops",
     title: "Production URL Shortener – MLH PE Hackfest 2026",
