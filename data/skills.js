@@ -122,7 +122,7 @@ export const highlights = [
   },
   {
     title: "International Teams",
-    description: "Collaborated across Brazil, USA, Canada, Nigeria, Ghana",
+    description: "Collaborated across Brazil, USA, Canada, Ghana",
     icon: "🌍"
   }
 ]

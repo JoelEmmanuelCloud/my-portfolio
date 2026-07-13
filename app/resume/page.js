@@ -40,13 +40,12 @@ export default function ResumePage() {
             <span>joelemmanuel.dev</span>
             <span>linkedin.com/in/joel-emmanuel-149708202</span>
             <span>github.com/joelemmanuel</span>
-            <span>Nigeria</span>
           </div>
         </div>
 
         <div className="mb-5">
           <p className="text-sm text-gray-700 leading-relaxed">
-            Fullstack & Blockchain Developer with 3+ years building scalable Web3 applications, AI-powered platforms, and production systems across international teams in Brazil, USA, Canada, Nigeria, and Ghana. Experienced with Lisk, Ethereum, React, NestJS, Spring Boot, and AWS. AWS Certified Cloud Practitioner and AI Practitioner.
+            Fullstack & Blockchain Developer with 3+ years building scalable Web3 applications, AI-powered platforms, and production systems across international teams in Brazil, USA, Canada, and Ghana. Experienced with Lisk, Ethereum, React, NestJS, Spring Boot, and AWS. AWS Certified Cloud Practitioner and AI Practitioner.
           </p>
         </div>
 

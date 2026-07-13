@@ -2,7 +2,7 @@ export const metadata = {
   title: 'Resume — Joel Emmanuel',
   description: 'Resume of Joel Emmanuel — Fullstack & Blockchain Developer with 3+ years experience. AWS Certified Cloud and AI Practitioner. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML.',
   keywords: [
-    'Joel Emmanuel resume', 'Joel Emmanuel CV', 'Fullstack Developer resume Nigeria',
+    'Joel Emmanuel resume', 'Joel Emmanuel CV', 'Fullstack Developer resume',
     'Blockchain Developer CV', 'React NestJS developer resume', 'AWS Certified developer CV',
     'hire Joel Emmanuel', 'developer resume download'
   ],

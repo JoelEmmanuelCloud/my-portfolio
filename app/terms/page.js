@@ -260,9 +260,9 @@ export default function TermsOfService() {
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold text-black mb-4">Governing Law</h3>
                       <p className="text-black leading-relaxed font-medium">
-                        These Terms of Service are governed by and construed in accordance with the laws of Nigeria. 
-                        Any disputes arising from these terms or your use of the website will be subject to the 
-                        jurisdiction of Nigerian courts.
+                        These Terms of Service are governed by and construed in accordance with applicable law.
+                        Any disputes arising from these terms or your use of the website will be subject to the
+                        jurisdiction of the competent courts.
                       </p>
                     </div>
                     

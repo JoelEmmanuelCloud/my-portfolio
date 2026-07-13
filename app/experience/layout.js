@@ -1,8 +1,8 @@
 export const metadata = {
   title: 'Experience — Joel Emmanuel',
-  description: '3+ years of fullstack and blockchain development at Invillia, Learnway, Freedom, and Compass UOL across Nigeria, Brazil, USA, Canada, and Ghana. AWS Certified Cloud and AI Practitioner.',
+  description: '3+ years of fullstack and blockchain development at Invillia, Learnway, Freedom, and Compass UOL across Brazil, USA, Canada, and Ghana. AWS Certified Cloud and AI Practitioner.',
   keywords: [
-    'Joel Emmanuel experience', 'Fullstack Developer Nigeria', 'Blockchain Developer experience',
+    'Joel Emmanuel experience', 'Fullstack Developer', 'Blockchain Developer experience',
     'Invillia developer', 'Learnway Lisk blockchain', 'AWS Certified developer',
     'React NestJS Spring Boot', 'remote developer portfolio'
   ],
@@ -16,7 +16,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Experience — Joel Emmanuel',
-    description: '3+ years building production systems across Nigeria, Brazil, USA, Canada, and Ghana. AWS Certified Cloud & AI Practitioner.',
+    description: '3+ years building production systems across Brazil, USA, Canada, and Ghana. AWS Certified Cloud & AI Practitioner.',
     creator: '@joelCloud899799',
   },
 }

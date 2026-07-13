@@ -3,7 +3,7 @@ export const education = [
     id: 'uniport-cs',
     degree: 'Bachelor of Science in Computer Science',
     school: 'University of Port Harcourt',
-    location: 'Port Harcourt, Nigeria',
+    location: 'Port Harcourt',
     period: '2018 – 2022',
     startDate: '2018-09',
     endDate: '2022-07',
