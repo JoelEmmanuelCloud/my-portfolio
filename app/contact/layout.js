@@ -2,9 +2,9 @@ export const metadata = {
   title: 'Contact — Joel Emmanuel',
   description: 'Get in touch with Joel Emmanuel for freelance projects, full-time roles, or collaborations. Available for blockchain, Web3, AI/ML, and fullstack development work. Remote worldwide. Responds within 24 hours.',
   keywords: [
-    'hire Joel Emmanuel', 'hire blockchain developer', 'hire fullstack developer Nigeria',
+    'hire Joel Emmanuel', 'hire blockchain developer', 'hire fullstack developer',
     'freelance Web3 developer', 'remote React developer', 'NestJS freelancer',
-    'blockchain consultant', 'contact developer Nigeria'
+    'blockchain consultant', 'contact developer'
   ],
   alternates: { canonical: '/contact' },
   openGraph: {

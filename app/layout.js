@@ -15,13 +15,13 @@ const inter = Inter({
 
 export const metadata = {
   title: 'Joel Emmanuel — Fullstack & Blockchain Developer',
-  description: 'Fullstack & Blockchain Developer with 3+ years building scalable Web3 apps, AI platforms, and production systems for companies across Nigeria, Brazil, USA, Canada, and Ghana. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML.',
+  description: 'Fullstack & Blockchain Developer with 3+ years building scalable Web3 apps, AI platforms, and production systems for companies across Brazil, USA, Canada, and Ghana. Expert in React, NestJS, Lisk Blockchain, Ethereum, AWS, and AI/ML.',
   keywords: [
     'Fullstack Developer', 'Blockchain Developer', 'Web3 Developer', 'React Developer',
     'NestJS Developer', 'Lisk Blockchain', 'Ethereum', 'Solidity', 'Smart Contracts',
     'DeFi', 'AI Developer', 'ML Engineer', 'AWS Certified', 'Node.js', 'TypeScript',
     'Next.js', 'Spring Boot', 'PostgreSQL', 'MongoDB', 'Docker', 'LangChain', 'RAG',
-    'Joel Emmanuel', 'Nigeria Developer', 'Remote Developer'
+    'Joel Emmanuel', 'Remote Developer'
   ],
   authors: [{ name: 'Joel Emmanuel', url: 'https://joelemmanuel.dev' }],
   creator: 'Joel Emmanuel',

@@ -4,7 +4,7 @@ export const metadata = {
   keywords: [
     'Joel Emmanuel projects', 'blockchain projects', 'Web3 portfolio',
     'Learnway Lisk', 'Freedom ride-hailing', 'React projects', 'NestJS projects',
-    'AI ML projects', 'AWS projects', 'fullstack portfolio Nigeria'
+    'AI ML projects', 'AWS projects', 'fullstack portfolio'
   ],
   alternates: { canonical: '/projects' },
   openGraph: {

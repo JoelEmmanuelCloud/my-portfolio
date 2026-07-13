@@ -226,8 +226,8 @@ export const projects = [
       "Odoo Framework", "Python", "XML", "PostgreSQL", 
       "QR Codes", "JavaScript", "Custom Modules"
     ],
-    summary: "Complete warehouse management system for RED Transport Limited, a leading maritime logistics company in Lagos, Nigeria.",
-    context: "RED Transport manages complex maritime cargo operations requiring efficient inventory tracking, vessel management, and automated billing for Nigerian customs compliance.",
+    summary: "Complete warehouse management system for RED Transport Limited, a leading maritime logistics company.",
+    context: "RED Transport manages complex maritime cargo operations requiring efficient inventory tracking, vessel management, and automated billing for customs compliance.",
     challenge: "Building comprehensive warehouse system with inventory tracking, prepaid storage, vessel management, and automated billing tailored to maritime logistics requirements.",
     solution: "Developed custom Odoo modules with inventory tracking, QR code scanning for put-away processes, real-time stock monitoring, and integrated reporting dashboards.",
     impact: [

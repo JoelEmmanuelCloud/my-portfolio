@@ -117,7 +117,7 @@ export const experience = [
     company: "Rewod Technologies",
     role: "Backend Developer",
     period: "Oct 2022 – Mar 2023",
-    location: "Nigeria",
+    location: "Remote",
     website: "https://www.rewodtechnologies.com/",
     stack: ["Python", "Java", "Spring Boot", "Node.js", "REST APIs"],
     description: "Backend development and data processing systems",
@@ -163,7 +163,6 @@ export const education = [
   {
     degree: "Bachelor of Science in Computer Science",
     school: "University of Port Harcourt",
-    location: "Nigeria",
     period: "2018 – 2022",
     description: "Comprehensive study of Computer Science Fundamentals, Algorithms and Data Structures, Design Patterns, Object-Oriented Programming, Database Systems, Distributed Systems, Software Engineering, and Network Security."
   }

@@ -269,11 +269,27 @@ export function TimelineItemHorizontal({ experience, index = 0 }) {
   )
 }
 
+const MONTH_INDEX = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 }
+
+function parsePeriodStart(period) {
+  const startPart = period.split(/\s[-–—]\s/)[0].trim()
+  const monthYear = startPart.match(/^([A-Za-z]{3})[a-z]*\s+(\d{4})$/)
+  if (monthYear) {
+    return new Date(parseInt(monthYear[2], 10), MONTH_INDEX[monthYear[1]], 1)
+  }
+  const yearOnly = startPart.match(/^(\d{4})$/)
+  if (yearOnly) {
+    return new Date(parseInt(yearOnly[1], 10), 0, 1)
+  }
+  return null
+}
+
 export function TimelineStats({ experiences }) {
-  const totalYears = experiences.reduce((acc, exp) => {
-    if (exp.current) return acc + 1
-    return acc + 1
-  }, 0)
+  const startDates = experiences.map(exp => parsePeriodStart(exp.period)).filter(Boolean)
+  const earliestStart = startDates.length
+    ? new Date(Math.min(...startDates.map(d => d.getTime())))
+    : new Date()
+  const totalYears = Math.max(1, Math.floor((Date.now() - earliestStart.getTime()) / (1000 * 60 * 60 * 24 * 365.25)))
 
   const companies = experiences.length
   const currentRoles = experiences.filter(exp => exp.current).length
