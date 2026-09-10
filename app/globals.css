@@ -6,75 +6,55 @@
   html {
     scroll-behavior: smooth;
   }
-   
+
   body {
-    @apply bg-white text-gray-900 font-normal;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-cream text-ink font-normal;
   }
 
   .dark body {
-    @apply bg-gray-900 text-gray-100;
+    @apply bg-ink text-cream;
   }
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
-  }
-   
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-sm border border-gray-200/50 shadow-lg;
-  }
-   
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
-  }
-   
-  .section-padding {
-    @apply px-6 sm:px-8 lg:px-12;
-  }
-   
-  .container-max {
-    @apply max-w-7xl mx-auto;
-  }
-   
-  /* Updated button styles for minimalist design */
-  .btn-primary {
-    @apply bg-gray-900 text-white px-8 py-3 rounded-none font-medium text-sm tracking-wide transition-all duration-300 hover:bg-gray-700;
+  .eyebrow {
+    @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-ink/50 dark:text-cream/50;
   }
 
-  .btn-secondary {
-    @apply bg-transparent text-gray-900 border border-gray-300 px-8 py-3 rounded-none font-medium text-sm tracking-wide transition-all duration-300 hover:bg-gray-900 hover:text-white;
+  .glow-orb {
+    @apply pointer-events-none absolute rounded-full opacity-60 blur-[90px];
   }
 
-  .link-minimal {
-    @apply text-gray-900 font-normal tracking-wide transition-colors duration-300 hover:text-gray-600;
+  .watermark-text {
+    @apply pointer-events-none absolute select-none font-medium leading-none tracking-tight opacity-[0.06] dark:opacity-[0.08];
   }
 
-  /* Typography classes for the new design */
-  .text-hero {
-    @apply text-8xl lg:text-9xl font-extralight leading-none tracking-tight;
+  .section-watermark {
+    @apply pointer-events-none absolute -top-4 left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-semibold leading-none tracking-tight opacity-[0.05] dark:opacity-[0.07];
+    background: linear-gradient(180deg, currentColor 0%, transparent 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
-  .text-subtitle {
-    @apply text-xl font-light text-gray-600 leading-relaxed;
+  .panel-dark {
+    @apply relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-ink text-cream;
   }
 
-  .text-stat-number {
-    @apply text-4xl font-light text-gray-900;
+  .grid-texture {
+    @apply pointer-events-none absolute;
+    background-image: linear-gradient(to right, rgba(242, 240, 234, 0.14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(242, 240, 234, 0.14) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle, black 10%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle, black 10%, transparent 75%);
   }
 
-  .text-stat-label {
-    @apply text-sm font-light text-gray-500 tracking-wide;
-  }
-
-  /* Profile image styles */
-  .profile-image {
-    @apply rounded-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-500;
+  .tag-pill {
+    @apply inline-flex items-center rounded-full border border-ink/15 dark:border-cream/15 px-3 py-1 font-mono text-xs text-ink/70 dark:text-cream/70 transition-colors duration-200 hover:border-ink hover:bg-ink hover:text-cream dark:hover:border-cream dark:hover:bg-cream dark:hover:text-ink;
   }
 }
 
-/* Minimal animations for the new design */
 @keyframes subtleFadeIn {
   from {
     opacity: 0;
@@ -127,24 +107,37 @@
   animation: spinArc 1.2s linear infinite;
 }
 
-
-/* Focus styles for accessibility */
-.focus-ring {
-  @apply focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-2;
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3%, -4%) scale(1.08); }
 }
 
-/* Visible focus for keyboard navigation */
+.animate-drift {
+  animation: drift 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring {
+  @apply focus:outline-none focus:ring-1 focus:ring-gold focus:ring-offset-2;
+}
+
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #f2c200;
   outline-offset: 2px;
 }
 
-/* Remove focus ring for mouse users */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Rotated text utility */
 .rotate-text-vertical {
   writing-mode: vertical-lr;
   text-orientation: mixed;
@@ -169,7 +162,6 @@
   }
 }
 
-/* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
   width: 6px;
 }

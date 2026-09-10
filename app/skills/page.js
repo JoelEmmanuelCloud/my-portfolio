@@ -1,9 +1,37 @@
 'use client'
 import { useState } from 'react'
-import Link from 'next/link'
+import { Boxes, Code2, Server, Cloud, Activity, Database, Brain, Wrench, Rocket, ShieldCheck, Zap, Layers, Bot, Trophy, Globe } from 'lucide-react'
 import { skills, highlights } from '@/data/skills'
+import ProficiencyBar from '@/components/ui/ProficiencyBar'
+import TechBadge from '@/components/ui/TechBadge'
+import { getTech } from '@/lib/techIcons'
+import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
+import CTAPanel from '@/components/ui/CTAPanel'
 
 const skillCategories = Object.entries(skills)
+
+const categoryIcons = {
+  blockchain: Boxes,
+  frontend: Code2,
+  backend: Server,
+  cloud: Cloud,
+  sre: Activity,
+  database: Database,
+  ai: Brain,
+  tools: Wrench,
+}
+
+const highlightIcons = {
+  'Side Project Builder': Rocket,
+  'Blockchain Developer': Boxes,
+  'AWS Certified': ShieldCheck,
+  'Production Systems': Zap,
+  'Full-Stack Expert': Layers,
+  'AI/ML Integration': Bot,
+  'Production Engineer': Wrench,
+  'Hackathon Competitor': Trophy,
+  'International Teams': Globe,
+}
 
 const skillProficiency = {
   'React.js': 'Expert',
@@ -24,192 +52,234 @@ const skillProficiency = {
   'PyTorch': 'Learning'
 }
 
+const proficiencyStyles = {
+  Expert: 'bg-moss/15 text-moss dark:bg-moss/20',
+  Advanced: 'bg-gold/20 text-ink dark:bg-gold/25 dark:text-cream',
+  Intermediate: 'bg-ink/10 text-ink/70 dark:bg-cream/15 dark:text-cream/75',
+  Learning: 'bg-ink/5 text-ink/50 dark:bg-cream/10 dark:text-cream/50',
+}
+
+const proficiencyWidth = {
+  Expert: '100%',
+  Advanced: '85%',
+  Intermediate: '65%',
+  Learning: '40%',
+}
+
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState(skillCategories[0][0])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-cream dark:bg-ink">
 
-      <section className="py-12 sm:py-20 lg:py-28 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-normal text-black dark:text-white mb-4 sm:mb-6">
+      <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="max-w-3xl">
+            <p className="eyebrow mb-4">Toolbox</p>
+            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
               Skills
             </h1>
-            <p className="text-lg sm:text-xl text-black dark:text-gray-300 font-normal mb-6 sm:mb-8">
-              — Modern technologies for scalable web development
+            <p className="mb-6 text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
+              Modern technologies for scalable web development.
             </p>
-            <div className="text-black dark:text-gray-300 space-y-2 text-sm sm:text-base">
-              <p>Full-stack development with React, Node.js, and AWS</p>
-              <p>5+ years building production applications</p>
-              <p>Continuous learning and adaptation to new technologies</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Key Strengths</h2>
-
-            <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 xs:gap-6 lg:gap-8">
-              {highlights.map((highlight, index) => (
-                <div key={highlight.title} className="text-center border border-black dark:border-gray-600 rounded-lg p-3 xs:p-4 sm:p-6 bg-white dark:bg-gray-800">
-                  <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{highlight.icon}</div>
-                  <h3 className="text-base sm:text-lg font-medium text-black dark:text-white mb-2">{highlight.title}</h3>
-                  <p className="text-black dark:text-gray-300 text-sm sm:text-base">{highlight.description}</p>
-                </div>
+            <div className="flex flex-wrap gap-2">
+              {['React, Node.js & AWS', '5+ years building production apps', 'Always learning'].map((tag) => (
+                <span key={tag} className="tag-pill">{tag}</span>
               ))}
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <p className="eyebrow mb-3 text-center">Highlights</p>
+              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Key Strengths</h2>
+            </Reveal>
+
+            <RevealGroup className="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:gap-5 md:grid-cols-4" stagger={0.08}>
+              {highlights.map((highlight) => {
+                const HighlightIcon = highlightIcons[highlight.title] || Zap
+                return (
+                  <RevealItem key={highlight.title} className="group rounded-3xl border border-ink/10 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                    <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
+                      <HighlightIcon className="size-5" strokeWidth={1.75} aria-hidden="true" />
+                    </div>
+                    <h3 className="mb-2 text-base font-semibold text-ink dark:text-cream sm:text-lg">{highlight.title}</h3>
+                    <p className="text-sm text-ink/60 dark:text-cream/60">{highlight.description}</p>
+                  </RevealItem>
+                )
+              })}
+            </RevealGroup>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Technical Skills</h2>
+      <section className="relative overflow-hidden py-12 sm:py-16">
+        <div className="section-watermark text-[6rem] text-ink dark:text-cream sm:text-[10rem] lg:text-[12rem]">
+          SKILLS
+        </div>
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <p className="eyebrow mb-3 text-center">Deep dive</p>
+              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Technical Skills</h2>
+            </Reveal>
 
-            <div className="grid md:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid gap-6 md:grid-cols-4 lg:gap-8">
 
-              <div className="md:col-span-1">
-                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-1 gap-2">
-                  {skillCategories.map(([key, category]) => (
-                    <button
-                      key={key}
-                      onClick={() => setSelectedCategory(key)}
-                      className={`w-full text-left p-3 sm:p-4 rounded border transition-all duration-200 text-sm sm:text-base font-medium ${
-                        selectedCategory === key
-                          ? 'bg-blue-600 text-white border-blue-600'
-                          : 'bg-white dark:bg-gray-800 text-black dark:text-gray-300 border-black dark:border-gray-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-600'
-                      }`}
-                    >
-                      <span className="mr-2 sm:mr-3">{category.icon}</span>
-                      {category.title}
-                    </button>
-                  ))}
+              <Reveal direction="right" className="md:col-span-1">
+                <div className="grid grid-cols-1 gap-2 xs:grid-cols-2 md:grid-cols-1">
+                  {skillCategories.map(([key, category]) => {
+                    const CategoryIcon = categoryIcons[key] || Code2
+                    return (
+                      <button
+                        key={key}
+                        onClick={() => setSelectedCategory(key)}
+                        className={`flex w-full items-center gap-2.5 rounded-lg border p-3 text-left text-sm font-medium transition-all duration-200 sm:p-4 sm:text-base ${
+                          selectedCategory === key
+                            ? 'border-ink bg-ink text-cream dark:border-cream dark:bg-cream dark:text-ink'
+                            : 'border-ink/10 bg-white text-ink/70 hover:border-ink/25 dark:border-cream/10 dark:bg-ink/60 dark:text-cream/70 dark:hover:border-cream/25'
+                        }`}
+                      >
+                        <CategoryIcon className="size-4 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                        {category.title}
+                      </button>
+                    )
+                  })}
                 </div>
-              </div>
+              </Reveal>
 
               <div className="md:col-span-3">
-                {skillCategories.map(([key, category]) => (
-                  <div
-                    key={key}
-                    className={selectedCategory === key ? 'block' : 'hidden'}
-                  >
-                    <div className="mb-6 sm:mb-8">
-                      <h3 className="text-xl sm:text-2xl font-normal text-black dark:text-white mb-2 flex items-center gap-3">
-                        <span>{category.icon}</span>
-                        {category.title}
-                      </h3>
-                    </div>
+                {skillCategories.map(([key, category]) => {
+                  const CategoryIcon = categoryIcons[key] || Code2
+                  return (
+                    <div
+                      key={key}
+                      className={selectedCategory === key ? 'block' : 'hidden'}
+                    >
+                      <div className="mb-6 sm:mb-8">
+                        <h3 className="flex items-center gap-3 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
+                          <CategoryIcon className="size-6 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                          {category.title}
+                        </h3>
+                      </div>
 
-                    <div className="space-y-4 sm:space-y-6">
-                      {category.skills.map((skill, index) => {
-                        const proficiency = skillProficiency[skill] || 'Intermediate'
+                      <div className="space-y-5 sm:space-y-6">
+                        {category.skills.map((skill) => {
+                          const proficiency = skillProficiency[skill] || 'Intermediate'
+                          const skillTech = getTech(skill)
 
-                        return (
-                          <div key={skill} className="border-b border-black dark:border-gray-700 pb-3 sm:pb-4">
-                            <div className="flex items-center justify-between mb-2">
-                              <h4 className="text-base sm:text-lg text-black dark:text-white font-medium">{skill}</h4>
-                              <span className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-full font-medium ${
-                                proficiency === 'Expert' ? 'bg-green-100 text-green-800 border border-green-800 dark:bg-green-900/30 dark:text-green-400 dark:border-green-600' :
-                                proficiency === 'Advanced' ? 'bg-blue-100 text-blue-800 border border-blue-800 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-600' :
-                                proficiency === 'Intermediate' ? 'bg-yellow-100 text-yellow-800 border border-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-600' :
-                                'bg-red-100 text-red-800 border border-red-800 dark:bg-red-900/30 dark:text-red-400 dark:border-red-600'
-                              }`}>
-                                {proficiency}
-                              </span>
+                          return (
+                            <div key={skill} className="border-b border-ink/10 pb-4 dark:border-cream/10">
+                              <div className="mb-2 flex items-center justify-between">
+                                <h4 className="flex items-center gap-2 text-base font-medium text-ink dark:text-cream sm:text-lg">
+                                  {skillTech && <skillTech.icon className="size-4 shrink-0" style={{ color: skillTech.color }} aria-hidden="true" />}
+                                  {skill}
+                                </h4>
+                                <span className={`rounded-full px-3 py-1 font-mono text-xs uppercase tracking-wide ${proficiencyStyles[proficiency]}`}>
+                                  {proficiency}
+                                </span>
+                              </div>
+
+                              <ProficiencyBar width={proficiencyWidth[proficiency]} />
                             </div>
-
-                            <div className="w-full bg-white dark:bg-gray-700 rounded h-2 border border-black dark:border-gray-600">
-                              <div
-                                className={`h-full rounded ${
-                                  proficiency === 'Expert' ? 'bg-green-600 w-full' :
-                                  proficiency === 'Advanced' ? 'bg-blue-600 w-4/5' :
-                                  proficiency === 'Intermediate' ? 'bg-yellow-600 w-3/5' :
-                                  'bg-red-600 w-2/5'
-                                }`}
-                              />
-                            </div>
-                          </div>
-                        )
-                      })}
+                          )
+                        })}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Professional Certifications</h2>
+      <section className="py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <p className="eyebrow mb-3 text-center">Verified</p>
+              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Professional Certifications</h2>
+            </Reveal>
 
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+            <RevealGroup className="grid gap-5 sm:gap-6 md:grid-cols-2" stagger={0.1}>
 
-              <div className="border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-800">
-                <div className="mb-4 sm:mb-6">
-                  <h3 className="text-lg sm:text-xl font-medium text-black dark:text-white mb-2">AWS Certified Cloud Practitioner</h3>
-                  <p className="text-black dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base font-medium">Amazon Web Services</p>
+              <RevealItem className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <div className="mb-5">
+                  <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">AWS Certified Cloud Practitioner</h3>
+                  <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Amazon Web Services</p>
 
-                  <div className="space-y-2 text-xs sm:text-sm text-black dark:text-gray-400">
+                  <div className="space-y-1 text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
                     <p>Valid: Oct 11, 2023 – Oct 11, 2026</p>
                     <p>ID: VVNDR86202F4155M</p>
                   </div>
                 </div>
 
-                <p className="text-black dark:text-gray-300 mb-4 text-sm sm:text-base">
+                <p className="mb-4 text-sm text-ink/70 dark:text-cream/70 sm:text-base">
                   Foundational understanding of AWS Cloud services, architecture, security, and pricing models.
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {['EC2', 'S3', 'Lambda', 'CloudWatch', 'IAM', 'VPC'].map((service) => (
-                    <span key={service} className="px-2 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400 text-xs border border-orange-700 dark:border-orange-600 rounded font-medium">
-                      {service}
-                    </span>
+                    <TechBadge key={service} name={service} />
                   ))}
                 </div>
-              </div>
+              </RevealItem>
 
-              <div className="border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-800">
-                <div className="mb-4 sm:mb-6">
-                  <h3 className="text-lg sm:text-xl font-medium text-black dark:text-white mb-2">AWS Certified AI Practitioner</h3>
-                  <p className="text-black dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base font-medium">Amazon Web Services</p>
+              <RevealItem className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <div className="mb-5">
+                  <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">AWS Certified AI Practitioner</h3>
+                  <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Amazon Web Services</p>
 
-                  <div className="space-y-2 text-xs sm:text-sm text-black dark:text-gray-400">
+                  <div className="space-y-1 text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
                     <p>Certified 2024</p>
                     <p>Latest AI/ML Certification</p>
                   </div>
                 </div>
 
-                <p className="text-black dark:text-gray-300 mb-4 text-sm sm:text-base">
+                <p className="mb-4 text-sm text-ink/70 dark:text-cream/70 sm:text-base">
                   Expertise in AWS AI and machine learning services, including model deployment and MLOps practices.
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {['SageMaker', 'Bedrock', 'Lex', 'Textract', 'Comprehend', 'Rekognition'].map((service) => (
-                    <span key={service} className="px-2 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-400 text-xs border border-purple-700 dark:border-purple-600 rounded font-medium">
-                      {service}
-                    </span>
+                    <TechBadge key={service} name={service} />
                   ))}
                 </div>
-              </div>
-            </div>
+              </RevealItem>
+
+              <RevealItem className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <div className="mb-5">
+                  <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">Huawei Certified Network Associate</h3>
+                  <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Huawei</p>
+
+                  <div className="space-y-1 text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
+                    <p>Certified 2023</p>
+                  </div>
+                </div>
+
+                <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base">
+                  Comprehensive networking fundamentals and technologies certification.
+                </p>
+              </RevealItem>
+            </RevealGroup>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-normal text-black dark:text-white mb-12 sm:mb-16 text-center">Continuous Learning</h2>
+      <section className="py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <p className="eyebrow mb-3 text-center">Growth</p>
+              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Continuous Learning</h2>
+            </Reveal>
 
-            <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3">
+            <RevealGroup className="grid gap-4 sm:gap-5 sm:grid-cols-2 md:grid-cols-3" stagger={0.1}>
               {[
                 {
                   title: 'Current Focus',
@@ -223,81 +293,57 @@ export default function Skills() {
                   title: 'Practice Areas',
                   items: ['System Design', 'DevOps Culture', 'Team Leadership']
                 }
-              ].map((area, index) => (
-                <div key={area.title} className="border border-black dark:border-gray-600 rounded-lg p-4 sm:p-6 bg-white dark:bg-gray-800 break-inside-avoid">
-                  <h3 className="text-base sm:text-lg font-medium text-black dark:text-white mb-3 sm:mb-4">{area.title}</h3>
+              ].map((area) => (
+                <RevealItem key={area.title} className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60">
+                  <h3 className="mb-4 text-base font-semibold text-ink dark:text-cream sm:text-lg">{area.title}</h3>
                   <ul className="space-y-2">
                     {area.items.map((item) => (
-                      <li key={item} className="text-black dark:text-gray-300 flex items-center gap-2 text-sm sm:text-base">
-                        <div className="w-1.5 h-1.5 bg-black dark:bg-gray-400 rounded-full flex-shrink-0" />
+                      <li key={item} className="flex items-center gap-2 text-sm text-ink/70 dark:text-cream/70 sm:text-base">
+                        <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </RevealItem>
               ))}
-            </div>
+            </RevealGroup>
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-lg sm:text-xl font-normal text-black dark:text-white mb-6 sm:mb-8 text-center">
+      <section className="pb-12 sm:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <Reveal as="h3" className="mb-6 text-center text-lg font-semibold text-ink dark:text-cream sm:mb-8 sm:text-xl">
               Proficiency Levels
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            </Reveal>
+            <RevealGroup className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4" stagger={0.08}>
               {[
-                { level: 'Expert', description: '5+ years, production experience', color: 'bg-green-600' },
-                { level: 'Advanced', description: '3+ years, complex projects', color: 'bg-blue-600' },
-                { level: 'Intermediate', description: '1-3 years, regular use', color: 'bg-yellow-600' },
-                { level: 'Learning', description: 'Currently exploring', color: 'bg-red-600' }
-              ].map((level, index) => (
-                <div key={level.level} className="text-center border border-black dark:border-gray-600 rounded p-3 sm:p-4 bg-white dark:bg-gray-800">
-                  <div className="w-full bg-white dark:bg-gray-700 rounded h-2 mb-2 sm:mb-3 border border-black dark:border-gray-600">
-                    <div
-                      className={`h-full rounded ${level.color}`}
-                      style={{
-                        width: level.level === 'Expert' ? '100%' :
-                               level.level === 'Advanced' ? '85%' :
-                               level.level === 'Intermediate' ? '70%' : '50%'
-                      }}
-                    />
-                  </div>
-                  <h4 className="font-medium text-black dark:text-white mb-1 text-sm sm:text-base">{level.level}</h4>
-                  <p className="text-xs text-black dark:text-gray-400">{level.description}</p>
-                </div>
+                { level: 'Expert', description: '5+ years, production experience' },
+                { level: 'Advanced', description: '3+ years, complex projects' },
+                { level: 'Intermediate', description: '1-3 years, regular use' },
+                { level: 'Learning', description: 'Currently exploring' }
+              ].map((level) => (
+                <RevealItem key={level.level} className="rounded-2xl border border-ink/10 bg-white p-4 text-center dark:border-cream/10 dark:bg-ink/60">
+                  <ProficiencyBar width={proficiencyWidth[level.level]} className="mb-3" />
+                  <h4 className="mb-1 text-sm font-semibold text-ink dark:text-cream">{level.level}</h4>
+                  <p className="text-xs text-ink/50 dark:text-cream/50">{level.description}</p>
+                </RevealItem>
               ))}
-            </div>
+            </RevealGroup>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900 border-t border-black dark:border-gray-700">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl text-center mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-normal text-black dark:text-white mb-4 sm:mb-6">
-              Ready to Collaborate?
-            </h2>
-            <p className="text-lg sm:text-xl text-black dark:text-gray-300 mb-8 sm:mb-12">
-              Let&apos;s discuss how these skills can help solve your technical challenges.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
-              >
-                Start a Project
-              </Link>
-              <Link
-                href="/projects"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-black dark:text-gray-300 hover:text-white hover:bg-blue-600 border border-blue-600 rounded-full transition-colors text-sm sm:text-base font-medium"
-              >
-                View My Work →
-              </Link>
-            </div>
-          </div>
+      <section className="pb-12 sm:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <CTAPanel
+            eyebrow="Let's talk"
+            title="Ready to Collaborate?"
+            description="Let's discuss how these skills can help solve your technical challenges."
+            primary={{ href: '/contact', label: 'Start a project' }}
+            secondary={{ href: '/projects', label: 'View my work' }}
+          />
         </div>
       </section>
     </div>

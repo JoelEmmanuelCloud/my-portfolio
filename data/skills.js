@@ -2,7 +2,7 @@
 export const skills = {
   blockchain: {
     title: "Blockchain & Web3",
-    icon: "⛓️",
+    icon: "",
     skills: [
       "Lisk Blockchain", "Ethereum Development", "Solidity", "Smart Contracts",
       "DeFi Protocols", "Web3.js", "Ethers.js", "dApp Development",
@@ -13,7 +13,7 @@ export const skills = {
   },
   frontend: {
     title: "Frontend Development",
-    icon: "🖥️",
+    icon: "",
     skills: [
       "React.js", "Next.js", "TypeScript", "JavaScript ES6+", 
       "React Native", "Tailwind CSS", "Material UI", "Redux",
@@ -22,7 +22,7 @@ export const skills = {
   },
   backend: {
     title: "Backend Development",
-    icon: "⚙️",
+    icon: "",
     skills: [
       "Node.js", "NestJS", "Express.js", "Java", "Spring Boot",
       "Python", "REST APIs", "GraphQL", "Microservices", 
@@ -31,7 +31,7 @@ export const skills = {
   },
   cloud: {
     title: "Cloud & DevOps",
-    icon: "☁️",
+    icon: "",
     skills: [
       "AWS (EC2, S3, Lambda, SageMaker, Bedrock, RDS, DynamoDB)",
       "Docker", "Kubernetes", "CI/CD", "GitHub Actions",
@@ -40,7 +40,7 @@ export const skills = {
   },
   sre: {
     title: "Production Engineering & SRE",
-    icon: "🔧",
+    icon: "",
     skills: [
       "Prometheus", "Grafana", "k6 Load Testing",
       "Structured Logging", "Health Checks", "Alerting",
@@ -51,7 +51,7 @@ export const skills = {
   },
   database: {
     title: "Databases & Caching",
-    icon: "🗄️",
+    icon: "",
     skills: [
       "MongoDB", "PostgreSQL", "MySQL", "Redis", 
       "Vector Databases", "SQL", "Database Design",
@@ -60,7 +60,7 @@ export const skills = {
   },
   ai: {
     title: "AI & Machine Learning",
-    icon: "🤖",
+    icon: "",
     skills: [
       "AWS SageMaker", "Amazon Bedrock", "Amazon Lex", 
       "TensorFlow", "PyTorch", "LangChain", "RAG Systems",
@@ -70,7 +70,7 @@ export const skills = {
   },
   tools: {
     title: "Development Tools",
-    icon: "🛠️",
+    icon: "",
     skills: [
       "Git", "GitHub", "VS Code", "Postman", 
       "npm", "Webpack", "ESLint", "Jest",
@@ -83,47 +83,47 @@ export const highlights = [
   {
     title: "Side Project Builder",
     description: "Building side projects that solve real-world problems from concept to production",
-    icon: "🚀"
+    icon: ""
   },
   {
     title: "Blockchain Developer",
     description: "Experience with Lisk, Ethereum, and DeFi protocols",
-    icon: "⛓️"
+    icon: ""
   },
   {
     title: "AWS Certified",
     description: "Cloud Practitioner & AI Practitioner certified",
-    icon: "☁️"
+    icon: ""
   },
   {
     title: "Production Systems",
     description: "Built applications serving real users at scale",
-    icon: "⚡"
+    icon: ""
   },
   {
     title: "Full-Stack Expert",
     description: "End-to-end development from frontend to blockchain",
-    icon: "💻"
+    icon: ""
   },
   {
     title: "AI/ML Integration",
     description: "RAG systems, LLMs, and automated document processing",
-    icon: "🤖"
+    icon: ""
   },
   {
     title: "Production Engineer",
     description: "MLH PE Hackfest: load testing, Redis caching, Prometheus/Grafana observability, runbooks",
-    icon: "🔧"
+    icon: ""
   },
   {
     title: "Hackathon Competitor",
     description: "MLH PE Hackfest, EthGlobal Unite, EthGlobal x Avail",
-    icon: "🏆"
+    icon: ""
   },
   {
     title: "International Teams",
     description: "Collaborated across Brazil, USA, Canada, Ghana",
-    icon: "🌍"
+    icon: ""
   }
 ]
 
@@ -215,41 +215,41 @@ export const coreCompetencies = [
   {
     title: "Technical Leadership",
     description: "Leading architecture design for blockchain-integrated platforms and complex backend systems",
-    icon: "👨‍💼"
+    icon: ""
   },
   {
     title: "Entrepreneurship",
     description: "Demonstrated ability to identify opportunities and build solutions from concept to product",
-    icon: "💡"
+    icon: ""
   },
   {
     title: "Team Collaboration",
     description: "Proven ability to work effectively in cross-functional teams across multiple time zones",
-    icon: "🤝"
+    icon: ""
   },
   {
     title: "Problem-Solving",
     description: "Expert at analyzing complex challenges and implementing innovative solutions in blockchain, AI/ML, and distributed systems",
-    icon: "🔍"
+    icon: ""
   },
   {
     title: "Adaptability",
     description: "Quick learner rapidly mastering emerging technologies, from Web3 frameworks to AI/ML tools",
-    icon: "🔄"
+    icon: ""
   },
   {
     title: "Communication",
     description: "Strong ability to translate technical concepts for diverse stakeholders and document complex systems",
-    icon: "💬"
+    icon: ""
   },
   {
     title: "Attention to Detail",
     description: "Meticulous code quality, security-first mindset, and commitment to best practices",
-    icon: "🎯"
+    icon: ""
   },
   {
     title: "Self-Motivated",
     description: "Entrepreneurial drive through successful freelance projects, startup founding, and continuous learning",
-    icon: "⚡"
+    icon: ""
   }
 ]

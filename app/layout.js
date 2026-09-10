@@ -1,16 +1,24 @@
-import { Inter } from 'next/font/google'
-import Script from 'next/script'
+import { Inter, DM_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ErrorBoundary from '@/components/ErrorBoundary'
-import ThemeProvider from '@/components/ThemeProvider'
 import AppRefresher from '@/components/AppRefresher'
+import Analytics from '@/components/Analytics'
+import CookieConsent from '@/components/ui/CookieConsent'
 
 const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
+  variable: '--font-sans',
+})
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
+  variable: '--font-mono',
 })
 
 export const metadata = {
@@ -80,12 +88,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#2563eb" />
+        <meta name="theme-color" content="#0a0a09" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -99,8 +107,7 @@ export default function RootLayout({ children }) {
               "image": "https://joelemmanuel.dev/images/profile/profile.jpeg",
               "sameAs": [
                 "https://www.linkedin.com/in/joel-emmanuel-149708202/",
-                "https://github.com/joelemmanuel",
-                "https://x.com/joelCloud899799"
+                "https://github.com/JoelEmmanuelCloud"
               ],
               "alumniOf": {
                 "@type": "CollegeOrUniversity",
@@ -138,17 +145,11 @@ export default function RootLayout({ children }) {
             })
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})();`
-          }}
-        />
       </head>
-      <body className={inter.className}>
-        <ThemeProvider>
+      <body className={`${inter.variable} ${dmMono.variable} font-sans`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:font-medium"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:font-medium focus:text-ink"
         >
           Skip to main content
         </a>
@@ -158,15 +159,8 @@ export default function RootLayout({ children }) {
         </ErrorBoundary>
         <Footer />
         <AppRefresher />
-        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
-          <Script
-            defer
-            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
-            src="https://plausible.io/js/script.js"
-            strategy="afterInteractive"
-          />
-        )}
-        </ThemeProvider>
+        <CookieConsent />
+        <Analytics domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} />
       </body>
     </html>
   )

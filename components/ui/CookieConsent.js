@@ -24,7 +24,8 @@ export default function CookieConsent() {
     const onOpen = () => {
       try {
         setAnalyticsOn(localStorage.getItem(CONSENT_KEY) !== 'declined')
-      } catch {
+      } catch (err) {
+        void err
       }
       setManaging(true)
       setVisible(true)
@@ -37,7 +38,8 @@ export default function CookieConsent() {
     try {
       localStorage.setItem(CONSENT_KEY, value)
       window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: value }))
-    } catch {
+    } catch (err) {
+      void err
     }
     setVisible(false)
     setManaging(false)
