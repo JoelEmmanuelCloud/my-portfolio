@@ -1,4 +1,4 @@
-import { Smartphone, Link2, Car, Zap, ShoppingBag, Building2, Package, Heart, Brain, Code } from 'lucide-react'
+import { Smartphone, Link2, Car, Zap, ShoppingBag, Building2, Package, Heart, Brain, Code, Flame } from 'lucide-react'
 
 const categoryConfig = {
   mobile:     { from: '#059669', to: '#0d9488', Icon: Smartphone,  label: 'Mobile App'       },
@@ -10,6 +10,7 @@ const categoryConfig = {
   logistics:  { from: '#52525b', to: '#3f3f46', Icon: Package,     label: 'Logistics'        },
   healthcare: { from: '#0d9488', to: '#059669', Icon: Heart,       label: 'Healthcare'       },
   ai:         { from: '#7c3aed', to: '#4f46e5', Icon: Brain,       label: 'AI / ML'          },
+  energy:     { from: '#b45309', to: '#78350f', Icon: Flame,       label: 'Power / Energy'   },
 }
 
 export default function ProjectCardVisual({ category = 'enterprise', size = 'card' }) {
