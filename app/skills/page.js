@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Boxes, Code2, Server, Cloud, Activity, Database, Brain, Wrench, Rocket, ShieldCheck, Zap, Layers, Bot, Trophy, Globe } from 'lucide-react'
-import { skills, highlights } from '@/data/skills'
+import { skills, highlights, skillProficiency } from '@/data/skills'
 import ProficiencyBar from '@/components/ui/ProficiencyBar'
 import TechBadge from '@/components/ui/TechBadge'
 import { getTech } from '@/lib/techIcons'
@@ -31,25 +31,6 @@ const highlightIcons = {
   'Production Engineer': Wrench,
   'Hackathon Competitor': Trophy,
   'International Teams': Globe,
-}
-
-const skillProficiency = {
-  'React.js': 'Expert',
-  'Next.js': 'Expert',
-  'Node.js': 'Expert',
-  'JavaScript ES6+': 'Expert',
-  'TypeScript': 'Advanced',
-  'AWS (EC2, S3, Lambda, SageMaker)': 'Advanced',
-  'MongoDB': 'Advanced',
-  'Express.js': 'Advanced',
-  'Java': 'Advanced',
-  'Spring Boot': 'Advanced',
-  'Python': 'Advanced',
-  'Tailwind CSS': 'Advanced',
-  'Docker': 'Intermediate',
-  'Kubernetes': 'Intermediate',
-  'TensorFlow': 'Intermediate',
-  'PyTorch': 'Learning'
 }
 
 const proficiencyStyles = {

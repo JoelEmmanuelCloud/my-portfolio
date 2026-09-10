@@ -59,6 +59,7 @@ export default function Experience() {
                             href={job.website}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`${job.company} website`}
                             className="text-ink/50 transition-colors hover:text-gold dark:text-cream/50"
                           >
                             <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -134,6 +135,7 @@ export default function Experience() {
                         href={cert.verifyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Verify ${cert.name} certification`}
                         className="shrink-0 text-ink/50 transition-colors hover:text-gold dark:text-cream/50"
                       >
                         <ExternalLink className="h-5 w-5" />

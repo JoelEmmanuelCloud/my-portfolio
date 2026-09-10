@@ -136,8 +136,18 @@ export default function Header() {
             <motion.div
               key={item.name}
               initial={false}
-              animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 24 }}
-              transition={{ duration: 0.35, delay: mobileMenuOpen ? i * 0.05 : 0, ease: [0.22, 1, 0.36, 1] }}
+              animate={
+                shouldReduceMotion
+                  ? { opacity: mobileMenuOpen ? 1 : 0 }
+                  : mobileMenuOpen
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: 24 }
+              }
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0.2 }
+                  : { duration: 0.35, delay: mobileMenuOpen ? i * 0.05 : 0, ease: [0.22, 1, 0.36, 1] }
+              }
             >
               <Link
                 href={item.href}

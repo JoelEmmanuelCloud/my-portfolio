@@ -26,7 +26,7 @@ export default function Reveal({
 
   if (shouldReduceMotion) {
     const Plain = as
-    return <Plain className={className}>{children}</Plain>
+    return <Plain className={className} {...props}>{children}</Plain>
   }
 
   return (
@@ -55,7 +55,7 @@ export function RevealGroup({
   const shouldReduceMotion = useReducedMotion()
 
   if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>
+    return <div className={className} {...props}>{children}</div>
   }
 
   return (
