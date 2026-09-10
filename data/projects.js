@@ -396,6 +396,39 @@ export const projects = [
       frontend: ["React", "Admin Dashboard"],
       integration: ["Twilio Flex", "Multi-channel Communication"]
     }
+  },
+  {
+    slug: "fipl-website",
+    category: "energy",
+    title: "FIPL – Corporate Website & Admin Platform",
+    role: "Full-stack Developer (Freelance)",
+    featured: false,
+    links: {
+      live: "https://fipl-ng.com/",
+      github: "https://github.com/JoelEmmanuelCloud/fipl-website",
+    },
+    stack: [
+      "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui",
+      "Supabase", "PostgreSQL", "Google Gemini", "Resend", "Web Push", "GitHub Actions"
+    ],
+    summary: "Production corporate website and admin console for First Independent Power Limited (FIPL), a Nigerian independent power producer operating four gas turbine plants with 541MW combined capacity.",
+    context: "FIPL needed a public-facing website covering its power plants, sustainability initiatives, careers, and vendor registration, alongside an internal console non-technical staff could use to manage news, job listings, media, and site content without developer involvement.",
+    challenge: "Building a server-rendered marketing site backed by dynamic, editable content, a role-based admin system with three permission tiers, and an AI chatbot that could answer visitor questions safely without exposing internal data or being manipulated by prompt injection.",
+    solution: "Built on Next.js 14 App Router with Supabase (PostgreSQL, Row Level Security) as the content and data layer, with graceful degradation if Supabase is unreachable. Implemented cookie-session admin auth with owner/content/HR role tiers behind middleware, a Tiptap-powered content editor, Resend for transactional email, Web Push (VAPID) for admin alerts, and a Gemini-powered chatbot with prompt-injection and profanity filtering.",
+    impact: [
+      "Public site covering four power plants (541MW combined capacity) with dynamic, database-backed content",
+      "Three-tier role-based admin console for managing news, jobs, media, testimonials, and page content without code changes",
+      "AI chatbot answering visitor questions with prompt-injection and profanity filtering",
+      "Vendor registration and job application workflows with automated email notifications via Resend",
+      "CI pipeline (GitHub Actions) with ESLint and Prettier, deployed serverlessly on Vercel"
+    ],
+    technologies: {
+      frontend: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+      backend: ["Supabase", "PostgreSQL", "Row Level Security", "Cookie-session Auth"],
+      ai: ["Google Gemini 2.5 Flash", "Prompt-injection Filtering"],
+      integrations: ["Resend", "Web Push (VAPID)", "Recharts", "Tiptap"],
+      devops: ["GitHub Actions CI", "Vercel"]
+    }
   }
 ]
 
