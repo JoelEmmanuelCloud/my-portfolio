@@ -94,6 +94,7 @@ const SlideButton = ({
           className={classes}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={onClick}
           {...motionProps}
           {...props}
         >
@@ -103,7 +104,7 @@ const SlideButton = ({
       )
     }
     return (
-      <MotionLink href={href} className={classes} {...motionProps} {...props}>
+      <MotionLink href={href} className={classes} onClick={onClick} {...motionProps} {...props}>
         {chip}
         {label}
       </MotionLink>

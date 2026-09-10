@@ -1,22 +1,35 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Script from 'next/script'
 import { CONSENT_KEY, CONSENT_EVENT } from '@/components/ui/CookieConsent'
 
 export default function Analytics({ domain }) {
   const [allowed, setAllowed] = useState(false)
+  const loadedRef = useRef(false)
 
   useEffect(() => {
     try {
       setAllowed(localStorage.getItem(CONSENT_KEY) === 'accepted')
-    } catch {
+    } catch (err) {
+      void err
       setAllowed(false)
     }
 
-    const onChange = (e) => setAllowed(e.detail === 'accepted')
+    const onChange = (e) => {
+      const nextAllowed = e.detail === 'accepted'
+      if (!nextAllowed && loadedRef.current) {
+        window.location.reload()
+        return
+      }
+      setAllowed(nextAllowed)
+    }
     window.addEventListener(CONSENT_EVENT, onChange)
     return () => window.removeEventListener(CONSENT_EVENT, onChange)
   }, [])
+
+  useEffect(() => {
+    if (allowed) loadedRef.current = true
+  }, [allowed])
 
   if (!domain || !allowed) return null
 

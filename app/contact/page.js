@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 import Script from 'next/script'
 import { CheckCircle, Calendar, ArrowUpRight } from 'lucide-react'
 import SlideButton from '@/components/ui/SlideButton'
@@ -170,13 +171,13 @@ export default function Contact() {
                         <ArrowUpRight className="h-4 w-4" />
                         GitHub profile
                       </a>
-                      <a
+                      <Link
                         href="/projects"
                         className="inline-flex items-center gap-2 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="h-4 w-4" />
                         View portfolio
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

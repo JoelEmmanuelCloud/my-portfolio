@@ -1,10 +1,11 @@
 'use client'
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { Plus } from 'lucide-react'
 
 export default function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null)
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <div className="divide-y divide-ink/10 dark:divide-cream/10">
@@ -22,8 +23,8 @@ export default function Accordion({ items }) {
                 {item.question}
               </span>
               <motion.span
-                animate={{ rotate: isOpen ? 45 : 0 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                animate={{ rotate: isOpen && !shouldReduceMotion ? 45 : 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="flex size-8 shrink-0 items-center justify-center rounded-md border border-ink/15 text-ink dark:border-cream/15 dark:text-cream"
               >
                 <Plus className="size-4" />
@@ -35,7 +36,7 @@ export default function Accordion({ items }) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
                   <p className="pb-5 text-sm leading-relaxed text-ink/65 dark:text-cream/65 sm:pb-6 sm:text-base">
