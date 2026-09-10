@@ -2,6 +2,7 @@
 import { Download } from 'lucide-react'
 import { experience, certifications, education, hackathons } from '@/data/experience'
 import { skills } from '@/data/skills'
+import SlideButton from '@/components/ui/SlideButton'
 
 export default function ResumePage() {
   const currentRoles = experience.filter(e => e.current)
@@ -17,16 +18,12 @@ export default function ResumePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-20 pb-10 print:bg-white print:pt-0 print:pb-0">
+    <div className="min-h-screen bg-cream pt-10 pb-10 dark:bg-ink print:bg-white print:pt-0 print:pb-0">
 
-      <div className="no-print flex justify-center mb-6 px-4">
-        <button
-          onClick={() => window.print()}
-          className="inline-flex items-center justify-center gap-2 w-full xs:w-auto px-5 py-2.5 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-md"
-        >
-          <Download className="h-4 w-4" />
+      <div className="no-print mb-6 flex justify-center px-4">
+        <SlideButton onClick={() => window.print()} variant="dark" icon={Download} className="w-full justify-center xs:w-auto">
           Download PDF
-        </button>
+        </SlideButton>
       </div>
 
       <div className="resume-page bg-white mx-auto shadow-xl print:shadow-none w-full px-5 py-8 sm:px-10 sm:py-10 md:px-14 md:py-12"
@@ -34,12 +31,12 @@ export default function ResumePage() {
 
         <div className="border-b border-gray-200 pb-5 mb-5">
           <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Joel Emmanuel</h1>
-          <p className="text-base font-medium text-blue-600 mt-1">Fullstack & Blockchain Developer</p>
+          <p className="text-base font-medium text-moss mt-1">Fullstack & Blockchain Developer</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-gray-600">
             <span>ejoel0035@gmail.com</span>
             <span>joelemmanuel.dev</span>
             <span>linkedin.com/in/joel-emmanuel-149708202</span>
-            <span>github.com/joelemmanuel</span>
+            <span>github.com/JoelEmmanuelCloud</span>
           </div>
         </div>
 

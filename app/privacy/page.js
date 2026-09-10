@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { ArrowLeft, Shield, Eye, Database } from 'lucide-react'
+import Reveal from '@/components/ui/Reveal'
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -133,54 +134,53 @@ export default function PrivacyPolicy() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-8 sm:pt-12 pb-12 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors mb-8 sm:mb-12 text-sm sm:text-base font-semibold"
+            className="mb-8 inline-flex items-center text-sm font-semibold text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:mb-12 sm:text-base"
           >
-            <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+            <ArrowLeft className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             Back to Home
           </Link>
-          
-          <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 sm:mb-6 leading-tight">
+
+          <Reveal className="max-w-4xl">
+            <p className="eyebrow mb-4">Legal</p>
+            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
               Privacy Policy
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-black font-medium mb-4 sm:mb-6 leading-relaxed">
-              — How we collect, use, and protect your information
+            <p className="mb-4 text-lg text-ink/65 dark:text-cream/65 sm:mb-6 sm:text-xl lg:text-2xl">
+              How I collect, use, and protect your information.
             </p>
-            <p className="text-black font-medium text-sm sm:text-base">
+            <p className="font-mono text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
+          <div className="grid gap-8 sm:gap-12 lg:grid-cols-4 lg:gap-16">
 
             <div className="lg:col-span-1">
-              <div className="sticky top-20 sm:top-24">
-                <h3 className="text-sm sm:text-base font-bold text-black uppercase tracking-wide mb-4 sm:mb-6">
-                  Contents
-                </h3>
-                <nav className="space-y-2 sm:space-y-3">
+              <div className="sticky top-24">
+                <p className="eyebrow mb-4 sm:mb-6">Contents</p>
+                <nav className="space-y-1">
                   {sections.map((section) => (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block text-black hover:text-blue-600 transition-colors text-sm sm:text-base font-medium py-1 border-l-2 border-transparent hover:border-blue-600 pl-3"
+                      className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
                     >
                       {section.title}
                     </a>
                   ))}
                   <a
                     href="#contact-info"
-                    className="block text-black hover:text-blue-600 transition-colors text-sm sm:text-base font-medium py-1 border-l-2 border-transparent hover:border-blue-600 pl-3"
+                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
                   >
                     Contact Information
                   </a>
@@ -191,69 +191,73 @@ export default function PrivacyPolicy() {
             <div className="lg:col-span-3">
               <div className="max-w-none">
                 {sections.map((section) => (
-                  <div
+                  <Reveal
                     key={section.id}
                     id={section.id}
                     className="mb-12 sm:mb-16 lg:mb-20"
                   >
-                    <div className="flex items-center mb-6 sm:mb-8">
-                      <section.icon className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-black leading-tight">
+                    <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                        <section.icon className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
+                      </div>
+                      <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
                         {section.title}
                       </h2>
                     </div>
 
                     <div className="space-y-6 sm:space-y-8">
                       {section.content.map((subsection, subIndex) => (
-                        <div key={subIndex} className="border-l-4 border-blue-600 pl-4 sm:pl-6">
-                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-3 sm:mb-4 leading-tight">
+                        <div key={subIndex} className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                          <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:mb-4 sm:text-lg">
                             {subsection.subtitle}
                           </h3>
-                          <div className="space-y-3 sm:space-y-4">
+                          <div className="space-y-2.5 sm:space-y-3">
                             {subsection.items.map((item, itemIndex) => (
-                              <div key={itemIndex} className="flex items-start">
-                                <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 sm:mt-2.5 mr-3 sm:mr-4 flex-shrink-0"></span>
-                                <p className="text-black leading-relaxed font-medium text-sm sm:text-base lg:text-lg">{item}</p>
+                              <div key={itemIndex} className="flex items-start gap-3">
+                                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                                <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">{item}</p>
                               </div>
                             ))}
                           </div>
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </Reveal>
                 ))}
 
-                <div id="contact-info" className="mb-12 sm:mb-16">
-                  <div className="flex items-center mb-6 sm:mb-8">
-                    <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-black leading-tight">
+                <Reveal id="contact-info" className="mb-12 sm:mb-16">
+                  <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                      <Shield className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
+                    </div>
+                    <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
                       Contact Information
                     </h2>
                   </div>
 
-                  <div className="border-2 border-black rounded-xl p-6 sm:p-8 lg:p-10 bg-white hover:shadow-lg transition-shadow duration-300">
-                    <p className="text-black mb-6 leading-relaxed font-medium text-sm sm:text-base lg:text-lg">
-                      If you have any questions about this Privacy Policy or how we handle your data, 
-                      please contact us:
+                  <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:p-10">
+                    <p className="mb-6 text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
+                      If you have any questions about this Privacy Policy or how I handle your data,
+                      please get in touch:
                     </p>
-                    
+
                     <div className="space-y-4 sm:space-y-6">
-                      <p className="text-black font-bold text-lg sm:text-xl lg:text-2xl">Joel Emmanuel</p>
-                      <div className="space-y-3 sm:space-y-4">
-                        <p className="text-black text-sm sm:text-base lg:text-lg">
-                          <span className="font-bold">Email:</span>{' '}
-                          <a 
-                            href="mailto:ejoel0035@gmail.com" 
-                            className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
+                      <p className="text-lg font-semibold text-ink dark:text-cream sm:text-xl lg:text-2xl">Joel Emmanuel</p>
+                      <div className="space-y-2.5 sm:space-y-3">
+                        <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
+                          <span className="font-semibold text-ink dark:text-cream">Email:</span>{' '}
+                          <a
+                            href="mailto:ejoel0035@gmail.com"
+                            className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream"
                           >
                             ejoel0035@gmail.com
                           </a>
                         </p>
-                        <p className="text-black text-sm sm:text-base lg:text-lg">
-                          <span className="font-bold">Website:</span>{' '}
-                          <a 
-                            href="https://joelemmanuel.dev" 
-                            className="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-2"
+                        <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
+                          <span className="font-semibold text-ink dark:text-cream">Website:</span>{' '}
+                          <a
+                            href="https://joelemmanuel.dev"
+                            className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream"
                           >
                             joelemmanuel.dev
                           </a>
@@ -261,20 +265,20 @@ export default function PrivacyPolicy() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Reveal>
 
-                <div className="border-2 border-black rounded-xl p-6 sm:p-8 lg:p-10 bg-white hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex items-center mb-4 sm:mb-6">
-                    <Eye className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-2 sm:mr-3 flex-shrink-0" />
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black leading-tight">
+                <Reveal className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:p-10">
+                  <div className="mb-4 flex items-center gap-2.5 sm:mb-6 sm:gap-3">
+                    <Eye className="size-5 shrink-0 text-ink/50 dark:text-cream/50 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
+                    <h3 className="text-lg font-semibold leading-tight text-ink dark:text-cream sm:text-xl lg:text-2xl">
                       Policy Updates
                     </h3>
                   </div>
-                  <p className="text-black leading-relaxed font-medium text-sm sm:text-base lg:text-lg">
-                    We may update this Privacy Policy from time to time. Any changes will be posted on this page 
-                    with an updated revision date. We encourage you to review this policy periodically.
+                  <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
+                    I may update this Privacy Policy from time to time. Any changes will be posted on this page
+                    with an updated revision date. I encourage you to review this policy periodically.
                   </p>
-                </div>
+                </Reveal>
               </div>
             </div>
           </div>

@@ -13,7 +13,6 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals"),
   {
     rules: {
-      // Windows development environment uses CRLF line endings
       "linebreak-style": "off",
       "no-trailing-spaces": "off",
       "eol-last": "off",

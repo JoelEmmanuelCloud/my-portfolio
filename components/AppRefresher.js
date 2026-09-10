@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { RefreshCw, X } from 'lucide-react'
 
 export default function AppRefresher() {
   const router = useRouter()
@@ -49,20 +50,26 @@ export default function AppRefresher() {
   if (!updateReady) return null
 
   return (
-    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-5 py-3 rounded-full shadow-2xl text-sm font-medium animate-subtle-fade-in">
-      <span>Update available</span>
+    <div
+      role="status"
+      className="fixed inset-x-3 bottom-5 z-50 mx-auto flex max-w-sm flex-wrap items-center justify-center gap-3 rounded-lg border border-ink/10 bg-cream px-5 py-3 text-sm font-medium text-ink shadow-2xl animate-subtle-fade-in sm:inset-x-auto sm:left-1/2 sm:max-w-none sm:-translate-x-1/2 sm:flex-nowrap"
+    >
+      <span className="flex items-center gap-2 text-center sm:text-left">
+        <RefreshCw className="size-4 shrink-0 text-gold" aria-hidden="true" />
+        A new version is available
+      </span>
       <button
         onClick={() => window.location.reload()}
-        className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-blue-700 transition-colors"
+        className="rounded-md bg-ink px-3 py-2.5 text-xs font-semibold text-cream transition-colors hover:bg-ink/80"
       >
         Reload
       </button>
       <button
         onClick={() => setUpdateReady(false)}
         aria-label="Dismiss"
-        className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-900 transition-colors leading-none"
+        className="-m-2.5 p-2.5 text-ink/40 transition-colors hover:text-ink"
       >
-        x
+        <X className="size-4" aria-hidden="true" />
       </button>
     </div>
   )

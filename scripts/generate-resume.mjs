@@ -33,7 +33,6 @@ const html = `<!DOCTYPE html>
   }
   a { color: #1a1a1a; text-decoration: none; }
 
-  /* HEADER */
   .header { border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 14px; }
   .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
   .header .title { font-size: 12px; color: #444; margin-top: 2px; margin-bottom: 6px; }
@@ -41,7 +40,6 @@ const html = `<!DOCTYPE html>
   .contact span::before { content: '• '; color: #888; }
   .contact span:first-child::before { content: ''; }
 
-  /* SECTIONS */
   .section { margin-bottom: 8px; }
   .section-title {
     font-size: 10px;
@@ -54,7 +52,6 @@ const html = `<!DOCTYPE html>
     margin-bottom: 8px;
   }
 
-  /* EXPERIENCE */
   .entry { margin-bottom: 7px; }
   .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
   .entry-title { font-weight: 700; font-size: 10.5px; }
@@ -63,21 +60,17 @@ const html = `<!DOCTYPE html>
   ul { padding-left: 13px; }
   li { margin-bottom: 1.5px; font-size: 9.8px; }
 
-  /* SKILLS */
   .skill-group { margin-bottom: 3px; }
   .skill-group-title { font-weight: 700; font-size: 9.5px; color: #333; }
   .skill-list { font-size: 9.5px; color: #444; }
 
-  /* PROJECTS */
   .project-stack { font-size: 9px; color: #666; margin-top: 1px; font-style: italic; }
 
-  /* TWO COL LAYOUT for bottom sections */
   .two-col { display: grid; grid-template-columns: 55% 42%; gap: 0 3%; break-inside: avoid; page-break-inside: avoid; }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <h1>Joel Emmanuel</h1>
   <div class="title">Full-Stack Developer &amp; Production Engineer</div>
@@ -89,7 +82,6 @@ const html = `<!DOCTYPE html>
   </div>
 </div>
 
-<!-- SKILLS -->
 <div class="section">
   <div class="section-title">Technical Skills</div>
   <div class="skill-group"><span class="skill-group-title">Backend: </span><span class="skill-list">Node.js, NestJS, Express.js, Python, Flask, Java, Spring Boot, REST APIs, GraphQL, Microservices, WebSockets</span></div>
@@ -99,7 +91,6 @@ const html = `<!DOCTYPE html>
   <div class="skill-group"><span class="skill-group-title">AI &amp; Blockchain: </span><span class="skill-list">LangChain, AWS Bedrock, RAG Systems, LLMs, Vector Databases &nbsp;|&nbsp; Solidity, Web3.js, Lisk, Smart Contracts, Ethers.js</span></div>
 </div>
 
-<!-- EXPERIENCE -->
 <div class="section">
   <div class="section-title">Experience</div>
   ${experience.map(e => {
@@ -120,7 +111,6 @@ const html = `<!DOCTYPE html>
   }).join('')}
 </div>
 
-<!-- FEATURED PROJECTS -->
 <div class="section">
   <div class="section-title">Key Projects</div>
   ${featuredProjects.map(p => `
@@ -136,10 +126,8 @@ const html = `<!DOCTYPE html>
   </div>`).join('')}
 </div>
 
-<!-- HACKATHONS + CERTS + EDUCATION -->
 <div class="two-col">
   <div>
-    <!-- HACKATHONS -->
     <div class="section">
       <div class="section-title">Hackathons</div>
       ${hackathons.map(h => `
@@ -154,7 +142,6 @@ const html = `<!DOCTYPE html>
   </div>
 
   <div>
-    <!-- CERTIFICATIONS -->
     <div class="section">
       <div class="section-title">Certifications</div>
       ${certifications.map(c => `

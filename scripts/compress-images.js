@@ -23,12 +23,11 @@ async function compress() {
 
     const after = fs.statSync(tmp).size
 
-    // Only replace if we actually saved space
     if (after < before) {
       fs.renameSync(tmp, filePath)
       totalAfter += after
       const saved = (((before - after) / before) * 100).toFixed(0)
-      console.log(`✓ ${file}: ${kb(before)} → ${kb(after)} (${saved}% saved)`)
+      console.log(` ${file}: ${kb(before)} → ${kb(after)} (${saved}% saved)`)
     } else {
       fs.unlinkSync(tmp)
       totalAfter += before

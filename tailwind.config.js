@@ -1,7 +1,6 @@
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 
-/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
   content: [
@@ -12,7 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       fontWeight: {
         'extralight': 200,
@@ -59,6 +59,47 @@ export default {
           700: '#7c3aed',
           800: '#6b21a8',
           900: '#581c87',
+        },
+        cream: {
+          DEFAULT: '#f2f0ea',
+          50: '#faf9f6',
+          100: '#f2f0ea',
+          200: '#e8e5dc',
+        },
+        ink: {
+          DEFAULT: '#0a0a09',
+          900: '#0a0a09',
+          800: '#151513',
+        },
+        gold: {
+          DEFAULT: '#f2c200',
+          50: '#fefaeb',
+          100: '#fdf0c2',
+          400: '#f7d43d',
+          500: '#f2c200',
+          600: '#d9ac00',
+        },
+        moss: {
+          DEFAULT: '#447e68',
+          100: '#e1ebe6',
+          500: '#447e68',
+          600: '#386a57',
+        },
+        ember: {
+          DEFAULT: '#fa9a63',
+          300: '#ffd9be',
+          500: '#fa9a63',
+          600: '#e57d42',
+        },
+        bronze: {
+          DEFAULT: '#cda63c',
+          400: '#e0c477',
+          500: '#cda63c',
+        },
+        taupe: {
+          DEFAULT: '#8c8879',
+          200: '#e8e5dc',
+          500: '#8c8879',
         },
       },
       fontSize: {
@@ -117,6 +158,10 @@ export default {
         '8xl': '88rem',
         '9xl': '96rem',
         '10xl': '104rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.5rem',
       },
       minHeight: {
         '128': '32rem',
