@@ -28,16 +28,14 @@ const chipVariants = {
 
 const sizes = {
   md: {
-    container: 'gap-2 py-2.5 pr-5 pl-11 text-sm',
+    container: 'gap-2 py-2.5 pr-5 pl-11 text-sm hover:pr-11',
     chip: 'size-8 group-hover:left-[calc(100%-2.25rem)]',
     icon: 'size-4',
-    label: 'group-hover:translate-x-4',
   },
   sm: {
-    container: 'gap-1.5 py-2 pr-4 pl-9 text-xs',
+    container: 'gap-1.5 py-2 pr-4 pl-9 text-xs hover:pr-9',
     chip: 'size-6 group-hover:left-[calc(100%-1.75rem)]',
     icon: 'size-3.5',
-    label: 'group-hover:translate-x-3',
   },
 }
 
@@ -61,7 +59,7 @@ const SlideButton = ({
   const sizing = sizes[size] || sizes.md
 
   const classes = cn(
-    'group relative inline-flex items-center overflow-hidden rounded-lg border font-semibold tracking-tight transition-colors duration-300',
+    'group relative inline-flex items-center overflow-hidden rounded-lg border font-semibold tracking-tight transition-[color,background-color,border-color,padding] duration-300',
     sizing.container,
     variants[variant],
     className
@@ -79,11 +77,7 @@ const SlideButton = ({
     </span>
   )
 
-  const label = (
-    <span className={cn('relative z-0 inline-block transition-transform duration-400 ease-out', sizing.label)}>
-      {children}
-    </span>
-  )
+  const label = <span className="relative z-0 inline-block">{children}</span>
 
   if (href) {
     const isExternal = href.startsWith('http') || href.startsWith('mailto:')
