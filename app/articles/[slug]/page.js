@@ -1,49 +1,49 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowUpRight, ArrowLeft } from 'lucide-react'
-import { research } from '@/data/research'
+import { articles } from '@/data/articles'
 import SlideButton from '@/components/ui/SlideButton'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
 
 export async function generateStaticParams() {
-  return research.map((piece) => ({ slug: piece.slug }))
+  return articles.map((article) => ({ slug: article.slug }))
 }
 
 export async function generateMetadata({ params }) {
-  const piece = research.find(p => p.slug === params.slug)
-  if (!piece) return {}
+  const article = articles.find(a => a.slug === params.slug)
+  if (!article) return {}
 
   return {
-    title: `${piece.title} — Joel Emmanuel`,
-    description: piece.summary,
+    title: `${article.title} — Joel Emmanuel`,
+    description: article.summary,
     alternates: {
-      canonical: `/research/${piece.slug}`,
+      canonical: `/articles/${article.slug}`,
     },
     openGraph: {
-      title: `${piece.title} — Joel Emmanuel`,
-      description: piece.summary,
-      url: `https://joelemmanuel.dev/research/${piece.slug}`,
+      title: `${article.title} — Joel Emmanuel`,
+      description: article.summary,
+      url: `https://joelemmanuel.dev/articles/${article.slug}`,
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${piece.title} — Joel Emmanuel`,
-      description: piece.summary,
+      title: `${article.title} — Joel Emmanuel`,
+      description: article.summary,
     },
   }
 }
 
-export default function ResearchDetail({ params }) {
-  const piece = research.find(p => p.slug === params.slug)
+export default function ArticleDetail({ params }) {
+  const article = articles.find(a => a.slug === params.slug)
 
-  if (!piece) {
+  if (!article) {
     notFound()
   }
 
-  const relatedResearch = research
-    .filter(p => p.slug !== params.slug)
+  const relatedArticles = articles
+    .filter(a => a.slug !== params.slug)
     .slice(0, 2)
 
   return (
@@ -52,11 +52,11 @@ export default function ResearchDetail({ params }) {
       <section className="py-6 sm:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            href="/research"
+            href="/articles"
             className="inline-flex items-center text-sm font-semibold text-ink/70 transition-colors hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Research
+            Back to Articles
           </Link>
         </div>
       </section>
@@ -64,12 +64,12 @@ export default function ResearchDetail({ params }) {
       <section className="py-8 sm:py-10 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-4xl">
-            <p className="eyebrow mb-4">{piece.date}</p>
+            <p className="eyebrow mb-4">{article.date}</p>
             <h1 className="mb-6 text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-8 sm:text-5xl lg:text-6xl">
-              {piece.title}
+              {article.title}
             </h1>
             <p className="max-w-3xl text-lg leading-relaxed text-ink/70 dark:text-cream/70 sm:text-xl">
-              {piece.summary}
+              {article.summary}
             </p>
           </Reveal>
         </div>
@@ -81,35 +81,57 @@ export default function ResearchDetail({ params }) {
 
             <Reveal className="space-y-10 lg:col-span-2 lg:space-y-14">
 
-              {piece.methodology && (
+              {article.context && (
                 <div>
                   <h2 className="mb-4 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
-                    Methodology
+                    Context
                   </h2>
                   <p className="text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:text-lg">
-                    {piece.methodology}
+                    {article.context}
                   </p>
                 </div>
               )}
 
-              {piece.findings && (
+              {article.approach && (
                 <div>
                   <h2 className="mb-4 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
-                    Findings
+                    Approach
                   </h2>
                   <p className="text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:text-lg">
-                    {piece.findings}
+                    {article.approach}
                   </p>
                 </div>
               )}
 
-              {piece.papers && piece.papers.length > 0 && (
+              {article.challenges && (
+                <div>
+                  <h2 className="mb-4 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
+                    What broke
+                  </h2>
+                  <p className="text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:text-lg">
+                    {article.challenges}
+                  </p>
+                </div>
+              )}
+
+              {article.lessons && (
+                <div>
+                  <h2 className="mb-4 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
+                    What I&apos;d do differently
+                  </h2>
+                  <p className="text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:text-lg">
+                    {article.lessons}
+                  </p>
+                </div>
+              )}
+
+              {article.papers && article.papers.length > 0 && (
                 <div>
                   <h2 className="mb-6 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
                     Reading list
                   </h2>
                   <div className="space-y-4">
-                    {piece.papers.map((paper) => (
+                    {article.papers.map((paper) => (
                       <a
                         key={paper.title}
                         href={paper.url}
@@ -134,28 +156,40 @@ export default function ResearchDetail({ params }) {
 
             <Reveal direction="left" delay={0.1} className="space-y-6 lg:sticky lg:top-24 lg:self-start">
 
-              {piece.stack && piece.stack.length > 0 && (
+              {article.stack && article.stack.length > 0 && (
                 <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
                   <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                     Tools &amp; stack
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {piece.stack.map((tech) => (
+                    {article.stack.map((tech) => (
                       <TechBadge key={tech} name={tech} />
                     ))}
                   </div>
                 </div>
               )}
 
-              {(piece.links?.writeup || piece.links?.github || piece.links?.dataset) && (
+              {(article.links?.live || article.links?.github || article.links?.dataset) && (
                 <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
                   <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                     Links
                   </h3>
                   <div className="space-y-3">
-                    {piece.links?.github && (
+                    {article.links?.live && (
                       <a
-                        href={piece.links.github}
+                        href={article.links.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                      >
+                        <ArrowUpRight className="size-4 shrink-0" />
+                        Live site
+                      </a>
+                    )}
+
+                    {article.links?.github && (
+                      <a
+                        href={article.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
@@ -165,9 +199,9 @@ export default function ResearchDetail({ params }) {
                       </a>
                     )}
 
-                    {piece.links?.dataset && (
+                    {article.links?.dataset && (
                       <a
-                        href={piece.links.dataset}
+                        href={article.links.dataset}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
@@ -184,28 +218,28 @@ export default function ResearchDetail({ params }) {
         </div>
       </section>
 
-      {relatedResearch.length > 0 && (
+      {relatedArticles.length > 0 && (
         <section className="py-14 sm:py-16 lg:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal>
               <p className="eyebrow mb-3">Keep exploring</p>
               <h2 className="mb-10 text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-12 sm:text-3xl lg:text-4xl">
-                More research
+                More articles
               </h2>
             </Reveal>
 
             <RevealGroup className="grid gap-6 sm:gap-8 md:grid-cols-2" stagger={0.12}>
-              {relatedResearch.map((relatedPiece) => (
-                <RevealItem key={relatedPiece.slug} className="rounded-3xl border border-ink/10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+              {relatedArticles.map((relatedArticle) => (
+                <RevealItem key={relatedArticle.slug} className="rounded-3xl border border-ink/10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-cream/10 dark:bg-ink/60 sm:p-8">
                   <h3 className="mb-2 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
-                    {relatedPiece.title}
+                    {relatedArticle.title}
                   </h3>
                   <p className="mb-6 text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
-                    {relatedPiece.summary}
+                    {relatedArticle.summary}
                   </p>
 
-                  <SlideButton href={`/research/${relatedPiece.slug}`} variant="dark">
-                    Read the write-up
+                  <SlideButton href={`/articles/${relatedArticle.slug}`} variant="dark">
+                    Read the article
                   </SlideButton>
                 </RevealItem>
               ))}
@@ -221,7 +255,7 @@ export default function ResearchDetail({ params }) {
             title="Interested in similar work?"
             description="Get in touch to talk through scope and fit."
             primary={{ href: '/contact', label: 'Start a conversation' }}
-            secondary={{ href: '/research', label: 'View all research' }}
+            secondary={{ href: '/articles', label: 'View all articles' }}
           />
         </div>
       </section>
