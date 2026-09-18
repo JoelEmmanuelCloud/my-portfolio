@@ -265,8 +265,8 @@ export default function Home() {
               AWS Certified in Cloud Practitioner and AI Practitioner. Specializing in Blockchain, React,
               NestJS, AWS, and applied AI/ML.
             </p>
-            <SlideButton href="/resume" variant="gold">
-              View resume
+            <SlideButton href="/experience" variant="gold">
+              See my experience
             </SlideButton>
           </Reveal>
         </div>
