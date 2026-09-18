@@ -288,9 +288,9 @@ export default function ProjectDetail({ params }) {
       <section className="py-14 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <CTAPanel
-            eyebrow="Let's talk"
+            eyebrow="Next steps"
             title="Interested in similar work?"
-            description="Let's discuss your project requirements."
+            description="Get in touch to talk through scope and fit."
             primary={{ href: '/contact', label: 'Start a conversation' }}
             secondary={{ href: '/projects', label: 'View all projects' }}
           />

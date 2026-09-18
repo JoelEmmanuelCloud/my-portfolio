@@ -200,9 +200,9 @@ export default function Experience() {
       <section className="pb-12 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <CTAPanel
-            eyebrow="Let's talk"
+            eyebrow="Next steps"
             title="Let's work together"
-            description="Ready to discuss how my experience can help your next project succeed?"
+            description="Explore the projects behind this experience, or reach out to talk specifics."
             primary={{ href: '/projects', label: 'View my work' }}
             secondary={{ href: '/contact', label: 'Get in touch' }}
           />

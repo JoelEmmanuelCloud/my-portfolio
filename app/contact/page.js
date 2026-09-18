@@ -118,7 +118,7 @@ export default function Contact() {
                 Contact
               </h1>
               <p className="max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
-                Let&apos;s discuss your project or opportunity.
+                Get in touch about blockchain, AI, or full-stack engineering work.
               </p>
             </Reveal>
 
@@ -129,8 +129,8 @@ export default function Contact() {
                   Get In Touch
                 </h2>
                 <p className="mb-8 text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:text-lg">
-                  I&apos;m always interested in new opportunities and exciting projects.
-                  Whether you&apos;re a startup or enterprise, let&apos;s discuss how I can help.
+                  I work with startups and enterprises on blockchain, AI/ML, and full-stack
+                  systems — from early architecture through production deployment.
                 </p>
 
                 <div className="space-y-6">
@@ -190,7 +190,7 @@ export default function Contact() {
                     Prefer to talk?
                   </h3>
                   <p className="mb-6 text-sm text-cream/65 sm:text-base">
-                    Schedule a 30-minute call to discuss your project in detail.
+                    Schedule a 30-minute call to scope the work.
                   </p>
                   <SlideButton
                     onClick={handleBookCallClick}
@@ -225,27 +225,27 @@ export default function Contact() {
                 items={[
                   {
                     question: "What's your typical project timeline?",
-                    answer: "Project timelines vary based on scope and complexity. Simple websites take 2-4 weeks, while complex applications can take 2-6 months. I provide detailed timelines during our initial consultation."
+                    answer: "It depends on scope. A focused integration or technical audit can run 1-2 weeks, while a full system build — a RAG pipeline, a smart contract protocol, or a backend platform — typically runs 2-6 months. I scope this with you upfront on the discovery call."
                   },
                   {
                     question: "Do you work with international clients?",
-                    answer: "Absolutely! I work with clients worldwide and am experienced with remote collaboration. I'm flexible with time zones and communication preferences."
+                    answer: "Yes — I've shipped production systems for clients across Brazil, the US, Canada, and Ghana, and I'm set up for async, remote collaboration across time zones."
                   },
                   {
                     question: "What technologies do you specialize in?",
-                    answer: "I specialize in React, Next.js, Node.js, AWS, and modern JavaScript/TypeScript. I also have experience with Python, Java Spring Boot, and AI/ML technologies."
+                    answer: "React, Next.js, NestJS, and Node.js on the application side; AWS and GCP for infrastructure; Solidity and Ethereum for blockchain work. I also build production RAG and AI agent systems with LangChain, Bedrock, and vector databases."
                   },
                   {
                     question: "Do you provide ongoing support?",
-                    answer: "Yes, I offer maintenance and support packages for projects I've built. This includes bug fixes, updates, feature additions, and technical support."
+                    answer: "Yes — I offer maintenance and support after launch, including monitoring, bug fixes, and feature work on systems I've built."
                   },
                   {
                     question: "How do you handle project communication?",
-                    answer: "I believe in transparent communication. I provide regular updates via email, Slack, or your preferred method. We can schedule weekly check-ins and I'm always available for urgent matters."
+                    answer: "Direct and regular — updates via email or Slack, with weekly check-ins on active engagements."
                   },
                   {
                     question: "What's your preferred way to start a project?",
-                    answer: "I prefer to start with a discovery call to understand your goals, followed by a detailed proposal. Once approved, we kick off with project planning and wireframing before development begins."
+                    answer: "A short discovery call to understand scope and constraints, followed by a written plan covering architecture, timeline, and cost before any work begins."
                   }
                 ]}
               />
