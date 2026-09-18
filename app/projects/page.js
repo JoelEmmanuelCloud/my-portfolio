@@ -184,9 +184,9 @@ export default function Projects() {
       <section className="pb-14 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <CTAPanel
-            eyebrow="Let's talk"
-            title="Interested in working together?"
-            description="Let's discuss your project requirements."
+            eyebrow="Next steps"
+            title="Have a similar project?"
+            description="Get in touch to talk through scope and fit."
             primary={{ href: '/contact', label: 'Get in touch' }}
           />
         </div>

@@ -42,7 +42,7 @@ export default function TermsOfService() {
             'View portfolio content and project information',
             'Contact us through provided forms and methods',
             'Schedule consultations through integrated booking systems',
-            'Download publicly available resources (resume, case studies)'
+            'Download publicly available resources (case studies, project materials)'
           ]
         },
         {

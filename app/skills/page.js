@@ -319,9 +319,9 @@ export default function Skills() {
       <section className="pb-12 sm:pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <CTAPanel
-            eyebrow="Let's talk"
-            title="Ready to Collaborate?"
-            description="Let's discuss how these skills can help solve your technical challenges."
+            eyebrow="Next steps"
+            title="See these skills in production"
+            description="Explore the projects that put this stack to work, or get in touch to talk specifics."
             primary={{ href: '/contact', label: 'Start a project' }}
             secondary={{ href: '/projects', label: 'View my work' }}
           />

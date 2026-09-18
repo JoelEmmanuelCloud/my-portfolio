@@ -4,7 +4,6 @@ import {
   Mail,
   Linkedin,
   Github,
-  Download,
   ExternalLink,
   MessageCircle,
   Calendar
@@ -158,13 +157,6 @@ export function SocialLinksCompact({ links = defaultSocialLinks }) {
 
 export function SocialActionButtons({ className = "" }) {
   const actionButtons = [
-    {
-      name: 'Download Resume',
-      url: '/documents/joel-emmanuel-resume.pdf',
-      icon: Download,
-      description: 'Download my resume',
-      primary: false
-    },
     {
       name: 'Schedule Call',
       url: '/contact',

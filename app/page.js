@@ -265,8 +265,8 @@ export default function Home() {
               AWS Certified in Cloud Practitioner and AI Practitioner. Specializing in Blockchain, React,
               NestJS, AWS, and applied AI/ML.
             </p>
-            <SlideButton href="/resume" variant="gold">
-              View resume
+            <SlideButton href="/experience" variant="gold">
+              See my experience
             </SlideButton>
           </Reveal>
         </div>
@@ -275,9 +275,9 @@ export default function Home() {
       <section className="pb-14 sm:pb-16 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <CTAPanel
-            eyebrow="Let's talk"
-            title="Ready to build something amazing?"
-            description="Let's discuss blockchain, AI, or full-stack development."
+            eyebrow="Start a project"
+            title="Have a project in mind?"
+            description="I partner with startups and enterprises on blockchain, AI, and full-stack systems — from architecture to production."
             primary={{ href: '/contact', label: 'Start a conversation' }}
             secondary={{ href: 'mailto:ejoel0035@gmail.com', label: 'Send email' }}
           />
