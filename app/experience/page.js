@@ -172,17 +172,23 @@ export default function Experience() {
                   <div className="grid gap-6 lg:grid-cols-3 lg:gap-10">
                     <div className="lg:col-span-1">
                       <h3 className="mb-3 text-base font-semibold leading-tight text-ink dark:text-cream sm:text-lg">{edu.degree}</h3>
-                      <p className="mb-4 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">{edu.school}</p>
+                      {edu.school && (
+                        <p className="mb-4 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">{edu.school}</p>
+                      )}
 
                       <div className="space-y-2.5 text-sm text-ink/60 dark:text-cream/60">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 shrink-0" />
-                          <span className="font-medium">{edu.period}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin className="h-4 w-4 shrink-0" />
-                          <span className="font-medium">{edu.location}</span>
-                        </div>
+                        {edu.period && (
+                          <div className="flex items-center gap-2">
+                            <Calendar className="h-4 w-4 shrink-0" />
+                            <span className="font-medium">{edu.period}</span>
+                          </div>
+                        )}
+                        {edu.location && (
+                          <div className="flex items-center gap-2">
+                            <MapPin className="h-4 w-4 shrink-0" />
+                            <span className="font-medium">{edu.location}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
 

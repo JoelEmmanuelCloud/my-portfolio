@@ -109,10 +109,6 @@ export default function RootLayout({ children }) {
                 "https://www.linkedin.com/in/joel-emmanuel-149708202/",
                 "https://github.com/JoelEmmanuelCloud"
               ],
-              "alumniOf": {
-                "@type": "CollegeOrUniversity",
-                "name": "University of Port Harcourt"
-              },
               "knowsAbout": [
                 "Blockchain Development",
                 "Web3",

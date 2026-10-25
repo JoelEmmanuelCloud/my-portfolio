@@ -1,13 +1,13 @@
 export const education = [
   {
-    id: 'uniport-cs',
-    degree: 'Bachelor of Science in Computer Science',
-    school: 'University of Port Harcourt',
-    location: 'Port Harcourt',
-    period: '2018 – 2022',
-    startDate: '2018-09',
-    endDate: '2022-07',
-    status: 'completed',
+    id: 'bsc-cs',
+    degree: 'Bachelor of Computer Science (Honours)',
+    school: '',
+    location: '',
+    period: '',
+    startDate: '',
+    endDate: '',
+    status: 'current',
     description: 'Computer Science fundamentals with focus on software engineering and system design',
     coursework: [
       'Algorithms and Data Structures',
