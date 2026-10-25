@@ -1,5 +1,28 @@
 export const projects = [
   {
+    slug: "airflow-executor-health-check",
+    category: "fullstack",
+    title: "Apache Airflow – Per-Executor Health Reporting",
+    role: "Open Source Contributor",
+    featured: false,
+    links: {
+      github: "https://github.com/JoelEmmanuelCloud/airflow",
+    },
+    stack: ["Python", "Apache Airflow"],
+    summary: "Open source proposal for Apache Airflow through the MLH Open Source Fellowship, adding per-executor health reporting so operators can see when the Celery broker or Kubernetes pod manager an executor depends on has gone unhealthy, not just the scheduler itself.",
+    context: "Airflow already reports Scheduler, Triggerer, and DagProcessor health through /api/v2/monitor/health, but executors have no equivalent. A hung executor currently just looks like 'the scheduler is stuck,' which sends operators chasing the wrong component.",
+    challenge: "Designing a mechanism that adds executor visibility without risking the scheduler's main loop: a slow or hung executor health check can't be allowed to block scheduling itself.",
+    solution: "Reused the existing Jobs table instead of a new data model, adding an ExecutorJob row and ExecutorHealth column. The scheduler polls each executor's get_executor_health() in its own worker thread with a timeout and an in-flight guard, so a hung executor can never stall the scheduler loop. Scoped into two pull requests: scaffolding first (no behavior change for existing executors), then a CeleryExecutor proof of concept.",
+    impact: [
+      "Proposal posted to dev@airflow.apache.org as a DISCUSS thread after several rounds of design review with Airflow maintainer Dennis Ferruzzi",
+      "Maintainer Vincent Beck voiced support for adding executor health status to the dashboard",
+      "Design scoped to keep PR1 a no-behavior-change scaffold, de-risking review for a first-time contribution to a major Apache project"
+    ],
+    technologies: {
+      backend: ["Python", "Apache Airflow scheduler internals", "Jobs table / SQLAlchemy models"]
+    }
+  },
+  {
     slug: "aegis-protocol",
     category: "blockchain",
     title: "Aegis Protocol – AI Agent Accountability Layer",

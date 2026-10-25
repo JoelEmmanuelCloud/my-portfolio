@@ -23,29 +23,6 @@ export const experience = [
     ]
   },
   {
-    company: "Invillia",
-    client: "AIQuickMatch",
-    role: "Front-End Developer",
-    period: "Apr 2025 – Mar 2026",
-    location: "Brazil (Remote)",
-    website: "https://invillia.ai/en/home",
-    stack: ["React 18", "TypeScript 5", "TanStack Table", "TanStack Query", "Axios", "Keycloak", "Zod", "Cypress", "Jest", "Vitest", "React Hook Form", "React Router DOM", "Vite", "TailwindCSS", "shadcn/ui", "Azure Application Insights", "i18next"],
-    description: "Front-end development for AIQuickMatch, an AI-powered recruitment platform accelerating talent acquisition through intelligent candidate matching and automated screening workflows",
-    highlights: [
-      "Transitioned from Front-end QA to Developer within the same engagement, leveraging dual QA-dev background to streamline feature delivery",
-      "Developed UI features using React 18, TypeScript 5, and TanStack Table for complex data-driven recruitment workflows",
-      "Integrated REST APIs via Axios with Keycloak OIDC/SSO authentication and Zod schema validation",
-      "Wrote Cypress E2E and Jest unit tests, significantly improving test coverage across the platform",
-      "Operated in a Scrum environment contributing across both QA and development tracks"
-    ],
-    bullets: [
-      "Transitioned from Front-end QA to Developer within the same engagement",
-      "Built UI features with React 18, TypeScript, and TanStack Table",
-      "Integrated REST APIs with Keycloak SSO authentication and Zod validation",
-      "Wrote Cypress E2E and Jest unit tests improving overall test coverage"
-    ]
-  },
-  {
     company: "Vivo",
     role: "Frontend Developer",
     period: "2024 – 2025",
@@ -89,6 +66,46 @@ export const experience = [
     ]
   },
   {
+    company: "Apache Airflow",
+    client: "MLH Open Source Fellowship",
+    role: "Open Source Contributor",
+    period: "Sep 2026 – Present",
+    location: "Remote",
+    current: true,
+    website: "https://airflow.apache.org/",
+    stack: ["Python", "Apache Airflow"],
+    description: "Open source contribution to Apache Airflow through the MLH Open Source Fellowship, proposing per-executor health reporting",
+    highlights: [
+      "Designed a per-executor health check feature for Apache Airflow, reusing the existing Jobs table and the scheduler's heartbeat pattern instead of adding a new data model",
+      "Worked with Airflow maintainer Dennis Ferruzzi through several rounds of design review, then posted the proposal to the dev@airflow.apache.org mailing list, where maintainer Vincent Beck voiced support",
+      "Scoped the work into two pull requests: scaffolding with no behavior change for existing executors, then a proof of concept for CeleryExecutor"
+    ],
+    bullets: [
+      "Designed a per-executor health check feature for Apache Airflow",
+      "Posted the proposal to the dev@airflow.apache.org mailing list and built maintainer support",
+      "Scoped the work into a scaffolding PR and a CeleryExecutor proof of concept"
+    ]
+  },
+  {
+    company: "Aegis Protocol",
+    role: "Lead Developer",
+    period: "May 2026",
+    location: "Ghent, Belgium (ETHGlobal Open Agents)",
+    website: "https://app.aegisprotocol.uk",
+    stack: ["TypeScript", "Solidity", "0G Storage/Compute", "Gensyn AXL", "ENS"],
+    description: "On-chain accountability layer for AI agents, built at ETHGlobal Open Agents",
+    highlights: [
+      "Architected a decentralized AI agent accountability system across four distributed nodes (Witness, Verifier, Propagator, Memory) on a peer-to-peer mesh, with a deterministic 5-rule mandate engine that auto-fires remedy workflows on every verdict",
+      "Built an audit-logging and provenance layer notarizing every agent decision with cryptographic merkle roots for full traceability",
+      "Shipped a drop-in SDK integrating with LangChain, LangGraph, CrewAI, AutoGen, and ElizaOS, productizing agent-monitoring infrastructure for external developers"
+    ],
+    bullets: [
+      "Architected a decentralized AI agent accountability system across four distributed nodes",
+      "Built an audit-logging and provenance layer with cryptographic merkle roots",
+      "Shipped a drop-in SDK integrating with LangChain, LangGraph, CrewAI, AutoGen, and ElizaOS"
+    ]
+  },
+  {
     company: "Compass UOL",
     role: "Full Stack and AI/ML Developer",
     period: "Feb 2023 – Present", 
@@ -104,13 +121,15 @@ export const experience = [
       "Build predictive analytics with AWS SageMaker for inventory optimization and demand forecasting",
       "Develop backend microservices with Spring Boot and NestJS implementing REST, GraphQL, and WebSockets",
       "Optimize databases achieving 35% improvement through MongoDB tuning, PostgreSQL indexing, and Redis caching",
-      "Deploy on AWS using EC2, S3, Lambda, SageMaker, Bedrock, RDS, DynamoDB, and CloudWatch"
+      "Deploy on AWS using EC2, S3, Lambda, SageMaker, Bedrock, RDS, DynamoDB, and CloudWatch",
+      "Engineer front-end features for client engagements including Invillia (React 18/TypeScript, Cypress/Jest) and Vivo (React B2B e-commerce, Node.js BFF integration)"
     ],
     bullets: [
       "Developed e-commerce and enterprise applications with React, Spring Boot, and modern tech stack",
       "Architected AI/ML solutions using AWS services including SageMaker and Bedrock",
       "Built RAG system for Universidade de São Paulo with LangChain and vector databases",
-      "Optimized API performance achieving 35% improvement through caching and query tuning"
+      "Optimized API performance achieving 35% improvement through caching and query tuning",
+      "Engineered front-end features for client engagements including Invillia and Vivo"
     ]
   },
   {
@@ -161,9 +180,9 @@ export const certifications = [
 
 export const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    school: "University of Port Harcourt",
-    period: "2018 – 2022",
+    degree: "Bachelor of Computer Science (Honours)",
+    school: "",
+    period: "",
     description: "Comprehensive study of Computer Science Fundamentals, Algorithms and Data Structures, Design Patterns, Object-Oriented Programming, Database Systems, Distributed Systems, Software Engineering, and Network Security."
   }
 ]
