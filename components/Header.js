@@ -53,10 +53,10 @@ export default function Header() {
         className="sticky top-3 sm:top-4 z-50 w-full px-3 sm:px-4"
       >
         <nav
-          className={`mx-auto flex h-14 sm:h-16 max-w-5xl items-center justify-between rounded-full border px-3 sm:px-4 transition-all duration-300 ${
+          className={`mx-auto flex h-14 sm:h-16 max-w-5xl items-center justify-between rounded-full border p-2 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 ${
             scrolled
-              ? 'border-ink/10 bg-ink/95 shadow-lg shadow-ink/10 backdrop-blur-md dark:border-cream/10 dark:bg-cream/95'
-              : 'border-cream/10 bg-ink/80 backdrop-blur-md dark:border-ink/10 dark:bg-cream/80'
+              ? 'border-cream/10 bg-ink/70 shadow-lg shadow-ink/10 dark:border-ink/10 dark:bg-cream/70'
+              : 'border-cream/10 bg-ink/60 dark:border-ink/10 dark:bg-cream/60'
           }`}
           aria-label="Global"
         >
