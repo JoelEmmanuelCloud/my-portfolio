@@ -18,8 +18,9 @@ export default function ProjectCardVisual({ category = 'enterprise', size = 'car
   const { from, to, Icon, label } = config
 
   const isHero = size === 'hero'
-  const iconSize = isHero ? 72 : 48
-  const dotSpacing = isHero ? 28 : 22
+  const isThumb = size === 'thumb'
+  const iconSize = isHero ? 72 : isThumb ? 16 : 48
+  const dotSpacing = isHero ? 28 : isThumb ? 8 : 22
 
   return (
     <div
@@ -40,7 +41,7 @@ export default function ProjectCardVisual({ category = 'enterprise', size = 'car
 
       <div className="relative flex flex-col items-center gap-3 select-none">
         <div
-          className="rounded-2xl flex items-center justify-center"
+          className={`${isThumb ? 'rounded-lg' : 'rounded-2xl'} flex items-center justify-center`}
           style={{
             width: iconSize * 1.6,
             height: iconSize * 1.6,
@@ -53,7 +54,7 @@ export default function ProjectCardVisual({ category = 'enterprise', size = 'car
             strokeWidth={1.5}
           />
         </div>
-        <span
+        {!isThumb && <span
           className="font-semibold tracking-wide uppercase"
           style={{
             color: 'rgba(255,255,255,0.75)',
@@ -62,7 +63,7 @@ export default function ProjectCardVisual({ category = 'enterprise', size = 'car
           }}
         >
           {label}
-        </span>
+        </span>}
       </div>
     </div>
   )
