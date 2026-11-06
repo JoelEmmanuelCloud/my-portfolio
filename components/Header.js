@@ -1,11 +1,13 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { motion, useReducedMotion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
 import SlideButton from './ui/SlideButton'
+import ProjectCardVisual from './project/ProjectCardVisual'
+import { projects } from '@/data/projects'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -15,6 +17,133 @@ const navigation = [
   { name: 'Articles', href: '/articles' },
   { name: 'Contact', href: '/contact' },
 ]
+
+const featuredProjects = projects.filter((project) => project.featured).slice(0, 3)
+
+function splitTitle(title) {
+  const [name, ...rest] = title.split(/\s[\u2013-]\s/)
+  return { name, tagline: rest.join(' - ') }
+}
+
+const linkClass = (active) =>
+  `rounded-full px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] transition-colors duration-200 ${
+    active
+      ? 'bg-gold text-ink'
+      : 'text-cream/70 hover:bg-cream/10 hover:text-cream dark:text-ink/70 dark:hover:bg-ink/10 dark:hover:text-ink'
+  }`
+
+function ProjectsMenu({ item, active, shouldReduceMotion }) {
+  const [open, setOpen] = useState(false)
+  const closeTimer = useRef(null)
+  const wrapperRef = useRef(null)
+  const triggerRef = useRef(null)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
+  useEffect(() => () => clearTimeout(closeTimer.current), [])
+
+  const show = () => {
+    clearTimeout(closeTimer.current)
+    setOpen(true)
+  }
+
+  const hide = () => {
+    clearTimeout(closeTimer.current)
+    closeTimer.current = setTimeout(() => setOpen(false), 150)
+  }
+
+  const onBlur = (event) => {
+    if (!wrapperRef.current?.contains(event.relatedTarget)) setOpen(false)
+  }
+
+  const onKeyDown = (event) => {
+    if (event.key === 'Escape' && open) {
+      setOpen(false)
+      triggerRef.current?.focus()
+    }
+  }
+
+  return (
+    <div
+      ref={wrapperRef}
+      className="relative"
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onFocus={show}
+      onBlur={onBlur}
+      onKeyDown={onKeyDown}
+    >
+      <Link
+        ref={triggerRef}
+        href={item.href}
+        className={`${linkClass(active)} inline-flex items-center gap-1.5`}
+        aria-haspopup="true"
+        aria-expanded={open}
+        aria-controls="projects-menu"
+      >
+        {item.name}
+        <ChevronDown
+          className={`size-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        />
+      </Link>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="projects-menu"
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute left-1/2 top-full w-[24rem] -translate-x-1/2 pt-4"
+          >
+            <div className="rounded-3xl border border-cream/10 bg-ink/95 p-2 shadow-xl shadow-ink/20 backdrop-blur-2xl backdrop-saturate-150 dark:border-ink/10 dark:bg-cream/95">
+              <p className="px-3 pb-2 pt-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-cream/50 dark:text-ink/50">
+                Featured work
+              </p>
+              <ul className="flex flex-col gap-1">
+                {featuredProjects.map((project) => {
+                  const { name, tagline } = splitTitle(project.title)
+                  return (
+                    <li key={project.slug}>
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="group flex items-center gap-3 rounded-2xl p-2 transition-colors duration-200 hover:bg-cream/10 focus-visible:bg-cream/10 dark:hover:bg-ink/10 dark:focus-visible:bg-ink/10"
+                      >
+                        <div className="size-12 shrink-0 overflow-hidden rounded-xl">
+                          <ProjectCardVisual category={project.category} size="thumb" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-semibold text-cream dark:text-ink">{name}</p>
+                          <p className="truncate text-xs text-cream/60 dark:text-ink/60">{tagline || project.role}</p>
+                        </div>
+                        <ArrowUpRight
+                          className="size-4 shrink-0 text-cream/40 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold dark:text-ink/40"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+              <Link
+                href={item.href}
+                className="mt-1 flex items-center justify-between rounded-2xl border-t border-cream/10 px-3 py-3 font-mono text-xs uppercase tracking-[0.12em] text-cream/70 transition-colors duration-200 hover:text-gold dark:border-ink/10 dark:text-ink/70"
+              >
+                View all projects
+                <ArrowUpRight className="size-3.5" aria-hidden="true" />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -74,19 +203,20 @@ export default function Header() {
           </Link>
 
           <div className="hidden lg:flex lg:items-center lg:gap-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`rounded-full px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] transition-colors duration-200 ${
-                  pathname === item.href
-                    ? 'bg-gold text-ink'
-                    : 'text-cream/70 hover:bg-cream/10 hover:text-cream dark:text-ink/70 dark:hover:bg-ink/10 dark:hover:text-ink'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.href === '/projects' ? (
+                <ProjectsMenu
+                  key={item.name}
+                  item={item}
+                  active={pathname === item.href}
+                  shouldReduceMotion={shouldReduceMotion}
+                />
+              ) : (
+                <Link key={item.name} href={item.href} className={linkClass(pathname === item.href)}>
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           <div className="hidden lg:flex lg:items-center lg:gap-2">
