@@ -10,7 +10,7 @@ export default function Experience() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="page-spotlight max-w-3xl">
             <p className="eyebrow mb-4">Career</p>
             <h1 className="page-title">
@@ -32,7 +32,7 @@ export default function Experience() {
         <div className="section-watermark text-[5.5rem] text-ink dark:text-cream sm:text-[9rem] lg:text-[11rem]">
           CAREER
         </div>
-        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container relative">
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="eyebrow mb-3">Timeline</p>
@@ -117,7 +117,7 @@ export default function Experience() {
       </section>
 
       <section className="py-12 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="eyebrow mb-3">Credentials</p>
@@ -161,7 +161,7 @@ export default function Experience() {
       </section>
 
       <section className="py-12 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="eyebrow mb-3">Background</p>
@@ -208,7 +208,7 @@ export default function Experience() {
       </section>
 
       <section className="pb-12 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <CTAPanel
             eyebrow="Next steps"
             title="Let's work together"

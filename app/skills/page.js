@@ -54,7 +54,7 @@ export default function Skills() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="page-spotlight max-w-3xl">
             <p className="eyebrow mb-4">Toolbox</p>
             <h1 className="page-title">
@@ -73,7 +73,7 @@ export default function Skills() {
       </section>
 
       <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="eyebrow mb-3 text-center">Highlights</p>
@@ -102,7 +102,7 @@ export default function Skills() {
         <div className="section-watermark text-[6rem] text-ink dark:text-cream sm:text-[10rem] lg:text-[12rem]">
           SKILLS
         </div>
-        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container relative">
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="eyebrow mb-3 text-center">Deep dive</p>
@@ -183,7 +183,7 @@ export default function Skills() {
       </section>
 
       <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="eyebrow mb-3 text-center">Verified</p>
@@ -256,7 +256,7 @@ export default function Skills() {
       </section>
 
       <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="eyebrow mb-3 text-center">Growth</p>
@@ -296,7 +296,7 @@ export default function Skills() {
       </section>
 
       <section className="pb-12 sm:pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal as="h3" className="mb-6 text-center text-lg font-semibold text-ink dark:text-cream sm:mb-8 sm:text-xl">
               Proficiency Levels
@@ -320,7 +320,7 @@ export default function Skills() {
       </section>
 
       <section className="pb-12 sm:pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <CTAPanel
             eyebrow="Next steps"
             title="See these skills in production"

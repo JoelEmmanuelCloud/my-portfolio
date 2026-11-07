@@ -100,7 +100,7 @@ export default function Home() {
       </section>
 
       <section className="border-y border-ink/5 bg-cream-200/50 py-14 dark:border-cream/5 dark:bg-cream/[0.03] sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal as="p" className="eyebrow text-center mb-8 sm:mb-10">Trusted by fast-growing teams</Reveal>
           <RevealGroup className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14 sm:gap-y-8" stagger={0.06}>
             {companies.map((company) => (
@@ -116,7 +116,7 @@ export default function Home() {
         <div className="section-watermark text-[6rem] text-ink dark:text-cream sm:text-[10rem] lg:text-[13rem]">
           WORK
         </div>
-        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container relative">
           <Reveal className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow mb-3">Selected work</p>
@@ -195,7 +195,7 @@ export default function Home() {
         <div className="section-watermark text-[6rem] text-ink dark:text-cream sm:text-[10rem] lg:text-[13rem]">
           STACK
         </div>
-        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container relative">
           <Reveal className="mb-10 sm:mb-14">
             <p className="eyebrow mb-3">How I build</p>
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:text-4xl lg:text-5xl">
@@ -277,7 +277,7 @@ export default function Home() {
       </section>
 
       <section className="pb-14 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <CTAPanel
             eyebrow="Start a project"
             title="Have a project in mind?"

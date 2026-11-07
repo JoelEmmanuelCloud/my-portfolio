@@ -137,7 +137,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-8 sm:pt-12 pb-12 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Link
             href="/"
             className="mb-8 inline-flex items-center text-sm font-semibold text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:mb-12 sm:text-base"
@@ -162,7 +162,7 @@ export default function PrivacyPolicy() {
       </section>
 
       <section className="pb-16 sm:pb-20 lg:pb-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="grid gap-8 sm:gap-12 lg:grid-cols-4 lg:gap-16">
 
             <div className="lg:col-span-1">

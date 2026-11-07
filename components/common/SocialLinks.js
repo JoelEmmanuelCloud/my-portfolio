@@ -277,7 +277,7 @@ export function SocialContactSection({
 }) {
   return (
     <section className={`py-12 sm:py-16 lg:py-20 bg-white ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div className="container max-w-4xl">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-4">
             {title}

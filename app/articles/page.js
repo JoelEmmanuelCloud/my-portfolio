@@ -10,7 +10,7 @@ export default function Articles() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="page-spotlight max-w-3xl">
             <p className="eyebrow mb-4">Articles</p>
             <h1 className="page-title">
@@ -26,7 +26,7 @@ export default function Articles() {
       </section>
 
       <section className="pb-14 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           {articles.length > 0 ? (
             <RevealGroup className="space-y-6 sm:space-y-8" stagger={0.1}>
               {articles.map((article, index) => (
@@ -81,7 +81,7 @@ export default function Articles() {
       </section>
 
       <section className="pb-14 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <CTAPanel
             eyebrow="Next steps"
             title="Curious about the details?"

@@ -110,7 +110,7 @@ export default function Contact() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-10 pb-8 sm:pt-16 sm:pb-12 lg:pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-7xl">
             <Reveal className="page-spotlight mb-10 sm:mb-14">
               <p className="eyebrow mb-4">Say hello</p>
@@ -208,7 +208,7 @@ export default function Contact() {
       </section>
 
       <section className="py-10 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal className="mb-8 sm:mb-12">
               <p className="eyebrow mb-3">FAQ</p>

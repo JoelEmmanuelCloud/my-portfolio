@@ -20,7 +20,7 @@ export default function ProjectDetail({ params }) {
     <div className="min-h-screen pt-16 bg-white">
 
       <section className="py-6 sm:py-8 border-b-2 border-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Link
             href="/projects"
             className="inline-flex items-center text-black hover:text-blue-600 transition-colors font-semibold text-sm sm:text-base"
@@ -32,7 +32,7 @@ export default function ProjectDetail({ params }) {
       </section>
 
       <section className="py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 sm:mb-8">
               {project.title}
@@ -62,7 +62,7 @@ export default function ProjectDetail({ params }) {
 
       {project.images && project.images[0] && (
         <section className="py-8 sm:py-12">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container">
             <div className="relative aspect-video bg-white overflow-hidden rounded-lg border-2 border-black">
               <Image
                 src={project.images[0]}
@@ -77,7 +77,7 @@ export default function ProjectDetail({ params }) {
       )}
 
       <section className="py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-16">
 
             <div className="lg:col-span-2 space-y-12 lg:space-y-16">
@@ -249,7 +249,7 @@ export default function ProjectDetail({ params }) {
 
       {relatedProjects.length > 0 && (
         <section className="py-16 sm:py-20 lg:py-24 bg-white border-t-2 border-black">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-12 sm:mb-16">
               More Projects
             </h2>
@@ -299,7 +299,7 @@ export default function ProjectDetail({ params }) {
       )}
 
       <section className="py-16 sm:py-20 lg:py-24 bg-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
             Interested in similar work?
           </h2>

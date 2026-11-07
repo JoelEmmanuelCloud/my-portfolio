@@ -64,7 +64,7 @@ export default function Projects() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="page-spotlight max-w-3xl">
             <p className="eyebrow mb-4">Portfolio</p>
             <h1 className="page-title">
@@ -94,7 +94,7 @@ export default function Projects() {
       </section>
 
       <section className="pb-14 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <RevealGroup className="space-y-6 sm:space-y-8" stagger={0.1}>
             {filteredProjects.map((project) => {
               const isFlagship = project.slug === flagshipSlug
@@ -163,7 +163,7 @@ export default function Projects() {
       </section>
 
       <section className="py-14 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="mb-8 sm:mb-12">
             <p className="eyebrow mb-3">Other work</p>
             <h2 className="text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
@@ -196,7 +196,7 @@ export default function Projects() {
       </section>
 
       <section className="pb-14 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <CTAPanel
             eyebrow="Next steps"
             title="Have a similar project?"

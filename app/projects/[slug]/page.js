@@ -55,7 +55,7 @@ export default function ProjectDetail({ params }) {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="py-6 sm:py-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Link
             href="/projects"
             className="inline-flex items-center text-sm font-semibold text-ink/70 transition-colors hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
@@ -67,7 +67,7 @@ export default function ProjectDetail({ params }) {
       </section>
 
       <section className="py-8 sm:py-10 lg:py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="page-spotlight max-w-4xl">
             {project.category && <p className="eyebrow mb-4">{project.category}</p>}
             <h1 className="mb-6 text-4xl font-semibold leading-[1] tracking-tighter text-ink dark:text-cream sm:mb-8 sm:text-6xl lg:text-7xl">
@@ -97,7 +97,7 @@ export default function ProjectDetail({ params }) {
       </section>
 
       <section className="pb-8 sm:pb-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="relative aspect-video overflow-hidden rounded-3xl" delay={0.1}>
             <ProjectCardVisual category={project.category} size="hero" />
           </Reveal>
@@ -105,7 +105,7 @@ export default function ProjectDetail({ params }) {
       </section>
 
       <section className="py-10 sm:py-14 lg:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="grid gap-10 lg:grid-cols-3 lg:gap-14">
 
             <Reveal className="space-y-10 lg:col-span-2 lg:space-y-14">
@@ -248,7 +248,7 @@ export default function ProjectDetail({ params }) {
 
       {relatedProjects.length > 0 && (
         <section className="py-14 sm:py-16 lg:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container">
             <Reveal>
               <p className="eyebrow mb-3">Keep exploring</p>
               <h2 className="mb-10 text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-12 sm:text-3xl lg:text-4xl">
@@ -286,7 +286,7 @@ export default function ProjectDetail({ params }) {
       )}
 
       <section className="py-14 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <CTAPanel
             eyebrow="Next steps"
             title="Interested in similar work?"

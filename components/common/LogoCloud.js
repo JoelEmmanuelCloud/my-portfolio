@@ -52,7 +52,7 @@ export default function LogoCloud({
 
   return (
     <section className={`py-12 sm:py-16 lg:py-20 bg-white ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="container max-w-7xl">
         {title && (
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-xs sm:text-sm lg:text-base font-semibold text-black uppercase tracking-wider mb-2">
@@ -161,7 +161,7 @@ export function LogoCloudMinimal({ companies = defaultCompanies.slice(0, 4) }) {
 export function LogoCloudCarousel({ companies = defaultCompanies }) {
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container">
         <div className="text-center mb-6 sm:mb-8 lg:mb-12">
           <h2 className="text-xs sm:text-sm lg:text-base font-semibold text-black uppercase tracking-wider">
             Trusted by leading companies
