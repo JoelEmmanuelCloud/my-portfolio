@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Boxes, Code2, Server, Cloud, Activity, Database, Brain, Wrench, Rocket, ShieldCheck, Zap, Layers, Bot, Trophy, Globe } from 'lucide-react'
-import { skills, highlights, skillProficiency } from '@/data/skills'
+import { skills, highlights, skillProficiency, learningAreas, proficiencyLevels } from '@/data/skills'
 import ProficiencyBar from '@/components/ui/ProficiencyBar'
 import TechBadge from '@/components/ui/TechBadge'
 import { getTech } from '@/lib/techIcons'
@@ -220,20 +220,7 @@ export default function Skills() {
             </Reveal>
 
             <RevealGroup className="grid gap-4 sm:gap-5 sm:grid-cols-2 md:grid-cols-3" stagger={0.1}>
-              {[
-                {
-                  title: 'Current Focus',
-                  items: ['Advanced AI/ML', 'Kubernetes', 'Serverless Architecture']
-                },
-                {
-                  title: 'Next Learning',
-                  items: ['Rust Programming', 'ZK Proofs', 'GraphQL Advanced']
-                },
-                {
-                  title: 'Practice Areas',
-                  items: ['System Design', 'DevOps Culture', 'Team Leadership']
-                }
-              ].map((area) => (
+              {learningAreas.map((area) => (
                 <RevealItem key={area.title} className="surface-card p-6">
                   <h3 className="mb-4 text-base font-semibold text-ink dark:text-cream sm:text-lg">{area.title}</h3>
                   <ul className="space-y-2">
@@ -258,12 +245,7 @@ export default function Skills() {
               Proficiency Levels
             </Reveal>
             <RevealGroup className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4" stagger={0.08}>
-              {[
-                { level: 'Expert', description: '5+ years, production experience' },
-                { level: 'Advanced', description: '3+ years, complex projects' },
-                { level: 'Intermediate', description: '1-3 years, regular use' },
-                { level: 'Learning', description: 'Currently exploring' }
-              ].map((level) => (
+              {proficiencyLevels.map((level) => (
                 <RevealItem key={level.level} className="surface-card rounded-2xl p-4 text-center">
                   <ProficiencyBar width={proficiencyWidth[level.level]} className="mb-3" />
                   <h4 className="mb-1 text-sm font-semibold text-ink dark:text-cream">{level.level}</h4>

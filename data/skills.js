@@ -253,3 +253,25 @@ export const coreCompetencies = [
     icon: ""
   }
 ]
+
+export const learningAreas = [
+  {
+    title: 'Current Focus',
+    items: ['Advanced AI/ML', 'Kubernetes', 'Serverless Architecture'],
+  },
+  {
+    title: 'Next Learning',
+    items: ['Rust Programming', 'ZK Proofs', 'GraphQL Advanced'],
+  },
+  {
+    title: 'Practice Areas',
+    items: ['System Design', 'DevOps Culture', 'Team Leadership'],
+  },
+]
+
+export const proficiencyLevels = [
+  { level: 'Expert', description: '5+ years, production experience' },
+  { level: 'Advanced', description: '3+ years, complex projects' },
+  { level: 'Intermediate', description: '1-3 years, regular use' },
+  { level: 'Learning', description: 'Currently exploring' },
+]
