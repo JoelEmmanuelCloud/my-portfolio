@@ -63,7 +63,7 @@
   }
 
   .skeleton {
-    @apply relative overflow-hidden rounded-lg bg-ink/[0.07] dark:bg-cream/[0.07];
+    @apply relative overflow-hidden rounded-lg bg-ink/[0.07] dark:bg-cream/[0.1];
   }
 
   .skeleton::after {
