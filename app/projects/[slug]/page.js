@@ -7,6 +7,7 @@ import SlideButton from '@/components/ui/SlideButton'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }))
@@ -250,10 +251,11 @@ export default function ProjectDetail({ params }) {
         <section className="py-14 sm:py-16 lg:py-20">
           <div className="container">
             <Reveal>
-              <p className="eyebrow mb-3">Keep exploring</p>
-              <h2 className="mb-10 text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-12 sm:text-3xl lg:text-4xl">
-                More projects
-              </h2>
+              <SectionHeading
+                eyebrow="Keep exploring"
+                title="More projects"
+                className="mb-10 sm:mb-12"
+              />
             </Reveal>
 
             <RevealGroup className="grid gap-6 sm:gap-8 md:grid-cols-2" stagger={0.12}>

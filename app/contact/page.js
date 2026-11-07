@@ -8,6 +8,7 @@ import Accordion from '@/components/ui/Accordion'
 import Reveal from '@/components/ui/Reveal'
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
 import PageHeader from '@/components/layout/PageHeader'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 function CalendlyEmbed({ onSuccess }) {
   useEffect(() => {
@@ -210,10 +211,12 @@ export default function Contact() {
         <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal className="mb-8 sm:mb-12">
-              <p className="eyebrow mb-3">FAQ</p>
-              <h2 className="mb-4 text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:text-4xl lg:text-5xl">
-                Frequently Asked
-              </h2>
+              <SectionHeading
+                eyebrow="FAQ"
+                title="Frequently Asked"
+                size="lg"
+                className="mb-4"
+              />
               <p className="text-base text-ink/65 dark:text-cream/65 sm:text-lg lg:text-xl">
                 Common questions about working together.
               </p>

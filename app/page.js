@@ -10,6 +10,7 @@ import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
 import { getTech } from '@/lib/techIcons'
 import { SOCIAL_LINKS } from '@/lib/constants'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 const companies = [
   { name: 'Invillia', logo: '/logos/invillia.svg', url: 'https://invillia.ai/en/home' },
@@ -120,10 +121,11 @@ export default function Home() {
         <div className="container relative">
           <Reveal className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="eyebrow mb-3">Selected work</p>
-              <h2 className="text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:text-4xl lg:text-5xl">
-                Featured projects
-              </h2>
+              <SectionHeading
+                eyebrow="Selected work"
+                title="Featured projects"
+                size="lg"
+              />
             </div>
             <p className="max-w-sm text-sm text-ink/60 dark:text-cream/60 sm:text-base">
               From blockchain protocols to production transportation platforms — shipped and live.
@@ -198,10 +200,12 @@ export default function Home() {
         </div>
         <div className="container relative">
           <Reveal className="mb-10 sm:mb-14">
-            <p className="eyebrow mb-3">How I build</p>
-            <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:text-4xl lg:text-5xl">
-              A modern stack, from blockchain to cloud.
-            </h2>
+            <SectionHeading
+              eyebrow="How I build"
+              title="A modern stack, from blockchain to cloud."
+              size="lg"
+              className="max-w-2xl"
+            />
           </Reveal>
 
           <RevealGroup className="grid gap-4 sm:gap-5 sm:grid-cols-2" stagger={0.1}>

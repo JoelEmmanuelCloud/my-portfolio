@@ -5,6 +5,7 @@ import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
 import PageHeader from '@/components/layout/PageHeader'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 export default function Experience() {
   return (
@@ -28,10 +29,11 @@ export default function Experience() {
         <div className="container relative">
           <div className="mx-auto max-w-6xl">
             <Reveal>
-              <p className="eyebrow mb-3">Timeline</p>
-              <h2 className="mb-10 text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl lg:text-4xl">
-                Work history
-              </h2>
+              <SectionHeading
+                eyebrow="Timeline"
+                title="Work history"
+                className="mb-10 sm:mb-14"
+              />
             </Reveal>
 
             <RevealGroup className="space-y-5 sm:space-y-6" stagger={0.1}>
@@ -113,10 +115,11 @@ export default function Experience() {
         <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
-              <p className="eyebrow mb-3">Credentials</p>
-              <h2 className="mb-10 text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl lg:text-4xl">
-                Certifications
-              </h2>
+              <SectionHeading
+                eyebrow="Credentials"
+                title="Certifications"
+                className="mb-10 sm:mb-14"
+              />
             </Reveal>
 
             <RevealGroup className="grid gap-5 sm:gap-6 md:grid-cols-2" stagger={0.1}>
@@ -157,10 +160,11 @@ export default function Experience() {
         <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
-              <p className="eyebrow mb-3">Background</p>
-              <h2 className="mb-10 text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl lg:text-4xl">
-                Education
-              </h2>
+              <SectionHeading
+                eyebrow="Background"
+                title="Education"
+                className="mb-10 sm:mb-14"
+              />
             </Reveal>
 
             <RevealGroup className="space-y-5 sm:space-y-6" stagger={0.1}>

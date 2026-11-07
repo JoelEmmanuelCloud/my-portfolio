@@ -9,6 +9,7 @@ import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
 import PageHeader from '@/components/layout/PageHeader'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 const categories = [
   { id: 'all', name: 'All' },
@@ -162,10 +163,10 @@ export default function Projects() {
       <section className="py-14 sm:py-16 lg:py-20">
         <div className="container">
           <Reveal className="mb-8 sm:mb-12">
-            <p className="eyebrow mb-3">Other work</p>
-            <h2 className="text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
-              Other collaborations
-            </h2>
+            <SectionHeading
+              eyebrow="Other work"
+              title="Other collaborations"
+            />
           </Reveal>
 
           <RevealGroup className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3" stagger={0.08}>

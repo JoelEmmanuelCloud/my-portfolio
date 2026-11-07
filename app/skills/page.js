@@ -8,6 +8,7 @@ import { getTech } from '@/lib/techIcons'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import PageHeader from '@/components/layout/PageHeader'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 const skillCategories = Object.entries(skills)
 
@@ -69,8 +70,12 @@ export default function Skills() {
         <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
-              <p className="eyebrow mb-3 text-center">Highlights</p>
-              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Key Strengths</h2>
+              <SectionHeading
+                eyebrow="Highlights"
+                title="Key Strengths"
+                align="center"
+                className="mb-10 sm:mb-14"
+              />
             </Reveal>
 
             <RevealGroup className="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:gap-5 md:grid-cols-4" stagger={0.08}>
@@ -98,8 +103,12 @@ export default function Skills() {
         <div className="container relative">
           <div className="mx-auto max-w-6xl">
             <Reveal>
-              <p className="eyebrow mb-3 text-center">Deep dive</p>
-              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Technical Skills</h2>
+              <SectionHeading
+                eyebrow="Deep dive"
+                title="Technical Skills"
+                align="center"
+                className="mb-10 sm:mb-14"
+              />
             </Reveal>
 
             <div className="grid gap-6 md:grid-cols-4 lg:gap-8">
@@ -179,8 +188,12 @@ export default function Skills() {
         <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
-              <p className="eyebrow mb-3 text-center">Verified</p>
-              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Professional Certifications</h2>
+              <SectionHeading
+                eyebrow="Verified"
+                title="Professional Certifications"
+                align="center"
+                className="mb-10 sm:mb-14"
+              />
             </Reveal>
 
             <RevealGroup className="grid gap-5 sm:gap-6 md:grid-cols-2" stagger={0.1}>
@@ -252,8 +265,12 @@ export default function Skills() {
         <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal>
-              <p className="eyebrow mb-3 text-center">Growth</p>
-              <h2 className="mb-10 text-center text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-14 sm:text-3xl">Continuous Learning</h2>
+              <SectionHeading
+                eyebrow="Growth"
+                title="Continuous Learning"
+                align="center"
+                className="mb-10 sm:mb-14"
+              />
             </Reveal>
 
             <RevealGroup className="grid gap-4 sm:gap-5 sm:grid-cols-2 md:grid-cols-3" stagger={0.1}>
