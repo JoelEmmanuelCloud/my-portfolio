@@ -90,8 +90,8 @@ export default function Home() {
 
           <RevealGroup className="relative grid grid-cols-3 divide-x divide-cream/10 border-t border-cream/10" stagger={0.1}>
             {stats.map((stat) => (
-              <RevealItem key={stat.label} className="flex flex-col items-center gap-1 py-5 sm:py-6">
-                <span className="text-xl font-semibold text-cream sm:text-2xl">{stat.value}</span>
+              <RevealItem key={stat.label} className="flex flex-col items-center gap-1.5 py-6 sm:py-8">
+                <span className="text-3xl font-semibold tracking-tight text-cream sm:text-5xl">{stat.value}</span>
                 <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-cream/50 sm:text-xs">{stat.label}</span>
               </RevealItem>
             ))}
