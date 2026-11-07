@@ -129,7 +129,7 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <RevealGroup className="grid grid-cols-12 gap-5 sm:gap-6 lg:grid-rows-[300px_300px]" stagger={0.12}>
+          <RevealGroup className="grid grid-cols-12 gap-5 sm:gap-6 lg:grid-rows-[320px_320px]" stagger={0.12}>
             {featuredProjects.map((project, i) => (
               <RevealItem
                 key={project.slug}
@@ -141,7 +141,7 @@ export default function Home() {
               >
                 <Link href={`/projects/${project.slug}`} className="block h-full w-full">
                   <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-105">
-                    <ProjectCardVisual category={project.category} size="card" />
+                    <ProjectCardVisual category={project.category} size={i === 0 ? 'card' : 'thumb'} align={i === 0 ? 'center' : 'top'} />
                   </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />

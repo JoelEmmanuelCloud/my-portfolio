@@ -13,7 +13,7 @@ const categoryConfig = {
   energy:     { from: '#b45309', to: '#78350f', Icon: Flame,       label: 'Power / Energy'   },
 }
 
-export default function ProjectCardVisual({ category = 'enterprise', size = 'card' }) {
+export default function ProjectCardVisual({ category = 'enterprise', size = 'card', align = 'center' }) {
   const config = categoryConfig[category] ?? categoryConfig.enterprise
   const { from, to, Icon, label } = config
 
@@ -24,7 +24,7 @@ export default function ProjectCardVisual({ category = 'enterprise', size = 'car
 
   return (
     <div
-      className="w-full h-full relative overflow-hidden flex items-center justify-center"
+      className={`w-full h-full relative overflow-hidden flex justify-center ${align === 'top' ? 'items-start pt-8 sm:pt-10' : 'items-center'}`}
       style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
     >
       <svg
