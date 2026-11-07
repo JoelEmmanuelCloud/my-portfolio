@@ -11,10 +11,10 @@ export default function Experience() {
 
       <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-3xl">
+          <Reveal className="page-spotlight max-w-3xl">
             <p className="eyebrow mb-4">Career</p>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
-              Experience
+            <h1 className="page-title">
+              Experience<span className="text-glow text-gold">.</span>
             </h1>
             <p className="mb-6 max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
               Building production systems across innovative companies.

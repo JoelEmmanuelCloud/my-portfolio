@@ -41,6 +41,19 @@
     text-shadow: 0 0 32px rgba(242, 194, 0, 0.45), 0 0 80px rgba(242, 194, 0, 0.25);
   }
 
+  .page-title {
+    @apply mb-4 text-5xl font-semibold leading-[0.95] tracking-tighter text-ink dark:text-cream sm:mb-6 sm:text-7xl lg:text-[7.5rem];
+  }
+
+  .page-spotlight {
+    @apply relative isolate;
+  }
+
+  .page-spotlight::before {
+    content: '';
+    @apply pointer-events-none absolute -top-24 left-0 -z-10 h-96 w-full max-w-2xl rounded-full bg-gold/20 blur-[100px] dark:bg-gold/15;
+  }
+
   .panel-dark {
     @apply relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-ink text-cream;
   }

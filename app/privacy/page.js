@@ -146,10 +146,10 @@ export default function PrivacyPolicy() {
             Back to Home
           </Link>
 
-          <Reveal className="max-w-4xl">
+          <Reveal className="page-spotlight max-w-4xl">
             <p className="eyebrow mb-4">Legal</p>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
-              Privacy Policy
+            <h1 className="page-title">
+              Privacy Policy<span className="text-glow text-gold">.</span>
             </h1>
             <p className="mb-4 text-lg text-ink/65 dark:text-cream/65 sm:mb-6 sm:text-xl lg:text-2xl">
               How I collect, use, and protect your information.

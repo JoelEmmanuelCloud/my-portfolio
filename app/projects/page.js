@@ -63,10 +63,10 @@ export default function Projects() {
 
       <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-3xl">
+          <Reveal className="page-spotlight max-w-3xl">
             <p className="eyebrow mb-4">Portfolio</p>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
-              Projects
+            <h1 className="page-title">
+              Projects<span className="text-glow text-gold">.</span>
             </h1>
             <p className="max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
               Production systems and innovative solutions built with modern technologies.

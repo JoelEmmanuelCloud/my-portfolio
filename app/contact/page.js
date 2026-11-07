@@ -112,10 +112,10 @@ export default function Contact() {
       <section className="pt-10 pb-8 sm:pt-16 sm:pb-12 lg:pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <Reveal className="mb-10 sm:mb-14">
+            <Reveal className="page-spotlight mb-10 sm:mb-14">
               <p className="eyebrow mb-4">Say hello</p>
-              <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
-                Contact
+              <h1 className="page-title">
+                Contact<span className="text-glow text-gold">.</span>
               </h1>
               <p className="max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
                 Get in touch about blockchain, AI, or full-stack engineering work.
