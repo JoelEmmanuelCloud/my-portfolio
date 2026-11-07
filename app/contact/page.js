@@ -58,7 +58,7 @@ function BookingSuccessModal({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-modal-title"
-        className="w-full max-w-md rounded-3xl bg-cream p-6 shadow-xl dark:bg-ink xs:p-8"
+        className="w-full max-w-md rounded-xl bg-cream p-6 shadow-xl dark:bg-ink xs:p-8"
       >
         <div className="text-center">
           <CheckCircle className="mx-auto mb-4 h-12 w-12 text-moss sm:h-16 sm:w-16" aria-hidden="true" />

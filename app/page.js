@@ -111,7 +111,7 @@ export default function Home() {
                 className="surface-card group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
               >
                 <div className="relative flex items-start gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
                     <approach.icon className="size-5" strokeWidth={1.75} />
                   </div>
                   <div>

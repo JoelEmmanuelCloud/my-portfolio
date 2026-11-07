@@ -16,7 +16,7 @@ export default function FeaturedProjectCard({ project, lead = false }) {
   return (
     <RevealItem
       className={cn(
-        'group relative overflow-hidden rounded-3xl',
+        'group relative overflow-hidden rounded-xl',
         lead
           ? 'col-span-12 h-[440px] shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)] ring-1 ring-gold/40 sm:h-[520px] lg:col-span-8 lg:row-span-2 lg:h-auto'
           : 'col-span-12 h-[340px] sm:col-span-6 sm:h-[380px] lg:col-span-4 lg:h-auto'

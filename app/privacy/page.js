@@ -196,7 +196,7 @@ export default function PrivacyPolicy() {
                     className="mb-12 sm:mb-16 lg:mb-20"
                   >
                     <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
                         <section.icon className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                       </div>
                       <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
@@ -206,7 +206,7 @@ export default function PrivacyPolicy() {
 
                     <div className="space-y-6 sm:space-y-8">
                       {section.content.map((subsection, subIndex) => (
-                        <div key={subIndex} className="surface-card rounded-2xl p-5 sm:p-6">
+                        <div key={subIndex} className="surface-card rounded-lg p-5 sm:p-6">
                           <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:mb-4 sm:text-lg">
                             {subsection.subtitle}
                           </h3>
@@ -226,7 +226,7 @@ export default function PrivacyPolicy() {
 
                 <Reveal id="contact-info" className="mb-12 sm:mb-16">
                   <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
                       <Shield className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                     </div>
                     <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">

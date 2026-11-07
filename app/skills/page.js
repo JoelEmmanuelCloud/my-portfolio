@@ -84,7 +84,7 @@ export default function Skills() {
                 const HighlightIcon = highlightIcons[highlight.title] || Zap
                 return (
                   <RevealItem key={highlight.title} className="surface-card group p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
-                    <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
+                    <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-lg bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
                       <HighlightIcon className="size-5" strokeWidth={1.75} aria-hidden="true" />
                     </div>
                     <h3 className="mb-2 text-base font-semibold text-ink dark:text-cream sm:text-lg">{highlight.title}</h3>
@@ -239,7 +239,7 @@ export default function Skills() {
             </Reveal>
             <RevealGroup className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4" stagger={0.08}>
               {proficiencyLevels.map((level) => (
-                <RevealItem key={level.level} className="surface-card rounded-2xl p-4 text-center">
+                <RevealItem key={level.level} className="surface-card rounded-lg p-4 text-center">
                   <ProficiencyBar width={proficiencyWidth[level.level]} fillClassName={proficiencyFill(level.level)} className="mb-3" />
                   <h4 className="mb-1 text-sm font-semibold text-ink dark:text-cream">{level.level}</h4>
                   <p className="text-xs text-ink/50 dark:text-cream/50">{level.description}</p>

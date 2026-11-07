@@ -138,7 +138,7 @@ export default function ArticleDetail({ params }) {
                         href={paper.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="surface-card group flex items-start justify-between gap-3 rounded-2xl p-5 transition-colors hover:border-gold/60"
+                        className="surface-card group flex items-start justify-between gap-3 rounded-lg p-5 transition-colors hover:bg-ink/5 dark:hover:bg-cream/[0.07]"
                       >
                         <div>
                           <p className="text-base font-medium text-ink dark:text-cream">{paper.title}</p>

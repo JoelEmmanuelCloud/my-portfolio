@@ -54,7 +54,7 @@ export default function NotFound() {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="group flex items-center justify-between rounded-2xl p-4 transition-colors hover:bg-ink/5 dark:hover:bg-cream/5"
+                  className="group flex items-center justify-between rounded-lg p-4 transition-colors hover:bg-ink/5 dark:hover:bg-cream/5"
                 >
                   <div>
                     <p className="text-sm font-semibold text-ink transition-colors group-hover:text-gold dark:text-cream">

@@ -34,11 +34,11 @@
   }
 
   .surface-card {
-    @apply rounded-3xl border border-ink/10 bg-white dark:border-cream/10 dark:bg-ink/60;
+    @apply rounded-xl bg-white dark:bg-cream/[0.04];
   }
 
   .surface-card-highlight {
-    @apply border-gold/60 shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)] dark:border-gold/60;
+    @apply shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)];
   }
 
   .skeleton {
@@ -57,7 +57,7 @@
   }
 
   .panel-dark {
-    @apply relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-ink text-cream;
+    @apply relative overflow-hidden rounded-xl bg-ink text-cream;
   }
 }
 

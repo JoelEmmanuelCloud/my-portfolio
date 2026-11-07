@@ -21,7 +21,7 @@ export default function DetailSkeleton() {
 
       <section className="pb-8 sm:pb-12">
         <div className="container">
-          <Skeleton className="aspect-video w-full rounded-3xl" />
+          <Skeleton className="aspect-video w-full rounded-xl" />
         </div>
       </section>
 

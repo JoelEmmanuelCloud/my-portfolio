@@ -98,7 +98,7 @@ export default function ProjectDetail({ params }) {
 
       <section className="pb-8 sm:pb-12">
         <div className="container">
-          <Reveal className="relative aspect-video overflow-hidden rounded-3xl" delay={0.1}>
+          <Reveal className="relative aspect-video overflow-hidden rounded-xl" delay={0.1}>
             <ProjectCardVisual category={project.category} size="hero" />
           </Reveal>
         </div>
@@ -172,7 +172,7 @@ export default function ProjectDetail({ params }) {
                   </h2>
                   <div className="space-y-4">
                     {project.impact.map((item, index) => (
-                      <div key={index} className="surface-card rounded-2xl p-5">
+                      <div key={index} className="surface-card rounded-lg p-5">
                         <p className="text-base leading-relaxed text-ink/75 dark:text-cream/75">
                           {item}
                         </p>

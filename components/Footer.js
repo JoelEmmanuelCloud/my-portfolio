@@ -24,7 +24,7 @@ export default function Footer() {
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-14 pt-16 sm:gap-16 sm:pt-20">
 
-        <Reveal className="panel-dark relative h-56 border border-cream/10 sm:h-72">
+        <Reveal className="panel-dark relative h-56 sm:h-72">
           <div className="relative flex h-full w-full flex-col items-start justify-between gap-6 px-6 py-8 sm:flex-row sm:items-center sm:px-12">
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-cream sm:text-3xl lg:text-4xl">
               Let&apos;s build your next product together

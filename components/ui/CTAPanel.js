@@ -8,7 +8,7 @@ export default function CTAPanel({
   secondary,
 }) {
   return (
-    <Reveal className="relative overflow-hidden rounded-3xl bg-cream px-6 py-14 text-center shadow-xl sm:px-10 sm:py-16 lg:py-20">
+    <Reveal className="relative overflow-hidden rounded-xl bg-cream px-6 py-14 text-center shadow-xl sm:px-10 sm:py-16 lg:py-20">
       <div className="relative">
         <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-semibold leading-[1] text-ink sm:text-5xl lg:text-6xl">
           {title}

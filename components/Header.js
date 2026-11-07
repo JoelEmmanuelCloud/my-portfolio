@@ -26,10 +26,10 @@ function splitTitle(title) {
 }
 
 const linkClass = (active) =>
-  `rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+  `px-3 py-2 text-sm font-medium transition-colors duration-200 ${
     active
-      ? 'bg-gold text-ink'
-      : 'text-cream/70 hover:bg-cream/10 hover:text-cream dark:text-ink/70 dark:hover:bg-ink/10 dark:hover:text-ink'
+      ? 'text-cream underline decoration-gold decoration-2 underline-offset-8 dark:text-ink'
+      : 'text-cream/70 hover:text-cream dark:text-ink/70 dark:hover:text-ink'
   }`
 
 function ProjectsMenu({ item, active, shouldReduceMotion }) {
@@ -101,7 +101,7 @@ function ProjectsMenu({ item, active, shouldReduceMotion }) {
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="absolute left-1/2 top-full w-[24rem] -translate-x-1/2 pt-4"
           >
-            <div className="rounded-3xl border border-cream/10 bg-ink/95 p-2 shadow-xl shadow-ink/20 backdrop-blur-2xl backdrop-saturate-150 dark:border-ink/10 dark:bg-cream/95">
+            <div className="rounded-xl bg-ink/95 p-2 shadow-xl shadow-ink/20 backdrop-blur-2xl backdrop-saturate-150 dark:bg-cream/95">
               <p className="px-3 pb-2 pt-2 text-xs text-cream/50 dark:text-ink/50">
                 Featured work
               </p>
@@ -112,7 +112,7 @@ function ProjectsMenu({ item, active, shouldReduceMotion }) {
                     <li key={project.slug}>
                       <Link
                         href={`/projects/${project.slug}`}
-                        className="group flex items-center gap-3 rounded-2xl p-2 transition-colors duration-200 hover:bg-cream/10 focus-visible:bg-cream/10 dark:hover:bg-ink/10 dark:focus-visible:bg-ink/10"
+                        className="group flex items-center gap-3 rounded-lg p-2 transition-colors duration-200 hover:bg-cream/10 focus-visible:bg-cream/10 dark:hover:bg-ink/10 dark:focus-visible:bg-ink/10"
                       >
                         <div className="size-12 shrink-0 overflow-hidden rounded-xl">
                           <ProjectCardVisual category={project.category} size="thumb" />
@@ -132,7 +132,7 @@ function ProjectsMenu({ item, active, shouldReduceMotion }) {
               </ul>
               <Link
                 href={item.href}
-                className="mt-1 flex items-center justify-between rounded-2xl px-3 py-3 text-xs text-cream/70 transition-colors duration-200 hover:text-gold dark:text-ink/70"
+                className="mt-1 flex items-center justify-between rounded-lg px-3 py-3 text-xs text-cream/70 transition-colors duration-200 hover:text-gold dark:text-ink/70"
               >
                 View all projects
                 <ArrowUpRight className="size-3.5" aria-hidden="true" />
@@ -182,10 +182,10 @@ export default function Header() {
         className="sticky top-3 sm:top-4 z-50 w-full px-3 sm:px-4"
       >
         <nav
-          className={`mx-auto flex h-14 sm:h-16 max-w-5xl items-center justify-between rounded-full border p-2 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 ${
+          className={`mx-auto flex h-14 sm:h-16 max-w-5xl items-center justify-between rounded-xl p-2 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 ${
             scrolled
-              ? 'border-cream/10 bg-ink/70 shadow-lg shadow-ink/10 dark:border-ink/10 dark:bg-cream/80'
-              : 'border-cream/10 bg-ink/60 dark:border-ink/10 dark:bg-cream/80'
+              ? 'bg-ink/70 shadow-lg shadow-ink/10 dark:bg-cream/80'
+              : 'bg-ink/60 dark:bg-cream/80'
           }`}
           aria-label="Global"
         >
@@ -282,9 +282,9 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className={`flex items-center justify-between rounded-2xl px-5 py-4 text-2xl font-medium transition-colors duration-200 ${
+                className={`flex items-center justify-between rounded-lg px-5 py-4 text-2xl font-medium transition-colors duration-200 ${
                   pathname === item.href
-                    ? 'bg-gold text-ink'
+                    ? 'text-gold'
                     : 'text-cream hover:bg-cream/10'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
