@@ -68,9 +68,9 @@ export default function ProjectDetail({ params }) {
 
       <section className="py-8 sm:py-10 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-4xl">
+          <Reveal className="page-spotlight max-w-4xl">
             {project.category && <p className="eyebrow mb-4">{project.category}</p>}
-            <h1 className="mb-6 text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-8 sm:text-5xl lg:text-6xl">
+            <h1 className="mb-6 text-4xl font-semibold leading-[1] tracking-tighter text-ink dark:text-cream sm:mb-8 sm:text-6xl lg:text-7xl">
               {project.title}
             </h1>
 
