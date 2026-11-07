@@ -54,6 +54,29 @@
     @apply pointer-events-none absolute -top-24 left-0 -z-10 h-96 w-full max-w-2xl rounded-full bg-gold/20 blur-[100px] dark:bg-gold/15;
   }
 
+  .surface-card {
+    @apply rounded-3xl border border-ink/10 bg-white dark:border-cream/10 dark:bg-ink/60;
+  }
+
+  .surface-card-highlight {
+    @apply border-gold/60 shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)] dark:border-gold/60;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded-lg bg-ink/[0.07] dark:bg-cream/[0.07];
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+
+  .dark .skeleton::after {
+    background: linear-gradient(90deg, transparent, rgba(242, 240, 234, 0.07), transparent);
+  }
+
   .panel-dark {
     @apply relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-ink text-cream;
   }
@@ -96,32 +119,10 @@
   animation: gentleFloat 8s ease-in-out infinite;
 }
 
-@keyframes progressBar {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(500%); }
-}
-
-.animate-progress-bar {
-  animation: progressBar 1.4s ease-in-out infinite;
-  width: 20%;
-}
-
-@keyframes logoPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.08); opacity: 0.85; }
-}
-
-@keyframes spinArc {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-logo-pulse {
-  animation: logoPulse 2s ease-in-out infinite;
-}
-
-.animate-spin-arc {
-  animation: spinArc 1.2s linear infinite;
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes drift {
