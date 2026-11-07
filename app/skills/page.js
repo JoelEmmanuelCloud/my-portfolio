@@ -63,7 +63,7 @@ export default function Skills() {
         <div className="container">
           <PageHeader
             title="Skills"
-            description="Modern technologies for scalable web development."
+            description="The tools I use and how well I know them."
           />
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                title="Key Strengths"
+                title="Key strengths"
                 align="center"
                 className="mb-10 sm:mb-14"
               />
@@ -102,7 +102,7 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                title="Technical Skills"
+                title="Technical skills"
                 align="center"
                 className="mb-10 sm:mb-14"
               />
@@ -186,7 +186,7 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                title="Professional Certifications"
+                title="Certifications"
                 align="center"
                 className="mb-10 sm:mb-14"
               />
@@ -206,7 +206,7 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                title="Continuous Learning"
+                title="What I'm learning"
                 align="center"
                 className="mb-10 sm:mb-14"
               />
@@ -254,7 +254,7 @@ export default function Skills() {
         <div className="container">
           <CTAPanel
             title="See these skills in production"
-            description="Explore the projects that put this stack to work, or get in touch to talk specifics."
+            description="See the projects that use this stack, or get in touch."
             primary={{ href: '/contact', label: 'Start a project' }}
             secondary={{ href: '/projects', label: 'View my work' }}
           />

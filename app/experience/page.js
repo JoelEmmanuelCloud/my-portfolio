@@ -16,7 +16,7 @@ export default function Experience() {
         <div className="container">
           <PageHeader
             title="Experience"
-            description="Building production systems across innovative companies."
+            description="Where I've worked and what I built there."
           />
         </div>
       </section>
@@ -110,7 +110,7 @@ export default function Experience() {
         <div className="container">
           <CTAPanel
             title="Let's work together"
-            description="Explore the projects behind this experience, or reach out to talk specifics."
+            description="See the projects behind this work, or get in touch."
             primary={{ href: '/projects', label: 'View my work' }}
             secondary={{ href: '/contact', label: 'Get in touch' }}
           />

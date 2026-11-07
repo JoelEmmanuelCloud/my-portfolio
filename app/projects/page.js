@@ -43,7 +43,7 @@ export default function Projects() {
         <div className="container">
           <PageHeader
             title="Projects"
-            description="Production systems and innovative solutions built with modern technologies."
+            description="Things I've built and shipped."
           />
 
           <div className="mt-8 flex flex-wrap gap-2 sm:mt-12">

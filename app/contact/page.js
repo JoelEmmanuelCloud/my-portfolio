@@ -210,7 +210,7 @@ export default function Contact() {
           <div className="mx-auto max-w-6xl">
             <Reveal className="mb-8 sm:mb-12">
               <SectionHeading
-                title="Frequently Asked"
+                title="Common questions"
                 size="lg"
                 className="mb-4"
               />

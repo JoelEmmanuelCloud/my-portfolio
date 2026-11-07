@@ -26,8 +26,8 @@ export default function Home() {
               Web3, AI &amp; cloud systems <span className="text-glow text-gold">that ship</span>
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-cream/70 sm:text-lg">
-              I&apos;m Joel Emmanuel. I design and build scalable blockchain protocols, AI-powered platforms,
-              and full-stack products for startups and enterprises across four continents.
+              I&apos;m Joel Emmanuel. I build blockchain protocols, AI platforms, and full-stack products
+              for teams on four continents.
             </p>
             <div className="mt-2 flex flex-col gap-3 xs:flex-row">
               <SlideButton href="/projects" variant="gold">
@@ -75,9 +75,6 @@ export default function Home() {
                 size="lg"
               />
             </div>
-            <p className="max-w-sm text-sm text-ink/70 dark:text-cream/70 sm:text-base">
-              From blockchain protocols to production transportation platforms — shipped and live.
-            </p>
           </Reveal>
 
           <RevealGroup className="grid grid-cols-12 gap-5 sm:gap-6 lg:grid-rows-[320px_320px]" stagger={0.12}>
@@ -173,7 +170,7 @@ export default function Home() {
         <div className="container">
           <CTAPanel
             title="Have a project in mind?"
-            description="I partner with startups and enterprises on blockchain, AI, and full-stack systems — from architecture to production."
+            description="I work with startups and enterprises on blockchain, AI, and full-stack systems."
             primary={{ href: '/contact', label: 'Start a conversation' }}
             secondary={{ href: SOCIAL_LINKS.email, label: 'Send email' }}
           />

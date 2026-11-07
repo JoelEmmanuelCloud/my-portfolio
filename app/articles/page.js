@@ -13,7 +13,7 @@ export default function Articles() {
         <div className="container">
           <PageHeader
             title="Articles"
-            description="Engineering write-ups on what it actually takes to build and ship production systems — fintech, AI, and blockchain lessons from real projects, with the details a portfolio card leaves out."
+            description="Notes on building fintech, AI, and blockchain systems."
           />
         </div>
       </section>

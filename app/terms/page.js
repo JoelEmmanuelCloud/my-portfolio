@@ -176,7 +176,7 @@ export default function TermsOfService() {
 
           <PageHeader
             title="Terms of Service"
-            description="Governing your use of this website and its services."
+            description="The rules for using this site."
             width="4xl"
           >
             <p className="text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
