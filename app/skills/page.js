@@ -34,8 +34,8 @@ const highlightIcons = {
 }
 
 const proficiencyStyles = {
-  Expert: 'bg-moss/15 text-moss dark:bg-moss/20',
-  Advanced: 'bg-gold/20 text-ink dark:bg-gold/25 dark:text-cream',
+  Expert: 'bg-gold text-ink shadow-[0_0_18px_-4px_rgba(242,194,0,0.6)]',
+  Advanced: 'bg-ink/10 text-ink dark:bg-cream/15 dark:text-cream',
   Intermediate: 'bg-ink/10 text-ink/70 dark:bg-cream/15 dark:text-cream/75',
   Learning: 'bg-ink/5 text-ink/50 dark:bg-cream/10 dark:text-cream/50',
 }
