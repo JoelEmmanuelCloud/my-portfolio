@@ -6,6 +6,7 @@ import { CheckCircle, Calendar, ArrowUpRight } from 'lucide-react'
 import SlideButton from '@/components/ui/SlideButton'
 import Accordion from '@/components/ui/Accordion'
 import Reveal from '@/components/ui/Reveal'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
 
 function CalendlyEmbed({ onSuccess }) {
   useEffect(() => {
@@ -137,10 +138,10 @@ export default function Contact() {
                   <div className="border-b border-ink/10 pb-5 dark:border-cream/10">
                     <h3 className="eyebrow mb-2">Email</h3>
                     <a
-                      href="mailto:ejoel0035@gmail.com"
+                      href={SOCIAL_LINKS.email}
                       className="break-all text-2xl font-semibold tracking-tight text-ink underline decoration-gold decoration-4 underline-offset-8 transition-colors hover:text-gold dark:text-cream sm:text-4xl lg:text-5xl"
                     >
-                      ejoel0035@gmail.com
+                      {SITE_CONFIG.author.email}
                     </a>
                   </div>
 
@@ -154,7 +155,7 @@ export default function Contact() {
                     <h3 className="eyebrow mb-3">Quick links</h3>
                     <div className="flex flex-col gap-2.5">
                       <a
-                        href="https://www.linkedin.com/in/joel-emmanuel-149708202/"
+                        href={SOCIAL_LINKS.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
@@ -163,7 +164,7 @@ export default function Contact() {
                         LinkedIn profile
                       </a>
                       <a
-                        href="https://github.com/JoelEmmanuelCloud"
+                        href={SOCIAL_LINKS.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"

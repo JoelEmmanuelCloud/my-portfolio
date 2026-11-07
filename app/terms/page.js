@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, FileText, AlertCircle, Scale, Users, Shield } from 'lucide-react'
 import Reveal from '@/components/ui/Reveal'
 import SlideButton from '@/components/ui/SlideButton'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
 
 export default function TermsOfService() {
   const sections = [
@@ -306,8 +307,8 @@ export default function TermsOfService() {
                       <div className="space-y-2">
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base">
                           <span className="font-semibold text-ink dark:text-cream">Email:</span>{' '}
-                          <a href="mailto:ejoel0035@gmail.com" className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream">
-                            ejoel0035@gmail.com
+                          <a href={SOCIAL_LINKS.email} className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream">
+                            {SITE_CONFIG.author.email}
                           </a>
                         </p>
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base">

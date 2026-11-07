@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Shield, Eye, Database } from 'lucide-react'
 import Reveal from '@/components/ui/Reveal'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -123,7 +124,7 @@ export default function PrivacyPolicy() {
         {
           subtitle: 'How to Exercise Rights',
           items: [
-            'Email us at ejoel0035@gmail.com with your request',
+            `Email us at ${SITE_CONFIG.author.email} with your request`,
             'Include sufficient information to verify your identity',
             'We will respond within 30 days of receiving your request',
             'No fees for reasonable requests'
@@ -247,10 +248,10 @@ export default function PrivacyPolicy() {
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
                           <span className="font-semibold text-ink dark:text-cream">Email:</span>{' '}
                           <a
-                            href="mailto:ejoel0035@gmail.com"
+                            href={SOCIAL_LINKS.email}
                             className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream"
                           >
-                            ejoel0035@gmail.com
+                            {SITE_CONFIG.author.email}
                           </a>
                         </p>
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">

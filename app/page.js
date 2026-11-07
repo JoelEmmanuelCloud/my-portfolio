@@ -9,6 +9,7 @@ import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
 import { getTech } from '@/lib/techIcons'
+import { SOCIAL_LINKS } from '@/lib/constants'
 
 const companies = [
   { name: 'Invillia', logo: '/logos/invillia.svg', url: 'https://invillia.ai/en/home' },
@@ -283,7 +284,7 @@ export default function Home() {
             title="Have a project in mind?"
             description="I partner with startups and enterprises on blockchain, AI, and full-stack systems — from architecture to production."
             primary={{ href: '/contact', label: 'Start a conversation' }}
-            secondary={{ href: 'mailto:ejoel0035@gmail.com', label: 'Send email' }}
+            secondary={{ href: SOCIAL_LINKS.email, label: 'Send email' }}
           />
         </div>
       </section>

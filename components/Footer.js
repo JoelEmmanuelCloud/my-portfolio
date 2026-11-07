@@ -3,6 +3,7 @@ import Image from 'next/image'
 import SlideButton from './ui/SlideButton'
 import Reveal, { RevealGroup, RevealItem } from './ui/Reveal'
 import ManageCookiesButton from './ui/ManageCookiesButton'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
 
 const navLinks = [
   { name: 'Experience', href: '/experience' },
@@ -13,8 +14,8 @@ const navLinks = [
 ]
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/joel-emmanuel-149708202/' },
-  { name: 'GitHub', href: 'https://github.com/JoelEmmanuelCloud' },
+  { name: 'LinkedIn', href: SOCIAL_LINKS.linkedin },
+  { name: 'GitHub', href: SOCIAL_LINKS.github },
 ]
 
 export default function Footer() {
@@ -53,10 +54,10 @@ export default function Footer() {
               Fullstack &amp; Blockchain Developer building scalable Web3 apps, AI platforms, and production systems.
             </p>
             <a
-              href="mailto:ejoel0035@gmail.com"
+              href={SOCIAL_LINKS.email}
               className="text-sm text-cream/50 transition-colors hover:text-gold"
             >
-              ejoel0035@gmail.com
+              {SITE_CONFIG.author.email}
             </a>
           </RevealItem>
 

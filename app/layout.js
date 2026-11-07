@@ -6,6 +6,7 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 import AppRefresher from '@/components/AppRefresher'
 import Analytics from '@/components/Analytics'
 import CookieConsent from '@/components/ui/CookieConsent'
+import { SOCIAL_LINKS } from '@/lib/constants'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -105,10 +106,7 @@ export default function RootLayout({ children }) {
               "description": "Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems.",
               "url": "https://joelemmanuel.dev",
               "image": "https://joelemmanuel.dev/images/profile/profile.jpeg",
-              "sameAs": [
-                "https://www.linkedin.com/in/joel-emmanuel-149708202/",
-                "https://github.com/JoelEmmanuelCloud"
-              ],
+              "sameAs": [SOCIAL_LINKS.linkedin, SOCIAL_LINKS.github],
               "knowsAbout": [
                 "Blockchain Development",
                 "Web3",
