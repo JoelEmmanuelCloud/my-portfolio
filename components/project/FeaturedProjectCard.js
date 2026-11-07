@@ -47,7 +47,7 @@ export default function FeaturedProjectCard({ project, lead = false }) {
           {lead && <HighlightTag className="mb-4">Flagship</HighlightTag>}
           <h3
             className={cn(
-              'font-semibold text-cream',
+              'mb-1 font-semibold leading-tight text-cream',
               lead ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-xl sm:text-2xl'
             )}
           >

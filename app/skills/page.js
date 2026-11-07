@@ -118,10 +118,10 @@ export default function Skills() {
                       <button
                         key={key}
                         onClick={() => setSelectedCategory(key)}
-                        className={`flex w-full items-center gap-2.5 rounded-lg border p-3 text-left text-sm font-medium transition-all duration-200 sm:p-4 sm:text-base ${
+                        className={`flex w-full items-center gap-2.5 rounded-lg p-3 text-left text-sm font-medium transition-all duration-200 sm:p-4 sm:text-base ${
                           selectedCategory === key
-                            ? 'border-ink bg-ink text-cream dark:border-cream dark:bg-cream dark:text-ink'
-                            : 'border-ink/10 bg-white text-ink/70 hover:border-ink/25 dark:border-cream/10 dark:bg-ink/60 dark:text-cream/70 dark:hover:border-cream/25'
+                            ? 'bg-ink text-cream dark:bg-cream dark:text-ink'
+                            : 'text-ink/70 hover:bg-ink/5 dark:text-cream/70 dark:hover:bg-cream/[0.06]'
                         }`}
                       >
                         <CategoryIcon className="size-4 shrink-0" strokeWidth={1.75} aria-hidden="true" />
