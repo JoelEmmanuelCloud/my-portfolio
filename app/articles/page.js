@@ -29,18 +29,27 @@ export default function Articles() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {articles.length > 0 ? (
             <RevealGroup className="space-y-6 sm:space-y-8" stagger={0.1}>
-              {articles.map((article) => (
+              {articles.map((article, index) => (
                 <RevealItem
                   key={article.slug}
-                  className="rounded-3xl border border-ink/10 bg-white p-6 transition-shadow duration-300 hover:shadow-xl dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:p-10"
+                  className={`rounded-3xl border bg-white p-6 transition-shadow duration-300 hover:shadow-xl dark:bg-ink/60 sm:p-8 lg:p-10 ${
+                    index === 0
+                      ? 'border-gold/60 shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)] lg:p-14'
+                      : 'border-ink/10 dark:border-cream/10'
+                  }`}
                 >
+                  {index === 0 && (
+                    <span className="mb-5 inline-flex w-fit items-center rounded-full bg-gold px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-ink">
+                      Latest
+                    </span>
+                  )}
                   <div className="mb-4 flex flex-wrap gap-1.5">
                     {article.stack?.slice(0, 4).map((tech) => (
                       <TechBadge key={tech} name={tech} />
                     ))}
                   </div>
 
-                  <h2 className="mb-2 text-2xl font-semibold text-ink dark:text-cream sm:text-3xl">
+                  <h2 className={`mb-2 font-semibold tracking-tight text-ink dark:text-cream ${index === 0 ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl'}`}>
                     {article.title}
                   </h2>
                   <p className="mb-3 text-sm font-medium text-ink/50 dark:text-cream/50 sm:text-base">
