@@ -165,7 +165,10 @@ export default function Skills() {
                                 </span>
                               </div>
 
-                              <ProficiencyBar width={proficiencyWidth[proficiency]} />
+                              <ProficiencyBar
+                                width={proficiencyWidth[proficiency]}
+                                fillClassName={proficiency === 'Expert' ? 'bg-gold' : 'bg-ink/35 dark:bg-cream/35'}
+                              />
                             </div>
                           )
                         })}
