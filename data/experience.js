@@ -161,14 +161,16 @@ export const certifications = [
     date: "Oct 2023 – Oct 2026",
     id: "VVNDR86202F4155M",
     verifyUrl: "https://aws.amazon.com/verification",
-    description: "Foundational understanding of AWS Cloud services, architecture, security, and pricing models including EC2, S3, Lambda, CloudWatch, IAM, and VPC."
+    description: "Foundational understanding of AWS Cloud services, architecture, security, and pricing models including EC2, S3, Lambda, CloudWatch, IAM, and VPC.",
+    services: ['EC2', 'S3', 'Lambda', 'CloudWatch', 'IAM', 'VPC']
   },
   {
     name: "AWS Certified AI Practitioner", 
     issuer: "Amazon Web Services",
     date: "2024",
     verifyUrl: "https://aws.amazon.com/verification",
-    description: "Expertise in AWS AI and machine learning services including SageMaker, Bedrock, Lex, Textract, Comprehend, and Rekognition with MLOps practices."
+    description: "Expertise in AWS AI and machine learning services including SageMaker, Bedrock, Lex, Textract, Comprehend, and Rekognition with MLOps practices.",
+    services: ['SageMaker', 'Bedrock', 'Lex', 'Textract', 'Comprehend', 'Rekognition']
   },
   {
     name: "Huawei Certified Network Associate (HCNA)",

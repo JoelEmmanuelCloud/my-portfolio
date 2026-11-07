@@ -1,9 +1,10 @@
 'use client'
-import { ExternalLink, Calendar, MapPin } from 'lucide-react'
+import { Calendar, MapPin } from 'lucide-react'
 import { experience, certifications, education } from '@/data/experience'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TimelineItem from '@/components/experience/TimelineItem'
+import CertificationCard from '@/components/experience/CertificationCard'
 import PageHeader from '@/components/layout/PageHeader'
 import SectionHeading from '@/components/layout/SectionHeading'
 
@@ -57,33 +58,8 @@ export default function Experience() {
             </Reveal>
 
             <RevealGroup className="grid gap-5 sm:gap-6 md:grid-cols-2" stagger={0.1}>
-              {certifications?.map((cert, index) => (
-                <RevealItem key={index} className="surface-card p-6 transition-shadow duration-300 hover:shadow-lg sm:p-8">
-                  <div className="mb-5 flex items-start justify-between">
-                    <div className="mr-4 flex-1">
-                      <h3 className="mb-2 text-base font-semibold leading-tight text-ink dark:text-cream sm:text-lg">{cert.name}</h3>
-                      <p className="text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">{cert.issuer}</p>
-                    </div>
-                    {cert.verifyUrl && (
-                      <a
-                        href={cert.verifyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Verify ${cert.name} certification`}
-                        className="shrink-0 text-ink/50 transition-colors hover:text-gold dark:text-cream/50"
-                      >
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
-                    )}
-                  </div>
-
-                  <div className="mb-4 space-y-1 text-sm text-ink/60 dark:text-cream/60">
-                    <p className="font-medium">{cert.date}</p>
-                    {cert.id && <p className="break-all">ID: {cert.id}</p>}
-                  </div>
-
-                  <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">{cert.description}</p>
-                </RevealItem>
+              {certifications?.map((certification) => (
+                <CertificationCard key={certification.name} certification={certification} />
               ))}
             </RevealGroup>
           </div>

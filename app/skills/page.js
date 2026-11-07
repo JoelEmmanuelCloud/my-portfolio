@@ -9,6 +9,8 @@ import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import PageHeader from '@/components/layout/PageHeader'
 import SectionHeading from '@/components/layout/SectionHeading'
+import CertificationCard from '@/components/experience/CertificationCard'
+import { certifications } from '@/data/experience'
 
 const skillCategories = Object.entries(skills)
 
@@ -197,65 +199,9 @@ export default function Skills() {
             </Reveal>
 
             <RevealGroup className="grid gap-5 sm:gap-6 md:grid-cols-2" stagger={0.1}>
-
-              <RevealItem className="surface-card p-6 sm:p-8">
-                <div className="mb-5">
-                  <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">AWS Certified Cloud Practitioner</h3>
-                  <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Amazon Web Services</p>
-
-                  <div className="space-y-1 text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
-                    <p>Valid: Oct 11, 2023 – Oct 11, 2026</p>
-                    <p>ID: VVNDR86202F4155M</p>
-                  </div>
-                </div>
-
-                <p className="mb-4 text-sm text-ink/70 dark:text-cream/70 sm:text-base">
-                  Foundational understanding of AWS Cloud services, architecture, security, and pricing models.
-                </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {['EC2', 'S3', 'Lambda', 'CloudWatch', 'IAM', 'VPC'].map((service) => (
-                    <TechBadge key={service} name={service} />
-                  ))}
-                </div>
-              </RevealItem>
-
-              <RevealItem className="surface-card p-6 sm:p-8">
-                <div className="mb-5">
-                  <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">AWS Certified AI Practitioner</h3>
-                  <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Amazon Web Services</p>
-
-                  <div className="space-y-1 text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
-                    <p>Certified 2024</p>
-                    <p>Latest AI/ML Certification</p>
-                  </div>
-                </div>
-
-                <p className="mb-4 text-sm text-ink/70 dark:text-cream/70 sm:text-base">
-                  Expertise in AWS AI and machine learning services, including model deployment and MLOps practices.
-                </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {['SageMaker', 'Bedrock', 'Lex', 'Textract', 'Comprehend', 'Rekognition'].map((service) => (
-                    <TechBadge key={service} name={service} />
-                  ))}
-                </div>
-              </RevealItem>
-
-              <RevealItem className="surface-card p-6 sm:p-8">
-                <div className="mb-5">
-                  <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">Huawei Certified Network Associate</h3>
-                  <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Huawei</p>
-
-                  <div className="space-y-1 text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
-                    <p>Certified 2023</p>
-                  </div>
-                </div>
-
-                <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base">
-                  Comprehensive networking fundamentals and technologies certification.
-                </p>
-              </RevealItem>
+              {certifications.map((certification) => (
+                <CertificationCard key={certification.name} certification={certification} />
+              ))}
             </RevealGroup>
           </div>
         </div>
