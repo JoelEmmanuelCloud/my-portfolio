@@ -21,17 +21,10 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-ink px-2 pb-2 sm:px-3">
-      <div className="glow-orb -left-32 top-10 h-96 w-96 bg-moss/20" />
-      <div className="glow-orb bottom-0 right-0 h-80 w-80 bg-gold/15" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-14 pt-16 sm:gap-16 sm:pt-20">
 
         <Reveal className="panel-dark relative h-56 border border-cream/10 sm:h-72">
-          <div className="glow-orb -right-10 -top-10 h-56 w-56 bg-gold/20" />
-          <div className="glow-orb -left-16 bottom-0 h-48 w-48 bg-ember/15" />
-          <div className="watermark-text left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[4.5rem] text-cream sm:text-[7rem] lg:text-[9rem]">
-            EMMANUEL
-          </div>
           <div className="relative flex h-full w-full flex-col items-start justify-between gap-6 px-6 py-8 sm:flex-row sm:items-center sm:px-12">
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-cream sm:text-3xl lg:text-4xl">
               Let&apos;s build your next product together

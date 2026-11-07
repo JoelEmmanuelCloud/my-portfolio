@@ -69,7 +69,7 @@ export default function ProjectDetail({ params }) {
 
       <section className="py-8 sm:py-10 lg:py-12">
         <div className="container">
-          <Reveal className="page-spotlight max-w-4xl">
+          <Reveal className="max-w-4xl">
             <h1 className="mb-6 text-4xl font-semibold leading-[1] text-ink dark:text-cream sm:mb-8 sm:text-6xl lg:text-7xl">
               {project.title}
             </h1>

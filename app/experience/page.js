@@ -22,9 +22,6 @@ export default function Experience() {
       </section>
 
       <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20">
-        <div className="section-watermark text-[5.5rem] text-ink dark:text-cream sm:text-[9rem] lg:text-[11rem]">
-          CAREER
-        </div>
         <div className="container relative">
           <div className="mx-auto max-w-6xl">
             <Reveal>

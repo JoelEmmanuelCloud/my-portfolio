@@ -31,8 +31,6 @@ export default function FeaturedProjectCard({ project, lead = false }) {
           />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-
         <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
           <div className="mb-3 flex flex-wrap gap-x-4 gap-y-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             {project.stack.slice(0, 3).map((tech) => {

@@ -10,7 +10,7 @@ export default function PageHeader({ title, description, width = '3xl', classNam
   const hasFooter = Boolean(children)
 
   return (
-    <Reveal className={cn('page-spotlight', widths[width], className)}>
+    <Reveal className={cn(widths[width], className)}>
       <h1 className="page-title">
         {title}
       </h1>

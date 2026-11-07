@@ -1,59 +1,36 @@
 import { Smartphone, Link2, Car, Zap, ShoppingBag, Building2, Package, Heart, Brain, Code, Flame } from 'lucide-react'
 
 const categoryConfig = {
-  mobile:     { from: '#059669', to: '#0d9488', Icon: Smartphone,  label: 'Mobile App'       },
-  blockchain: { from: '#2563eb', to: '#4338ca', Icon: Link2,       label: 'Blockchain / Web3' },
-  ridehailing:{ from: '#0284c7', to: '#0369a1', Icon: Car,         label: 'Ride Hailing'     },
-  defi:       { from: '#4338ca', to: '#6d28d9', Icon: Zap,         label: 'DeFi'             },
-  ecommerce:  { from: '#ea580c', to: '#b45309', Icon: ShoppingBag, label: 'E-commerce'       },
-  enterprise: { from: '#475569', to: '#1e293b', Icon: Building2,   label: 'Enterprise'       },
-  logistics:  { from: '#52525b', to: '#3f3f46', Icon: Package,     label: 'Logistics'        },
-  healthcare: { from: '#0d9488', to: '#059669', Icon: Heart,       label: 'Healthcare'       },
-  ai:         { from: '#7c3aed', to: '#4f46e5', Icon: Brain,       label: 'AI / ML'          },
-  energy:     { from: '#b45309', to: '#78350f', Icon: Flame,       label: 'Power / Energy'   },
+  mobile:     { from: '#059669', Icon: Smartphone,  label: 'Mobile App'       },
+  blockchain: { from: '#2563eb', Icon: Link2,       label: 'Blockchain / Web3' },
+  ridehailing:{ from: '#0284c7', Icon: Car,         label: 'Ride Hailing'     },
+  defi:       { from: '#4338ca', Icon: Zap,         label: 'DeFi'             },
+  ecommerce:  { from: '#ea580c', Icon: ShoppingBag, label: 'E-commerce'       },
+  enterprise: { from: '#475569', Icon: Building2,   label: 'Enterprise'       },
+  logistics:  { from: '#52525b', Icon: Package,     label: 'Logistics'        },
+  healthcare: { from: '#0d9488', Icon: Heart,       label: 'Healthcare'       },
+  ai:         { from: '#7c3aed', Icon: Brain,       label: 'AI / ML'          },
+  energy:     { from: '#b45309', Icon: Flame,       label: 'Power / Energy'   },
 }
 
 export default function ProjectCardVisual({ category = 'enterprise', size = 'card', align = 'center' }) {
   const config = categoryConfig[category] ?? categoryConfig.enterprise
-  const { from, to, Icon, label } = config
+  const { from, Icon, label } = config
 
   const isHero = size === 'hero'
   const isThumb = size === 'thumb'
   const iconSize = isHero ? 72 : isThumb ? 16 : 48
-  const dotSpacing = isHero ? 28 : isThumb ? 8 : 22
 
   return (
     <div
       className={`w-full h-full relative overflow-hidden flex justify-center ${align === 'top' ? 'items-start pt-8 sm:pt-10' : 'items-center'}`}
-      style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
+      style={{ backgroundColor: from }}
     >
-      <svg
-        className="absolute inset-0 w-full h-full opacity-20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern id={`dots-${category}-${size}`} x="0" y="0" width={dotSpacing} height={dotSpacing} patternUnits="userSpaceOnUse">
-            <circle cx="1.5" cy="1.5" r="1.5" fill="white" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#dots-${category}-${size})`} />
-      </svg>
-
       <div className="relative flex flex-col items-center gap-3 select-none">
-        <div
-          className={`${isThumb ? 'rounded-lg' : 'rounded-2xl'} flex items-center justify-center`}
-          style={{
-            width: iconSize * 1.6,
-            height: iconSize * 1.6,
-            background: 'rgba(255,255,255,0.15)',
-            backdropFilter: 'blur(4px)',
-          }}
-        >
           <Icon
             style={{ width: iconSize, height: iconSize, color: 'white', opacity: 0.95 }}
             strokeWidth={1.5}
           />
-        </div>
         {!isThumb && <span
           className="font-semibold"
           style={{

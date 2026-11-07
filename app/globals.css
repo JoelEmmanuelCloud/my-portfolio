@@ -25,33 +25,12 @@
     @apply pointer-events-none absolute rounded-full opacity-60 blur-[90px];
   }
 
-  .watermark-text {
-    @apply pointer-events-none absolute select-none font-medium leading-none opacity-[0.06] dark:opacity-[0.08];
-  }
-
-  .section-watermark {
-    @apply pointer-events-none absolute -top-4 left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-semibold leading-none opacity-[0.05] dark:opacity-[0.07];
-    background: linear-gradient(180deg, currentColor 0%, transparent 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
   .text-glow {
     text-shadow: 0 0 32px rgba(242, 194, 0, 0.45), 0 0 80px rgba(242, 194, 0, 0.25);
   }
 
   .page-title {
     @apply mb-4 text-5xl font-semibold leading-[0.95] text-ink dark:text-cream sm:mb-6 sm:text-7xl lg:text-[7.5rem];
-  }
-
-  .page-spotlight {
-    @apply relative isolate;
-  }
-
-  .page-spotlight::before {
-    content: '';
-    @apply pointer-events-none absolute -top-24 left-0 -z-10 h-96 w-full max-w-2xl rounded-full bg-gold/20 blur-[100px] dark:bg-gold/15;
   }
 
   .surface-card {
@@ -79,15 +58,6 @@
 
   .panel-dark {
     @apply relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-ink text-cream;
-  }
-
-  .grid-texture {
-    @apply pointer-events-none absolute;
-    background-image: linear-gradient(to right, rgba(242, 240, 234, 0.14) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(242, 240, 234, 0.14) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(circle, black 10%, transparent 75%);
-    -webkit-mask-image: radial-gradient(circle, black 10%, transparent 75%);
   }
 }
 

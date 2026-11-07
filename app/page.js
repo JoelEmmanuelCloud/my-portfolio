@@ -67,9 +67,6 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
-        <div className="section-watermark text-[6rem] text-ink dark:text-cream sm:text-[10rem] lg:text-[13rem]">
-          WORK
-        </div>
         <div className="container relative">
           <Reveal className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -98,9 +95,6 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
-        <div className="section-watermark text-[6rem] text-ink dark:text-cream sm:text-[10rem] lg:text-[13rem]">
-          STACK
-        </div>
         <div className="container relative">
           <Reveal className="mb-10 sm:mb-14">
             <SectionHeading
@@ -142,9 +136,6 @@ export default function Home() {
 
       <section className="px-2 sm:px-3">
         <div className="panel-dark grid items-center gap-10 p-6 sm:p-10 lg:grid-cols-[260px_1fr] lg:gap-14 lg:p-14">
-          <div className="glow-orb -left-20 top-1/2 h-80 w-80 -translate-y-1/2 bg-cream/10" />
-          <div className="glow-orb -right-10 -top-10 h-64 w-64 bg-gold/15" />
-          <div className="grid-texture inset-0" />
 
           <Reveal direction="right" className="relative mx-auto w-40 shrink-0 sm:w-48 lg:mx-0 lg:w-full">
             <div className="relative aspect-square overflow-hidden rounded-full ring-4 ring-gold/40">

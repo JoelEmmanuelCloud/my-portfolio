@@ -183,7 +183,6 @@ export default function Contact() {
               </Reveal>
 
               <Reveal direction="left" delay={0.1} className="panel-dark flex flex-col justify-center p-6 sm:p-8">
-                <div className="glow-orb -top-16 right-0 h-48 w-48 bg-gold/30" />
                 <div className="relative">
                   <h3 className="mb-3 text-xl font-semibold text-cream sm:text-2xl">
                     Prefer to talk?

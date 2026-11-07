@@ -98,9 +98,6 @@ export default function Skills() {
       </section>
 
       <section className="relative overflow-hidden py-12 sm:py-16">
-        <div className="section-watermark text-[6rem] text-ink dark:text-cream sm:text-[10rem] lg:text-[12rem]">
-          SKILLS
-        </div>
         <div className="container relative">
           <div className="mx-auto max-w-6xl">
             <Reveal>
