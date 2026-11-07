@@ -22,7 +22,7 @@ export default function Home() {
           <div className="glow-orb left-1/2 top-1/2 h-[420px] w-[680px] -translate-x-1/2 -translate-y-[60%] bg-gold/25 sm:h-[520px] sm:w-[900px]" />
 
           <Reveal className="relative flex flex-1 flex-col items-center justify-center gap-6 px-5 py-20 text-center sm:gap-8 sm:px-10 lg:py-28" duration={0.7}>
-            <h1 className="max-w-6xl text-5xl font-semibold leading-[0.95] tracking-tighter text-cream sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">
+            <h1 className="max-w-6xl text-5xl font-semibold leading-[0.95] text-cream sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">
               Web3, AI &amp; cloud systems <span className="text-glow text-gold">that ship</span>
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-cream/60 sm:text-lg">
@@ -45,7 +45,7 @@ export default function Home() {
           <RevealGroup className="relative grid grid-cols-3 divide-x divide-cream/10 border-t border-cream/10" stagger={0.1}>
             {stats.map((stat) => (
               <RevealItem key={stat.label} className="flex flex-col items-center gap-1.5 py-6 sm:py-8">
-                <span className="text-3xl font-semibold tracking-tight text-cream sm:text-5xl">{stat.value}</span>
+                <span className="text-3xl font-semibold text-cream sm:text-5xl">{stat.value}</span>
                 <span className="text-xs text-cream/60 sm:text-sm">{stat.label}</span>
               </RevealItem>
             ))}
@@ -163,7 +163,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal direction="left" delay={0.1} className="relative">
-            <h2 className="mb-4 text-2xl font-semibold tracking-tight text-cream sm:text-3xl lg:text-4xl">
+            <h2 className="mb-4 text-2xl font-semibold text-cream sm:text-3xl lg:text-4xl">
               Former Front-End Developer at Invillia, now building Web3 &amp; AI products
             </h2>
             <p className="mb-3 text-sm leading-relaxed text-cream/65 sm:text-base">

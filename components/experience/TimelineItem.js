@@ -20,7 +20,7 @@ export default function TimelineItem({ job, index }) {
         <span className="text-xs text-ink/35 dark:text-cream/35">{String(index + 1).padStart(2, '0')}</span>
         <h3
           className={cn(
-            'font-semibold leading-tight tracking-tight text-ink dark:text-cream',
+            'font-semibold leading-tight text-ink dark:text-cream',
             job.current ? 'text-2xl sm:text-3xl' : 'text-lg sm:text-xl'
           )}
         >

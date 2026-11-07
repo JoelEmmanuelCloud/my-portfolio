@@ -28,7 +28,7 @@ export default function ProjectCard({ project, highlighted = false }) {
         {highlighted && <HighlightTag className="mb-4">Flagship</HighlightTag>}
         <h2
           className={cn(
-            'mb-2 font-semibold tracking-tight text-ink dark:text-cream',
+            'mb-2 font-semibold text-ink dark:text-cream',
             highlighted ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl'
           )}
         >

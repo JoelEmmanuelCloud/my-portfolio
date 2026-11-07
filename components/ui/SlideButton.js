@@ -59,7 +59,7 @@ const SlideButton = ({
   const sizing = sizes[size] || sizes.md
 
   const classes = cn(
-    'group relative inline-flex items-center overflow-hidden rounded-lg border font-semibold tracking-tight transition-[color,background-color,border-color,padding] duration-300',
+    'group relative inline-flex items-center overflow-hidden rounded-lg border font-semibold transition-[color,background-color,border-color,padding] duration-300',
     sizing.container,
     variants[variant],
     className

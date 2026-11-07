@@ -26,11 +26,11 @@
   }
 
   .watermark-text {
-    @apply pointer-events-none absolute select-none font-medium leading-none tracking-tight opacity-[0.06] dark:opacity-[0.08];
+    @apply pointer-events-none absolute select-none font-medium leading-none opacity-[0.06] dark:opacity-[0.08];
   }
 
   .section-watermark {
-    @apply pointer-events-none absolute -top-4 left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-semibold leading-none tracking-tight opacity-[0.05] dark:opacity-[0.07];
+    @apply pointer-events-none absolute -top-4 left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-semibold leading-none opacity-[0.05] dark:opacity-[0.07];
     background: linear-gradient(180deg, currentColor 0%, transparent 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -42,7 +42,7 @@
   }
 
   .page-title {
-    @apply mb-4 text-5xl font-semibold leading-[0.95] tracking-tighter text-ink dark:text-cream sm:mb-6 sm:text-7xl lg:text-[7.5rem];
+    @apply mb-4 text-5xl font-semibold leading-[0.95] text-ink dark:text-cream sm:mb-6 sm:text-7xl lg:text-[7.5rem];
   }
 
   .page-spotlight {

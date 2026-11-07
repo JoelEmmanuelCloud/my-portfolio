@@ -23,9 +23,9 @@ export default function NotFound() {
             joelemmanuel.dev
           </Link>
 
-          <p aria-hidden="true" className="text-glow mb-2 text-[7rem] font-semibold leading-none tracking-tighter text-gold sm:text-[10rem]">404</p>
+          <p aria-hidden="true" className="text-glow mb-2 text-[7rem] font-semibold leading-none text-gold sm:text-[10rem]">404</p>
 
-          <h1 className="mb-4 text-4xl font-semibold leading-tight tracking-tight text-ink dark:text-cream sm:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-4xl font-semibold leading-tight text-ink dark:text-cream sm:text-5xl lg:text-6xl">
             Page not found
           </h1>
 

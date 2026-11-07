@@ -66,7 +66,7 @@ export default function ArticleDetail({ params }) {
         <div className="container">
           <Reveal className="page-spotlight max-w-4xl">
             <p className="label mb-4">{article.date}</p>
-            <h1 className="mb-6 text-4xl font-semibold leading-[1] tracking-tighter text-ink dark:text-cream sm:mb-8 sm:text-6xl lg:text-7xl">
+            <h1 className="mb-6 text-4xl font-semibold leading-[1] text-ink dark:text-cream sm:mb-8 sm:text-6xl lg:text-7xl">
               {article.title}
             </h1>
             <p className="max-w-3xl text-lg leading-relaxed text-ink/70 dark:text-cream/70 sm:text-xl">
