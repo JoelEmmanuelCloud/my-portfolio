@@ -7,6 +7,7 @@ import SlideButton from '@/components/ui/SlideButton'
 import Accordion from '@/components/ui/Accordion'
 import Reveal from '@/components/ui/Reveal'
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
+import PageHeader from '@/components/layout/PageHeader'
 
 function CalendlyEmbed({ onSuccess }) {
   useEffect(() => {
@@ -113,15 +114,12 @@ export default function Contact() {
       <section className="pt-10 pb-8 sm:pt-16 sm:pb-12 lg:pt-20">
         <div className="container">
           <div className="mx-auto max-w-7xl">
-            <Reveal className="page-spotlight mb-10 sm:mb-14">
-              <p className="eyebrow mb-4">Say hello</p>
-              <h1 className="page-title">
-                Contact<span className="text-glow text-gold">.</span>
-              </h1>
-              <p className="max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
-                Get in touch about blockchain, AI, or full-stack engineering work.
-              </p>
-            </Reveal>
+            <PageHeader
+              eyebrow="Say hello"
+              title="Contact"
+              description="Get in touch about blockchain, AI, or full-stack engineering work."
+              className="mb-10 sm:mb-14"
+            />
 
             <div className="grid gap-5 lg:grid-cols-3">
 

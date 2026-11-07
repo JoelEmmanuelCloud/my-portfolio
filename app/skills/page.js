@@ -7,6 +7,7 @@ import TechBadge from '@/components/ui/TechBadge'
 import { getTech } from '@/lib/techIcons'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
+import PageHeader from '@/components/layout/PageHeader'
 
 const skillCategories = Object.entries(skills)
 
@@ -55,20 +56,12 @@ export default function Skills() {
 
       <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20">
         <div className="container">
-          <Reveal className="page-spotlight max-w-3xl">
-            <p className="eyebrow mb-4">Toolbox</p>
-            <h1 className="page-title">
-              Skills<span className="text-glow text-gold">.</span>
-            </h1>
-            <p className="mb-6 text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
-              Modern technologies for scalable web development.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {['React, Node.js & AWS', '5+ years building production apps', 'Always learning'].map((tag) => (
-                <span key={tag} className="tag-pill">{tag}</span>
-              ))}
-            </div>
-          </Reveal>
+          <PageHeader
+            eyebrow="Toolbox"
+            title="Skills"
+            description="Modern technologies for scalable web development."
+            tags={['React, Node.js & AWS', '5+ years building production apps', 'Always learning']}
+          />
         </div>
       </section>
 

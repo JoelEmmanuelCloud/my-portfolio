@@ -4,6 +4,7 @@ import { experience, certifications, education } from '@/data/experience'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
+import PageHeader from '@/components/layout/PageHeader'
 
 export default function Experience() {
   return (
@@ -11,20 +12,12 @@ export default function Experience() {
 
       <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16">
         <div className="container">
-          <Reveal className="page-spotlight max-w-3xl">
-            <p className="eyebrow mb-4">Career</p>
-            <h1 className="page-title">
-              Experience<span className="text-glow text-gold">.</span>
-            </h1>
-            <p className="mb-6 max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
-              Building production systems across innovative companies.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {['Fullstack & Blockchain Developer', '3+ years experience', 'AWS certified'].map((tag) => (
-                <span key={tag} className="tag-pill">{tag}</span>
-              ))}
-            </div>
-          </Reveal>
+          <PageHeader
+            eyebrow="Career"
+            title="Experience"
+            description="Building production systems across innovative companies."
+            tags={['Fullstack & Blockchain Developer', '3+ years experience', 'AWS certified']}
+          />
         </div>
       </section>
 

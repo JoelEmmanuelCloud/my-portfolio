@@ -8,6 +8,7 @@ import SlideButton from '@/components/ui/SlideButton'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
+import PageHeader from '@/components/layout/PageHeader'
 
 const categories = [
   { id: 'all', name: 'All' },
@@ -65,15 +66,11 @@ export default function Projects() {
 
       <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
         <div className="container">
-          <Reveal className="page-spotlight max-w-3xl">
-            <p className="eyebrow mb-4">Portfolio</p>
-            <h1 className="page-title">
-              Projects<span className="text-glow text-gold">.</span>
-            </h1>
-            <p className="max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
-              Production systems and innovative solutions built with modern technologies.
-            </p>
-          </Reveal>
+          <PageHeader
+            eyebrow="Portfolio"
+            title="Projects"
+            description="Production systems and innovative solutions built with modern technologies."
+          />
 
           <div className="mt-8 flex flex-wrap gap-2 sm:mt-12">
             {categories.map((category) => (

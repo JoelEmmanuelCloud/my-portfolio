@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, Shield, Eye, Database } from 'lucide-react'
 import Reveal from '@/components/ui/Reveal'
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
+import PageHeader from '@/components/layout/PageHeader'
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -147,18 +148,16 @@ export default function PrivacyPolicy() {
             Back to Home
           </Link>
 
-          <Reveal className="page-spotlight max-w-4xl">
-            <p className="eyebrow mb-4">Legal</p>
-            <h1 className="page-title">
-              Privacy Policy<span className="text-glow text-gold">.</span>
-            </h1>
-            <p className="mb-4 text-lg text-ink/65 dark:text-cream/65 sm:mb-6 sm:text-xl lg:text-2xl">
-              How I collect, use, and protect your information.
-            </p>
+          <PageHeader
+            eyebrow="Legal"
+            title="Privacy Policy"
+            description="How I collect, use, and protect your information."
+            width="4xl"
+          >
             <p className="font-mono text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
-          </Reveal>
+          </PageHeader>
         </div>
       </section>
 

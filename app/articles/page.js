@@ -4,6 +4,7 @@ import SlideButton from '@/components/ui/SlideButton'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
+import PageHeader from '@/components/layout/PageHeader'
 
 export default function Articles() {
   return (
@@ -11,17 +12,11 @@ export default function Articles() {
 
       <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
         <div className="container">
-          <Reveal className="page-spotlight max-w-3xl">
-            <p className="eyebrow mb-4">Articles</p>
-            <h1 className="page-title">
-              Articles<span className="text-glow text-gold">.</span>
-            </h1>
-            <p className="max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
-              Engineering write-ups on what it actually takes to build and ship production
-              systems — fintech, AI, and blockchain lessons from real projects, with the
-              details a portfolio card leaves out.
-            </p>
-          </Reveal>
+          <PageHeader
+            eyebrow="Articles"
+            title="Articles"
+            description="Engineering write-ups on what it actually takes to build and ship production systems — fintech, AI, and blockchain lessons from real projects, with the details a portfolio card leaves out."
+          />
         </div>
       </section>
 
