@@ -1,13 +1,10 @@
 'use client'
 import { useState } from 'react'
-import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { projects, otherEngagements } from '@/data/projects'
-import ProjectCardVisual from '@/components/project/ProjectCardVisual'
-import SlideButton from '@/components/ui/SlideButton'
+import ProjectCard from '@/components/project/ProjectCard'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
-import TechBadge from '@/components/ui/TechBadge'
 import PageHeader from '@/components/layout/PageHeader'
 import SectionHeading from '@/components/layout/SectionHeading'
 
@@ -94,61 +91,9 @@ export default function Projects() {
       <section className="pb-14 sm:pb-16 lg:pb-20">
         <div className="container">
           <RevealGroup className="space-y-6 sm:space-y-8" stagger={0.1}>
-            {filteredProjects.map((project) => {
-              const isFlagship = project.slug === flagshipSlug
-              return (
-              <RevealItem
-                key={project.slug}
-                className={`grid gap-0 overflow-hidden rounded-3xl border bg-white transition-shadow duration-300 hover:shadow-xl dark:bg-ink/60 lg:grid-cols-2 ${
-                  isFlagship
-                    ? 'border-gold/60 shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)] lg:min-h-[480px]'
-                    : 'border-ink/10 dark:border-cream/10'
-                }`}
-              >
-                <div className="relative aspect-[4/3] overflow-hidden lg:[aspect-ratio:auto]">
-                  <ProjectCardVisual category={project.category} size="card" />
-                </div>
-
-                <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
-                  <div className="mb-4 flex flex-wrap gap-1.5">
-                    {project.stack.slice(0, 4).map((tech) => (
-                      <TechBadge key={tech} name={tech} />
-                    ))}
-                  </div>
-
-                  {isFlagship && (
-                    <span className="mb-4 inline-flex w-fit items-center rounded-full bg-gold px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-ink">
-                      Flagship
-                    </span>
-                  )}
-                  <h2 className={`mb-2 font-semibold tracking-tight text-ink dark:text-cream ${isFlagship ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-2xl sm:text-3xl'}`}>
-                    {project.title}
-                  </h2>
-                  <p className="mb-3 text-sm font-medium text-ink/50 dark:text-cream/50 sm:text-base">{project.role}</p>
-                  <p className="mb-6 text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
-                    {project.summary}
-                  </p>
-
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <SlideButton href={`/projects/${project.slug}`} variant="dark">
-                      View details
-                    </SlideButton>
-                    {project.links?.live && (
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink/70 transition-colors hover:text-ink dark:text-cream/70 dark:hover:text-cream"
-                      >
-                        Live site
-                        <ArrowUpRight className="size-4" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </RevealItem>
-              )
-            })}
+            {filteredProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} highlighted={project.slug === flagshipSlug} />
+            ))}
           </RevealGroup>
 
           {filteredProjects.length === 0 && (

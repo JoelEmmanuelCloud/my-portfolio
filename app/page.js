@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight, Code, Cloud, Database, Box } from 'lucide-react'
+import { Code, Cloud, Database, Box } from 'lucide-react'
 import { projects } from '@/data/projects'
-import ProjectCardVisual from '@/components/project/ProjectCardVisual'
+import FeaturedProjectCard from '@/components/project/FeaturedProjectCard'
 import SlideButton from '@/components/ui/SlideButton'
 import TiltLogo from '@/components/ui/TiltLogo'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
-import { getTech } from '@/lib/techIcons'
 import { SOCIAL_LINKS } from '@/lib/constants'
 import SectionHeading from '@/components/layout/SectionHeading'
 
@@ -134,55 +133,7 @@ export default function Home() {
 
           <RevealGroup className="grid grid-cols-12 gap-5 sm:gap-6 lg:grid-rows-[320px_320px]" stagger={0.12}>
             {featuredProjects.map((project, i) => (
-              <RevealItem
-                key={project.slug}
-                className={`group relative overflow-hidden rounded-3xl ${
-                  i === 0
-                    ? 'col-span-12 h-[440px] ring-1 ring-gold/40 shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)] sm:h-[520px] lg:col-span-8 lg:row-span-2 lg:h-auto'
-                    : 'col-span-12 h-[340px] sm:col-span-6 sm:h-[380px] lg:col-span-4 lg:h-auto'
-                }`}
-              >
-                <Link href={`/projects/${project.slug}`} className="block h-full w-full">
-                  <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-105">
-                    <ProjectCardVisual category={project.category} size={i === 0 ? 'card' : 'thumb'} align={i === 0 ? 'center' : 'top'} />
-                  </div>
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
-                    <div className="mb-3 flex flex-wrap gap-1.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      {project.stack.slice(0, 3).map((tech) => {
-                        const techEntry = getTech(tech)
-                        return (
-                          <span key={tech} className="inline-flex items-center gap-1.5 rounded-full border border-cream/30 bg-ink/40 px-3 py-1 font-mono text-xs text-cream backdrop-blur-sm">
-                            {techEntry && <techEntry.icon className="size-3.5 shrink-0" style={{ color: techEntry.color }} aria-hidden="true" />}
-                            {tech}
-                          </span>
-                        )
-                      })}
-                    </div>
-
-                    {i === 0 && (
-                      <span className="mb-4 inline-flex w-fit items-center rounded-full bg-gold px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-ink">
-                        Flagship
-                      </span>
-                    )}
-                    <h3 className={`font-semibold tracking-tight text-cream ${i === 0 ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-xl sm:text-2xl'}`}>
-                      {project.title}
-                    </h3>
-                    <p className="mb-2 text-sm font-medium text-cream/60">{project.role}</p>
-
-                    <p className="mb-0 max-h-0 overflow-hidden text-sm leading-relaxed text-cream/75 opacity-0 transition-all duration-300 group-hover:mb-4 group-hover:max-h-24 group-hover:opacity-100">
-                      {project.summary.length > 140 ? `${project.summary.slice(0, 140)}...` : project.summary}
-                    </p>
-
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-cream">
-                      View case study
-                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </span>
-                  </div>
-                </Link>
-              </RevealItem>
+              <FeaturedProjectCard key={project.slug} project={project} lead={i === 0} />
             ))}
           </RevealGroup>
 
