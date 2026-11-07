@@ -121,7 +121,7 @@ export default function Projects() {
                   href={engagement.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-3xl border border-ink/10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-cream/10 dark:bg-ink/60"
+                  className="surface-card group block p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="mb-4 flex items-start justify-between">
                     <h3 className="text-lg font-semibold text-ink dark:text-cream sm:text-xl">

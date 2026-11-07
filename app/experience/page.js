@@ -58,7 +58,7 @@ export default function Experience() {
 
             <RevealGroup className="grid gap-5 sm:gap-6 md:grid-cols-2" stagger={0.1}>
               {certifications?.map((cert, index) => (
-                <RevealItem key={index} className="rounded-3xl border border-ink/10 bg-white p-6 transition-shadow duration-300 hover:shadow-lg dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <RevealItem key={index} className="surface-card p-6 transition-shadow duration-300 hover:shadow-lg sm:p-8">
                   <div className="mb-5 flex items-start justify-between">
                     <div className="mr-4 flex-1">
                       <h3 className="mb-2 text-base font-semibold leading-tight text-ink dark:text-cream sm:text-lg">{cert.name}</h3>
@@ -103,7 +103,7 @@ export default function Experience() {
 
             <RevealGroup className="space-y-5 sm:space-y-6" stagger={0.1}>
               {education?.map((edu, index) => (
-                <RevealItem key={index} className="rounded-3xl border border-ink/10 bg-white p-6 transition-shadow duration-300 hover:shadow-lg dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <RevealItem key={index} className="surface-card p-6 transition-shadow duration-300 hover:shadow-lg sm:p-8">
                   <div className="grid gap-6 lg:grid-cols-3 lg:gap-10">
                     <div className="lg:col-span-1">
                       <h3 className="mb-3 text-base font-semibold leading-tight text-ink dark:text-cream sm:text-lg">{edu.degree}</h3>

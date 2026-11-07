@@ -124,7 +124,7 @@ export default function Contact() {
 
             <div className="grid gap-5 lg:grid-cols-3">
 
-              <Reveal className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:col-span-2">
+              <Reveal className="surface-card p-6 sm:p-8 lg:col-span-2">
                 <h2 className="mb-4 text-2xl font-semibold text-ink dark:text-cream sm:text-3xl">
                   Get In Touch
                 </h2>

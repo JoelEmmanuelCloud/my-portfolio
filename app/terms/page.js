@@ -239,7 +239,7 @@ export default function TermsOfService() {
 
                     <div className="space-y-6 sm:space-y-8">
                       {section.content.map((subsection, subIndex) => (
-                        <div key={subIndex} className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                        <div key={subIndex} className="surface-card rounded-2xl p-5 sm:p-6">
                           <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:mb-4 sm:text-lg">
                             {subsection.subtitle}
                           </h3>
@@ -263,7 +263,7 @@ export default function TermsOfService() {
                   </h2>
 
                   <div className="space-y-4 sm:space-y-5">
-                    <div className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                    <div className="surface-card rounded-2xl p-5 sm:p-6">
                       <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:text-lg">Governing Law</h3>
                       <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                         These Terms of Service are governed by and construed in accordance with applicable law.
@@ -272,7 +272,7 @@ export default function TermsOfService() {
                       </p>
                     </div>
 
-                    <div className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                    <div className="surface-card rounded-2xl p-5 sm:p-6">
                       <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:text-lg">Dispute Resolution</h3>
                       <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                         I prefer to resolve disputes amicably through direct communication. If a dispute cannot be
@@ -281,7 +281,7 @@ export default function TermsOfService() {
                       </p>
                     </div>
 
-                    <div className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                    <div className="surface-card rounded-2xl p-5 sm:p-6">
                       <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:text-lg">Severability</h3>
                       <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                         If any provision of these terms is found to be unenforceable, the remaining provisions
@@ -296,7 +296,7 @@ export default function TermsOfService() {
                     Questions About These Terms
                   </h2>
 
-                  <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                  <div className="surface-card p-6 sm:p-8">
                     <p className="mb-6 text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                       If you have any questions about these Terms of Service, please get in touch:
                     </p>
@@ -321,7 +321,7 @@ export default function TermsOfService() {
                   </div>
                 </Reveal>
 
-                <Reveal className="mb-5 rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <Reveal className="surface-card mb-5 p-6 sm:p-8">
                   <h3 className="mb-3 text-lg font-semibold text-ink dark:text-cream sm:mb-4 sm:text-xl">
                     Changes to Terms
                   </h3>
@@ -332,7 +332,7 @@ export default function TermsOfService() {
                   </p>
                 </Reveal>
 
-                <Reveal className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <Reveal className="surface-card p-6 sm:p-8">
                   <h3 className="mb-3 text-lg font-semibold text-ink dark:text-cream sm:mb-4 sm:text-xl">
                     Important Notice
                   </h3>

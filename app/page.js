@@ -163,7 +163,7 @@ export default function Home() {
             {buildingApproach.map((approach) => (
               <RevealItem
                 key={approach.title}
-                className="group relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-cream/10 dark:bg-ink/60 sm:p-8"
+                className="surface-card group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
               >
                 <span className="pointer-events-none absolute -right-2 -top-6 select-none font-mono text-7xl font-medium text-ink/[0.05] dark:text-cream/[0.06] sm:text-8xl">
                   {approach.index}

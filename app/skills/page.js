@@ -82,7 +82,7 @@ export default function Skills() {
               {highlights.map((highlight) => {
                 const HighlightIcon = highlightIcons[highlight.title] || Zap
                 return (
-                  <RevealItem key={highlight.title} className="group rounded-3xl border border-ink/10 bg-white p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                  <RevealItem key={highlight.title} className="surface-card group p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
                     <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
                       <HighlightIcon className="size-5" strokeWidth={1.75} aria-hidden="true" />
                     </div>
@@ -198,7 +198,7 @@ export default function Skills() {
 
             <RevealGroup className="grid gap-5 sm:gap-6 md:grid-cols-2" stagger={0.1}>
 
-              <RevealItem className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+              <RevealItem className="surface-card p-6 sm:p-8">
                 <div className="mb-5">
                   <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">AWS Certified Cloud Practitioner</h3>
                   <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Amazon Web Services</p>
@@ -220,7 +220,7 @@ export default function Skills() {
                 </div>
               </RevealItem>
 
-              <RevealItem className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+              <RevealItem className="surface-card p-6 sm:p-8">
                 <div className="mb-5">
                   <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">AWS Certified AI Practitioner</h3>
                   <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Amazon Web Services</p>
@@ -242,7 +242,7 @@ export default function Skills() {
                 </div>
               </RevealItem>
 
-              <RevealItem className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+              <RevealItem className="surface-card p-6 sm:p-8">
                 <div className="mb-5">
                   <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">Huawei Certified Network Associate</h3>
                   <p className="mb-3 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">Huawei</p>
@@ -288,7 +288,7 @@ export default function Skills() {
                   items: ['System Design', 'DevOps Culture', 'Team Leadership']
                 }
               ].map((area) => (
-                <RevealItem key={area.title} className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60">
+                <RevealItem key={area.title} className="surface-card p-6">
                   <h3 className="mb-4 text-base font-semibold text-ink dark:text-cream sm:text-lg">{area.title}</h3>
                   <ul className="space-y-2">
                     {area.items.map((item) => (
@@ -318,7 +318,7 @@ export default function Skills() {
                 { level: 'Intermediate', description: '1-3 years, regular use' },
                 { level: 'Learning', description: 'Currently exploring' }
               ].map((level) => (
-                <RevealItem key={level.level} className="rounded-2xl border border-ink/10 bg-white p-4 text-center dark:border-cream/10 dark:bg-ink/60">
+                <RevealItem key={level.level} className="surface-card rounded-2xl p-4 text-center">
                   <ProficiencyBar width={proficiencyWidth[level.level]} className="mb-3" />
                   <h4 className="mb-1 text-sm font-semibold text-ink dark:text-cream">{level.level}</h4>
                   <p className="text-xs text-ink/50 dark:text-cream/50">{level.description}</p>

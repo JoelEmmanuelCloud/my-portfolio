@@ -138,7 +138,7 @@ export default function ArticleDetail({ params }) {
                         href={paper.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-start justify-between gap-3 rounded-2xl border border-ink/10 bg-white p-5 transition-colors hover:border-gold/60 dark:border-cream/10 dark:bg-ink/60"
+                        className="surface-card group flex items-start justify-between gap-3 rounded-2xl p-5 transition-colors hover:border-gold/60"
                       >
                         <div>
                           <p className="text-base font-medium text-ink dark:text-cream">{paper.title}</p>
@@ -158,7 +158,7 @@ export default function ArticleDetail({ params }) {
             <Reveal direction="left" delay={0.1} className="space-y-6 lg:sticky lg:top-24 lg:self-start">
 
               {article.stack && article.stack.length > 0 && (
-                <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <div className="surface-card p-6 sm:p-8">
                   <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                     Tools &amp; stack
                   </h3>
@@ -171,7 +171,7 @@ export default function ArticleDetail({ params }) {
               )}
 
               {(article.links?.live || article.links?.github || article.links?.dataset) && (
-                <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <div className="surface-card p-6 sm:p-8">
                   <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                     Links
                   </h3>
@@ -232,7 +232,7 @@ export default function ArticleDetail({ params }) {
 
             <RevealGroup className="grid gap-6 sm:gap-8 md:grid-cols-2" stagger={0.12}>
               {relatedArticles.map((relatedArticle) => (
-                <RevealItem key={relatedArticle.slug} className="rounded-3xl border border-ink/10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <RevealItem key={relatedArticle.slug} className="surface-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8">
                   <h3 className="mb-2 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">
                     {relatedArticle.title}
                   </h3>

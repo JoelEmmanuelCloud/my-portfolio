@@ -207,7 +207,7 @@ export default function PrivacyPolicy() {
 
                     <div className="space-y-6 sm:space-y-8">
                       {section.content.map((subsection, subIndex) => (
-                        <div key={subIndex} className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                        <div key={subIndex} className="surface-card rounded-2xl p-5 sm:p-6">
                           <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:mb-4 sm:text-lg">
                             {subsection.subtitle}
                           </h3>
@@ -235,7 +235,7 @@ export default function PrivacyPolicy() {
                     </h2>
                   </div>
 
-                  <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:p-10">
+                  <div className="surface-card p-6 sm:p-8 lg:p-10">
                     <p className="mb-6 text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
                       If you have any questions about this Privacy Policy or how I handle your data,
                       please get in touch:
@@ -267,7 +267,7 @@ export default function PrivacyPolicy() {
                   </div>
                 </Reveal>
 
-                <Reveal className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:p-10">
+                <Reveal className="surface-card p-6 sm:p-8 lg:p-10">
                   <div className="mb-4 flex items-center gap-2.5 sm:mb-6 sm:gap-3">
                     <Eye className="size-5 shrink-0 text-ink/50 dark:text-cream/50 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                     <h3 className="text-lg font-semibold leading-tight text-ink dark:text-cream sm:text-xl lg:text-2xl">

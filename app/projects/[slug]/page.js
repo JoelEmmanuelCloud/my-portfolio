@@ -173,7 +173,7 @@ export default function ProjectDetail({ params }) {
                   </h2>
                   <div className="space-y-4">
                     {project.impact.map((item, index) => (
-                      <div key={index} className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60">
+                      <div key={index} className="surface-card rounded-2xl p-5">
                         <p className="text-base leading-relaxed text-ink/75 dark:text-cream/75">
                           {item}
                         </p>
@@ -187,7 +187,7 @@ export default function ProjectDetail({ params }) {
 
             <Reveal direction="left" delay={0.1} className="space-y-6 lg:sticky lg:top-24 lg:self-start">
 
-              <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+              <div className="surface-card p-6 sm:p-8">
                 <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                   Technologies
                 </h3>
@@ -199,7 +199,7 @@ export default function ProjectDetail({ params }) {
               </div>
 
               {(project.links?.live || project.links?.github || project.links?.company) && (
-                <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <div className="surface-card p-6 sm:p-8">
                   <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                     Links
                   </h3>
@@ -260,7 +260,7 @@ export default function ProjectDetail({ params }) {
 
             <RevealGroup className="grid gap-6 sm:gap-8 md:grid-cols-2" stagger={0.12}>
               {relatedProjects.map((relatedProject) => (
-                <RevealItem key={relatedProject.slug} className="group overflow-hidden rounded-3xl border border-ink/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-cream/10 dark:bg-ink/60">
+                <RevealItem key={relatedProject.slug} className="surface-card group overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="relative aspect-video overflow-hidden">
                     <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
                       <ProjectCardVisual category={relatedProject.category} size="card" />
