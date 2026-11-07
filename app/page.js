@@ -131,7 +131,7 @@ export default function Home() {
                     <p className="mb-4 text-sm leading-relaxed text-ink/65 dark:text-cream/65">
                       {approach.description}
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-x-4 gap-y-2">
                       {approach.tech.map((tech) => (
                         <TechBadge key={tech} name={tech} />
                       ))}

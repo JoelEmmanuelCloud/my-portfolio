@@ -4,7 +4,7 @@ export default function HighlightTag({ children, className }) {
   return (
     <span
       className={cn(
-        'inline-flex w-fit items-center rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink',
+        'block text-sm font-semibold text-gold-600 dark:text-gold',
         className
       )}
     >

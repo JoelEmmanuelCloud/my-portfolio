@@ -154,7 +154,7 @@ export default function ProjectDetail({ params }) {
                         <h3 className="mb-3 text-sm font-semibold text-ink/50 dark:text-cream/50">
                           {category.replace(/([A-Z])/g, ' $1').trim()}
                         </h3>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-x-4 gap-y-2">
                           {techs.map((tech) => (
                             <TechBadge key={tech} name={tech} />
                           ))}
@@ -190,7 +190,7 @@ export default function ProjectDetail({ params }) {
                 <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                   Technologies
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {project.stack.map((tech) => (
                     <TechBadge key={tech} name={tech} />
                   ))}

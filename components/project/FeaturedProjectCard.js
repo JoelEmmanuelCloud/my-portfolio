@@ -34,11 +34,11 @@ export default function FeaturedProjectCard({ project, lead = false }) {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
 
         <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
-          <div className="mb-3 flex flex-wrap gap-1.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="mb-3 flex flex-wrap gap-x-4 gap-y-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             {project.stack.slice(0, 3).map((tech) => {
               const techEntry = getTech(tech)
               return (
-                <span key={tech} className="inline-flex items-center gap-1.5 rounded-full border border-cream/30 bg-ink/40 px-3 py-1 text-xs text-cream backdrop-blur-sm">
+                <span key={tech} className="inline-flex items-center gap-1.5 text-sm text-cream/80">
                   {techEntry && <techEntry.icon className="size-3.5 shrink-0" style={{ color: techEntry.color }} aria-hidden="true" />}
                   {tech}
                 </span>

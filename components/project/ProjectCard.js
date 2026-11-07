@@ -19,7 +19,7 @@ export default function ProjectCard({ project, highlighted = false }) {
       </div>
 
       <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
-        <div className="mb-4 flex flex-wrap gap-1.5">
+        <div className="mb-4 flex flex-wrap gap-x-4 gap-y-2">
           {project.stack.slice(0, 4).map((tech) => (
             <TechBadge key={tech} name={tech} />
           ))}

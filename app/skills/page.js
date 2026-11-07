@@ -38,10 +38,10 @@ const highlightIcons = {
 }
 
 const proficiencyStyles = {
-  Expert: 'bg-gold text-ink shadow-[0_0_18px_-4px_rgba(242,194,0,0.6)]',
-  Advanced: 'bg-ink/10 text-ink dark:bg-cream/15 dark:text-cream',
-  Intermediate: 'bg-ink/10 text-ink/70 dark:bg-cream/15 dark:text-cream/75',
-  Learning: 'bg-ink/5 text-ink/50 dark:bg-cream/10 dark:text-cream/50',
+  Expert: 'font-semibold text-gold-600 dark:text-gold',
+  Advanced: 'text-ink/60 dark:text-cream/60',
+  Intermediate: 'text-ink/60 dark:text-cream/60',
+  Learning: 'text-ink/40 dark:text-cream/40',
 }
 
 const proficiencyFill = (level) => (level === 'Expert' ? 'bg-gold' : 'bg-ink/35 dark:bg-cream/35')
@@ -64,7 +64,6 @@ export default function Skills() {
           <PageHeader
             title="Skills"
             description="Modern technologies for scalable web development."
-            tags={['React, Node.js & AWS', '5+ years building production apps', 'Always learning']}
           />
         </div>
       </section>
@@ -163,7 +162,7 @@ export default function Skills() {
                                   {skillTech && <skillTech.icon className="size-4 shrink-0" style={{ color: skillTech.color }} aria-hidden="true" />}
                                   {skill}
                                 </h4>
-                                <span className={`rounded-full px-3 py-1 text-xs ${proficiencyStyles[proficiency]}`}>
+                                <span className={`text-sm ${proficiencyStyles[proficiency]}`}>
                                   {proficiency}
                                 </span>
                               </div>

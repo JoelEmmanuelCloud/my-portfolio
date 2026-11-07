@@ -162,7 +162,7 @@ export default function ArticleDetail({ params }) {
                   <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                     Tools &amp; stack
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
                     {article.stack.map((tech) => (
                       <TechBadge key={tech} name={tech} />
                     ))}

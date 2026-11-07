@@ -89,10 +89,6 @@
     mask-image: radial-gradient(circle, black 10%, transparent 75%);
     -webkit-mask-image: radial-gradient(circle, black 10%, transparent 75%);
   }
-
-  .tag-pill {
-    @apply inline-flex items-center rounded-full border border-ink/15 dark:border-cream/15 px-3 py-1 text-xs text-ink/70 dark:text-cream/70 transition-colors duration-200 hover:border-ink hover:bg-ink hover:text-cream dark:hover:border-cream dark:hover:bg-cream dark:hover:text-ink;
-  }
 }
 
 @keyframes subtleFadeIn {

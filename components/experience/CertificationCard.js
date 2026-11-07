@@ -33,7 +33,7 @@ export default function CertificationCard({ certification }) {
       <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">{description}</p>
 
       {services?.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-1.5">
+        <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
           {services.map((service) => (
             <TechBadge key={service} name={service} />
           ))}

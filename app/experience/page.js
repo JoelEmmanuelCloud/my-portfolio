@@ -17,7 +17,6 @@ export default function Experience() {
           <PageHeader
             title="Experience"
             description="Building production systems across innovative companies."
-            tags={['Fullstack & Blockchain Developer', '3+ years experience', 'AWS certified']}
           />
         </div>
       </section>
