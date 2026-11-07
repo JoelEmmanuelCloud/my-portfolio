@@ -14,7 +14,7 @@ export default function ProjectCard({ project, highlighted = false }) {
         highlighted && 'surface-card-highlight lg:min-h-[480px]'
       )}
     >
-      <div className="relative aspect-[4/3] overflow-hidden lg:[aspect-ratio:auto]">
+      <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
         <ProjectCardVisual category={project.category} size="card" />
       </div>
 
