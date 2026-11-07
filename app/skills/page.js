@@ -84,7 +84,7 @@ export default function Skills() {
                 const HighlightIcon = highlightIcons[highlight.title] || Zap
                 return (
                   <RevealItem key={highlight.title} className="surface-card group p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
-                    <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-lg bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
+                    <div className="mb-4 flex justify-center text-ink transition-colors duration-300 group-hover:text-gold-600 dark:text-cream dark:group-hover:text-gold">
                       <HighlightIcon className="size-5" strokeWidth={1.75} aria-hidden="true" />
                     </div>
                     <h3 className="mb-2 text-base font-semibold text-ink dark:text-cream sm:text-lg">{highlight.title}</h3>

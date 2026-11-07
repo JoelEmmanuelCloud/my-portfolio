@@ -228,7 +228,7 @@ export default function TermsOfService() {
                     className="mb-12 sm:mb-16 lg:mb-20"
                   >
                     <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                      <div className="shrink-0 pt-1 text-ink dark:text-cream">
                         <section.icon className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                       </div>
                       <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
