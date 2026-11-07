@@ -156,7 +156,7 @@ export default function Skills() {
                           const skillTech = getTech(skill)
 
                           return (
-                            <div key={skill} className="border-b border-ink/10 pb-4 dark:border-cream/10">
+                            <div key={skill}>
                               <div className="mb-2 flex items-center justify-between">
                                 <h4 className="flex items-center gap-2 text-base font-medium text-ink dark:text-cream sm:text-lg">
                                   {skillTech && <skillTech.icon className="size-4 shrink-0" style={{ color: skillTech.color }} aria-hidden="true" />}

@@ -42,7 +42,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <RevealGroup className="relative grid grid-cols-3 divide-x divide-cream/10 border-t border-cream/10" stagger={0.1}>
+          <RevealGroup className="relative grid grid-cols-3" stagger={0.1}>
             {stats.map((stat) => (
               <RevealItem key={stat.label} className="flex flex-col items-center gap-1.5 py-6 sm:py-8">
                 <span className="text-3xl font-semibold text-cream sm:text-5xl">{stat.value}</span>
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-ink/5 bg-cream-200/50 py-14 dark:border-cream/5 dark:bg-cream/[0.03] sm:py-16 lg:py-20">
+      <section className="py-14 sm:py-16 lg:py-20">
         <div className="container">
           <Reveal as="p" className="label text-center mb-8 sm:mb-10">Trusted by fast-growing teams</Reveal>
           <RevealGroup className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14 sm:gap-y-8" stagger={0.06}>

@@ -132,7 +132,7 @@ function ProjectsMenu({ item, active, shouldReduceMotion }) {
               </ul>
               <Link
                 href={item.href}
-                className="mt-1 flex items-center justify-between rounded-2xl border-t border-cream/10 px-3 py-3 text-xs text-cream/70 transition-colors duration-200 hover:text-gold dark:border-ink/10 dark:text-ink/70"
+                className="mt-1 flex items-center justify-between rounded-2xl px-3 py-3 text-xs text-cream/70 transition-colors duration-200 hover:text-gold dark:text-ink/70"
               >
                 View all projects
                 <ArrowUpRight className="size-3.5" aria-hidden="true" />
@@ -248,7 +248,7 @@ export default function Header() {
         }`}
         aria-hidden={!mobileMenuOpen}
       >
-        <div className="flex items-center justify-between px-6 h-16 sm:h-20 border-b border-cream/10">
+        <div className="flex items-center justify-between px-6 h-16 sm:h-20">
           <div className="relative h-8 w-8 rounded-full bg-ink ring-1 ring-gold/30">
             <Image src="/logos/logo-je.svg" alt="Joel Emmanuel" fill sizes="32px" className="object-contain p-1.5" />
           </div>

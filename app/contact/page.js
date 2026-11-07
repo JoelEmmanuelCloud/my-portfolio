@@ -133,7 +133,7 @@ export default function Contact() {
                 </p>
 
                 <div className="space-y-6">
-                  <div className="border-b border-ink/10 pb-5 dark:border-cream/10">
+                  <div>
                     <h3 className="label mb-2">Email</h3>
                     <a
                       href={SOCIAL_LINKS.email}
@@ -143,7 +143,7 @@ export default function Contact() {
                     </a>
                   </div>
 
-                  <div className="border-b border-ink/10 pb-5 dark:border-cream/10">
+                  <div>
                     <h3 className="label mb-2">Response Time</h3>
                     <p className="text-base font-medium text-ink dark:text-cream sm:text-lg">Within 24 hours</p>
                     <p className="mt-1 text-sm text-ink/50 dark:text-cream/50">Usually much faster</p>

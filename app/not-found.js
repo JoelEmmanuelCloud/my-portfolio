@@ -45,7 +45,7 @@ export default function NotFound() {
             </Link>
           </div>
 
-          <div className="border-t border-ink/10 pt-10 dark:border-cream/10 sm:pt-12">
+          <div className="pt-4 sm:pt-6">
             <p className="label mb-6">
               You might be looking for
             </p>
