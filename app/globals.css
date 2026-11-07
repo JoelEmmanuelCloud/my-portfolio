@@ -17,41 +17,47 @@
 }
 
 @layer components {
-  .eyebrow {
-    @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-ink/50 dark:text-cream/50;
+  .label {
+    @apply text-sm font-medium text-ink/70 dark:text-cream/70;
   }
 
   .glow-orb {
     @apply pointer-events-none absolute rounded-full opacity-60 blur-[90px];
   }
 
-  .watermark-text {
-    @apply pointer-events-none absolute select-none font-medium leading-none tracking-tight opacity-[0.06] dark:opacity-[0.08];
+  .text-glow {
+    text-shadow: 0 0 32px rgba(242, 194, 0, 0.45), 0 0 80px rgba(242, 194, 0, 0.25);
   }
 
-  .section-watermark {
-    @apply pointer-events-none absolute -top-4 left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-semibold leading-none tracking-tight opacity-[0.05] dark:opacity-[0.07];
-    background: linear-gradient(180deg, currentColor 0%, transparent 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .page-title {
+    @apply mb-4 text-5xl font-semibold leading-[0.95] text-ink dark:text-cream sm:mb-6 sm:text-7xl lg:text-[7.5rem];
+  }
+
+  .surface-card {
+    @apply rounded-xl bg-white dark:bg-cream/[0.04];
+  }
+
+  .surface-card-highlight {
+    @apply shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)];
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded-lg bg-ink/[0.07] dark:bg-cream/[0.1];
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+
+  .dark .skeleton::after {
+    background: linear-gradient(90deg, transparent, rgba(242, 240, 234, 0.07), transparent);
   }
 
   .panel-dark {
-    @apply relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-ink text-cream;
-  }
-
-  .grid-texture {
-    @apply pointer-events-none absolute;
-    background-image: linear-gradient(to right, rgba(242, 240, 234, 0.14) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(242, 240, 234, 0.14) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(circle, black 10%, transparent 75%);
-    -webkit-mask-image: radial-gradient(circle, black 10%, transparent 75%);
-  }
-
-  .tag-pill {
-    @apply inline-flex items-center rounded-full border border-ink/15 dark:border-cream/15 px-3 py-1 font-mono text-xs text-ink/70 dark:text-cream/70 transition-colors duration-200 hover:border-ink hover:bg-ink hover:text-cream dark:hover:border-cream dark:hover:bg-cream dark:hover:text-ink;
+    @apply relative overflow-hidden rounded-xl bg-ink text-cream;
   }
 }
 
@@ -79,32 +85,10 @@
   animation: gentleFloat 8s ease-in-out infinite;
 }
 
-@keyframes progressBar {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(500%); }
-}
-
-.animate-progress-bar {
-  animation: progressBar 1.4s ease-in-out infinite;
-  width: 20%;
-}
-
-@keyframes logoPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.08); opacity: 0.85; }
-}
-
-@keyframes spinArc {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-logo-pulse {
-  animation: logoPulse 2s ease-in-out infinite;
-}
-
-.animate-spin-arc {
-  animation: spinArc 1.2s linear infinite;
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes drift {

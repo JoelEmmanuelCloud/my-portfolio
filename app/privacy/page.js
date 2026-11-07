@@ -2,6 +2,8 @@
 import Link from 'next/link'
 import { ArrowLeft, Shield, Eye, Database } from 'lucide-react'
 import Reveal from '@/components/ui/Reveal'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
+import PageHeader from '@/components/layout/PageHeader'
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -123,7 +125,7 @@ export default function PrivacyPolicy() {
         {
           subtitle: 'How to Exercise Rights',
           items: [
-            'Email us at ejoel0035@gmail.com with your request',
+            `Email us at ${SITE_CONFIG.author.email} with your request`,
             'Include sufficient information to verify your identity',
             'We will respond within 30 days of receiving your request',
             'No fees for reasonable requests'
@@ -137,7 +139,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-8 sm:pt-12 pb-12 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Link
             href="/"
             className="mb-8 inline-flex items-center text-sm font-semibold text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:mb-12 sm:text-base"
@@ -146,41 +148,38 @@ export default function PrivacyPolicy() {
             Back to Home
           </Link>
 
-          <Reveal className="max-w-4xl">
-            <p className="eyebrow mb-4">Legal</p>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
-              Privacy Policy
-            </h1>
-            <p className="mb-4 text-lg text-ink/65 dark:text-cream/65 sm:mb-6 sm:text-xl lg:text-2xl">
-              How I collect, use, and protect your information.
-            </p>
-            <p className="font-mono text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
+          <PageHeader
+            title="Privacy Policy"
+            description="How I collect, use, and protect your information."
+            width="4xl"
+          >
+            <p className="text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
-          </Reveal>
+          </PageHeader>
         </div>
       </section>
 
       <section className="pb-16 sm:pb-20 lg:pb-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="grid gap-8 sm:gap-12 lg:grid-cols-4 lg:gap-16">
 
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <p className="eyebrow mb-4 sm:mb-6">Contents</p>
+                <p className="label mb-4 sm:mb-6">Contents</p>
                 <nav className="space-y-1">
                   {sections.map((section) => (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                      className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                     >
                       {section.title}
                     </a>
                   ))}
                   <a
                     href="#contact-info"
-                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                   >
                     Contact Information
                   </a>
@@ -197,7 +196,7 @@ export default function PrivacyPolicy() {
                     className="mb-12 sm:mb-16 lg:mb-20"
                   >
                     <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                      <div className="shrink-0 pt-1 text-ink dark:text-cream">
                         <section.icon className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                       </div>
                       <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
@@ -207,7 +206,7 @@ export default function PrivacyPolicy() {
 
                     <div className="space-y-6 sm:space-y-8">
                       {section.content.map((subsection, subIndex) => (
-                        <div key={subIndex} className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                        <div key={subIndex} className="surface-card rounded-lg p-5 sm:p-6">
                           <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:mb-4 sm:text-lg">
                             {subsection.subtitle}
                           </h3>
@@ -227,7 +226,7 @@ export default function PrivacyPolicy() {
 
                 <Reveal id="contact-info" className="mb-12 sm:mb-16">
                   <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                    <div className="shrink-0 pt-1 text-ink dark:text-cream">
                       <Shield className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                     </div>
                     <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
@@ -235,7 +234,7 @@ export default function PrivacyPolicy() {
                     </h2>
                   </div>
 
-                  <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:p-10">
+                  <div className="surface-card p-6 sm:p-8 lg:p-10">
                     <p className="mb-6 text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
                       If you have any questions about this Privacy Policy or how I handle your data,
                       please get in touch:
@@ -247,10 +246,10 @@ export default function PrivacyPolicy() {
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
                           <span className="font-semibold text-ink dark:text-cream">Email:</span>{' '}
                           <a
-                            href="mailto:ejoel0035@gmail.com"
+                            href={SOCIAL_LINKS.email}
                             className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream"
                           >
-                            ejoel0035@gmail.com
+                            {SITE_CONFIG.author.email}
                           </a>
                         </p>
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base lg:text-lg">
@@ -267,7 +266,7 @@ export default function PrivacyPolicy() {
                   </div>
                 </Reveal>
 
-                <Reveal className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:p-10">
+                <Reveal className="surface-card p-6 sm:p-8 lg:p-10">
                   <div className="mb-4 flex items-center gap-2.5 sm:mb-6 sm:gap-3">
                     <Eye className="size-5 shrink-0 text-ink/50 dark:text-cream/50 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                     <h3 className="text-lg font-semibold leading-tight text-ink dark:text-cream sm:text-xl lg:text-2xl">

@@ -7,6 +7,7 @@ import SlideButton from '@/components/ui/SlideButton'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }))
@@ -55,7 +56,7 @@ export default function ProjectDetail({ params }) {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="py-6 sm:py-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Link
             href="/projects"
             className="inline-flex items-center text-sm font-semibold text-ink/70 transition-colors hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
@@ -67,10 +68,9 @@ export default function ProjectDetail({ params }) {
       </section>
 
       <section className="py-8 sm:py-10 lg:py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Reveal className="max-w-4xl">
-            {project.category && <p className="eyebrow mb-4">{project.category}</p>}
-            <h1 className="mb-6 text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-8 sm:text-5xl lg:text-6xl">
+            <h1 className="mb-6 text-4xl font-semibold leading-[1] text-ink dark:text-cream sm:mb-8 sm:text-6xl lg:text-7xl">
               {project.title}
             </h1>
 
@@ -97,15 +97,15 @@ export default function ProjectDetail({ params }) {
       </section>
 
       <section className="pb-8 sm:pb-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="relative aspect-video overflow-hidden rounded-3xl" delay={0.1}>
+        <div className="container">
+          <Reveal className="relative aspect-video overflow-hidden rounded-xl" delay={0.1}>
             <ProjectCardVisual category={project.category} size="hero" />
           </Reveal>
         </div>
       </section>
 
       <section className="py-10 sm:py-14 lg:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="grid gap-10 lg:grid-cols-3 lg:gap-14">
 
             <Reveal className="space-y-10 lg:col-span-2 lg:space-y-14">
@@ -151,10 +151,10 @@ export default function ProjectDetail({ params }) {
                   <div className="space-y-6">
                     {Object.entries(project.technologies).map(([category, techs]) => (
                       <div key={category}>
-                        <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink/50 dark:text-cream/50">
+                        <h3 className="mb-3 text-sm font-semibold text-ink/50 dark:text-cream/50">
                           {category.replace(/([A-Z])/g, ' $1').trim()}
                         </h3>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-x-4 gap-y-2">
                           {techs.map((tech) => (
                             <TechBadge key={tech} name={tech} />
                           ))}
@@ -172,8 +172,8 @@ export default function ProjectDetail({ params }) {
                   </h2>
                   <div className="space-y-4">
                     {project.impact.map((item, index) => (
-                      <div key={index} className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60">
-                        <p className="text-base leading-relaxed text-ink/75 dark:text-cream/75">
+                      <div key={index} className="surface-card rounded-lg p-5">
+                        <p className="text-base leading-relaxed text-ink/70 dark:text-cream/70">
                           {item}
                         </p>
                       </div>
@@ -186,11 +186,11 @@ export default function ProjectDetail({ params }) {
 
             <Reveal direction="left" delay={0.1} className="space-y-6 lg:sticky lg:top-24 lg:self-start">
 
-              <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+              <div className="surface-card p-6 sm:p-8">
                 <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                   Technologies
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {project.stack.map((tech) => (
                     <TechBadge key={tech} name={tech} />
                   ))}
@@ -198,7 +198,7 @@ export default function ProjectDetail({ params }) {
               </div>
 
               {(project.links?.live || project.links?.github || project.links?.company) && (
-                <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <div className="surface-card p-6 sm:p-8">
                   <h3 className="mb-5 text-base font-semibold text-ink dark:text-cream sm:text-lg">
                     Links
                   </h3>
@@ -208,7 +208,7 @@ export default function ProjectDetail({ params }) {
                         href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Live website
@@ -220,7 +220,7 @@ export default function ProjectDetail({ params }) {
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Source code
@@ -232,7 +232,7 @@ export default function ProjectDetail({ params }) {
                         href={project.links.company}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Company
@@ -248,17 +248,17 @@ export default function ProjectDetail({ params }) {
 
       {relatedProjects.length > 0 && (
         <section className="py-14 sm:py-16 lg:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container">
             <Reveal>
-              <p className="eyebrow mb-3">Keep exploring</p>
-              <h2 className="mb-10 text-2xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-12 sm:text-3xl lg:text-4xl">
-                More projects
-              </h2>
+              <SectionHeading
+                title="More projects"
+                className="mb-10 sm:mb-12"
+              />
             </Reveal>
 
             <RevealGroup className="grid gap-6 sm:gap-8 md:grid-cols-2" stagger={0.12}>
               {relatedProjects.map((relatedProject) => (
-                <RevealItem key={relatedProject.slug} className="group overflow-hidden rounded-3xl border border-ink/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-cream/10 dark:bg-ink/60">
+                <RevealItem key={relatedProject.slug} className="surface-card group overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="relative aspect-video overflow-hidden">
                     <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
                       <ProjectCardVisual category={relatedProject.category} size="card" />
@@ -286,9 +286,8 @@ export default function ProjectDetail({ params }) {
       )}
 
       <section className="py-14 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <CTAPanel
-            eyebrow="Next steps"
             title="Interested in similar work?"
             description="Get in touch to talk through scope and fit."
             primary={{ href: '/contact', label: 'Start a conversation' }}

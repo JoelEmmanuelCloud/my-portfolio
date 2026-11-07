@@ -6,6 +6,9 @@ import { CheckCircle, Calendar, ArrowUpRight } from 'lucide-react'
 import SlideButton from '@/components/ui/SlideButton'
 import Accordion from '@/components/ui/Accordion'
 import Reveal from '@/components/ui/Reveal'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
+import PageHeader from '@/components/layout/PageHeader'
+import SectionHeading from '@/components/layout/SectionHeading'
 
 function CalendlyEmbed({ onSuccess }) {
   useEffect(() => {
@@ -55,7 +58,7 @@ function BookingSuccessModal({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-modal-title"
-        className="w-full max-w-md rounded-3xl bg-cream p-6 shadow-xl dark:bg-ink xs:p-8"
+        className="w-full max-w-md rounded-xl bg-cream p-6 shadow-xl dark:bg-ink xs:p-8"
       >
         <div className="text-center">
           <CheckCircle className="mx-auto mb-4 h-12 w-12 text-moss sm:h-16 sm:w-16" aria-hidden="true" />
@@ -110,51 +113,46 @@ export default function Contact() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-10 pb-8 sm:pt-16 sm:pb-12 lg:pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-7xl">
-            <Reveal className="mb-10 sm:mb-14">
-              <p className="eyebrow mb-4">Say hello</p>
-              <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
-                Contact
-              </h1>
-              <p className="max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl">
-                Get in touch about blockchain, AI, or full-stack engineering work.
-              </p>
-            </Reveal>
+            <PageHeader
+              title="Contact"
+              description="Get in touch about blockchain, AI, or full-stack engineering work."
+              className="mb-10 sm:mb-14"
+            />
 
             <div className="grid gap-5 lg:grid-cols-3">
 
-              <Reveal className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:col-span-2">
+              <Reveal className="surface-card p-6 sm:p-8 lg:col-span-2">
                 <h2 className="mb-4 text-2xl font-semibold text-ink dark:text-cream sm:text-3xl">
-                  Get In Touch
+                  Get in touch
                 </h2>
                 <p className="mb-8 text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:text-lg">
-                  I work with startups and enterprises on blockchain, AI/ML, and full-stack
-                  systems — from early architecture through production deployment.
+                  Email is the fastest way to reach me.
                 </p>
 
                 <div className="space-y-6">
-                  <div className="border-b border-ink/10 pb-5 dark:border-cream/10">
-                    <h3 className="eyebrow mb-2">Email</h3>
+                  <div>
+                    <h3 className="label mb-2">Email</h3>
                     <a
-                      href="mailto:ejoel0035@gmail.com"
-                      className="text-base font-medium text-ink transition-colors hover:text-gold dark:text-cream sm:text-lg"
+                      href={SOCIAL_LINKS.email}
+                      className="break-all text-2xl font-semibold text-ink underline decoration-gold decoration-4 underline-offset-8 transition-colors hover:text-gold dark:text-cream sm:text-4xl lg:text-5xl"
                     >
-                      ejoel0035@gmail.com
+                      {SITE_CONFIG.author.email}
                     </a>
                   </div>
 
-                  <div className="border-b border-ink/10 pb-5 dark:border-cream/10">
-                    <h3 className="eyebrow mb-2">Response Time</h3>
+                  <div>
+                    <h3 className="label mb-2">Response time</h3>
                     <p className="text-base font-medium text-ink dark:text-cream sm:text-lg">Within 24 hours</p>
                     <p className="mt-1 text-sm text-ink/50 dark:text-cream/50">Usually much faster</p>
                   </div>
 
                   <div>
-                    <h3 className="eyebrow mb-3">Quick links</h3>
+                    <h3 className="label mb-3">Quick links</h3>
                     <div className="flex flex-col gap-2.5">
                       <a
-                        href="https://www.linkedin.com/in/joel-emmanuel-149708202/"
+                        href={SOCIAL_LINKS.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
@@ -163,7 +161,7 @@ export default function Contact() {
                         LinkedIn profile
                       </a>
                       <a
-                        href="https://github.com/JoelEmmanuelCloud"
+                        href={SOCIAL_LINKS.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
@@ -184,12 +182,11 @@ export default function Contact() {
               </Reveal>
 
               <Reveal direction="left" delay={0.1} className="panel-dark flex flex-col justify-center p-6 sm:p-8">
-                <div className="glow-orb -top-16 right-0 h-48 w-48 bg-gold/30" />
                 <div className="relative">
                   <h3 className="mb-3 text-xl font-semibold text-cream sm:text-2xl">
                     Prefer to talk?
                   </h3>
-                  <p className="mb-6 text-sm text-cream/65 sm:text-base">
+                  <p className="mb-6 text-sm text-cream/70 sm:text-base">
                     Schedule a 30-minute call to scope the work.
                   </p>
                   <SlideButton
@@ -208,14 +205,15 @@ export default function Contact() {
       </section>
 
       <section className="py-10 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="mx-auto max-w-6xl">
             <Reveal className="mb-8 sm:mb-12">
-              <p className="eyebrow mb-3">FAQ</p>
-              <h2 className="mb-4 text-3xl font-semibold tracking-tight text-ink dark:text-cream sm:text-4xl lg:text-5xl">
-                Frequently Asked
-              </h2>
-              <p className="text-base text-ink/65 dark:text-cream/65 sm:text-lg lg:text-xl">
+              <SectionHeading
+                title="Common questions"
+                size="lg"
+                className="mb-4"
+              />
+              <p className="text-base text-ink/70 dark:text-cream/70 sm:text-lg lg:text-xl">
                 Common questions about working together.
               </p>
             </Reveal>

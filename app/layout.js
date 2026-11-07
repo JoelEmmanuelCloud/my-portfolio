@@ -1,4 +1,4 @@
-import { Inter, DM_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -6,19 +6,13 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 import AppRefresher from '@/components/AppRefresher'
 import Analytics from '@/components/Analytics'
 import CookieConsent from '@/components/ui/CookieConsent'
+import { SOCIAL_LINKS } from '@/lib/constants'
 
 const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-sans',
-})
-
-const dmMono = DM_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  display: 'swap',
-  variable: '--font-mono',
 })
 
 export const metadata = {
@@ -105,10 +99,7 @@ export default function RootLayout({ children }) {
               "description": "Fullstack & Blockchain Developer building scalable Web3 applications, AI-powered platforms, and production systems.",
               "url": "https://joelemmanuel.dev",
               "image": "https://joelemmanuel.dev/images/profile/profile.jpeg",
-              "sameAs": [
-                "https://www.linkedin.com/in/joel-emmanuel-149708202/",
-                "https://github.com/JoelEmmanuelCloud"
-              ],
+              "sameAs": [SOCIAL_LINKS.linkedin, SOCIAL_LINKS.github],
               "knowsAbout": [
                 "Blockchain Development",
                 "Web3",
@@ -142,7 +133,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${inter.variable} ${dmMono.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:font-medium focus:text-ink"

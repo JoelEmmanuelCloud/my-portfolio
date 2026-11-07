@@ -60,7 +60,7 @@ export default function CookieConsent() {
 
       {!managing ? (
         <>
-          <p className="mb-4 text-sm leading-relaxed text-ink/65">
+          <p className="mb-4 text-sm leading-relaxed text-ink/70">
             This site uses privacy-friendly analytics to understand how visitors use it — no personal
             data is sold or shared. Read the{' '}
             <Link href="/privacy" className="font-medium text-ink underline decoration-gold decoration-2 underline-offset-2 hover:text-gold">
@@ -83,7 +83,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={() => setManaging(true)}
-              className="rounded-md px-4 py-3 text-xs font-semibold text-ink/60 underline decoration-ink/30 decoration-2 underline-offset-2 transition-colors hover:text-ink"
+              className="rounded-md px-4 py-3 text-xs font-semibold text-ink/70 underline decoration-ink/30 decoration-2 underline-offset-2 transition-colors hover:text-ink"
             >
               Manage cookies
             </button>
@@ -95,7 +95,7 @@ export default function CookieConsent() {
             <div className="flex items-start justify-between gap-4 rounded-md border border-ink/10 p-3">
               <div>
                 <p className="text-sm font-medium text-ink">Essential</p>
-                <p className="text-xs text-ink/55">Required for the site to function. Always on.</p>
+                <p className="text-xs text-ink/50">Required for the site to function. Always on.</p>
               </div>
               <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-ink text-cream">
                 <Check className="size-3" strokeWidth={3} aria-hidden="true" />
@@ -105,7 +105,7 @@ export default function CookieConsent() {
             <div className="flex items-start justify-between gap-4 rounded-md border border-ink/10 p-3">
               <div>
                 <p className="text-sm font-medium text-ink">Analytics</p>
-                <p className="text-xs text-ink/55">Privacy-friendly, anonymous usage analytics.</p>
+                <p className="text-xs text-ink/50">Privacy-friendly, anonymous usage analytics.</p>
               </div>
               <button
                 role="switch"

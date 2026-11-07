@@ -1,0 +1,25 @@
+import Reveal from '@/components/ui/Reveal'
+import { cn } from '@/lib/utils'
+
+const widths = {
+  '3xl': 'max-w-3xl',
+  '4xl': 'max-w-4xl',
+}
+
+export default function PageHeader({ title, description, width = '3xl', className, children }) {
+  const hasFooter = Boolean(children)
+
+  return (
+    <Reveal className={cn(widths[width], className)}>
+      <h1 className="page-title">
+        {title}
+      </h1>
+      {description && (
+        <p className={cn('max-w-2xl text-lg text-ink/70 dark:text-cream/70 sm:text-xl', hasFooter && 'mb-6')}>
+          {description}
+        </p>
+      )}
+      {children}
+    </Reveal>
+  )
+}

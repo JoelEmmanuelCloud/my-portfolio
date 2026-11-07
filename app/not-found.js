@@ -23,13 +23,13 @@ export default function NotFound() {
             joelemmanuel.dev
           </Link>
 
-          <p className="eyebrow mb-4">404</p>
+          <p aria-hidden="true" className="text-glow mb-2 text-[7rem] font-semibold leading-none text-gold sm:text-[10rem]">404</p>
 
-          <h1 className="mb-4 text-4xl font-semibold leading-tight tracking-tight text-ink dark:text-cream sm:text-5xl lg:text-6xl">
+          <h1 className="mb-4 text-4xl font-semibold leading-tight text-ink dark:text-cream sm:text-5xl lg:text-6xl">
             Page not found
           </h1>
 
-          <p className="mb-10 text-base leading-relaxed text-ink/60 dark:text-cream/60 sm:mb-12 sm:text-lg">
+          <p className="mb-10 text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:mb-12 sm:text-lg">
             The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
 
@@ -45,8 +45,8 @@ export default function NotFound() {
             </Link>
           </div>
 
-          <div className="border-t border-ink/10 pt-10 dark:border-cream/10 sm:pt-12">
-            <p className="eyebrow mb-6">
+          <div className="pt-4 sm:pt-6">
+            <p className="label mb-6">
               You might be looking for
             </p>
             <div className="space-y-2">
@@ -54,7 +54,7 @@ export default function NotFound() {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="group flex items-center justify-between rounded-2xl p-4 transition-colors hover:bg-ink/5 dark:hover:bg-cream/5"
+                  className="group flex items-center justify-between rounded-lg p-4 transition-colors hover:bg-ink/5 dark:hover:bg-cream/5"
                 >
                   <div>
                     <p className="text-sm font-semibold text-ink transition-colors group-hover:text-gold dark:text-cream">
@@ -62,7 +62,7 @@ export default function NotFound() {
                     </p>
                     <p className="mt-0.5 text-xs text-ink/50 dark:text-cream/50">{link.description}</p>
                   </div>
-                  <ArrowUpRight className="size-4 text-ink/30 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/30" />
+                  <ArrowUpRight className="size-4 text-ink/50 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/50" />
                 </Link>
               ))}
             </div>

@@ -1,13 +1,13 @@
 'use client'
 import { motion, useReducedMotion } from 'framer-motion'
 
-export default function ProficiencyBar({ width, className = '' }) {
+export default function ProficiencyBar({ width, className = '', fillClassName = 'bg-gold' }) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
     <div className={`h-1.5 w-full overflow-hidden rounded-full bg-ink/10 dark:bg-cream/10 ${className}`}>
       <motion.div
-        className="h-full rounded-full bg-gold"
+        className={`h-full rounded-full ${fillClassName}`}
         initial={{ width: shouldReduceMotion ? width : 0 }}
         whileInView={{ width }}
         viewport={{ once: true, amount: 0.6 }}

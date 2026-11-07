@@ -3,37 +3,30 @@ import Image from 'next/image'
 import SlideButton from './ui/SlideButton'
 import Reveal, { RevealGroup, RevealItem } from './ui/Reveal'
 import ManageCookiesButton from './ui/ManageCookiesButton'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
 
 const navLinks = [
   { name: 'Experience', href: '/experience' },
   { name: 'Projects', href: '/projects' },
   { name: 'Skills', href: '/skills' },
-  { name: 'Articles', href: '/articles' },
   { name: 'Contact', href: '/contact' },
 ]
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/joel-emmanuel-149708202/' },
-  { name: 'GitHub', href: 'https://github.com/JoelEmmanuelCloud' },
+  { name: 'LinkedIn', href: SOCIAL_LINKS.linkedin },
+  { name: 'GitHub', href: SOCIAL_LINKS.github },
 ]
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-ink px-2 pb-2 sm:px-3">
-      <div className="glow-orb -left-32 top-10 h-96 w-96 bg-moss/20" />
-      <div className="glow-orb bottom-0 right-0 h-80 w-80 bg-gold/15" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-14 pt-16 sm:gap-16 sm:pt-20">
 
-        <Reveal className="panel-dark relative h-56 border border-cream/10 sm:h-72">
-          <div className="glow-orb -right-10 -top-10 h-56 w-56 bg-gold/20" />
-          <div className="glow-orb -left-16 bottom-0 h-48 w-48 bg-ember/15" />
-          <div className="watermark-text left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[4.5rem] text-cream sm:text-[7rem] lg:text-[9rem]">
-            EMMANUEL
-          </div>
+        <Reveal className="panel-dark relative h-56 sm:h-72">
           <div className="relative flex h-full w-full flex-col items-start justify-between gap-6 px-6 py-8 sm:flex-row sm:items-center sm:px-12">
-            <h2 className="max-w-md text-2xl font-semibold leading-tight tracking-tight text-cream sm:text-3xl lg:text-4xl">
-              Let&apos;s build your next product together.
+            <h2 className="max-w-md text-2xl font-semibold leading-tight text-cream sm:text-3xl lg:text-4xl">
+              Let&apos;s build your next product together
             </h2>
             <SlideButton href="/contact" variant="gold" className="shrink-0">
               Get in touch
@@ -53,21 +46,21 @@ export default function Footer() {
               Fullstack &amp; Blockchain Developer building scalable Web3 apps, AI platforms, and production systems.
             </p>
             <a
-              href="mailto:ejoel0035@gmail.com"
+              href={SOCIAL_LINKS.email}
               className="text-sm text-cream/50 transition-colors hover:text-gold"
             >
-              ejoel0035@gmail.com
+              {SITE_CONFIG.author.email}
             </a>
           </RevealItem>
 
           <RevealItem>
-            <p className="eyebrow !text-cream/40 mb-4">Pages</p>
+            <p className="label mb-4 !text-cream/70">Pages</p>
             <div className="flex flex-col gap-2.5">
               {navLinks.map(link => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm text-cream/60 transition-colors hover:text-gold"
+                  className="text-sm text-cream/70 transition-colors hover:text-gold"
                 >
                   {link.name}
                 </Link>
@@ -76,7 +69,7 @@ export default function Footer() {
           </RevealItem>
 
           <RevealItem>
-            <p className="eyebrow !text-cream/40 mb-4">Social</p>
+            <p className="label mb-4 !text-cream/70">Social</p>
             <div className="flex flex-col gap-2.5">
               {socialLinks.map(link => (
                 <a
@@ -84,7 +77,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-cream/60 transition-colors hover:text-gold"
+                  className="text-sm text-cream/70 transition-colors hover:text-gold"
                 >
                   {link.name}
                 </a>
@@ -94,13 +87,13 @@ export default function Footer() {
         </RevealGroup>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-cream/10 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-xs text-cream/40">
+          <p className="text-xs text-cream/50">
             © {new Date().getFullYear()} Joel Emmanuel. All rights reserved.
           </p>
           <div className="flex gap-5">
-            <Link href="/privacy" className="text-xs text-cream/40 transition-colors hover:text-gold">Privacy</Link>
-            <Link href="/terms" className="text-xs text-cream/40 transition-colors hover:text-gold">Terms</Link>
-            <ManageCookiesButton className="text-xs text-cream/40 transition-colors hover:text-gold" />
+            <Link href="/privacy" className="text-xs text-cream/50 transition-colors hover:text-gold">Privacy</Link>
+            <Link href="/terms" className="text-xs text-cream/50 transition-colors hover:text-gold">Terms</Link>
+            <ManageCookiesButton className="text-xs text-cream/50 transition-colors hover:text-gold" />
           </div>
         </div>
       </div>

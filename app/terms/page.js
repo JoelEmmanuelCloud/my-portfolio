@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { ArrowLeft, FileText, AlertCircle, Scale, Users, Shield } from 'lucide-react'
 import Reveal from '@/components/ui/Reveal'
 import SlideButton from '@/components/ui/SlideButton'
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants'
+import PageHeader from '@/components/layout/PageHeader'
 
 export default function TermsOfService() {
   const sections = [
@@ -163,7 +165,7 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-cream dark:bg-ink">
 
       <section className="pt-8 sm:pt-12 pb-12 sm:pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <Link
             href="/"
             className="mb-8 inline-flex items-center text-sm font-semibold text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:mb-12 sm:text-base"
@@ -172,47 +174,44 @@ export default function TermsOfService() {
             Back to Home
           </Link>
 
-          <Reveal className="max-w-4xl">
-            <p className="eyebrow mb-4">Legal</p>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-ink dark:text-cream sm:mb-6 sm:text-6xl lg:text-7xl">
-              Terms of Service
-            </h1>
-            <p className="mb-4 text-lg text-ink/65 dark:text-cream/65 sm:mb-6 sm:text-xl lg:text-2xl">
-              Governing your use of this website and its services.
-            </p>
-            <p className="font-mono text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
+          <PageHeader
+            title="Terms of Service"
+            description="The rules for using this site."
+            width="4xl"
+          >
+            <p className="text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
-          </Reveal>
+          </PageHeader>
         </div>
       </section>
 
       <section className="pb-16 sm:pb-20 lg:pb-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="grid gap-8 sm:gap-12 lg:grid-cols-4 lg:gap-16">
 
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <p className="eyebrow mb-4 sm:mb-6">Contents</p>
+                <p className="label mb-4 sm:mb-6">Contents</p>
                 <nav className="space-y-1">
                   {sections.map((section) => (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                      className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                     >
                       {section.title}
                     </a>
                   ))}
                   <a
                     href="#governing-law"
-                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                   >
                     Governing Law
                   </a>
                   <a
                     href="#contact-info"
-                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                   >
                     Contact Information
                   </a>
@@ -229,7 +228,7 @@ export default function TermsOfService() {
                     className="mb-12 sm:mb-16 lg:mb-20"
                   >
                     <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream dark:bg-cream dark:text-ink sm:size-12">
+                      <div className="shrink-0 pt-1 text-ink dark:text-cream">
                         <section.icon className="size-5 sm:size-6" strokeWidth={1.75} aria-hidden="true" />
                       </div>
                       <h2 className="text-2xl font-semibold leading-tight text-ink dark:text-cream sm:text-3xl lg:text-4xl">
@@ -239,7 +238,7 @@ export default function TermsOfService() {
 
                     <div className="space-y-6 sm:space-y-8">
                       {section.content.map((subsection, subIndex) => (
-                        <div key={subIndex} className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                        <div key={subIndex} className="surface-card rounded-lg p-5 sm:p-6">
                           <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:mb-4 sm:text-lg">
                             {subsection.subtitle}
                           </h3>
@@ -263,7 +262,7 @@ export default function TermsOfService() {
                   </h2>
 
                   <div className="space-y-4 sm:space-y-5">
-                    <div className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                    <div className="surface-card rounded-lg p-5 sm:p-6">
                       <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:text-lg">Governing Law</h3>
                       <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                         These Terms of Service are governed by and construed in accordance with applicable law.
@@ -272,7 +271,7 @@ export default function TermsOfService() {
                       </p>
                     </div>
 
-                    <div className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                    <div className="surface-card rounded-lg p-5 sm:p-6">
                       <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:text-lg">Dispute Resolution</h3>
                       <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                         I prefer to resolve disputes amicably through direct communication. If a dispute cannot be
@@ -281,7 +280,7 @@ export default function TermsOfService() {
                       </p>
                     </div>
 
-                    <div className="rounded-2xl border border-ink/10 bg-white p-5 dark:border-cream/10 dark:bg-ink/60 sm:p-6">
+                    <div className="surface-card rounded-lg p-5 sm:p-6">
                       <h3 className="mb-3 text-base font-semibold text-ink dark:text-cream sm:text-lg">Severability</h3>
                       <p className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                         If any provision of these terms is found to be unenforceable, the remaining provisions
@@ -296,7 +295,7 @@ export default function TermsOfService() {
                     Questions About These Terms
                   </h2>
 
-                  <div className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                  <div className="surface-card p-6 sm:p-8">
                     <p className="mb-6 text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
                       If you have any questions about these Terms of Service, please get in touch:
                     </p>
@@ -306,8 +305,8 @@ export default function TermsOfService() {
                       <div className="space-y-2">
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base">
                           <span className="font-semibold text-ink dark:text-cream">Email:</span>{' '}
-                          <a href="mailto:ejoel0035@gmail.com" className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream">
-                            ejoel0035@gmail.com
+                          <a href={SOCIAL_LINKS.email} className="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-2 transition-colors hover:text-gold dark:text-cream">
+                            {SITE_CONFIG.author.email}
                           </a>
                         </p>
                         <p className="text-sm text-ink/70 dark:text-cream/70 sm:text-base">
@@ -321,7 +320,7 @@ export default function TermsOfService() {
                   </div>
                 </Reveal>
 
-                <Reveal className="mb-5 rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <Reveal className="surface-card mb-5 p-6 sm:p-8">
                   <h3 className="mb-3 text-lg font-semibold text-ink dark:text-cream sm:mb-4 sm:text-xl">
                     Changes to Terms
                   </h3>
@@ -332,7 +331,7 @@ export default function TermsOfService() {
                   </p>
                 </Reveal>
 
-                <Reveal className="rounded-3xl border border-ink/10 bg-white p-6 dark:border-cream/10 dark:bg-ink/60 sm:p-8">
+                <Reveal className="surface-card p-6 sm:p-8">
                   <h3 className="mb-3 text-lg font-semibold text-ink dark:text-cream sm:mb-4 sm:text-xl">
                     Important Notice
                   </h3>
