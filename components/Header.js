@@ -290,7 +290,6 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
-                <span className="text-xs text-cream/40">0{i + 1}</span>
               </Link>
             </motion.div>
           ))}

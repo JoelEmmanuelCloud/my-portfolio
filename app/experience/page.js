@@ -35,8 +35,8 @@ export default function Experience() {
             </Reveal>
 
             <RevealGroup className="space-y-5 sm:space-y-6" stagger={0.1}>
-              {experience?.map((job, index) => (
-                <TimelineItem key={`${job.company}-${job.role}`} job={job} index={index} />
+              {experience?.map((job) => (
+                <TimelineItem key={`${job.company}-${job.role}`} job={job} />
               ))}
             </RevealGroup>
           </div>

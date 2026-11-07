@@ -111,15 +111,11 @@ export default function Home() {
           </Reveal>
 
           <RevealGroup className="grid gap-4 sm:gap-5 sm:grid-cols-2" stagger={0.1}>
-            {buildingApproach.map((approach, index) => (
+            {buildingApproach.map((approach) => (
               <RevealItem
                 key={approach.title}
                 className="surface-card group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
               >
-                <span className="pointer-events-none absolute -right-2 -top-6 select-none text-7xl font-medium text-ink/[0.05] dark:text-cream/[0.06] sm:text-8xl">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-
                 <div className="relative flex items-start gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-ink text-cream transition-colors duration-300 group-hover:bg-gold group-hover:text-ink dark:bg-cream dark:text-ink">
                     <approach.icon className="size-5" strokeWidth={1.75} />

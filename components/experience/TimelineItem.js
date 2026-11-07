@@ -4,7 +4,7 @@ import TechBadge from '@/components/ui/TechBadge'
 import { RevealItem } from '@/components/ui/Reveal'
 import { cn } from '@/lib/utils'
 
-export default function TimelineItem({ job, index }) {
+export default function TimelineItem({ job }) {
   return (
     <RevealItem
       className={cn(
@@ -17,7 +17,6 @@ export default function TimelineItem({ job, index }) {
         aria-hidden="true"
       />
       <div className="space-y-3 lg:col-span-1">
-        <span className="text-xs text-ink/35 dark:text-cream/35">{String(index + 1).padStart(2, '0')}</span>
         <h3
           className={cn(
             'font-semibold leading-tight text-ink dark:text-cream',
