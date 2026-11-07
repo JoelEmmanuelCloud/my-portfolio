@@ -153,7 +153,7 @@ export default function PrivacyPolicy() {
             description="How I collect, use, and protect your information."
             width="4xl"
           >
-            <p className="font-mono text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
+            <p className="text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
           </PageHeader>

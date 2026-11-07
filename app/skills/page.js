@@ -163,7 +163,7 @@ export default function Skills() {
                                   {skillTech && <skillTech.icon className="size-4 shrink-0" style={{ color: skillTech.color }} aria-hidden="true" />}
                                   {skill}
                                 </h4>
-                                <span className={`rounded-full px-3 py-1 font-mono text-xs uppercase tracking-wide ${proficiencyStyles[proficiency]}`}>
+                                <span className={`rounded-full px-3 py-1 text-xs ${proficiencyStyles[proficiency]}`}>
                                   {proficiency}
                                 </span>
                               </div>

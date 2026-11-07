@@ -55,11 +55,10 @@ export default function ProjectCardVisual({ category = 'enterprise', size = 'car
           />
         </div>
         {!isThumb && <span
-          className="font-semibold tracking-wide uppercase"
+          className="font-semibold"
           style={{
             color: 'rgba(255,255,255,0.75)',
             fontSize: isHero ? 14 : 11,
-            letterSpacing: '0.1em',
           }}
         >
           {label}

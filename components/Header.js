@@ -26,7 +26,7 @@ function splitTitle(title) {
 }
 
 const linkClass = (active) =>
-  `rounded-full px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] transition-colors duration-200 ${
+  `rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
     active
       ? 'bg-gold text-ink'
       : 'text-cream/70 hover:bg-cream/10 hover:text-cream dark:text-ink/70 dark:hover:bg-ink/10 dark:hover:text-ink'
@@ -102,7 +102,7 @@ function ProjectsMenu({ item, active, shouldReduceMotion }) {
             className="absolute left-1/2 top-full w-[24rem] -translate-x-1/2 pt-4"
           >
             <div className="rounded-3xl border border-cream/10 bg-ink/95 p-2 shadow-xl shadow-ink/20 backdrop-blur-2xl backdrop-saturate-150 dark:border-ink/10 dark:bg-cream/95">
-              <p className="px-3 pb-2 pt-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-cream/50 dark:text-ink/50">
+              <p className="px-3 pb-2 pt-2 text-xs text-cream/50 dark:text-ink/50">
                 Featured work
               </p>
               <ul className="flex flex-col gap-1">
@@ -132,7 +132,7 @@ function ProjectsMenu({ item, active, shouldReduceMotion }) {
               </ul>
               <Link
                 href={item.href}
-                className="mt-1 flex items-center justify-between rounded-2xl border-t border-cream/10 px-3 py-3 font-mono text-xs uppercase tracking-[0.12em] text-cream/70 transition-colors duration-200 hover:text-gold dark:border-ink/10 dark:text-ink/70"
+                className="mt-1 flex items-center justify-between rounded-2xl border-t border-cream/10 px-3 py-3 text-xs text-cream/70 transition-colors duration-200 hover:text-gold dark:border-ink/10 dark:text-ink/70"
               >
                 View all projects
                 <ArrowUpRight className="size-3.5" aria-hidden="true" />
@@ -290,7 +290,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
-                <span className="font-mono text-xs text-cream/40">0{i + 1}</span>
+                <span className="text-xs text-cream/40">0{i + 1}</span>
               </Link>
             </motion.div>
           ))}

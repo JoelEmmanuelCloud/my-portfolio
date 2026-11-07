@@ -20,7 +20,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        mono: ['ui-monospace', 'monospace'],
       },
       fontWeight: {
         'extralight': 200,

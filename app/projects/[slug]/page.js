@@ -151,7 +151,7 @@ export default function ProjectDetail({ params }) {
                   <div className="space-y-6">
                     {Object.entries(project.technologies).map(([category, techs]) => (
                       <div key={category}>
-                        <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink/50 dark:text-cream/50">
+                        <h3 className="mb-3 text-sm font-semibold text-ink/50 dark:text-cream/50">
                           {category.replace(/([A-Z])/g, ' $1').trim()}
                         </h3>
                         <div className="flex flex-wrap gap-2">

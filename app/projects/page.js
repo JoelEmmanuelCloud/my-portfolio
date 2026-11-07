@@ -51,7 +51,7 @@ export default function Projects() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`rounded-lg border px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] transition-colors duration-200 sm:px-5 sm:py-2.5 ${
+                className={`rounded-lg border px-4 py-2 text-sm font-medium transition-colors duration-200 sm:px-5 sm:py-2.5 ${
                   selectedCategory === category.id
                     ? 'border-ink bg-ink text-cream dark:border-cream dark:bg-cream dark:text-ink'
                     : 'border-ink/15 text-ink/60 hover:border-ink/40 hover:text-ink dark:border-cream/15 dark:text-cream/60 dark:hover:border-cream/40 dark:hover:text-cream'

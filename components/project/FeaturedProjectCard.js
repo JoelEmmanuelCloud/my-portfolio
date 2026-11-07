@@ -38,7 +38,7 @@ export default function FeaturedProjectCard({ project, lead = false }) {
             {project.stack.slice(0, 3).map((tech) => {
               const techEntry = getTech(tech)
               return (
-                <span key={tech} className="inline-flex items-center gap-1.5 rounded-full border border-cream/30 bg-ink/40 px-3 py-1 font-mono text-xs text-cream backdrop-blur-sm">
+                <span key={tech} className="inline-flex items-center gap-1.5 rounded-full border border-cream/30 bg-ink/40 px-3 py-1 text-xs text-cream backdrop-blur-sm">
                   {techEntry && <techEntry.icon className="size-3.5 shrink-0" style={{ color: techEntry.color }} aria-hidden="true" />}
                   {tech}
                 </span>

@@ -46,7 +46,7 @@ export default function Home() {
             {stats.map((stat) => (
               <RevealItem key={stat.label} className="flex flex-col items-center gap-1.5 py-6 sm:py-8">
                 <span className="text-3xl font-semibold tracking-tight text-cream sm:text-5xl">{stat.value}</span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-cream/50 sm:text-xs">{stat.label}</span>
+                <span className="text-xs text-cream/60 sm:text-sm">{stat.label}</span>
               </RevealItem>
             ))}
           </RevealGroup>
@@ -116,7 +116,7 @@ export default function Home() {
                 key={approach.title}
                 className="surface-card group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
               >
-                <span className="pointer-events-none absolute -right-2 -top-6 select-none font-mono text-7xl font-medium text-ink/[0.05] dark:text-cream/[0.06] sm:text-8xl">
+                <span className="pointer-events-none absolute -right-2 -top-6 select-none text-7xl font-medium text-ink/[0.05] dark:text-cream/[0.06] sm:text-8xl">
                   {String(index + 1).padStart(2, '0')}
                 </span>
 

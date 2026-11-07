@@ -179,7 +179,7 @@ export default function TermsOfService() {
             description="Governing your use of this website and its services."
             width="4xl"
           >
-            <p className="font-mono text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
+            <p className="text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
           </PageHeader>
