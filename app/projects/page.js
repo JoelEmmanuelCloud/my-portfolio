@@ -107,7 +107,7 @@ export default function Projects() {
                     : 'border-ink/10 dark:border-cream/10'
                 }`}
               >
-                <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
+                <div className="relative aspect-[4/3] overflow-hidden lg:[aspect-ratio:auto]">
                   <ProjectCardVisual category={project.category} size="card" />
                 </div>
 
