@@ -3,7 +3,7 @@ import { ExternalLink, Calendar, MapPin } from 'lucide-react'
 import { experience, certifications, education } from '@/data/experience'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
-import TechBadge from '@/components/ui/TechBadge'
+import TimelineItem from '@/components/experience/TimelineItem'
 import PageHeader from '@/components/layout/PageHeader'
 import SectionHeading from '@/components/layout/SectionHeading'
 
@@ -38,73 +38,7 @@ export default function Experience() {
 
             <RevealGroup className="space-y-5 sm:space-y-6" stagger={0.1}>
               {experience?.map((job, index) => (
-                <RevealItem
-                  key={index}
-                  className={`relative grid gap-6 overflow-hidden rounded-3xl border bg-white p-6 transition-shadow duration-300 hover:shadow-lg dark:bg-ink/60 sm:p-8 lg:grid-cols-3 lg:gap-10 ${
-                    job.current
-                      ? 'border-gold/60 shadow-[0_0_50px_-14px_rgba(242,194,0,0.45)]'
-                      : 'border-ink/10 dark:border-cream/10'
-                  }`}
-                >
-                  <span className={`absolute left-0 top-0 h-full w-1 ${job.current ? 'bg-gold' : 'bg-ink/10 dark:bg-cream/10'}`} aria-hidden="true" />
-                  <div className="lg:col-span-1">
-                    <div className="space-y-3">
-                      <span className="font-mono text-xs text-ink/35 dark:text-cream/35">{String(index + 1).padStart(2, '0')}</span>
-                      <h3 className={`font-semibold leading-tight tracking-tight text-ink dark:text-cream ${job.current ? 'text-2xl sm:text-3xl' : 'text-lg sm:text-xl'}`}>{job.role}</h3>
-                      <div className="flex items-center gap-2 text-ink dark:text-cream">
-                        <span className="text-base font-medium sm:text-lg">{job.company}</span>
-                        {job.website && (
-                          <a
-                            href={job.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${job.company} website`}
-                            className="text-ink/50 transition-colors hover:text-gold dark:text-cream/50"
-                          >
-                            <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
-                          </a>
-                        )}
-                      </div>
-                      <div className="flex flex-col gap-2 text-sm text-ink/60 dark:text-cream/60 sm:flex-row sm:items-center sm:gap-4 sm:text-base">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 shrink-0" />
-                          <span className="font-medium">{job.period}</span>
-                        </div>
-                        {job.location && (
-                          <div className="flex items-center gap-2">
-                            <MapPin className="h-4 w-4 shrink-0" />
-                            <span className="font-medium">{job.location}</span>
-                          </div>
-                        )}
-                      </div>
-                      {job.current && (
-                        <span className="inline-block rounded-full bg-gold px-3 py-1 font-mono text-xs uppercase tracking-wide text-ink">
-                          Current
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 lg:col-span-2">
-                    {job.highlights && job.highlights.length > 0 && (
-                      <div className="space-y-3">
-                        {job.highlights.map((highlight, highlightIndex) => (
-                          <p key={highlightIndex} className="text-sm leading-relaxed text-ink/70 dark:text-cream/70 sm:text-base">
-                            {highlight}
-                          </p>
-                        ))}
-                      </div>
-                    )}
-
-                    {job.stack && job.stack.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5">
-                        {job.stack.map((tech) => (
-                          <TechBadge key={tech} name={tech} />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </RevealItem>
+                <TimelineItem key={`${job.company}-${job.role}`} job={job} index={index} />
               ))}
             </RevealGroup>
           </div>
