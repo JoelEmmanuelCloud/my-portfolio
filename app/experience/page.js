@@ -45,13 +45,17 @@ export default function Experience() {
               {experience?.map((job, index) => (
                 <RevealItem
                   key={index}
-                  className="relative grid gap-6 overflow-hidden rounded-3xl border border-ink/10 bg-white p-6 transition-shadow duration-300 hover:shadow-lg dark:border-cream/10 dark:bg-ink/60 sm:p-8 lg:grid-cols-3 lg:gap-10"
+                  className={`relative grid gap-6 overflow-hidden rounded-3xl border bg-white p-6 transition-shadow duration-300 hover:shadow-lg dark:bg-ink/60 sm:p-8 lg:grid-cols-3 lg:gap-10 ${
+                    job.current
+                      ? 'border-gold/60 shadow-[0_0_50px_-14px_rgba(242,194,0,0.45)]'
+                      : 'border-ink/10 dark:border-cream/10'
+                  }`}
                 >
-                  <span className="absolute left-0 top-0 h-full w-1 bg-gold" aria-hidden="true" />
+                  <span className={`absolute left-0 top-0 h-full w-1 ${job.current ? 'bg-gold' : 'bg-ink/10 dark:bg-cream/10'}`} aria-hidden="true" />
                   <div className="lg:col-span-1">
                     <div className="space-y-3">
                       <span className="font-mono text-xs text-ink/35 dark:text-cream/35">{String(index + 1).padStart(2, '0')}</span>
-                      <h3 className="text-lg font-semibold leading-tight text-ink dark:text-cream sm:text-xl">{job.role}</h3>
+                      <h3 className={`font-semibold leading-tight tracking-tight text-ink dark:text-cream ${job.current ? 'text-2xl sm:text-3xl' : 'text-lg sm:text-xl'}`}>{job.role}</h3>
                       <div className="flex items-center gap-2 text-ink dark:text-cream">
                         <span className="text-base font-medium sm:text-lg">{job.company}</span>
                         {job.website && (
