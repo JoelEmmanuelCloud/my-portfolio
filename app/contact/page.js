@@ -125,11 +125,10 @@ export default function Contact() {
 
               <Reveal className="surface-card p-6 sm:p-8 lg:col-span-2">
                 <h2 className="mb-4 text-2xl font-semibold text-ink dark:text-cream sm:text-3xl">
-                  Get In Touch
+                  Get in touch
                 </h2>
                 <p className="mb-8 text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:text-lg">
-                  I work with startups and enterprises on blockchain, AI/ML, and full-stack
-                  systems — from early architecture through production deployment.
+                  Email is the fastest way to reach me.
                 </p>
 
                 <div className="space-y-6">
@@ -144,7 +143,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <h3 className="label mb-2">Response Time</h3>
+                    <h3 className="label mb-2">Response time</h3>
                     <p className="text-base font-medium text-ink dark:text-cream sm:text-lg">Within 24 hours</p>
                     <p className="mt-1 text-sm text-ink/50 dark:text-cream/50">Usually much faster</p>
                   </div>
