@@ -36,7 +36,7 @@ export default function FeaturedProjectCard({ project, lead = false }) {
             {project.stack.slice(0, 3).map((tech) => {
               const techEntry = getTech(tech)
               return (
-                <span key={tech} className="inline-flex items-center gap-1.5 text-sm text-cream/80">
+                <span key={tech} className="inline-flex items-center gap-1.5 text-sm text-cream">
                   {techEntry && <techEntry.icon className="size-3.5 shrink-0" style={{ color: techEntry.color }} aria-hidden="true" />}
                   {tech}
                 </span>
@@ -53,9 +53,9 @@ export default function FeaturedProjectCard({ project, lead = false }) {
           >
             {project.title}
           </h3>
-          <p className="mb-2 text-sm font-medium text-cream/60">{project.role}</p>
+          <p className="mb-2 text-sm font-medium text-cream/70">{project.role}</p>
 
-          <p className="mb-0 max-h-0 overflow-hidden text-sm leading-relaxed text-cream/75 opacity-0 transition-all duration-300 group-hover:mb-4 group-hover:max-h-24 group-hover:opacity-100">
+          <p className="mb-0 max-h-0 overflow-hidden text-sm leading-relaxed text-cream/70 opacity-0 transition-all duration-300 group-hover:mb-4 group-hover:max-h-24 group-hover:opacity-100">
             {summary}
           </p>
 

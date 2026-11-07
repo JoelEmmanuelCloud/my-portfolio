@@ -39,7 +39,7 @@ export default function TimelineItem({ job }) {
             </a>
           )}
         </div>
-        <div className="flex flex-col gap-2 text-sm text-ink/60 dark:text-cream/60 sm:flex-row sm:items-center sm:gap-4 sm:text-base">
+        <div className="flex flex-col gap-2 text-sm text-ink/70 dark:text-cream/70 sm:flex-row sm:items-center sm:gap-4 sm:text-base">
           <div className="flex items-center gap-2">
             <Calendar className="h-4 w-4 shrink-0" />
             <span className="font-medium">{job.period}</span>

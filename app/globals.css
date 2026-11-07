@@ -18,7 +18,7 @@
 
 @layer components {
   .label {
-    @apply text-sm font-medium text-ink/60 dark:text-cream/60;
+    @apply text-sm font-medium text-ink/70 dark:text-cream/70;
   }
 
   .glow-orb {

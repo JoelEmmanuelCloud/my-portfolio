@@ -39,9 +39,9 @@ const highlightIcons = {
 
 const proficiencyStyles = {
   Expert: 'font-semibold text-gold-600 dark:text-gold',
-  Advanced: 'text-ink/60 dark:text-cream/60',
-  Intermediate: 'text-ink/60 dark:text-cream/60',
-  Learning: 'text-ink/40 dark:text-cream/40',
+  Advanced: 'text-ink/70 dark:text-cream/70',
+  Intermediate: 'text-ink/70 dark:text-cream/70',
+  Learning: 'text-ink/50 dark:text-cream/50',
 }
 
 const proficiencyFill = (level) => (level === 'Expert' ? 'bg-gold' : 'bg-ink/35 dark:bg-cream/35')
@@ -88,7 +88,7 @@ export default function Skills() {
                       <HighlightIcon className="size-5" strokeWidth={1.75} aria-hidden="true" />
                     </div>
                     <h3 className="mb-2 text-base font-semibold text-ink dark:text-cream sm:text-lg">{highlight.title}</h3>
-                    <p className="text-sm text-ink/60 dark:text-cream/60">{highlight.description}</p>
+                    <p className="text-sm text-ink/70 dark:text-cream/70">{highlight.description}</p>
                   </RevealItem>
                 )
               })}

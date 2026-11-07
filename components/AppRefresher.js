@@ -67,7 +67,7 @@ export default function AppRefresher() {
       <button
         onClick={() => setUpdateReady(false)}
         aria-label="Dismiss"
-        className="-m-2.5 p-2.5 text-ink/40 transition-colors hover:text-ink"
+        className="-m-2.5 p-2.5 text-ink/50 transition-colors hover:text-ink"
       >
         <X className="size-4" aria-hidden="true" />
       </button>

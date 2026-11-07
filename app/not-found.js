@@ -29,7 +29,7 @@ export default function NotFound() {
             Page not found
           </h1>
 
-          <p className="mb-10 text-base leading-relaxed text-ink/60 dark:text-cream/60 sm:mb-12 sm:text-lg">
+          <p className="mb-10 text-base leading-relaxed text-ink/70 dark:text-cream/70 sm:mb-12 sm:text-lg">
             The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
 
@@ -62,7 +62,7 @@ export default function NotFound() {
                     </p>
                     <p className="mt-0.5 text-xs text-ink/50 dark:text-cream/50">{link.description}</p>
                   </div>
-                  <ArrowUpRight className="size-4 text-ink/30 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/30" />
+                  <ArrowUpRight className="size-4 text-ink/50 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/50" />
                 </Link>
               ))}
             </div>

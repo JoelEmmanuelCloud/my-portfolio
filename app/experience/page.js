@@ -76,10 +76,10 @@ export default function Experience() {
                     <div className="lg:col-span-1">
                       <h3 className="mb-3 text-base font-semibold leading-tight text-ink dark:text-cream sm:text-lg">{edu.degree}</h3>
                       {edu.school && (
-                        <p className="mb-4 text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">{edu.school}</p>
+                        <p className="mb-4 text-sm font-medium text-ink/70 dark:text-cream/70 sm:text-base">{edu.school}</p>
                       )}
 
-                      <div className="space-y-2.5 text-sm text-ink/60 dark:text-cream/60">
+                      <div className="space-y-2.5 text-sm text-ink/70 dark:text-cream/70">
                         {edu.period && (
                           <div className="flex items-center gap-2">
                             <Calendar className="h-4 w-4 shrink-0" />

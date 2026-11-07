@@ -119,10 +119,10 @@ function ProjectsMenu({ item, active, shouldReduceMotion }) {
                         </div>
                         <div className="min-w-0 flex-1">
                           <p className="truncate text-sm font-semibold text-cream dark:text-ink">{name}</p>
-                          <p className="truncate text-xs text-cream/60 dark:text-ink/60">{tagline || project.role}</p>
+                          <p className="truncate text-xs text-cream/70 dark:text-ink/70">{tagline || project.role}</p>
                         </div>
                         <ArrowUpRight
-                          className="size-4 shrink-0 text-cream/40 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold dark:text-ink/40"
+                          className="size-4 shrink-0 text-cream/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold dark:text-ink/50"
                           aria-hidden="true"
                         />
                       </Link>
@@ -229,7 +229,7 @@ export default function Header() {
           <div className="flex lg:hidden items-center gap-1">
             <button
               type="button"
-              className="rounded-full p-3 -mr-1 text-cream/80 hover:bg-cream/10 hover:text-cream dark:text-ink/80 dark:hover:bg-ink/10 dark:hover:text-ink transition-colors duration-200"
+              className="rounded-full p-3 -mr-1 text-cream hover:bg-cream/10 hover:text-cream dark:text-ink dark:hover:bg-ink/10 dark:hover:text-ink transition-colors duration-200"
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
@@ -254,7 +254,7 @@ export default function Header() {
           </div>
           <button
             type="button"
-            className="rounded-full p-3 -mr-1 text-cream/80 hover:text-cream hover:bg-cream/10 transition-colors"
+            className="rounded-full p-3 -mr-1 text-cream hover:text-cream hover:bg-cream/10 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close menu"
           >

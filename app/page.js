@@ -25,7 +25,7 @@ export default function Home() {
             <h1 className="max-w-6xl text-5xl font-semibold leading-[0.95] text-cream sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">
               Web3, AI &amp; cloud systems <span className="text-glow text-gold">that ship</span>
             </h1>
-            <p className="max-w-xl text-base leading-relaxed text-cream/60 sm:text-lg">
+            <p className="max-w-xl text-base leading-relaxed text-cream/70 sm:text-lg">
               I&apos;m Joel Emmanuel. I design and build scalable blockchain protocols, AI-powered platforms,
               and full-stack products for startups and enterprises across four continents.
             </p>
@@ -46,7 +46,7 @@ export default function Home() {
             {stats.map((stat) => (
               <RevealItem key={stat.label} className="flex flex-col items-center gap-1.5 py-6 sm:py-8">
                 <span className="text-3xl font-semibold text-cream sm:text-5xl">{stat.value}</span>
-                <span className="text-xs text-cream/60 sm:text-sm">{stat.label}</span>
+                <span className="text-xs text-cream/70 sm:text-sm">{stat.label}</span>
               </RevealItem>
             ))}
           </RevealGroup>
@@ -75,7 +75,7 @@ export default function Home() {
                 size="lg"
               />
             </div>
-            <p className="max-w-sm text-sm text-ink/60 dark:text-cream/60 sm:text-base">
+            <p className="max-w-sm text-sm text-ink/70 dark:text-cream/70 sm:text-base">
               From blockchain protocols to production transportation platforms — shipped and live.
             </p>
           </Reveal>
@@ -118,7 +118,7 @@ export default function Home() {
                     <h3 className="mb-2 text-lg font-semibold text-ink dark:text-cream sm:text-xl">
                       {approach.title}
                     </h3>
-                    <p className="mb-4 text-sm leading-relaxed text-ink/65 dark:text-cream/65">
+                    <p className="mb-4 text-sm leading-relaxed text-ink/70 dark:text-cream/70">
                       {approach.description}
                     </p>
                     <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -153,12 +153,12 @@ export default function Home() {
             <h2 className="mb-4 text-2xl font-semibold text-cream sm:text-3xl lg:text-4xl">
               Former Front-End Developer at Invillia, now building Web3 &amp; AI products
             </h2>
-            <p className="mb-3 text-sm leading-relaxed text-cream/65 sm:text-base">
+            <p className="mb-3 text-sm leading-relaxed text-cream/70 sm:text-base">
               I&apos;ve shipped production platforms across Brazil, the USA, Canada, and Ghana — from AI-powered
               recruitment tools at Invillia, to blockchain education on Lisk at Learnway, to a ride-hailing
               platform serving thousands of daily riders at Freedom.
             </p>
-            <p className="mb-6 text-sm leading-relaxed text-cream/65 sm:text-base">
+            <p className="mb-6 text-sm leading-relaxed text-cream/70 sm:text-base">
               AWS Certified in Cloud Practitioner and AI Practitioner. Specializing in Blockchain, React,
               NestJS, AWS, and applied AI/ML.
             </p>

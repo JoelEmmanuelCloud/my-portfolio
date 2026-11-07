@@ -10,7 +10,7 @@ export default function CertificationCard({ certification }) {
       <div className="mb-5 flex items-start justify-between">
         <div className="mr-4 flex-1">
           <h3 className="mb-2 text-base font-semibold leading-tight text-ink dark:text-cream sm:text-lg">{name}</h3>
-          <p className="text-sm font-medium text-ink/60 dark:text-cream/60 sm:text-base">{issuer}</p>
+          <p className="text-sm font-medium text-ink/70 dark:text-cream/70 sm:text-base">{issuer}</p>
         </div>
         {verifyUrl && (
           <a
@@ -25,7 +25,7 @@ export default function CertificationCard({ certification }) {
         )}
       </div>
 
-      <div className="mb-4 space-y-1 text-sm text-ink/60 dark:text-cream/60">
+      <div className="mb-4 space-y-1 text-sm text-ink/70 dark:text-cream/70">
         <p className="font-medium">{date}</p>
         {id && <p className="break-all">ID: {id}</p>}
       </div>

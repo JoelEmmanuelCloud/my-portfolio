@@ -54,7 +54,7 @@ export default function Projects() {
                 className={`rounded-lg border px-4 py-2 text-sm font-medium transition-colors duration-200 sm:px-5 sm:py-2.5 ${
                   selectedCategory === category.id
                     ? 'border-ink bg-ink text-cream dark:border-cream dark:bg-cream dark:text-ink'
-                    : 'border-ink/15 text-ink/60 hover:border-ink/40 hover:text-ink dark:border-cream/15 dark:text-cream/60 dark:hover:border-cream/40 dark:hover:text-cream'
+                    : 'border-ink/15 text-ink/70 hover:border-ink/40 hover:text-ink dark:border-cream/15 dark:text-cream/70 dark:hover:border-cream/40 dark:hover:text-cream'
                 }`}
               >
                 {category.name}
@@ -75,7 +75,7 @@ export default function Projects() {
           {filteredProjects.length === 0 && (
             <div className="py-16 text-center sm:py-20">
               <h3 className="mb-2 text-xl font-semibold text-ink dark:text-cream sm:text-2xl">No projects found</h3>
-              <p className="text-base text-ink/60 dark:text-cream/60">Try selecting a different category.</p>
+              <p className="text-base text-ink/70 dark:text-cream/70">Try selecting a different category.</p>
             </div>
           )}
         </div>
@@ -102,10 +102,10 @@ export default function Projects() {
                     <h3 className="text-lg font-semibold text-ink dark:text-cream sm:text-xl">
                       {engagement.name}
                     </h3>
-                    <ArrowUpRight className="size-5 shrink-0 text-ink/40 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/40" />
+                    <ArrowUpRight className="size-5 shrink-0 text-ink/50 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/50" />
                   </div>
                   <p className="mb-1 text-sm font-medium text-ink/70 dark:text-cream/70">{engagement.role}</p>
-                  <p className="text-sm text-ink/45 dark:text-cream/45">{engagement.period}</p>
+                  <p className="text-sm text-ink/50 dark:text-cream/50">{engagement.period}</p>
                 </a>
               </RevealItem>
             ))}

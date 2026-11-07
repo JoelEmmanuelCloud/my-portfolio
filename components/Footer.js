@@ -55,13 +55,13 @@ export default function Footer() {
           </RevealItem>
 
           <RevealItem>
-            <p className="label mb-4 !text-cream/60">Pages</p>
+            <p className="label mb-4 !text-cream/70">Pages</p>
             <div className="flex flex-col gap-2.5">
               {navLinks.map(link => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm text-cream/60 transition-colors hover:text-gold"
+                  className="text-sm text-cream/70 transition-colors hover:text-gold"
                 >
                   {link.name}
                 </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
           </RevealItem>
 
           <RevealItem>
-            <p className="label mb-4 !text-cream/60">Social</p>
+            <p className="label mb-4 !text-cream/70">Social</p>
             <div className="flex flex-col gap-2.5">
               {socialLinks.map(link => (
                 <a
@@ -78,7 +78,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-cream/60 transition-colors hover:text-gold"
+                  className="text-sm text-cream/70 transition-colors hover:text-gold"
                 >
                   {link.name}
                 </a>
@@ -88,13 +88,13 @@ export default function Footer() {
         </RevealGroup>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-cream/10 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-xs text-cream/40">
+          <p className="text-xs text-cream/50">
             © {new Date().getFullYear()} Joel Emmanuel. All rights reserved.
           </p>
           <div className="flex gap-5">
-            <Link href="/privacy" className="text-xs text-cream/40 transition-colors hover:text-gold">Privacy</Link>
-            <Link href="/terms" className="text-xs text-cream/40 transition-colors hover:text-gold">Terms</Link>
-            <ManageCookiesButton className="text-xs text-cream/40 transition-colors hover:text-gold" />
+            <Link href="/privacy" className="text-xs text-cream/50 transition-colors hover:text-gold">Privacy</Link>
+            <Link href="/terms" className="text-xs text-cream/50 transition-colors hover:text-gold">Terms</Link>
+            <ManageCookiesButton className="text-xs text-cream/50 transition-colors hover:text-gold" />
           </div>
         </div>
       </div>

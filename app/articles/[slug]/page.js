@@ -146,7 +146,7 @@ export default function ArticleDetail({ params }) {
                             {paper.authors}{paper.year ? ` · ${paper.year}` : ''}
                           </p>
                         </div>
-                        <ArrowUpRight className="size-4 shrink-0 text-ink/40 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/40" />
+                        <ArrowUpRight className="size-4 shrink-0 text-ink/50 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold dark:text-cream/50" />
                       </a>
                     ))}
                   </div>
@@ -181,7 +181,7 @@ export default function ArticleDetail({ params }) {
                         href={article.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Live site
@@ -193,7 +193,7 @@ export default function ArticleDetail({ params }) {
                         href={article.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Source code
@@ -205,7 +205,7 @@ export default function ArticleDetail({ params }) {
                         href={article.links.dataset}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Dataset

@@ -187,7 +187,7 @@ export default function Contact() {
                   <h3 className="mb-3 text-xl font-semibold text-cream sm:text-2xl">
                     Prefer to talk?
                   </h3>
-                  <p className="mb-6 text-sm text-cream/65 sm:text-base">
+                  <p className="mb-6 text-sm text-cream/70 sm:text-base">
                     Schedule a 30-minute call to scope the work.
                   </p>
                   <SlideButton
@@ -214,7 +214,7 @@ export default function Contact() {
                 size="lg"
                 className="mb-4"
               />
-              <p className="text-base text-ink/65 dark:text-cream/65 sm:text-lg lg:text-xl">
+              <p className="text-base text-ink/70 dark:text-cream/70 sm:text-lg lg:text-xl">
                 Common questions about working together.
               </p>
             </Reveal>

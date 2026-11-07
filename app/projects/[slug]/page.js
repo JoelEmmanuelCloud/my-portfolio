@@ -173,7 +173,7 @@ export default function ProjectDetail({ params }) {
                   <div className="space-y-4">
                     {project.impact.map((item, index) => (
                       <div key={index} className="surface-card rounded-lg p-5">
-                        <p className="text-base leading-relaxed text-ink/75 dark:text-cream/75">
+                        <p className="text-base leading-relaxed text-ink/70 dark:text-cream/70">
                           {item}
                         </p>
                       </div>
@@ -208,7 +208,7 @@ export default function ProjectDetail({ params }) {
                         href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Live website
@@ -220,7 +220,7 @@ export default function ProjectDetail({ params }) {
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Source code
@@ -232,7 +232,7 @@ export default function ProjectDetail({ params }) {
                         href={project.links.company}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm font-medium text-ink/75 transition-colors hover:text-gold dark:text-cream/75 sm:text-base"
+                        className="flex items-center gap-2.5 text-sm font-medium text-ink/70 transition-colors hover:text-gold dark:text-cream/70 sm:text-base"
                       >
                         <ArrowUpRight className="size-4 shrink-0" />
                         Company

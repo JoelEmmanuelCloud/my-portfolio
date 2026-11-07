@@ -14,7 +14,7 @@ export default function CTAPanel({
           {title}
         </h2>
         {description && (
-          <p className="mx-auto mb-8 max-w-xl text-base text-ink/60 sm:mb-10 sm:text-lg">
+          <p className="mx-auto mb-8 max-w-xl text-base text-ink/70 sm:mb-10 sm:text-lg">
             {description}
           </p>
         )}

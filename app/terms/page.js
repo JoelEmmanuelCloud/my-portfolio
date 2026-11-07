@@ -179,7 +179,7 @@ export default function TermsOfService() {
             description="Governing your use of this website and its services."
             width="4xl"
           >
-            <p className="text-xs text-ink/45 dark:text-cream/45 sm:text-sm">
+            <p className="text-xs text-ink/50 dark:text-cream/50 sm:text-sm">
               Last updated: {new Date().toLocaleDateString()}
             </p>
           </PageHeader>
@@ -198,20 +198,20 @@ export default function TermsOfService() {
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                      className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                     >
                       {section.title}
                     </a>
                   ))}
                   <a
                     href="#governing-law"
-                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                   >
                     Governing Law
                   </a>
                   <a
                     href="#contact-info"
-                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/60 transition-colors hover:border-gold hover:text-ink dark:text-cream/60 dark:hover:text-cream sm:text-base"
+                    className="block border-l-2 border-transparent py-1.5 pl-3 text-sm font-medium text-ink/70 transition-colors hover:border-gold hover:text-ink dark:text-cream/70 dark:hover:text-cream sm:text-base"
                   >
                     Contact Information
                   </a>

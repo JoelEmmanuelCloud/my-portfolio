@@ -15,7 +15,7 @@ export default function PageHeader({ title, description, width = '3xl', classNam
         {title}
       </h1>
       {description && (
-        <p className={cn('max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl', hasFooter && 'mb-6')}>
+        <p className={cn('max-w-2xl text-lg text-ink/70 dark:text-cream/70 sm:text-xl', hasFooter && 'mb-6')}>
           {description}
         </p>
       )}
