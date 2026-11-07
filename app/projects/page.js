@@ -15,33 +15,10 @@ const categories = [
   { id: 'cloud', name: 'Cloud' },
 ]
 
-const fallbackEngagements = [
-  {
-    name: "Compass UOL",
-    url: "https://compass.uol/en/about-us/",
-    role: "Software Developer",
-    period: "Feb 2023 – Present"
-  },
-  {
-    name: "SLB",
-    url: "https://www.slb.com/",
-    role: "Automation Project",
-    period: "Project"
-  },
-  {
-    name: "Rewod Technologies",
-    url: "https://www.rewodtechnologies.com/",
-    role: "Backend Developer",
-    period: "Oct 2022 – Mar 2023"
-  }
-]
-
 const flagshipSlug = projects.find(project => project.featured)?.slug
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all')
-
-  const engagements = otherEngagements || fallbackEngagements
 
   const filteredProjects = selectedCategory === 'all'
     ? projects
@@ -115,7 +92,7 @@ export default function Projects() {
           </Reveal>
 
           <RevealGroup className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
-            {engagements.map((engagement) => (
+            {otherEngagements.map((engagement) => (
               <RevealItem key={engagement.name}>
                 <a
                   href={engagement.url}

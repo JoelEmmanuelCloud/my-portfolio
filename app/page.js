@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Code, Cloud, Database, Box } from 'lucide-react'
 import { projects } from '@/data/projects'
 import FeaturedProjectCard from '@/components/project/FeaturedProjectCard'
 import SlideButton from '@/components/ui/SlideButton'
@@ -8,56 +7,11 @@ import TiltLogo from '@/components/ui/TiltLogo'
 import Reveal, { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import CTAPanel from '@/components/ui/CTAPanel'
 import TechBadge from '@/components/ui/TechBadge'
-import { SOCIAL_LINKS } from '@/lib/constants'
+import { COMPANIES, SOCIAL_LINKS } from '@/lib/constants'
+import { stats, buildingApproach } from '@/data/home'
 import SectionHeading from '@/components/layout/SectionHeading'
 
-const companies = [
-  { name: 'Invillia', logo: '/logos/invillia.svg', url: 'https://invillia.ai/en/home' },
-  { name: 'Freedom', logo: '/logos/freedom.svg', url: 'https://www.freedomghana.com/' },
-  { name: 'Compass UOL', logo: '/logos/compass.svg', url: 'https://compass.uol/en/about-us/' },
-  { name: 'Yamaha', logo: '/logos/yamaha.svg', url: 'https://yamaha-motor.com/' },
-  { name: 'SLB', logo: '/logos/slb.svg', url: 'https://www.slb.com/' },
-  { name: 'nSight Live', logo: '/logos/nsight.svg', url: 'https://nsightlive.com/' }
-]
-
-const stats = [
-  { value: '+50', label: 'Projects shipped' },
-  { value: '+10', label: 'Companies served' },
-  { value: '4', label: 'Continents' },
-]
-
 const featuredProjects = projects.filter(project => project.featured).slice(0, 3)
-
-const buildingApproach = [
-  {
-    index: '01',
-    title: 'Blockchain & Web3',
-    description: 'Lisk, Ethereum, Solidity with DeFi protocols, smart contracts, and cross-chain solutions.',
-    icon: Box,
-    tech: ['Lisk', 'Ethereum', 'Solidity', 'DeFi']
-  },
-  {
-    index: '02',
-    title: 'Frontend Excellence',
-    description: 'React, Next.js, TypeScript with modern UI/UX patterns and responsive mobile-first design.',
-    icon: Code,
-    tech: ['React', 'Next.js', 'TypeScript', 'Tailwind']
-  },
-  {
-    index: '03',
-    title: 'Backend Power',
-    description: 'NestJS, Spring Boot, Node.js with microservices, real-time features, and secure APIs.',
-    icon: Database,
-    tech: ['NestJS', 'Spring Boot', 'Node.js', 'PostgreSQL']
-  },
-  {
-    index: '04',
-    title: 'Cloud & AI',
-    description: 'AWS infrastructure, AI/ML integration, RAG systems, and automated CI/CD pipelines.',
-    icon: Cloud,
-    tech: ['AWS', 'Docker', 'Bedrock', 'LangChain']
-  }
-]
 
 export default function Home() {
   return (
@@ -104,7 +58,7 @@ export default function Home() {
         <div className="container">
           <Reveal as="p" className="eyebrow text-center mb-8 sm:mb-10">Trusted by fast-growing teams</Reveal>
           <RevealGroup className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14 sm:gap-y-8" stagger={0.06}>
-            {companies.map((company) => (
+            {Object.values(COMPANIES).map((company) => (
               <RevealItem key={company.name}>
                 <TiltLogo href={company.url} name={company.name} logo={company.logo} />
               </RevealItem>
@@ -160,13 +114,13 @@ export default function Home() {
           </Reveal>
 
           <RevealGroup className="grid gap-4 sm:gap-5 sm:grid-cols-2" stagger={0.1}>
-            {buildingApproach.map((approach) => (
+            {buildingApproach.map((approach, index) => (
               <RevealItem
                 key={approach.title}
                 className="surface-card group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
               >
                 <span className="pointer-events-none absolute -right-2 -top-6 select-none font-mono text-7xl font-medium text-ink/[0.05] dark:text-cream/[0.06] sm:text-8xl">
-                  {approach.index}
+                  {String(index + 1).padStart(2, '0')}
                 </span>
 
                 <div className="relative flex items-start gap-4">
