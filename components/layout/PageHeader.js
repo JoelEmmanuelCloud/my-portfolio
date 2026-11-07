@@ -13,7 +13,6 @@ export default function PageHeader({ title, description, tags, width = '3xl', cl
     <Reveal className={cn('page-spotlight', widths[width], className)}>
       <h1 className="page-title">
         {title}
-        <span className="text-glow text-gold">.</span>
       </h1>
       {description && (
         <p className={cn('max-w-2xl text-lg text-ink/65 dark:text-cream/65 sm:text-xl', hasFooter && 'mb-6')}>

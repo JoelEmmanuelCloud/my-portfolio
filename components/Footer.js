@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
           <div className="relative flex h-full w-full flex-col items-start justify-between gap-6 px-6 py-8 sm:flex-row sm:items-center sm:px-12">
             <h2 className="max-w-md text-2xl font-semibold leading-tight tracking-tight text-cream sm:text-3xl lg:text-4xl">
-              Let&apos;s build your next product together.
+              Let&apos;s build your next product together
             </h2>
             <SlideButton href="/contact" variant="gold" className="shrink-0">
               Get in touch
