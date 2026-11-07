@@ -64,17 +64,14 @@ export default function Home() {
 
       <section className="px-2 sm:px-3 pt-2">
         <div className="panel-dark flex min-h-[560px] flex-col sm:min-h-[620px] lg:min-h-[680px]">
-          <div className="glow-orb -top-56 left-1/2 h-[560px] w-[560px] -translate-x-1/2 bg-gold/30" />
-          <div className="glow-orb -top-40 left-[38%] h-96 w-96 -translate-x-1/2 bg-ember/20" />
-          <div className="glow-orb -top-24 left-[58%] h-72 w-72 -translate-x-1/2 bg-bronze/20" />
-          <div className="glow-orb -bottom-32 right-[8%] h-72 w-72 bg-moss/40" />
+          <div className="glow-orb left-1/2 top-1/2 h-[420px] w-[680px] -translate-x-1/2 -translate-y-[60%] bg-gold/25 sm:h-[520px] sm:w-[900px]" />
 
-          <Reveal className="relative flex flex-1 flex-col items-center justify-center gap-6 px-5 py-20 text-center sm:gap-7 sm:px-10 lg:py-24" duration={0.7}>
+          <Reveal className="relative flex flex-1 flex-col items-center justify-center gap-6 px-5 py-20 text-center sm:gap-8 sm:px-10 lg:py-28" duration={0.7}>
             <span className="eyebrow !text-cream/55">Fullstack &amp; Blockchain Developer</span>
-            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-6xl lg:text-[4.5rem]">
-              Building production Web3, AI &amp; cloud systems that ship.
+            <h1 className="max-w-6xl text-5xl font-semibold leading-[0.95] tracking-tighter text-cream sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">
+              Web3, AI &amp; cloud systems <span className="text-glow text-gold">that ship.</span>
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-cream/65 sm:text-lg">
+            <p className="max-w-xl text-base leading-relaxed text-cream/60 sm:text-lg">
               I&apos;m Joel Emmanuel. I design and build scalable blockchain protocols, AI-powered platforms,
               and full-stack products for startups and enterprises across four continents.
             </p>
