@@ -129,12 +129,14 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <RevealGroup className="grid grid-cols-12 gap-5 sm:gap-6" stagger={0.12}>
+          <RevealGroup className="grid grid-cols-12 gap-5 sm:gap-6 lg:grid-rows-[300px_300px]" stagger={0.12}>
             {featuredProjects.map((project, i) => (
               <RevealItem
                 key={project.slug}
-                className={`group relative h-[380px] overflow-hidden rounded-3xl sm:h-[420px] ${
-                  i === 0 ? 'col-span-12 lg:col-span-7' : i === 1 ? 'col-span-12 lg:col-span-5' : 'col-span-12'
+                className={`group relative overflow-hidden rounded-3xl ${
+                  i === 0
+                    ? 'col-span-12 h-[440px] ring-1 ring-gold/40 shadow-[0_0_60px_-12px_rgba(242,194,0,0.45)] sm:h-[520px] lg:col-span-8 lg:row-span-2 lg:h-auto'
+                    : 'col-span-12 h-[340px] sm:col-span-6 sm:h-[380px] lg:col-span-4 lg:h-auto'
                 }`}
               >
                 <Link href={`/projects/${project.slug}`} className="block h-full w-full">
@@ -157,7 +159,12 @@ export default function Home() {
                       })}
                     </div>
 
-                    <h3 className="text-xl font-semibold text-cream sm:text-2xl">
+                    {i === 0 && (
+                      <span className="mb-4 inline-flex w-fit items-center rounded-full bg-gold px-3 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-ink">
+                        Flagship
+                      </span>
+                    )}
+                    <h3 className={`font-semibold tracking-tight text-cream ${i === 0 ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-xl sm:text-2xl'}`}>
                       {project.title}
                     </h3>
                     <p className="mb-2 text-sm font-medium text-cream/60">{project.role}</p>
