@@ -138,7 +138,7 @@ export default function Contact() {
                     <h3 className="eyebrow mb-2">Email</h3>
                     <a
                       href="mailto:ejoel0035@gmail.com"
-                      className="text-base font-medium text-ink transition-colors hover:text-gold dark:text-cream sm:text-lg"
+                      className="break-all text-2xl font-semibold tracking-tight text-ink underline decoration-gold decoration-4 underline-offset-8 transition-colors hover:text-gold dark:text-cream sm:text-4xl lg:text-5xl"
                     >
                       ejoel0035@gmail.com
                     </a>
