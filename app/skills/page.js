@@ -44,6 +44,8 @@ const proficiencyStyles = {
   Learning: 'bg-ink/5 text-ink/50 dark:bg-cream/10 dark:text-cream/50',
 }
 
+const proficiencyFill = (level) => (level === 'Expert' ? 'bg-gold' : 'bg-ink/35 dark:bg-cream/35')
+
 const proficiencyWidth = {
   Expert: '100%',
   Advanced: '85%',
@@ -171,7 +173,7 @@ export default function Skills() {
 
                               <ProficiencyBar
                                 width={proficiencyWidth[proficiency]}
-                                fillClassName={proficiency === 'Expert' ? 'bg-gold' : 'bg-ink/35 dark:bg-cream/35'}
+                                fillClassName={proficiencyFill(proficiency)}
                               />
                             </div>
                           )
@@ -247,7 +249,7 @@ export default function Skills() {
             <RevealGroup className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4" stagger={0.08}>
               {proficiencyLevels.map((level) => (
                 <RevealItem key={level.level} className="surface-card rounded-2xl p-4 text-center">
-                  <ProficiencyBar width={proficiencyWidth[level.level]} className="mb-3" />
+                  <ProficiencyBar width={proficiencyWidth[level.level]} fillClassName={proficiencyFill(level.level)} className="mb-3" />
                   <h4 className="mb-1 text-sm font-semibold text-ink dark:text-cream">{level.level}</h4>
                   <p className="text-xs text-ink/50 dark:text-cream/50">{level.description}</p>
                 </RevealItem>
