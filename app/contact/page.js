@@ -116,7 +116,6 @@ export default function Contact() {
         <div className="container">
           <div className="mx-auto max-w-7xl">
             <PageHeader
-              eyebrow="Say hello"
               title="Contact"
               description="Get in touch about blockchain, AI, or full-stack engineering work."
               className="mb-10 sm:mb-14"
@@ -135,7 +134,7 @@ export default function Contact() {
 
                 <div className="space-y-6">
                   <div className="border-b border-ink/10 pb-5 dark:border-cream/10">
-                    <h3 className="eyebrow mb-2">Email</h3>
+                    <h3 className="label mb-2">Email</h3>
                     <a
                       href={SOCIAL_LINKS.email}
                       className="break-all text-2xl font-semibold tracking-tight text-ink underline decoration-gold decoration-4 underline-offset-8 transition-colors hover:text-gold dark:text-cream sm:text-4xl lg:text-5xl"
@@ -145,13 +144,13 @@ export default function Contact() {
                   </div>
 
                   <div className="border-b border-ink/10 pb-5 dark:border-cream/10">
-                    <h3 className="eyebrow mb-2">Response Time</h3>
+                    <h3 className="label mb-2">Response Time</h3>
                     <p className="text-base font-medium text-ink dark:text-cream sm:text-lg">Within 24 hours</p>
                     <p className="mt-1 text-sm text-ink/50 dark:text-cream/50">Usually much faster</p>
                   </div>
 
                   <div>
-                    <h3 className="eyebrow mb-3">Quick links</h3>
+                    <h3 className="label mb-3">Quick links</h3>
                     <div className="flex flex-col gap-2.5">
                       <a
                         href={SOCIAL_LINKS.linkedin}
@@ -212,7 +211,6 @@ export default function Contact() {
           <div className="mx-auto max-w-6xl">
             <Reveal className="mb-8 sm:mb-12">
               <SectionHeading
-                eyebrow="FAQ"
                 title="Frequently Asked"
                 size="lg"
                 className="mb-4"

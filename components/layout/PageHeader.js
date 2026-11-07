@@ -6,12 +6,11 @@ const widths = {
   '4xl': 'max-w-4xl',
 }
 
-export default function PageHeader({ eyebrow, title, description, tags, width = '3xl', className, children }) {
+export default function PageHeader({ title, description, tags, width = '3xl', className, children }) {
   const hasFooter = Boolean(tags?.length || children)
 
   return (
     <Reveal className={cn('page-spotlight', widths[width], className)}>
-      {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
       <h1 className="page-title">
         {title}
         <span className="text-glow text-gold">.</span>

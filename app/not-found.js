@@ -46,7 +46,7 @@ export default function NotFound() {
           </div>
 
           <div className="border-t border-ink/10 pt-10 dark:border-cream/10 sm:pt-12">
-            <p className="eyebrow mb-6">
+            <p className="label mb-6">
               You might be looking for
             </p>
             <div className="space-y-2">

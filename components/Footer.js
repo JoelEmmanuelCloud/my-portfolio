@@ -62,7 +62,7 @@ export default function Footer() {
           </RevealItem>
 
           <RevealItem>
-            <p className="eyebrow !text-cream/40 mb-4">Pages</p>
+            <p className="label mb-4 !text-cream/60">Pages</p>
             <div className="flex flex-col gap-2.5">
               {navLinks.map(link => (
                 <Link
@@ -77,7 +77,7 @@ export default function Footer() {
           </RevealItem>
 
           <RevealItem>
-            <p className="eyebrow !text-cream/40 mb-4">Social</p>
+            <p className="label mb-4 !text-cream/60">Social</p>
             <div className="flex flex-col gap-2.5">
               {socialLinks.map(link => (
                 <a

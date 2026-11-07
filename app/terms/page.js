@@ -175,7 +175,6 @@ export default function TermsOfService() {
           </Link>
 
           <PageHeader
-            eyebrow="Legal"
             title="Terms of Service"
             description="Governing your use of this website and its services."
             width="4xl"
@@ -193,7 +192,7 @@ export default function TermsOfService() {
 
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <p className="eyebrow mb-4 sm:mb-6">Contents</p>
+                <p className="label mb-4 sm:mb-6">Contents</p>
                 <nav className="space-y-1">
                   {sections.map((section) => (
                     <a

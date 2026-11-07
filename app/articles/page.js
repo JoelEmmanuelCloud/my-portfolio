@@ -12,7 +12,6 @@ export default function Articles() {
       <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
         <div className="container">
           <PageHeader
-            eyebrow="Articles"
             title="Articles"
             description="Engineering write-ups on what it actually takes to build and ship production systems — fintech, AI, and blockchain lessons from real projects, with the details a portfolio card leaves out."
           />
@@ -45,7 +44,6 @@ export default function Articles() {
       <section className="pb-14 sm:pb-16 lg:pb-20">
         <div className="container">
           <CTAPanel
-            eyebrow="Next steps"
             title="Curious about the details?"
             description="Get in touch, or explore shipped projects while this is in progress."
             primary={{ href: '/contact', label: 'Get in touch' }}

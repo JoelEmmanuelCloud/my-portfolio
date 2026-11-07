@@ -15,7 +15,6 @@ export default function Experience() {
       <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16">
         <div className="container">
           <PageHeader
-            eyebrow="Career"
             title="Experience"
             description="Building production systems across innovative companies."
             tags={['Fullstack & Blockchain Developer', '3+ years experience', 'AWS certified']}
@@ -31,7 +30,6 @@ export default function Experience() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                eyebrow="Timeline"
                 title="Work history"
                 className="mb-10 sm:mb-14"
               />
@@ -51,7 +49,6 @@ export default function Experience() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                eyebrow="Credentials"
                 title="Certifications"
                 className="mb-10 sm:mb-14"
               />
@@ -71,7 +68,6 @@ export default function Experience() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                eyebrow="Background"
                 title="Education"
                 className="mb-10 sm:mb-14"
               />
@@ -117,7 +113,6 @@ export default function Experience() {
       <section className="pb-12 sm:pb-16 lg:pb-20">
         <div className="container">
           <CTAPanel
-            eyebrow="Next steps"
             title="Let's work together"
             description="Explore the projects behind this experience, or reach out to talk specifics."
             primary={{ href: '/projects', label: 'View my work' }}

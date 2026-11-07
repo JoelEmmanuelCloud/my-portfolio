@@ -149,7 +149,6 @@ export default function PrivacyPolicy() {
           </Link>
 
           <PageHeader
-            eyebrow="Legal"
             title="Privacy Policy"
             description="How I collect, use, and protect your information."
             width="4xl"
@@ -167,7 +166,7 @@ export default function PrivacyPolicy() {
 
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <p className="eyebrow mb-4 sm:mb-6">Contents</p>
+                <p className="label mb-4 sm:mb-6">Contents</p>
                 <nav className="space-y-1">
                   {sections.map((section) => (
                     <a

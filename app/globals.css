@@ -17,8 +17,8 @@
 }
 
 @layer components {
-  .eyebrow {
-    @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-ink/50 dark:text-cream/50;
+  .label {
+    @apply text-sm font-medium text-ink/60 dark:text-cream/60;
   }
 
   .glow-orb {

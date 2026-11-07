@@ -62,7 +62,6 @@ export default function Skills() {
       <section className="pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20">
         <div className="container">
           <PageHeader
-            eyebrow="Toolbox"
             title="Skills"
             description="Modern technologies for scalable web development."
             tags={['React, Node.js & AWS', '5+ years building production apps', 'Always learning']}
@@ -75,7 +74,6 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                eyebrow="Highlights"
                 title="Key Strengths"
                 align="center"
                 className="mb-10 sm:mb-14"
@@ -108,7 +106,6 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                eyebrow="Deep dive"
                 title="Technical Skills"
                 align="center"
                 className="mb-10 sm:mb-14"
@@ -193,7 +190,6 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                eyebrow="Verified"
                 title="Professional Certifications"
                 align="center"
                 className="mb-10 sm:mb-14"
@@ -214,7 +210,6 @@ export default function Skills() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <SectionHeading
-                eyebrow="Growth"
                 title="Continuous Learning"
                 align="center"
                 className="mb-10 sm:mb-14"
@@ -262,7 +257,6 @@ export default function Skills() {
       <section className="pb-12 sm:pb-16">
         <div className="container">
           <CTAPanel
-            eyebrow="Next steps"
             title="See these skills in production"
             description="Explore the projects that put this stack to work, or get in touch to talk specifics."
             primary={{ href: '/contact', label: 'Start a project' }}

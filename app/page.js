@@ -22,7 +22,6 @@ export default function Home() {
           <div className="glow-orb left-1/2 top-1/2 h-[420px] w-[680px] -translate-x-1/2 -translate-y-[60%] bg-gold/25 sm:h-[520px] sm:w-[900px]" />
 
           <Reveal className="relative flex flex-1 flex-col items-center justify-center gap-6 px-5 py-20 text-center sm:gap-8 sm:px-10 lg:py-28" duration={0.7}>
-            <span className="eyebrow !text-cream/55">Fullstack &amp; Blockchain Developer</span>
             <h1 className="max-w-6xl text-5xl font-semibold leading-[0.95] tracking-tighter text-cream sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">
               Web3, AI &amp; cloud systems <span className="text-glow text-gold">that ship.</span>
             </h1>
@@ -56,7 +55,7 @@ export default function Home() {
 
       <section className="border-y border-ink/5 bg-cream-200/50 py-14 dark:border-cream/5 dark:bg-cream/[0.03] sm:py-16 lg:py-20">
         <div className="container">
-          <Reveal as="p" className="eyebrow text-center mb-8 sm:mb-10">Trusted by fast-growing teams</Reveal>
+          <Reveal as="p" className="label text-center mb-8 sm:mb-10">Trusted by fast-growing teams</Reveal>
           <RevealGroup className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14 sm:gap-y-8" stagger={0.06}>
             {Object.values(COMPANIES).map((company) => (
               <RevealItem key={company.name}>
@@ -75,7 +74,6 @@ export default function Home() {
           <Reveal className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <SectionHeading
-                eyebrow="Selected work"
                 title="Featured projects"
                 size="lg"
               />
@@ -106,7 +104,6 @@ export default function Home() {
         <div className="container relative">
           <Reveal className="mb-10 sm:mb-14">
             <SectionHeading
-              eyebrow="How I build"
               title="A modern stack, from blockchain to cloud."
               size="lg"
               className="max-w-2xl"
@@ -166,7 +163,6 @@ export default function Home() {
           </Reveal>
 
           <Reveal direction="left" delay={0.1} className="relative">
-            <p className="eyebrow !text-cream/50 mb-3">The developer</p>
             <h2 className="mb-4 text-2xl font-semibold tracking-tight text-cream sm:text-3xl lg:text-4xl">
               Former Front-End Developer at Invillia, now building Web3 &amp; AI products.
             </h2>
@@ -189,7 +185,6 @@ export default function Home() {
       <section className="pb-14 sm:pb-16 lg:pb-20">
         <div className="container">
           <CTAPanel
-            eyebrow="Start a project"
             title="Have a project in mind?"
             description="I partner with startups and enterprises on blockchain, AI, and full-stack systems — from architecture to production."
             primary={{ href: '/contact', label: 'Start a conversation' }}

@@ -42,7 +42,6 @@ export default function Projects() {
       <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20">
         <div className="container">
           <PageHeader
-            eyebrow="Portfolio"
             title="Projects"
             description="Production systems and innovative solutions built with modern technologies."
           />
@@ -86,7 +85,6 @@ export default function Projects() {
         <div className="container">
           <Reveal className="mb-8 sm:mb-12">
             <SectionHeading
-              eyebrow="Other work"
               title="Other collaborations"
             />
           </Reveal>
@@ -118,7 +116,6 @@ export default function Projects() {
       <section className="pb-14 sm:pb-16 lg:pb-20">
         <div className="container">
           <CTAPanel
-            eyebrow="Next steps"
             title="Have a similar project?"
             description="Get in touch to talk through scope and fit."
             primary={{ href: '/contact', label: 'Get in touch' }}
