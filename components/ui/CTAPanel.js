@@ -13,11 +13,11 @@ export default function CTAPanel({
       <div className="glow-orb -top-20 left-1/2 h-64 w-64 -translate-x-1/2 bg-gold/25" />
       <div className="relative">
         {eyebrow && <p className="eyebrow !text-ink/50 mb-3">{eyebrow}</p>}
-        <h2 className="mb-4 text-2xl font-semibold tracking-tight text-ink sm:text-3xl lg:text-4xl">
+        <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-semibold leading-[1] tracking-tighter text-ink sm:text-5xl lg:text-6xl">
           {title}
         </h2>
         {description && (
-          <p className="mb-8 text-base text-ink/65 sm:mb-10 sm:text-lg">
+          <p className="mx-auto mb-8 max-w-xl text-base text-ink/60 sm:mb-10 sm:text-lg">
             {description}
           </p>
         )}
