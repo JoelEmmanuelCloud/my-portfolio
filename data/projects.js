@@ -67,7 +67,7 @@ export const projects = [
     featured: true,
     links: {
       live: "https://www.paulwaynegregory.com/",
-      github: "https://github.com/JoelEmmanuelCloud/web",
+      github: "https://github.com/JoelEmmanuelCloud/paulwaynegregory-web",
     },
     stack: [
       "Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4",
