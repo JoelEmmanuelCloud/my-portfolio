@@ -60,6 +60,39 @@ export const projects = [
     }
   },
   {
+    slug: "paul-wayne-gregory-chocolates",
+    category: "ecommerce",
+    title: "Paul Wayne Gregory Chocolates: Luxury Chocolate Storefront",
+    role: "Full-stack Developer",
+    featured: true,
+    links: {
+      live: "https://www.paulwaynegregory.com/",
+    },
+    stack: [
+      "Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4",
+      "Shopify Storefront API", "Shopify Admin API", "Vercel"
+    ],
+    summary: "Full rebuild of the online shop for Paul Wayne Gregory, an award-winning UK chocolatier. A fast, video-led Next.js storefront on top of Shopify, with a custom gift box builder and live stock and pricing.",
+    context: "The old site was a stock Shopify theme that looked like every other chocolate brand, with every product marked sold out behind a closed banner. Paul wanted a luxury site with real personality, a story behind each range, and a way for customers to design their own chocolate box.",
+    challenge: "Keeping the hand-written brand copy and cinematic pages fully custom while Shopify stays the single source for stock, prices, cart and checkout, and connecting orders to a third-party warehouse so they ship without manual work.",
+    solution: "Built a headless Next.js App Router storefront that reads products and runs the cart through the Shopify Storefront GraphQL API from Server Components and Server Actions. Product copy lives in code and merges with live Shopify data. A signed Shopify webhook clears the product cache the moment a product changes, so new items appear without a redeploy. Worked with the client and the fulfilment partner MyInline to fix order routing, warehouse and shipping name mapping, then proved it with a real end-to-end test order.",
+    impact: [
+      "Live in production at paulwaynegregory.com, moved from the old Shopify theme to Vercel with a DNS cutover",
+      "Multi-step Bespoke Box builder: pick a box and colour, choose truffles, add a message, review, then add to cart, with shareable saved designs",
+      "Shop updates within seconds of a Shopify product change through an HMAC-verified webhook",
+      "Orders flow to the MyInline warehouse with no manual steps, confirmed by a passing real test order",
+      "Dedicated Windrush Collection page and product, plus product reviews saved through the Shopify Admin API",
+      "Pre-launch coming soon gate with a secret preview link so the client could review the site before go-live"
+    ],
+    technologies: {
+      frontend: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4"],
+      commerce: ["Shopify Storefront API (GraphQL)", "Shopify Admin API", "Shopify Webhooks"],
+      backend: ["Server Components", "Server Actions", "Cookie-based Cart"],
+      integrations: ["MyInline Fulfilment", "UPS Shipping"],
+      devops: ["Vercel", "Image and Video Compression Scripts"]
+    }
+  },
+  {
     slug: "pe-hackathon-url-shortener",
     category: "devops",
     title: "Production URL Shortener – MLH PE Hackfest 2026",
